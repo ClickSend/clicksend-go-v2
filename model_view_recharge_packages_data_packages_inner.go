@@ -22,7 +22,7 @@ type ViewRechargePackagesDataPackagesInner struct {
 	// The ID of the package.
 	PackageId *float32 `json:"package_id,omitempty"`
 	// The price of the package.
-	PackagePrice *float32 `json:"package_price,omitempty"`
+	PackagePrice *string `json:"package_price,omitempty"`
 	// The pricing tier used to determine the cost per message.
 	PriceRate *int32 `json:"price_rate,omitempty"`
 	// The price of the SMS.
@@ -121,9 +121,9 @@ func (o *ViewRechargePackagesDataPackagesInner) SetPackageId(v float32) {
 }
 
 // GetPackagePrice returns the PackagePrice field value if set, zero value otherwise.
-func (o *ViewRechargePackagesDataPackagesInner) GetPackagePrice() float32 {
+func (o *ViewRechargePackagesDataPackagesInner) GetPackagePrice() string {
 	if o == nil || IsNil(o.PackagePrice) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.PackagePrice
@@ -131,7 +131,7 @@ func (o *ViewRechargePackagesDataPackagesInner) GetPackagePrice() float32 {
 
 // GetPackagePriceOk returns a tuple with the PackagePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewRechargePackagesDataPackagesInner) GetPackagePriceOk() (*float32, bool) {
+func (o *ViewRechargePackagesDataPackagesInner) GetPackagePriceOk() (*string, bool) {
 	if o == nil || IsNil(o.PackagePrice) {
 		return nil, false
 	}
@@ -147,8 +147,8 @@ func (o *ViewRechargePackagesDataPackagesInner) HasPackagePrice() bool {
 	return false
 }
 
-// SetPackagePrice gets a reference to the given float32 and assigns it to the PackagePrice field.
-func (o *ViewRechargePackagesDataPackagesInner) SetPackagePrice(v float32) {
+// SetPackagePrice gets a reference to the given string and assigns it to the PackagePrice field.
+func (o *ViewRechargePackagesDataPackagesInner) SetPackagePrice(v string) {
 	o.PackagePrice = &v
 }
 

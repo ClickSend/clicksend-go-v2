@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **From** | Pointer to **NullableString** | The sender&#39;s phone number. | [optional] 
 **Lang** | Pointer to **string** | The language of the message. | [optional] 
 **Voice** | Pointer to **string** | The voice of the message. | [optional] 
-**Schedule** | Pointer to **float32** | The timestamp when the message should be sent. | [optional] 
+**Schedule** | Pointer to **string** | The timestamp when the message should be sent. | [optional] 
 **MessageId** | Pointer to **string** | The ID of the message. | [optional] 
-**MessageParts** | Pointer to **float32** | The number of parts in the message. | [optional] 
-**MessagePrice** | Pointer to **float32** | The price of the message. | [optional] 
+**MessageParts** | Pointer to **string** | The number of parts in the message. | [optional] 
+**MessagePrice** | Pointer to **string** | The price of the message. | [optional] 
 **CustomString** | Pointer to **string** | The custom string of the message. | [optional] 
 **UserId** | Pointer to **float32** | The ID of the user. | [optional] 
 **SubaccountId** | Pointer to **float32** | The ID of the subaccount. | [optional] 
@@ -229,20 +229,20 @@ HasVoice returns a boolean if a field has been set.
 
 ### GetSchedule
 
-`func (o *VoiceMessage) GetSchedule() float32`
+`func (o *VoiceMessage) GetSchedule() string`
 
 GetSchedule returns the Schedule field if non-nil, zero value otherwise.
 
 ### GetScheduleOk
 
-`func (o *VoiceMessage) GetScheduleOk() (*float32, bool)`
+`func (o *VoiceMessage) GetScheduleOk() (*string, bool)`
 
 GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchedule
 
-`func (o *VoiceMessage) SetSchedule(v float32)`
+`func (o *VoiceMessage) SetSchedule(v string)`
 
 SetSchedule sets Schedule field to given value.
 
@@ -279,20 +279,20 @@ HasMessageId returns a boolean if a field has been set.
 
 ### GetMessageParts
 
-`func (o *VoiceMessage) GetMessageParts() float32`
+`func (o *VoiceMessage) GetMessageParts() string`
 
 GetMessageParts returns the MessageParts field if non-nil, zero value otherwise.
 
 ### GetMessagePartsOk
 
-`func (o *VoiceMessage) GetMessagePartsOk() (*float32, bool)`
+`func (o *VoiceMessage) GetMessagePartsOk() (*string, bool)`
 
 GetMessagePartsOk returns a tuple with the MessageParts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessageParts
 
-`func (o *VoiceMessage) SetMessageParts(v float32)`
+`func (o *VoiceMessage) SetMessageParts(v string)`
 
 SetMessageParts sets MessageParts field to given value.
 
@@ -304,20 +304,20 @@ HasMessageParts returns a boolean if a field has been set.
 
 ### GetMessagePrice
 
-`func (o *VoiceMessage) GetMessagePrice() float32`
+`func (o *VoiceMessage) GetMessagePrice() string`
 
 GetMessagePrice returns the MessagePrice field if non-nil, zero value otherwise.
 
 ### GetMessagePriceOk
 
-`func (o *VoiceMessage) GetMessagePriceOk() (*float32, bool)`
+`func (o *VoiceMessage) GetMessagePriceOk() (*string, bool)`
 
 GetMessagePriceOk returns a tuple with the MessagePrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessagePrice
 
-`func (o *VoiceMessage) SetMessagePrice(v float32)`
+`func (o *VoiceMessage) SetMessagePrice(v string)`
 
 SetMessagePrice sets MessagePrice field to given value.
 

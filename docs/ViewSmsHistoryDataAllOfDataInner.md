@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Body** | Pointer to **string** | The message sent. | [optional] 
 **Status** | Pointer to **string** | The status of the SMS. It can either be:  - _Queued_ - _Completed_ - _Scheduled_ - _WaitApproval_ - _Failed_ - _Cancelled_ - _CancelledAfterReview_ - _Received_ - _Sent_  This parameter reflects the actual status of the SMS. It is based on the  status of the SMS sent from the &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/SMS_gateway\&quot; target&#x3D;\&quot;_blank\&quot;&gt;SMS gateway&lt;/a&gt;, which is different  from the [API status code](https://developers-dev.clicksend.net/docs/#status-codes). Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. | [optional] 
 **From** | Pointer to **string** | The sender of the message. | [optional] 
-**Schedule** | Pointer to **int32** | The scheduled date of the message. It is in &lt;a href&#x3D;\&quot;http://help.clicksend.com/what-is-a-unix-timestamp\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Unix format&lt;/a&gt;. | [optional] 
-**StatusCode** | Pointer to **int32** | The status code sent from the &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/SMS_gateway\&quot; target&#x3D;\&quot;_blank\&quot;&gt;SMS gateway&lt;/a&gt;. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. | [optional] 
+**Schedule** | Pointer to **string** | The scheduled date of the message. It is in &lt;a href&#x3D;\&quot;http://help.clicksend.com/what-is-a-unix-timestamp\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Unix format&lt;/a&gt;. | [optional] 
+**StatusCode** | Pointer to **string** | The status code sent from the &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/SMS_gateway\&quot; target&#x3D;\&quot;_blank\&quot;&gt;SMS gateway&lt;/a&gt;. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. | [optional] 
 **StatusText** | Pointer to **string** | A message describing the _status_code_ of the operation. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. | [optional] 
-**ErrorCode** | Pointer to **NullableInt32** | The error code of the operation. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. If no error occurred, the value is **null**. | [optional] 
+**ErrorCode** | Pointer to **NullableString** | The error code of the operation. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. If no error occurred, the value is **null**. | [optional] 
 **ErrorText** | Pointer to **NullableString** | A message describing the _error_code_ of the operation. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. If no error occurred, the value is **null**. | [optional] 
-**MessageId** | Pointer to **int32** | The generated ID of the message. | [optional] 
-**MessageParts** | Pointer to **int32** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the &lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;&lt;strong&gt;SMS Character Count&lt;/strong&gt;&lt;/a&gt;. | [optional] 
-**MessagePrice** | Pointer to **float32** | The price of this message. This depends on the total number of parts of the message. | [optional] 
+**MessageId** | Pointer to **string** | The generated ID of the message. | [optional] 
+**MessageParts** | Pointer to **string** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the &lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;&lt;strong&gt;SMS Character Count&lt;/strong&gt;&lt;/a&gt;. | [optional] 
+**MessagePrice** | Pointer to **string** | The price of this message. This depends on the total number of parts of the message. | [optional] 
 **FromEmail** | Pointer to **string** | The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS | [optional] 
 **ListId** | Pointer to **NullableString** | The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request. | [optional] 
 **CustomString** | Pointer to **string** | A note that was included with the outgoing SMS. If no note was included, the value is **null**. | [optional] 
@@ -201,20 +201,20 @@ HasFrom returns a boolean if a field has been set.
 
 ### GetSchedule
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetSchedule() int32`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetSchedule() string`
 
 GetSchedule returns the Schedule field if non-nil, zero value otherwise.
 
 ### GetScheduleOk
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetScheduleOk() (*int32, bool)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetScheduleOk() (*string, bool)`
 
 GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchedule
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) SetSchedule(v int32)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) SetSchedule(v string)`
 
 SetSchedule sets Schedule field to given value.
 
@@ -226,20 +226,20 @@ HasSchedule returns a boolean if a field has been set.
 
 ### GetStatusCode
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCode() int32`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCode() string`
 
 GetStatusCode returns the StatusCode field if non-nil, zero value otherwise.
 
 ### GetStatusCodeOk
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCodeOk() (*int32, bool)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCodeOk() (*string, bool)`
 
 GetStatusCodeOk returns a tuple with the StatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatusCode
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) SetStatusCode(v int32)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) SetStatusCode(v string)`
 
 SetStatusCode sets StatusCode field to given value.
 
@@ -276,20 +276,20 @@ HasStatusText returns a boolean if a field has been set.
 
 ### GetErrorCode
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCode() int32`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCode() string`
 
 GetErrorCode returns the ErrorCode field if non-nil, zero value otherwise.
 
 ### GetErrorCodeOk
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCodeOk() (*int32, bool)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCodeOk() (*string, bool)`
 
 GetErrorCodeOk returns a tuple with the ErrorCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorCode
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) SetErrorCode(v int32)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) SetErrorCode(v string)`
 
 SetErrorCode sets ErrorCode field to given value.
 
@@ -346,20 +346,20 @@ HasErrorText returns a boolean if a field has been set.
 UnsetErrorText ensures that no value is present for ErrorText, not even an explicit nil
 ### GetMessageId
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageId() int32`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageId() string`
 
 GetMessageId returns the MessageId field if non-nil, zero value otherwise.
 
 ### GetMessageIdOk
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageIdOk() (*int32, bool)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageIdOk() (*string, bool)`
 
 GetMessageIdOk returns a tuple with the MessageId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessageId
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageId(v int32)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageId(v string)`
 
 SetMessageId sets MessageId field to given value.
 
@@ -371,20 +371,20 @@ HasMessageId returns a boolean if a field has been set.
 
 ### GetMessageParts
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() int32`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() string`
 
 GetMessageParts returns the MessageParts field if non-nil, zero value otherwise.
 
 ### GetMessagePartsOk
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePartsOk() (*int32, bool)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePartsOk() (*string, bool)`
 
 GetMessagePartsOk returns a tuple with the MessageParts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessageParts
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageParts(v int32)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageParts(v string)`
 
 SetMessageParts sets MessageParts field to given value.
 
@@ -396,20 +396,20 @@ HasMessageParts returns a boolean if a field has been set.
 
 ### GetMessagePrice
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePrice() float32`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePrice() string`
 
 GetMessagePrice returns the MessagePrice field if non-nil, zero value otherwise.
 
 ### GetMessagePriceOk
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePriceOk() (*float32, bool)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePriceOk() (*string, bool)`
 
 GetMessagePriceOk returns a tuple with the MessagePrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessagePrice
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) SetMessagePrice(v float32)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) SetMessagePrice(v string)`
 
 SetMessagePrice sets MessagePrice field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Code** | Pointer to **string** | The code of the language. | [optional] 
 **Country** | Pointer to **string** | The country of the language. | [optional] 
-**Gender** | Pointer to **[]string** |  | [optional] 
+**Gender** | Pointer to **string** | The gender of the language. | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasCountry returns a boolean if a field has been set.
 
 ### GetGender
 
-`func (o *ViewVoiceLanguagesDataInner) GetGender() []string`
+`func (o *ViewVoiceLanguagesDataInner) GetGender() string`
 
 GetGender returns the Gender field if non-nil, zero value otherwise.
 
 ### GetGenderOk
 
-`func (o *ViewVoiceLanguagesDataInner) GetGenderOk() (*[]string, bool)`
+`func (o *ViewVoiceLanguagesDataInner) GetGenderOk() (*string, bool)`
 
 GetGenderOk returns a tuple with the Gender field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGender
 
-`func (o *ViewVoiceLanguagesDataInner) SetGender(v []string)`
+`func (o *ViewVoiceLanguagesDataInner) SetGender(v string)`
 
 SetGender sets Gender field to given value.
 

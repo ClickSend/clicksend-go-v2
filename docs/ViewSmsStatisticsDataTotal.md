@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Outbound** | Pointer to [**ViewVoiceStatisticsDataStatsInnerOutbound**](ViewVoiceStatisticsDataStatsInnerOutbound.md) |  | [optional] 
+**Outbound** | Pointer to [**ViewVoiceStatisticsDataTotalOutbound**](ViewVoiceStatisticsDataTotalOutbound.md) |  | [optional] 
 **Inbound** | Pointer to [**CancelAllSmsData**](CancelAllSmsData.md) |  | [optional] 
 **Bounced** | Pointer to [**CancelAllSmsData**](CancelAllSmsData.md) |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOutbound
 
-`func (o *ViewSmsStatisticsDataTotal) GetOutbound() ViewVoiceStatisticsDataStatsInnerOutbound`
+`func (o *ViewSmsStatisticsDataTotal) GetOutbound() ViewVoiceStatisticsDataTotalOutbound`
 
 GetOutbound returns the Outbound field if non-nil, zero value otherwise.
 
 ### GetOutboundOk
 
-`func (o *ViewSmsStatisticsDataTotal) GetOutboundOk() (*ViewVoiceStatisticsDataStatsInnerOutbound, bool)`
+`func (o *ViewSmsStatisticsDataTotal) GetOutboundOk() (*ViewVoiceStatisticsDataTotalOutbound, bool)`
 
 GetOutboundOk returns a tuple with the Outbound field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutbound
 
-`func (o *ViewSmsStatisticsDataTotal) SetOutbound(v ViewVoiceStatisticsDataStatsInnerOutbound)`
+`func (o *ViewSmsStatisticsDataTotal) SetOutbound(v ViewVoiceStatisticsDataTotalOutbound)`
 
 SetOutbound sets Outbound field to given value.
 

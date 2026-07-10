@@ -20,15 +20,15 @@ var _ MappedNullable = &ViewAccountUsageData{}
 // ViewAccountUsageData struct for ViewAccountUsageData
 type ViewAccountUsageData struct {
 	Sms []ViewAccountUsageDataSmsInner `json:"sms,omitempty"`
-	Voice []ViewAccountUsageDataSmsInner `json:"voice,omitempty"`
-	Fax []ViewAccountUsageDataSmsInner `json:"fax,omitempty"`
-	Post []ViewAccountUsageDataSmsInner `json:"post,omitempty"`
+	Voice []ViewAccountUsageDataVoiceInner `json:"voice,omitempty"`
+	Fax []ViewAccountUsageDataVoiceInner `json:"fax,omitempty"`
+	Post []ViewAccountUsageDataVoiceInner `json:"post,omitempty"`
 	Email []ViewAccountUsageDataEmailInner `json:"email,omitempty"`
 	SmsTotal *ViewAccountUsageDataSmsTotal `json:"sms_total,omitempty"`
 	VoiceTotal *ViewAccountUsageDataSmsTotal `json:"voice_total,omitempty"`
 	FaxTotal *ViewAccountUsageDataSmsTotal `json:"fax_total,omitempty"`
 	PostTotal *ViewAccountUsageDataSmsTotal `json:"post_total,omitempty"`
-	EmailTotal *ViewVoiceStatisticsDataTotalOutbound `json:"email_total,omitempty"`
+	EmailTotal *ViewAccountUsageDataEmailTotal `json:"email_total,omitempty"`
 }
 
 // NewViewAccountUsageData instantiates a new ViewAccountUsageData object
@@ -81,9 +81,9 @@ func (o *ViewAccountUsageData) SetSms(v []ViewAccountUsageDataSmsInner) {
 }
 
 // GetVoice returns the Voice field value if set, zero value otherwise.
-func (o *ViewAccountUsageData) GetVoice() []ViewAccountUsageDataSmsInner {
+func (o *ViewAccountUsageData) GetVoice() []ViewAccountUsageDataVoiceInner {
 	if o == nil || IsNil(o.Voice) {
-		var ret []ViewAccountUsageDataSmsInner
+		var ret []ViewAccountUsageDataVoiceInner
 		return ret
 	}
 	return o.Voice
@@ -91,7 +91,7 @@ func (o *ViewAccountUsageData) GetVoice() []ViewAccountUsageDataSmsInner {
 
 // GetVoiceOk returns a tuple with the Voice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageData) GetVoiceOk() ([]ViewAccountUsageDataSmsInner, bool) {
+func (o *ViewAccountUsageData) GetVoiceOk() ([]ViewAccountUsageDataVoiceInner, bool) {
 	if o == nil || IsNil(o.Voice) {
 		return nil, false
 	}
@@ -107,15 +107,15 @@ func (o *ViewAccountUsageData) HasVoice() bool {
 	return false
 }
 
-// SetVoice gets a reference to the given []ViewAccountUsageDataSmsInner and assigns it to the Voice field.
-func (o *ViewAccountUsageData) SetVoice(v []ViewAccountUsageDataSmsInner) {
+// SetVoice gets a reference to the given []ViewAccountUsageDataVoiceInner and assigns it to the Voice field.
+func (o *ViewAccountUsageData) SetVoice(v []ViewAccountUsageDataVoiceInner) {
 	o.Voice = v
 }
 
 // GetFax returns the Fax field value if set, zero value otherwise.
-func (o *ViewAccountUsageData) GetFax() []ViewAccountUsageDataSmsInner {
+func (o *ViewAccountUsageData) GetFax() []ViewAccountUsageDataVoiceInner {
 	if o == nil || IsNil(o.Fax) {
-		var ret []ViewAccountUsageDataSmsInner
+		var ret []ViewAccountUsageDataVoiceInner
 		return ret
 	}
 	return o.Fax
@@ -123,7 +123,7 @@ func (o *ViewAccountUsageData) GetFax() []ViewAccountUsageDataSmsInner {
 
 // GetFaxOk returns a tuple with the Fax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageData) GetFaxOk() ([]ViewAccountUsageDataSmsInner, bool) {
+func (o *ViewAccountUsageData) GetFaxOk() ([]ViewAccountUsageDataVoiceInner, bool) {
 	if o == nil || IsNil(o.Fax) {
 		return nil, false
 	}
@@ -139,15 +139,15 @@ func (o *ViewAccountUsageData) HasFax() bool {
 	return false
 }
 
-// SetFax gets a reference to the given []ViewAccountUsageDataSmsInner and assigns it to the Fax field.
-func (o *ViewAccountUsageData) SetFax(v []ViewAccountUsageDataSmsInner) {
+// SetFax gets a reference to the given []ViewAccountUsageDataVoiceInner and assigns it to the Fax field.
+func (o *ViewAccountUsageData) SetFax(v []ViewAccountUsageDataVoiceInner) {
 	o.Fax = v
 }
 
 // GetPost returns the Post field value if set, zero value otherwise.
-func (o *ViewAccountUsageData) GetPost() []ViewAccountUsageDataSmsInner {
+func (o *ViewAccountUsageData) GetPost() []ViewAccountUsageDataVoiceInner {
 	if o == nil || IsNil(o.Post) {
-		var ret []ViewAccountUsageDataSmsInner
+		var ret []ViewAccountUsageDataVoiceInner
 		return ret
 	}
 	return o.Post
@@ -155,7 +155,7 @@ func (o *ViewAccountUsageData) GetPost() []ViewAccountUsageDataSmsInner {
 
 // GetPostOk returns a tuple with the Post field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageData) GetPostOk() ([]ViewAccountUsageDataSmsInner, bool) {
+func (o *ViewAccountUsageData) GetPostOk() ([]ViewAccountUsageDataVoiceInner, bool) {
 	if o == nil || IsNil(o.Post) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *ViewAccountUsageData) HasPost() bool {
 	return false
 }
 
-// SetPost gets a reference to the given []ViewAccountUsageDataSmsInner and assigns it to the Post field.
-func (o *ViewAccountUsageData) SetPost(v []ViewAccountUsageDataSmsInner) {
+// SetPost gets a reference to the given []ViewAccountUsageDataVoiceInner and assigns it to the Post field.
+func (o *ViewAccountUsageData) SetPost(v []ViewAccountUsageDataVoiceInner) {
 	o.Post = v
 }
 
@@ -337,9 +337,9 @@ func (o *ViewAccountUsageData) SetPostTotal(v ViewAccountUsageDataSmsTotal) {
 }
 
 // GetEmailTotal returns the EmailTotal field value if set, zero value otherwise.
-func (o *ViewAccountUsageData) GetEmailTotal() ViewVoiceStatisticsDataTotalOutbound {
+func (o *ViewAccountUsageData) GetEmailTotal() ViewAccountUsageDataEmailTotal {
 	if o == nil || IsNil(o.EmailTotal) {
-		var ret ViewVoiceStatisticsDataTotalOutbound
+		var ret ViewAccountUsageDataEmailTotal
 		return ret
 	}
 	return *o.EmailTotal
@@ -347,7 +347,7 @@ func (o *ViewAccountUsageData) GetEmailTotal() ViewVoiceStatisticsDataTotalOutbo
 
 // GetEmailTotalOk returns a tuple with the EmailTotal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageData) GetEmailTotalOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
+func (o *ViewAccountUsageData) GetEmailTotalOk() (*ViewAccountUsageDataEmailTotal, bool) {
 	if o == nil || IsNil(o.EmailTotal) {
 		return nil, false
 	}
@@ -363,8 +363,8 @@ func (o *ViewAccountUsageData) HasEmailTotal() bool {
 	return false
 }
 
-// SetEmailTotal gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the EmailTotal field.
-func (o *ViewAccountUsageData) SetEmailTotal(v ViewVoiceStatisticsDataTotalOutbound) {
+// SetEmailTotal gets a reference to the given ViewAccountUsageDataEmailTotal and assigns it to the EmailTotal field.
+func (o *ViewAccountUsageData) SetEmailTotal(v ViewAccountUsageDataEmailTotal) {
 	o.EmailTotal = &v
 }
 

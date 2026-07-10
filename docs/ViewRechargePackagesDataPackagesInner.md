@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PackageId** | Pointer to **float32** | The ID of the package. | [optional] 
-**PackagePrice** | Pointer to **float32** | The price of the package. | [optional] 
+**PackagePrice** | Pointer to **string** | The price of the package. | [optional] 
 **PriceRate** | Pointer to **int32** | The pricing tier used to determine the cost per message. | [optional] 
 **SmsPrice** | Pointer to **float32** | The price of the SMS. | [optional] 
 **SmsQuantity** | Pointer to **float32** | The quantity of the SMS. | [optional] 
@@ -76,20 +76,20 @@ HasPackageId returns a boolean if a field has been set.
 
 ### GetPackagePrice
 
-`func (o *ViewRechargePackagesDataPackagesInner) GetPackagePrice() float32`
+`func (o *ViewRechargePackagesDataPackagesInner) GetPackagePrice() string`
 
 GetPackagePrice returns the PackagePrice field if non-nil, zero value otherwise.
 
 ### GetPackagePriceOk
 
-`func (o *ViewRechargePackagesDataPackagesInner) GetPackagePriceOk() (*float32, bool)`
+`func (o *ViewRechargePackagesDataPackagesInner) GetPackagePriceOk() (*string, bool)`
 
 GetPackagePriceOk returns a tuple with the PackagePrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPackagePrice
 
-`func (o *ViewRechargePackagesDataPackagesInner) SetPackagePrice(v float32)`
+`func (o *ViewRechargePackagesDataPackagesInner) SetPackagePrice(v string)`
 
 SetPackagePrice sets PackagePrice field to given value.
 

@@ -25,7 +25,7 @@ type ViewListContacts struct {
 	ResponseCode *string `json:"response_code,omitempty"`
 	// A message describing the outcome of the operation.
 	ResponseMsg *string `json:"response_msg,omitempty"`
-	Data []Contact `json:"data,omitempty"`
+	Data *ViewListContactsData `json:"data,omitempty"`
 }
 
 // NewViewListContacts instantiates a new ViewListContacts object
@@ -142,17 +142,17 @@ func (o *ViewListContacts) SetResponseMsg(v string) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ViewListContacts) GetData() []Contact {
+func (o *ViewListContacts) GetData() ViewListContactsData {
 	if o == nil || IsNil(o.Data) {
-		var ret []Contact
+		var ret ViewListContactsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewListContacts) GetDataOk() ([]Contact, bool) {
+func (o *ViewListContacts) GetDataOk() (*ViewListContactsData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -168,9 +168,9 @@ func (o *ViewListContacts) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []Contact and assigns it to the Data field.
-func (o *ViewListContacts) SetData(v []Contact) {
-	o.Data = v
+// SetData gets a reference to the given ViewListContactsData and assigns it to the Data field.
+func (o *ViewListContacts) SetData(v ViewListContactsData) {
+	o.Data = &v
 }
 
 func (o ViewListContacts) MarshalJSON() ([]byte, error) {

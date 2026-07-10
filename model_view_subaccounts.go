@@ -25,7 +25,7 @@ type ViewSubaccounts struct {
 	ResponseCode *string `json:"response_code,omitempty"`
 	// A message describing the outcome of the operation.
 	ResponseMsg *string `json:"response_msg,omitempty"`
-	Data []Subaccount `json:"data,omitempty"`
+	Data *ViewSubaccountsData `json:"data,omitempty"`
 }
 
 // NewViewSubaccounts instantiates a new ViewSubaccounts object
@@ -142,17 +142,17 @@ func (o *ViewSubaccounts) SetResponseMsg(v string) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ViewSubaccounts) GetData() []Subaccount {
+func (o *ViewSubaccounts) GetData() ViewSubaccountsData {
 	if o == nil || IsNil(o.Data) {
-		var ret []Subaccount
+		var ret ViewSubaccountsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSubaccounts) GetDataOk() ([]Subaccount, bool) {
+func (o *ViewSubaccounts) GetDataOk() (*ViewSubaccountsData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -168,9 +168,9 @@ func (o *ViewSubaccounts) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []Subaccount and assigns it to the Data field.
-func (o *ViewSubaccounts) SetData(v []Subaccount) {
-	o.Data = v
+// SetData gets a reference to the given ViewSubaccountsData and assigns it to the Data field.
+func (o *ViewSubaccounts) SetData(v ViewSubaccountsData) {
+	o.Data = &v
 }
 
 func (o ViewSubaccounts) MarshalJSON() ([]byte, error) {

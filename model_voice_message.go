@@ -34,13 +34,13 @@ type VoiceMessage struct {
 	// The voice of the message.
 	Voice *string `json:"voice,omitempty"`
 	// The timestamp when the message should be sent.
-	Schedule *float32 `json:"schedule,omitempty"`
+	Schedule *string `json:"schedule,omitempty"`
 	// The ID of the message.
 	MessageId *string `json:"message_id,omitempty"`
 	// The number of parts in the message.
-	MessageParts *float32 `json:"message_parts,omitempty"`
+	MessageParts *string `json:"message_parts,omitempty"`
 	// The price of the message.
-	MessagePrice *float32 `json:"message_price,omitempty"`
+	MessagePrice *string `json:"message_price,omitempty"`
 	// The custom string of the message.
 	CustomString *string `json:"custom_string,omitempty"`
 	// The ID of the user.
@@ -309,9 +309,9 @@ func (o *VoiceMessage) SetVoice(v string) {
 }
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *VoiceMessage) GetSchedule() float32 {
+func (o *VoiceMessage) GetSchedule() string {
 	if o == nil || IsNil(o.Schedule) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.Schedule
@@ -319,7 +319,7 @@ func (o *VoiceMessage) GetSchedule() float32 {
 
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetScheduleOk() (*float32, bool) {
+func (o *VoiceMessage) GetScheduleOk() (*string, bool) {
 	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
@@ -335,8 +335,8 @@ func (o *VoiceMessage) HasSchedule() bool {
 	return false
 }
 
-// SetSchedule gets a reference to the given float32 and assigns it to the Schedule field.
-func (o *VoiceMessage) SetSchedule(v float32) {
+// SetSchedule gets a reference to the given string and assigns it to the Schedule field.
+func (o *VoiceMessage) SetSchedule(v string) {
 	o.Schedule = &v
 }
 
@@ -373,9 +373,9 @@ func (o *VoiceMessage) SetMessageId(v string) {
 }
 
 // GetMessageParts returns the MessageParts field value if set, zero value otherwise.
-func (o *VoiceMessage) GetMessageParts() float32 {
+func (o *VoiceMessage) GetMessageParts() string {
 	if o == nil || IsNil(o.MessageParts) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.MessageParts
@@ -383,7 +383,7 @@ func (o *VoiceMessage) GetMessageParts() float32 {
 
 // GetMessagePartsOk returns a tuple with the MessageParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetMessagePartsOk() (*float32, bool) {
+func (o *VoiceMessage) GetMessagePartsOk() (*string, bool) {
 	if o == nil || IsNil(o.MessageParts) {
 		return nil, false
 	}
@@ -399,15 +399,15 @@ func (o *VoiceMessage) HasMessageParts() bool {
 	return false
 }
 
-// SetMessageParts gets a reference to the given float32 and assigns it to the MessageParts field.
-func (o *VoiceMessage) SetMessageParts(v float32) {
+// SetMessageParts gets a reference to the given string and assigns it to the MessageParts field.
+func (o *VoiceMessage) SetMessageParts(v string) {
 	o.MessageParts = &v
 }
 
 // GetMessagePrice returns the MessagePrice field value if set, zero value otherwise.
-func (o *VoiceMessage) GetMessagePrice() float32 {
+func (o *VoiceMessage) GetMessagePrice() string {
 	if o == nil || IsNil(o.MessagePrice) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.MessagePrice
@@ -415,7 +415,7 @@ func (o *VoiceMessage) GetMessagePrice() float32 {
 
 // GetMessagePriceOk returns a tuple with the MessagePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetMessagePriceOk() (*float32, bool) {
+func (o *VoiceMessage) GetMessagePriceOk() (*string, bool) {
 	if o == nil || IsNil(o.MessagePrice) {
 		return nil, false
 	}
@@ -431,8 +431,8 @@ func (o *VoiceMessage) HasMessagePrice() bool {
 	return false
 }
 
-// SetMessagePrice gets a reference to the given float32 and assigns it to the MessagePrice field.
-func (o *VoiceMessage) SetMessagePrice(v float32) {
+// SetMessagePrice gets a reference to the given string and assigns it to the MessagePrice field.
+func (o *VoiceMessage) SetMessagePrice(v string) {
 	o.MessagePrice = &v
 }
 

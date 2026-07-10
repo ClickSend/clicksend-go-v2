@@ -23,7 +23,8 @@ type ViewVoiceLanguagesDataInner struct {
 	Code *string `json:"code,omitempty"`
 	// The country of the language.
 	Country *string `json:"country,omitempty"`
-	Gender []string `json:"gender,omitempty"`
+	// The gender of the language.
+	Gender *string `json:"gender,omitempty"`
 }
 
 // NewViewVoiceLanguagesDataInner instantiates a new ViewVoiceLanguagesDataInner object
@@ -108,17 +109,17 @@ func (o *ViewVoiceLanguagesDataInner) SetCountry(v string) {
 }
 
 // GetGender returns the Gender field value if set, zero value otherwise.
-func (o *ViewVoiceLanguagesDataInner) GetGender() []string {
+func (o *ViewVoiceLanguagesDataInner) GetGender() string {
 	if o == nil || IsNil(o.Gender) {
-		var ret []string
+		var ret string
 		return ret
 	}
-	return o.Gender
+	return *o.Gender
 }
 
 // GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewVoiceLanguagesDataInner) GetGenderOk() ([]string, bool) {
+func (o *ViewVoiceLanguagesDataInner) GetGenderOk() (*string, bool) {
 	if o == nil || IsNil(o.Gender) {
 		return nil, false
 	}
@@ -134,9 +135,9 @@ func (o *ViewVoiceLanguagesDataInner) HasGender() bool {
 	return false
 }
 
-// SetGender gets a reference to the given []string and assigns it to the Gender field.
-func (o *ViewVoiceLanguagesDataInner) SetGender(v []string) {
-	o.Gender = v
+// SetGender gets a reference to the given string and assigns it to the Gender field.
+func (o *ViewVoiceLanguagesDataInner) SetGender(v string) {
+	o.Gender = &v
 }
 
 func (o ViewVoiceLanguagesDataInner) MarshalJSON() ([]byte, error) {

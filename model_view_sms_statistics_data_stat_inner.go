@@ -21,7 +21,7 @@ var _ MappedNullable = &ViewSmsStatisticsDataStatInner{}
 type ViewSmsStatisticsDataStatInner struct {
 	// The date.
 	Date *float32 `json:"date,omitempty"`
-	Outbound *ViewVoiceStatisticsDataStatsInnerOutbound `json:"outbound,omitempty"`
+	Outbound *ViewVoiceStatisticsDataTotalOutbound `json:"outbound,omitempty"`
 	Inbound *CancelAllSmsData `json:"inbound,omitempty"`
 	Bounced *CancelAllSmsData `json:"bounced,omitempty"`
 }
@@ -76,9 +76,9 @@ func (o *ViewSmsStatisticsDataStatInner) SetDate(v float32) {
 }
 
 // GetOutbound returns the Outbound field value if set, zero value otherwise.
-func (o *ViewSmsStatisticsDataStatInner) GetOutbound() ViewVoiceStatisticsDataStatsInnerOutbound {
+func (o *ViewSmsStatisticsDataStatInner) GetOutbound() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Outbound) {
-		var ret ViewVoiceStatisticsDataStatsInnerOutbound
+		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
 	}
 	return *o.Outbound
@@ -86,7 +86,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetOutbound() ViewVoiceStatisticsDataSt
 
 // GetOutboundOk returns a tuple with the Outbound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsStatisticsDataStatInner) GetOutboundOk() (*ViewVoiceStatisticsDataStatsInnerOutbound, bool) {
+func (o *ViewSmsStatisticsDataStatInner) GetOutboundOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Outbound) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *ViewSmsStatisticsDataStatInner) HasOutbound() bool {
 	return false
 }
 
-// SetOutbound gets a reference to the given ViewVoiceStatisticsDataStatsInnerOutbound and assigns it to the Outbound field.
-func (o *ViewSmsStatisticsDataStatInner) SetOutbound(v ViewVoiceStatisticsDataStatsInnerOutbound) {
+// SetOutbound gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Outbound field.
+func (o *ViewSmsStatisticsDataStatInner) SetOutbound(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Outbound = &v
 }
 

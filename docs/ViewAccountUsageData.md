@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Sms** | Pointer to [**[]ViewAccountUsageDataSmsInner**](ViewAccountUsageDataSmsInner.md) |  | [optional] 
-**Voice** | Pointer to [**[]ViewAccountUsageDataSmsInner**](ViewAccountUsageDataSmsInner.md) |  | [optional] 
-**Fax** | Pointer to [**[]ViewAccountUsageDataSmsInner**](ViewAccountUsageDataSmsInner.md) |  | [optional] 
-**Post** | Pointer to [**[]ViewAccountUsageDataSmsInner**](ViewAccountUsageDataSmsInner.md) |  | [optional] 
+**Voice** | Pointer to [**[]ViewAccountUsageDataVoiceInner**](ViewAccountUsageDataVoiceInner.md) |  | [optional] 
+**Fax** | Pointer to [**[]ViewAccountUsageDataVoiceInner**](ViewAccountUsageDataVoiceInner.md) |  | [optional] 
+**Post** | Pointer to [**[]ViewAccountUsageDataVoiceInner**](ViewAccountUsageDataVoiceInner.md) |  | [optional] 
 **Email** | Pointer to [**[]ViewAccountUsageDataEmailInner**](ViewAccountUsageDataEmailInner.md) |  | [optional] 
 **SmsTotal** | Pointer to [**ViewAccountUsageDataSmsTotal**](ViewAccountUsageDataSmsTotal.md) |  | [optional] 
 **VoiceTotal** | Pointer to [**ViewAccountUsageDataSmsTotal**](ViewAccountUsageDataSmsTotal.md) |  | [optional] 
 **FaxTotal** | Pointer to [**ViewAccountUsageDataSmsTotal**](ViewAccountUsageDataSmsTotal.md) |  | [optional] 
 **PostTotal** | Pointer to [**ViewAccountUsageDataSmsTotal**](ViewAccountUsageDataSmsTotal.md) |  | [optional] 
-**EmailTotal** | Pointer to [**ViewVoiceStatisticsDataTotalOutbound**](ViewVoiceStatisticsDataTotalOutbound.md) |  | [optional] 
+**EmailTotal** | Pointer to [**ViewAccountUsageDataEmailTotal**](ViewAccountUsageDataEmailTotal.md) |  | [optional] 
 
 ## Methods
 
@@ -61,20 +61,20 @@ HasSms returns a boolean if a field has been set.
 
 ### GetVoice
 
-`func (o *ViewAccountUsageData) GetVoice() []ViewAccountUsageDataSmsInner`
+`func (o *ViewAccountUsageData) GetVoice() []ViewAccountUsageDataVoiceInner`
 
 GetVoice returns the Voice field if non-nil, zero value otherwise.
 
 ### GetVoiceOk
 
-`func (o *ViewAccountUsageData) GetVoiceOk() (*[]ViewAccountUsageDataSmsInner, bool)`
+`func (o *ViewAccountUsageData) GetVoiceOk() (*[]ViewAccountUsageDataVoiceInner, bool)`
 
 GetVoiceOk returns a tuple with the Voice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVoice
 
-`func (o *ViewAccountUsageData) SetVoice(v []ViewAccountUsageDataSmsInner)`
+`func (o *ViewAccountUsageData) SetVoice(v []ViewAccountUsageDataVoiceInner)`
 
 SetVoice sets Voice field to given value.
 
@@ -86,20 +86,20 @@ HasVoice returns a boolean if a field has been set.
 
 ### GetFax
 
-`func (o *ViewAccountUsageData) GetFax() []ViewAccountUsageDataSmsInner`
+`func (o *ViewAccountUsageData) GetFax() []ViewAccountUsageDataVoiceInner`
 
 GetFax returns the Fax field if non-nil, zero value otherwise.
 
 ### GetFaxOk
 
-`func (o *ViewAccountUsageData) GetFaxOk() (*[]ViewAccountUsageDataSmsInner, bool)`
+`func (o *ViewAccountUsageData) GetFaxOk() (*[]ViewAccountUsageDataVoiceInner, bool)`
 
 GetFaxOk returns a tuple with the Fax field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFax
 
-`func (o *ViewAccountUsageData) SetFax(v []ViewAccountUsageDataSmsInner)`
+`func (o *ViewAccountUsageData) SetFax(v []ViewAccountUsageDataVoiceInner)`
 
 SetFax sets Fax field to given value.
 
@@ -111,20 +111,20 @@ HasFax returns a boolean if a field has been set.
 
 ### GetPost
 
-`func (o *ViewAccountUsageData) GetPost() []ViewAccountUsageDataSmsInner`
+`func (o *ViewAccountUsageData) GetPost() []ViewAccountUsageDataVoiceInner`
 
 GetPost returns the Post field if non-nil, zero value otherwise.
 
 ### GetPostOk
 
-`func (o *ViewAccountUsageData) GetPostOk() (*[]ViewAccountUsageDataSmsInner, bool)`
+`func (o *ViewAccountUsageData) GetPostOk() (*[]ViewAccountUsageDataVoiceInner, bool)`
 
 GetPostOk returns a tuple with the Post field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPost
 
-`func (o *ViewAccountUsageData) SetPost(v []ViewAccountUsageDataSmsInner)`
+`func (o *ViewAccountUsageData) SetPost(v []ViewAccountUsageDataVoiceInner)`
 
 SetPost sets Post field to given value.
 
@@ -261,20 +261,20 @@ HasPostTotal returns a boolean if a field has been set.
 
 ### GetEmailTotal
 
-`func (o *ViewAccountUsageData) GetEmailTotal() ViewVoiceStatisticsDataTotalOutbound`
+`func (o *ViewAccountUsageData) GetEmailTotal() ViewAccountUsageDataEmailTotal`
 
 GetEmailTotal returns the EmailTotal field if non-nil, zero value otherwise.
 
 ### GetEmailTotalOk
 
-`func (o *ViewAccountUsageData) GetEmailTotalOk() (*ViewVoiceStatisticsDataTotalOutbound, bool)`
+`func (o *ViewAccountUsageData) GetEmailTotalOk() (*ViewAccountUsageDataEmailTotal, bool)`
 
 GetEmailTotalOk returns a tuple with the EmailTotal field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmailTotal
 
-`func (o *ViewAccountUsageData) SetEmailTotal(v ViewVoiceStatisticsDataTotalOutbound)`
+`func (o *ViewAccountUsageData) SetEmailTotal(v ViewAccountUsageDataEmailTotal)`
 
 SetEmailTotal sets EmailTotal field to given value.
 

@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewAvailableNumbersDataInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewAvailableNumbersDataInner{}
+// checks if the ViewAvailableNumbersDataAllOfDataInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ViewAvailableNumbersDataAllOfDataInner{}
 
-// ViewAvailableNumbersDataInner struct for ViewAvailableNumbersDataInner
-type ViewAvailableNumbersDataInner struct {
+// ViewAvailableNumbersDataAllOfDataInner struct for ViewAvailableNumbersDataAllOfDataInner
+type ViewAvailableNumbersDataAllOfDataInner struct {
 	// The country code of the number.
 	Country *string `json:"country,omitempty"`
 	// The country name of the number.
@@ -35,25 +35,25 @@ type ViewAvailableNumbersDataInner struct {
 	AddressRequirement NullableString `json:"address_requirement,omitempty"`
 }
 
-// NewViewAvailableNumbersDataInner instantiates a new ViewAvailableNumbersDataInner object
+// NewViewAvailableNumbersDataAllOfDataInner instantiates a new ViewAvailableNumbersDataAllOfDataInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewAvailableNumbersDataInner() *ViewAvailableNumbersDataInner {
-	this := ViewAvailableNumbersDataInner{}
+func NewViewAvailableNumbersDataAllOfDataInner() *ViewAvailableNumbersDataAllOfDataInner {
+	this := ViewAvailableNumbersDataAllOfDataInner{}
 	return &this
 }
 
-// NewViewAvailableNumbersDataInnerWithDefaults instantiates a new ViewAvailableNumbersDataInner object
+// NewViewAvailableNumbersDataAllOfDataInnerWithDefaults instantiates a new ViewAvailableNumbersDataAllOfDataInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewAvailableNumbersDataInnerWithDefaults() *ViewAvailableNumbersDataInner {
-	this := ViewAvailableNumbersDataInner{}
+func NewViewAvailableNumbersDataAllOfDataInnerWithDefaults() *ViewAvailableNumbersDataAllOfDataInner {
+	this := ViewAvailableNumbersDataAllOfDataInner{}
 	return &this
 }
 
 // GetCountry returns the Country field value if set, zero value otherwise.
-func (o *ViewAvailableNumbersDataInner) GetCountry() string {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetCountry() string {
 	if o == nil || IsNil(o.Country) {
 		var ret string
 		return ret
@@ -63,7 +63,7 @@ func (o *ViewAvailableNumbersDataInner) GetCountry() string {
 
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAvailableNumbersDataInner) GetCountryOk() (*string, bool) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetCountryOk() (*string, bool) {
 	if o == nil || IsNil(o.Country) {
 		return nil, false
 	}
@@ -71,7 +71,7 @@ func (o *ViewAvailableNumbersDataInner) GetCountryOk() (*string, bool) {
 }
 
 // HasCountry returns a boolean if a field has been set.
-func (o *ViewAvailableNumbersDataInner) HasCountry() bool {
+func (o *ViewAvailableNumbersDataAllOfDataInner) HasCountry() bool {
 	if o != nil && !IsNil(o.Country) {
 		return true
 	}
@@ -80,12 +80,12 @@ func (o *ViewAvailableNumbersDataInner) HasCountry() bool {
 }
 
 // SetCountry gets a reference to the given string and assigns it to the Country field.
-func (o *ViewAvailableNumbersDataInner) SetCountry(v string) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) SetCountry(v string) {
 	o.Country = &v
 }
 
 // GetCountryName returns the CountryName field value if set, zero value otherwise.
-func (o *ViewAvailableNumbersDataInner) GetCountryName() string {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetCountryName() string {
 	if o == nil || IsNil(o.CountryName) {
 		var ret string
 		return ret
@@ -95,7 +95,7 @@ func (o *ViewAvailableNumbersDataInner) GetCountryName() string {
 
 // GetCountryNameOk returns a tuple with the CountryName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAvailableNumbersDataInner) GetCountryNameOk() (*string, bool) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetCountryNameOk() (*string, bool) {
 	if o == nil || IsNil(o.CountryName) {
 		return nil, false
 	}
@@ -103,7 +103,7 @@ func (o *ViewAvailableNumbersDataInner) GetCountryNameOk() (*string, bool) {
 }
 
 // HasCountryName returns a boolean if a field has been set.
-func (o *ViewAvailableNumbersDataInner) HasCountryName() bool {
+func (o *ViewAvailableNumbersDataAllOfDataInner) HasCountryName() bool {
 	if o != nil && !IsNil(o.CountryName) {
 		return true
 	}
@@ -112,12 +112,12 @@ func (o *ViewAvailableNumbersDataInner) HasCountryName() bool {
 }
 
 // SetCountryName gets a reference to the given string and assigns it to the CountryName field.
-func (o *ViewAvailableNumbersDataInner) SetCountryName(v string) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) SetCountryName(v string) {
 	o.CountryName = &v
 }
 
 // GetDedicatedNumber returns the DedicatedNumber field value if set, zero value otherwise.
-func (o *ViewAvailableNumbersDataInner) GetDedicatedNumber() string {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetDedicatedNumber() string {
 	if o == nil || IsNil(o.DedicatedNumber) {
 		var ret string
 		return ret
@@ -127,7 +127,7 @@ func (o *ViewAvailableNumbersDataInner) GetDedicatedNumber() string {
 
 // GetDedicatedNumberOk returns a tuple with the DedicatedNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAvailableNumbersDataInner) GetDedicatedNumberOk() (*string, bool) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetDedicatedNumberOk() (*string, bool) {
 	if o == nil || IsNil(o.DedicatedNumber) {
 		return nil, false
 	}
@@ -135,7 +135,7 @@ func (o *ViewAvailableNumbersDataInner) GetDedicatedNumberOk() (*string, bool) {
 }
 
 // HasDedicatedNumber returns a boolean if a field has been set.
-func (o *ViewAvailableNumbersDataInner) HasDedicatedNumber() bool {
+func (o *ViewAvailableNumbersDataAllOfDataInner) HasDedicatedNumber() bool {
 	if o != nil && !IsNil(o.DedicatedNumber) {
 		return true
 	}
@@ -144,12 +144,12 @@ func (o *ViewAvailableNumbersDataInner) HasDedicatedNumber() bool {
 }
 
 // SetDedicatedNumber gets a reference to the given string and assigns it to the DedicatedNumber field.
-func (o *ViewAvailableNumbersDataInner) SetDedicatedNumber(v string) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) SetDedicatedNumber(v string) {
 	o.DedicatedNumber = &v
 }
 
 // GetPriceSetup returns the PriceSetup field value if set, zero value otherwise.
-func (o *ViewAvailableNumbersDataInner) GetPriceSetup() string {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceSetup() string {
 	if o == nil || IsNil(o.PriceSetup) {
 		var ret string
 		return ret
@@ -159,7 +159,7 @@ func (o *ViewAvailableNumbersDataInner) GetPriceSetup() string {
 
 // GetPriceSetupOk returns a tuple with the PriceSetup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAvailableNumbersDataInner) GetPriceSetupOk() (*string, bool) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceSetupOk() (*string, bool) {
 	if o == nil || IsNil(o.PriceSetup) {
 		return nil, false
 	}
@@ -167,7 +167,7 @@ func (o *ViewAvailableNumbersDataInner) GetPriceSetupOk() (*string, bool) {
 }
 
 // HasPriceSetup returns a boolean if a field has been set.
-func (o *ViewAvailableNumbersDataInner) HasPriceSetup() bool {
+func (o *ViewAvailableNumbersDataAllOfDataInner) HasPriceSetup() bool {
 	if o != nil && !IsNil(o.PriceSetup) {
 		return true
 	}
@@ -176,12 +176,12 @@ func (o *ViewAvailableNumbersDataInner) HasPriceSetup() bool {
 }
 
 // SetPriceSetup gets a reference to the given string and assigns it to the PriceSetup field.
-func (o *ViewAvailableNumbersDataInner) SetPriceSetup(v string) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) SetPriceSetup(v string) {
 	o.PriceSetup = &v
 }
 
 // GetPriceMonthly returns the PriceMonthly field value if set, zero value otherwise.
-func (o *ViewAvailableNumbersDataInner) GetPriceMonthly() string {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceMonthly() string {
 	if o == nil || IsNil(o.PriceMonthly) {
 		var ret string
 		return ret
@@ -191,7 +191,7 @@ func (o *ViewAvailableNumbersDataInner) GetPriceMonthly() string {
 
 // GetPriceMonthlyOk returns a tuple with the PriceMonthly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAvailableNumbersDataInner) GetPriceMonthlyOk() (*string, bool) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceMonthlyOk() (*string, bool) {
 	if o == nil || IsNil(o.PriceMonthly) {
 		return nil, false
 	}
@@ -199,7 +199,7 @@ func (o *ViewAvailableNumbersDataInner) GetPriceMonthlyOk() (*string, bool) {
 }
 
 // HasPriceMonthly returns a boolean if a field has been set.
-func (o *ViewAvailableNumbersDataInner) HasPriceMonthly() bool {
+func (o *ViewAvailableNumbersDataAllOfDataInner) HasPriceMonthly() bool {
 	if o != nil && !IsNil(o.PriceMonthly) {
 		return true
 	}
@@ -208,12 +208,12 @@ func (o *ViewAvailableNumbersDataInner) HasPriceMonthly() bool {
 }
 
 // SetPriceMonthly gets a reference to the given string and assigns it to the PriceMonthly field.
-func (o *ViewAvailableNumbersDataInner) SetPriceMonthly(v string) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) SetPriceMonthly(v string) {
 	o.PriceMonthly = &v
 }
 
 // GetPriceTotal returns the PriceTotal field value if set, zero value otherwise.
-func (o *ViewAvailableNumbersDataInner) GetPriceTotal() string {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceTotal() string {
 	if o == nil || IsNil(o.PriceTotal) {
 		var ret string
 		return ret
@@ -223,7 +223,7 @@ func (o *ViewAvailableNumbersDataInner) GetPriceTotal() string {
 
 // GetPriceTotalOk returns a tuple with the PriceTotal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAvailableNumbersDataInner) GetPriceTotalOk() (*string, bool) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceTotalOk() (*string, bool) {
 	if o == nil || IsNil(o.PriceTotal) {
 		return nil, false
 	}
@@ -231,7 +231,7 @@ func (o *ViewAvailableNumbersDataInner) GetPriceTotalOk() (*string, bool) {
 }
 
 // HasPriceTotal returns a boolean if a field has been set.
-func (o *ViewAvailableNumbersDataInner) HasPriceTotal() bool {
+func (o *ViewAvailableNumbersDataAllOfDataInner) HasPriceTotal() bool {
 	if o != nil && !IsNil(o.PriceTotal) {
 		return true
 	}
@@ -240,12 +240,12 @@ func (o *ViewAvailableNumbersDataInner) HasPriceTotal() bool {
 }
 
 // SetPriceTotal gets a reference to the given string and assigns it to the PriceTotal field.
-func (o *ViewAvailableNumbersDataInner) SetPriceTotal(v string) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) SetPriceTotal(v string) {
 	o.PriceTotal = &v
 }
 
 // GetAddressRequirement returns the AddressRequirement field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ViewAvailableNumbersDataInner) GetAddressRequirement() string {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetAddressRequirement() string {
 	if o == nil || IsNil(o.AddressRequirement.Get()) {
 		var ret string
 		return ret
@@ -256,7 +256,7 @@ func (o *ViewAvailableNumbersDataInner) GetAddressRequirement() string {
 // GetAddressRequirementOk returns a tuple with the AddressRequirement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ViewAvailableNumbersDataInner) GetAddressRequirementOk() (*string, bool) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) GetAddressRequirementOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -264,7 +264,7 @@ func (o *ViewAvailableNumbersDataInner) GetAddressRequirementOk() (*string, bool
 }
 
 // HasAddressRequirement returns a boolean if a field has been set.
-func (o *ViewAvailableNumbersDataInner) HasAddressRequirement() bool {
+func (o *ViewAvailableNumbersDataAllOfDataInner) HasAddressRequirement() bool {
 	if o != nil && o.AddressRequirement.IsSet() {
 		return true
 	}
@@ -273,20 +273,20 @@ func (o *ViewAvailableNumbersDataInner) HasAddressRequirement() bool {
 }
 
 // SetAddressRequirement gets a reference to the given NullableString and assigns it to the AddressRequirement field.
-func (o *ViewAvailableNumbersDataInner) SetAddressRequirement(v string) {
+func (o *ViewAvailableNumbersDataAllOfDataInner) SetAddressRequirement(v string) {
 	o.AddressRequirement.Set(&v)
 }
 // SetAddressRequirementNil sets the value for AddressRequirement to be an explicit nil
-func (o *ViewAvailableNumbersDataInner) SetAddressRequirementNil() {
+func (o *ViewAvailableNumbersDataAllOfDataInner) SetAddressRequirementNil() {
 	o.AddressRequirement.Set(nil)
 }
 
 // UnsetAddressRequirement ensures that no value is present for AddressRequirement, not even an explicit nil
-func (o *ViewAvailableNumbersDataInner) UnsetAddressRequirement() {
+func (o *ViewAvailableNumbersDataAllOfDataInner) UnsetAddressRequirement() {
 	o.AddressRequirement.Unset()
 }
 
-func (o ViewAvailableNumbersDataInner) MarshalJSON() ([]byte, error) {
+func (o ViewAvailableNumbersDataAllOfDataInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -294,7 +294,7 @@ func (o ViewAvailableNumbersDataInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewAvailableNumbersDataInner) ToMap() (map[string]interface{}, error) {
+func (o ViewAvailableNumbersDataAllOfDataInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Country) {
 		toSerialize["country"] = o.Country
@@ -320,38 +320,38 @@ func (o ViewAvailableNumbersDataInner) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableViewAvailableNumbersDataInner struct {
-	value *ViewAvailableNumbersDataInner
+type NullableViewAvailableNumbersDataAllOfDataInner struct {
+	value *ViewAvailableNumbersDataAllOfDataInner
 	isSet bool
 }
 
-func (v NullableViewAvailableNumbersDataInner) Get() *ViewAvailableNumbersDataInner {
+func (v NullableViewAvailableNumbersDataAllOfDataInner) Get() *ViewAvailableNumbersDataAllOfDataInner {
 	return v.value
 }
 
-func (v *NullableViewAvailableNumbersDataInner) Set(val *ViewAvailableNumbersDataInner) {
+func (v *NullableViewAvailableNumbersDataAllOfDataInner) Set(val *ViewAvailableNumbersDataAllOfDataInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewAvailableNumbersDataInner) IsSet() bool {
+func (v NullableViewAvailableNumbersDataAllOfDataInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewAvailableNumbersDataInner) Unset() {
+func (v *NullableViewAvailableNumbersDataAllOfDataInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewAvailableNumbersDataInner(val *ViewAvailableNumbersDataInner) *NullableViewAvailableNumbersDataInner {
-	return &NullableViewAvailableNumbersDataInner{value: val, isSet: true}
+func NewNullableViewAvailableNumbersDataAllOfDataInner(val *ViewAvailableNumbersDataAllOfDataInner) *NullableViewAvailableNumbersDataAllOfDataInner {
+	return &NullableViewAvailableNumbersDataAllOfDataInner{value: val, isSet: true}
 }
 
-func (v NullableViewAvailableNumbersDataInner) MarshalJSON() ([]byte, error) {
+func (v NullableViewAvailableNumbersDataAllOfDataInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewAvailableNumbersDataInner) UnmarshalJSON(src []byte) error {
+func (v *NullableViewAvailableNumbersDataAllOfDataInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

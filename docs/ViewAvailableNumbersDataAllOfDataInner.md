@@ -1,4 +1,4 @@
-# ViewAvailableNumbersDataInner
+# ViewAvailableNumbersDataAllOfDataInner
 
 ## Properties
 
@@ -14,206 +14,206 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewViewAvailableNumbersDataInner
+### NewViewAvailableNumbersDataAllOfDataInner
 
-`func NewViewAvailableNumbersDataInner() *ViewAvailableNumbersDataInner`
+`func NewViewAvailableNumbersDataAllOfDataInner() *ViewAvailableNumbersDataAllOfDataInner`
 
-NewViewAvailableNumbersDataInner instantiates a new ViewAvailableNumbersDataInner object
+NewViewAvailableNumbersDataAllOfDataInner instantiates a new ViewAvailableNumbersDataAllOfDataInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewViewAvailableNumbersDataInnerWithDefaults
+### NewViewAvailableNumbersDataAllOfDataInnerWithDefaults
 
-`func NewViewAvailableNumbersDataInnerWithDefaults() *ViewAvailableNumbersDataInner`
+`func NewViewAvailableNumbersDataAllOfDataInnerWithDefaults() *ViewAvailableNumbersDataAllOfDataInner`
 
-NewViewAvailableNumbersDataInnerWithDefaults instantiates a new ViewAvailableNumbersDataInner object
+NewViewAvailableNumbersDataAllOfDataInnerWithDefaults instantiates a new ViewAvailableNumbersDataAllOfDataInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCountry
 
-`func (o *ViewAvailableNumbersDataInner) GetCountry() string`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetCountry() string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *ViewAvailableNumbersDataInner) GetCountryOk() (*string, bool)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetCountryOk() (*string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *ViewAvailableNumbersDataInner) SetCountry(v string)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) SetCountry(v string)`
 
 SetCountry sets Country field to given value.
 
 ### HasCountry
 
-`func (o *ViewAvailableNumbersDataInner) HasCountry() bool`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
 ### GetCountryName
 
-`func (o *ViewAvailableNumbersDataInner) GetCountryName() string`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetCountryName() string`
 
 GetCountryName returns the CountryName field if non-nil, zero value otherwise.
 
 ### GetCountryNameOk
 
-`func (o *ViewAvailableNumbersDataInner) GetCountryNameOk() (*string, bool)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetCountryNameOk() (*string, bool)`
 
 GetCountryNameOk returns a tuple with the CountryName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountryName
 
-`func (o *ViewAvailableNumbersDataInner) SetCountryName(v string)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) SetCountryName(v string)`
 
 SetCountryName sets CountryName field to given value.
 
 ### HasCountryName
 
-`func (o *ViewAvailableNumbersDataInner) HasCountryName() bool`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) HasCountryName() bool`
 
 HasCountryName returns a boolean if a field has been set.
 
 ### GetDedicatedNumber
 
-`func (o *ViewAvailableNumbersDataInner) GetDedicatedNumber() string`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetDedicatedNumber() string`
 
 GetDedicatedNumber returns the DedicatedNumber field if non-nil, zero value otherwise.
 
 ### GetDedicatedNumberOk
 
-`func (o *ViewAvailableNumbersDataInner) GetDedicatedNumberOk() (*string, bool)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetDedicatedNumberOk() (*string, bool)`
 
 GetDedicatedNumberOk returns a tuple with the DedicatedNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDedicatedNumber
 
-`func (o *ViewAvailableNumbersDataInner) SetDedicatedNumber(v string)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) SetDedicatedNumber(v string)`
 
 SetDedicatedNumber sets DedicatedNumber field to given value.
 
 ### HasDedicatedNumber
 
-`func (o *ViewAvailableNumbersDataInner) HasDedicatedNumber() bool`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) HasDedicatedNumber() bool`
 
 HasDedicatedNumber returns a boolean if a field has been set.
 
 ### GetPriceSetup
 
-`func (o *ViewAvailableNumbersDataInner) GetPriceSetup() string`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceSetup() string`
 
 GetPriceSetup returns the PriceSetup field if non-nil, zero value otherwise.
 
 ### GetPriceSetupOk
 
-`func (o *ViewAvailableNumbersDataInner) GetPriceSetupOk() (*string, bool)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceSetupOk() (*string, bool)`
 
 GetPriceSetupOk returns a tuple with the PriceSetup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceSetup
 
-`func (o *ViewAvailableNumbersDataInner) SetPriceSetup(v string)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) SetPriceSetup(v string)`
 
 SetPriceSetup sets PriceSetup field to given value.
 
 ### HasPriceSetup
 
-`func (o *ViewAvailableNumbersDataInner) HasPriceSetup() bool`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) HasPriceSetup() bool`
 
 HasPriceSetup returns a boolean if a field has been set.
 
 ### GetPriceMonthly
 
-`func (o *ViewAvailableNumbersDataInner) GetPriceMonthly() string`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceMonthly() string`
 
 GetPriceMonthly returns the PriceMonthly field if non-nil, zero value otherwise.
 
 ### GetPriceMonthlyOk
 
-`func (o *ViewAvailableNumbersDataInner) GetPriceMonthlyOk() (*string, bool)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceMonthlyOk() (*string, bool)`
 
 GetPriceMonthlyOk returns a tuple with the PriceMonthly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceMonthly
 
-`func (o *ViewAvailableNumbersDataInner) SetPriceMonthly(v string)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) SetPriceMonthly(v string)`
 
 SetPriceMonthly sets PriceMonthly field to given value.
 
 ### HasPriceMonthly
 
-`func (o *ViewAvailableNumbersDataInner) HasPriceMonthly() bool`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) HasPriceMonthly() bool`
 
 HasPriceMonthly returns a boolean if a field has been set.
 
 ### GetPriceTotal
 
-`func (o *ViewAvailableNumbersDataInner) GetPriceTotal() string`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceTotal() string`
 
 GetPriceTotal returns the PriceTotal field if non-nil, zero value otherwise.
 
 ### GetPriceTotalOk
 
-`func (o *ViewAvailableNumbersDataInner) GetPriceTotalOk() (*string, bool)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetPriceTotalOk() (*string, bool)`
 
 GetPriceTotalOk returns a tuple with the PriceTotal field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceTotal
 
-`func (o *ViewAvailableNumbersDataInner) SetPriceTotal(v string)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) SetPriceTotal(v string)`
 
 SetPriceTotal sets PriceTotal field to given value.
 
 ### HasPriceTotal
 
-`func (o *ViewAvailableNumbersDataInner) HasPriceTotal() bool`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) HasPriceTotal() bool`
 
 HasPriceTotal returns a boolean if a field has been set.
 
 ### GetAddressRequirement
 
-`func (o *ViewAvailableNumbersDataInner) GetAddressRequirement() string`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetAddressRequirement() string`
 
 GetAddressRequirement returns the AddressRequirement field if non-nil, zero value otherwise.
 
 ### GetAddressRequirementOk
 
-`func (o *ViewAvailableNumbersDataInner) GetAddressRequirementOk() (*string, bool)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) GetAddressRequirementOk() (*string, bool)`
 
 GetAddressRequirementOk returns a tuple with the AddressRequirement field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddressRequirement
 
-`func (o *ViewAvailableNumbersDataInner) SetAddressRequirement(v string)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) SetAddressRequirement(v string)`
 
 SetAddressRequirement sets AddressRequirement field to given value.
 
 ### HasAddressRequirement
 
-`func (o *ViewAvailableNumbersDataInner) HasAddressRequirement() bool`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) HasAddressRequirement() bool`
 
 HasAddressRequirement returns a boolean if a field has been set.
 
 ### SetAddressRequirementNil
 
-`func (o *ViewAvailableNumbersDataInner) SetAddressRequirementNil(b bool)`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) SetAddressRequirementNil(b bool)`
 
  SetAddressRequirementNil sets the value for AddressRequirement to be an explicit nil
 
 ### UnsetAddressRequirement
-`func (o *ViewAvailableNumbersDataInner) UnsetAddressRequirement()`
+`func (o *ViewAvailableNumbersDataAllOfDataInner) UnsetAddressRequirement()`
 
 UnsetAddressRequirement ensures that no value is present for AddressRequirement, not even an explicit nil
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **HttpCode** | Pointer to **int32** | The HTTP status code of the response. | [optional] 
 **ResponseCode** | Pointer to **string** | The response code indicating the status of the operation. | [optional] 
 **ResponseMsg** | Pointer to **string** | A message describing the outcome of the operation. | [optional] 
-**Data** | Pointer to [**[]Subaccount**](Subaccount.md) |  | [optional] 
+**Data** | Pointer to [**ViewSubaccountsData**](ViewSubaccountsData.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasResponseMsg returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *ViewSubaccounts) GetData() []Subaccount`
+`func (o *ViewSubaccounts) GetData() ViewSubaccountsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ViewSubaccounts) GetDataOk() (*[]Subaccount, bool)`
+`func (o *ViewSubaccounts) GetDataOk() (*ViewSubaccountsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ViewSubaccounts) SetData(v []Subaccount)`
+`func (o *ViewSubaccounts) SetData(v ViewSubaccountsData)`
 
 SetData sets Data field to given value.
 

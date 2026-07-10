@@ -21,7 +21,7 @@ var _ MappedNullable = &ViewVoiceStatisticsDataStatsInner{}
 type ViewVoiceStatisticsDataStatsInner struct {
 	// The date.
 	Date *float32 `json:"date,omitempty"`
-	Outbound *ViewVoiceStatisticsDataStatsInnerOutbound `json:"outbound,omitempty"`
+	Outbound *ViewVoiceStatisticsDataTotalOutbound `json:"outbound,omitempty"`
 	Bounced *CancelAllSmsData `json:"bounced,omitempty"`
 }
 
@@ -75,9 +75,9 @@ func (o *ViewVoiceStatisticsDataStatsInner) SetDate(v float32) {
 }
 
 // GetOutbound returns the Outbound field value if set, zero value otherwise.
-func (o *ViewVoiceStatisticsDataStatsInner) GetOutbound() ViewVoiceStatisticsDataStatsInnerOutbound {
+func (o *ViewVoiceStatisticsDataStatsInner) GetOutbound() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Outbound) {
-		var ret ViewVoiceStatisticsDataStatsInnerOutbound
+		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
 	}
 	return *o.Outbound
@@ -85,7 +85,7 @@ func (o *ViewVoiceStatisticsDataStatsInner) GetOutbound() ViewVoiceStatisticsDat
 
 // GetOutboundOk returns a tuple with the Outbound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewVoiceStatisticsDataStatsInner) GetOutboundOk() (*ViewVoiceStatisticsDataStatsInnerOutbound, bool) {
+func (o *ViewVoiceStatisticsDataStatsInner) GetOutboundOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Outbound) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *ViewVoiceStatisticsDataStatsInner) HasOutbound() bool {
 	return false
 }
 
-// SetOutbound gets a reference to the given ViewVoiceStatisticsDataStatsInnerOutbound and assigns it to the Outbound field.
-func (o *ViewVoiceStatisticsDataStatsInner) SetOutbound(v ViewVoiceStatisticsDataStatsInnerOutbound) {
+// SetOutbound gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Outbound field.
+func (o *ViewVoiceStatisticsDataStatsInner) SetOutbound(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Outbound = &v
 }
 

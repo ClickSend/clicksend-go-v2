@@ -14,36 +14,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewVoiceStatisticsDataStatsInnerOutbound type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewVoiceStatisticsDataStatsInnerOutbound{}
+// checks if the ViewAccountUsageDataEmailTotal type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ViewAccountUsageDataEmailTotal{}
 
-// ViewVoiceStatisticsDataStatsInnerOutbound struct for ViewVoiceStatisticsDataStatsInnerOutbound
-type ViewVoiceStatisticsDataStatsInnerOutbound struct {
-	// The count of outbound calls.
+// ViewAccountUsageDataEmailTotal struct for ViewAccountUsageDataEmailTotal
+type ViewAccountUsageDataEmailTotal struct {
+	// The total count of emails.
 	Count *int32 `json:"count,omitempty"`
-	// The price of outbound calls.
-	Price *float32 `json:"price,omitempty"`
+	// The total price of emails.
+	Price *string `json:"price,omitempty"`
 }
 
-// NewViewVoiceStatisticsDataStatsInnerOutbound instantiates a new ViewVoiceStatisticsDataStatsInnerOutbound object
+// NewViewAccountUsageDataEmailTotal instantiates a new ViewAccountUsageDataEmailTotal object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewVoiceStatisticsDataStatsInnerOutbound() *ViewVoiceStatisticsDataStatsInnerOutbound {
-	this := ViewVoiceStatisticsDataStatsInnerOutbound{}
+func NewViewAccountUsageDataEmailTotal() *ViewAccountUsageDataEmailTotal {
+	this := ViewAccountUsageDataEmailTotal{}
 	return &this
 }
 
-// NewViewVoiceStatisticsDataStatsInnerOutboundWithDefaults instantiates a new ViewVoiceStatisticsDataStatsInnerOutbound object
+// NewViewAccountUsageDataEmailTotalWithDefaults instantiates a new ViewAccountUsageDataEmailTotal object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewVoiceStatisticsDataStatsInnerOutboundWithDefaults() *ViewVoiceStatisticsDataStatsInnerOutbound {
-	this := ViewVoiceStatisticsDataStatsInnerOutbound{}
+func NewViewAccountUsageDataEmailTotalWithDefaults() *ViewAccountUsageDataEmailTotal {
+	this := ViewAccountUsageDataEmailTotal{}
 	return &this
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
-func (o *ViewVoiceStatisticsDataStatsInnerOutbound) GetCount() int32 {
+func (o *ViewAccountUsageDataEmailTotal) GetCount() int32 {
 	if o == nil || IsNil(o.Count) {
 		var ret int32
 		return ret
@@ -53,7 +53,7 @@ func (o *ViewVoiceStatisticsDataStatsInnerOutbound) GetCount() int32 {
 
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewVoiceStatisticsDataStatsInnerOutbound) GetCountOk() (*int32, bool) {
+func (o *ViewAccountUsageDataEmailTotal) GetCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.Count) {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *ViewVoiceStatisticsDataStatsInnerOutbound) GetCountOk() (*int32, bool) 
 }
 
 // HasCount returns a boolean if a field has been set.
-func (o *ViewVoiceStatisticsDataStatsInnerOutbound) HasCount() bool {
+func (o *ViewAccountUsageDataEmailTotal) HasCount() bool {
 	if o != nil && !IsNil(o.Count) {
 		return true
 	}
@@ -70,14 +70,14 @@ func (o *ViewVoiceStatisticsDataStatsInnerOutbound) HasCount() bool {
 }
 
 // SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *ViewVoiceStatisticsDataStatsInnerOutbound) SetCount(v int32) {
+func (o *ViewAccountUsageDataEmailTotal) SetCount(v int32) {
 	o.Count = &v
 }
 
 // GetPrice returns the Price field value if set, zero value otherwise.
-func (o *ViewVoiceStatisticsDataStatsInnerOutbound) GetPrice() float32 {
+func (o *ViewAccountUsageDataEmailTotal) GetPrice() string {
 	if o == nil || IsNil(o.Price) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.Price
@@ -85,7 +85,7 @@ func (o *ViewVoiceStatisticsDataStatsInnerOutbound) GetPrice() float32 {
 
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewVoiceStatisticsDataStatsInnerOutbound) GetPriceOk() (*float32, bool) {
+func (o *ViewAccountUsageDataEmailTotal) GetPriceOk() (*string, bool) {
 	if o == nil || IsNil(o.Price) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *ViewVoiceStatisticsDataStatsInnerOutbound) GetPriceOk() (*float32, bool
 }
 
 // HasPrice returns a boolean if a field has been set.
-func (o *ViewVoiceStatisticsDataStatsInnerOutbound) HasPrice() bool {
+func (o *ViewAccountUsageDataEmailTotal) HasPrice() bool {
 	if o != nil && !IsNil(o.Price) {
 		return true
 	}
@@ -101,12 +101,12 @@ func (o *ViewVoiceStatisticsDataStatsInnerOutbound) HasPrice() bool {
 	return false
 }
 
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *ViewVoiceStatisticsDataStatsInnerOutbound) SetPrice(v float32) {
+// SetPrice gets a reference to the given string and assigns it to the Price field.
+func (o *ViewAccountUsageDataEmailTotal) SetPrice(v string) {
 	o.Price = &v
 }
 
-func (o ViewVoiceStatisticsDataStatsInnerOutbound) MarshalJSON() ([]byte, error) {
+func (o ViewAccountUsageDataEmailTotal) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -114,7 +114,7 @@ func (o ViewVoiceStatisticsDataStatsInnerOutbound) MarshalJSON() ([]byte, error)
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewVoiceStatisticsDataStatsInnerOutbound) ToMap() (map[string]interface{}, error) {
+func (o ViewAccountUsageDataEmailTotal) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
@@ -125,38 +125,38 @@ func (o ViewVoiceStatisticsDataStatsInnerOutbound) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 
-type NullableViewVoiceStatisticsDataStatsInnerOutbound struct {
-	value *ViewVoiceStatisticsDataStatsInnerOutbound
+type NullableViewAccountUsageDataEmailTotal struct {
+	value *ViewAccountUsageDataEmailTotal
 	isSet bool
 }
 
-func (v NullableViewVoiceStatisticsDataStatsInnerOutbound) Get() *ViewVoiceStatisticsDataStatsInnerOutbound {
+func (v NullableViewAccountUsageDataEmailTotal) Get() *ViewAccountUsageDataEmailTotal {
 	return v.value
 }
 
-func (v *NullableViewVoiceStatisticsDataStatsInnerOutbound) Set(val *ViewVoiceStatisticsDataStatsInnerOutbound) {
+func (v *NullableViewAccountUsageDataEmailTotal) Set(val *ViewAccountUsageDataEmailTotal) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewVoiceStatisticsDataStatsInnerOutbound) IsSet() bool {
+func (v NullableViewAccountUsageDataEmailTotal) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewVoiceStatisticsDataStatsInnerOutbound) Unset() {
+func (v *NullableViewAccountUsageDataEmailTotal) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewVoiceStatisticsDataStatsInnerOutbound(val *ViewVoiceStatisticsDataStatsInnerOutbound) *NullableViewVoiceStatisticsDataStatsInnerOutbound {
-	return &NullableViewVoiceStatisticsDataStatsInnerOutbound{value: val, isSet: true}
+func NewNullableViewAccountUsageDataEmailTotal(val *ViewAccountUsageDataEmailTotal) *NullableViewAccountUsageDataEmailTotal {
+	return &NullableViewAccountUsageDataEmailTotal{value: val, isSet: true}
 }
 
-func (v NullableViewVoiceStatisticsDataStatsInnerOutbound) MarshalJSON() ([]byte, error) {
+func (v NullableViewAccountUsageDataEmailTotal) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewVoiceStatisticsDataStatsInnerOutbound) UnmarshalJSON(src []byte) error {
+func (v *NullableViewAccountUsageDataEmailTotal) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

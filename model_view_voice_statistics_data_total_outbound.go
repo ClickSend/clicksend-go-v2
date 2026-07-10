@@ -22,7 +22,7 @@ type ViewVoiceStatisticsDataTotalOutbound struct {
 	// The total count of outbound calls.
 	Count *int32 `json:"count,omitempty"`
 	// The total price of outbound calls.
-	Price *string `json:"price,omitempty"`
+	Price *float32 `json:"price,omitempty"`
 }
 
 // NewViewVoiceStatisticsDataTotalOutbound instantiates a new ViewVoiceStatisticsDataTotalOutbound object
@@ -75,9 +75,9 @@ func (o *ViewVoiceStatisticsDataTotalOutbound) SetCount(v int32) {
 }
 
 // GetPrice returns the Price field value if set, zero value otherwise.
-func (o *ViewVoiceStatisticsDataTotalOutbound) GetPrice() string {
+func (o *ViewVoiceStatisticsDataTotalOutbound) GetPrice() float32 {
 	if o == nil || IsNil(o.Price) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.Price
@@ -85,7 +85,7 @@ func (o *ViewVoiceStatisticsDataTotalOutbound) GetPrice() string {
 
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewVoiceStatisticsDataTotalOutbound) GetPriceOk() (*string, bool) {
+func (o *ViewVoiceStatisticsDataTotalOutbound) GetPriceOk() (*float32, bool) {
 	if o == nil || IsNil(o.Price) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *ViewVoiceStatisticsDataTotalOutbound) HasPrice() bool {
 	return false
 }
 
-// SetPrice gets a reference to the given string and assigns it to the Price field.
-func (o *ViewVoiceStatisticsDataTotalOutbound) SetPrice(v string) {
+// SetPrice gets a reference to the given float32 and assigns it to the Price field.
+func (o *ViewVoiceStatisticsDataTotalOutbound) SetPrice(v float32) {
 	o.Price = &v
 }
 

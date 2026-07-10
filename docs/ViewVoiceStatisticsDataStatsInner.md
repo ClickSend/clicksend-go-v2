@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Date** | Pointer to **float32** | The date. | [optional] 
-**Outbound** | Pointer to [**ViewVoiceStatisticsDataStatsInnerOutbound**](ViewVoiceStatisticsDataStatsInnerOutbound.md) |  | [optional] 
+**Outbound** | Pointer to [**ViewVoiceStatisticsDataTotalOutbound**](ViewVoiceStatisticsDataTotalOutbound.md) |  | [optional] 
 **Bounced** | Pointer to [**CancelAllSmsData**](CancelAllSmsData.md) |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasDate returns a boolean if a field has been set.
 
 ### GetOutbound
 
-`func (o *ViewVoiceStatisticsDataStatsInner) GetOutbound() ViewVoiceStatisticsDataStatsInnerOutbound`
+`func (o *ViewVoiceStatisticsDataStatsInner) GetOutbound() ViewVoiceStatisticsDataTotalOutbound`
 
 GetOutbound returns the Outbound field if non-nil, zero value otherwise.
 
 ### GetOutboundOk
 
-`func (o *ViewVoiceStatisticsDataStatsInner) GetOutboundOk() (*ViewVoiceStatisticsDataStatsInnerOutbound, bool)`
+`func (o *ViewVoiceStatisticsDataStatsInner) GetOutboundOk() (*ViewVoiceStatisticsDataTotalOutbound, bool)`
 
 GetOutboundOk returns a tuple with the Outbound field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutbound
 
-`func (o *ViewVoiceStatisticsDataStatsInner) SetOutbound(v ViewVoiceStatisticsDataStatsInnerOutbound)`
+`func (o *ViewVoiceStatisticsDataStatsInner) SetOutbound(v ViewVoiceStatisticsDataTotalOutbound)`
 
 SetOutbound sets Outbound field to given value.
 

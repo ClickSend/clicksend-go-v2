@@ -25,7 +25,7 @@ type ViewAvailableNumbers struct {
 	ResponseCode *string `json:"response_code,omitempty"`
 	// A message describing the outcome of the operation.
 	ResponseMsg *string `json:"response_msg,omitempty"`
-	Data []ViewAvailableNumbersDataInner `json:"data,omitempty"`
+	Data *ViewAvailableNumbersData `json:"data,omitempty"`
 	Currency *Currency `json:"_currency,omitempty"`
 }
 
@@ -143,17 +143,17 @@ func (o *ViewAvailableNumbers) SetResponseMsg(v string) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ViewAvailableNumbers) GetData() []ViewAvailableNumbersDataInner {
+func (o *ViewAvailableNumbers) GetData() ViewAvailableNumbersData {
 	if o == nil || IsNil(o.Data) {
-		var ret []ViewAvailableNumbersDataInner
+		var ret ViewAvailableNumbersData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAvailableNumbers) GetDataOk() ([]ViewAvailableNumbersDataInner, bool) {
+func (o *ViewAvailableNumbers) GetDataOk() (*ViewAvailableNumbersData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -169,9 +169,9 @@ func (o *ViewAvailableNumbers) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []ViewAvailableNumbersDataInner and assigns it to the Data field.
-func (o *ViewAvailableNumbers) SetData(v []ViewAvailableNumbersDataInner) {
-	o.Data = v
+// SetData gets a reference to the given ViewAvailableNumbersData and assigns it to the Data field.
+func (o *ViewAvailableNumbers) SetData(v ViewAvailableNumbersData) {
+	o.Data = &v
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.

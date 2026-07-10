@@ -32,21 +32,21 @@ type ViewSmsHistoryDataAllOfDataInner struct {
 	// The sender of the message.
 	From *string `json:"from,omitempty"`
 	// The scheduled date of the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
-	Schedule *int32 `json:"schedule,omitempty"`
+	Schedule *string `json:"schedule,omitempty"`
 	// The status code sent from the <a href=\"https://en.wikipedia.org/wiki/SMS_gateway\" target=\"_blank\">SMS gateway</a>. Visit <a href=\"https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\" target=\"_blank\">this page</a> for more information.
-	StatusCode *int32 `json:"status_code,omitempty"`
+	StatusCode *string `json:"status_code,omitempty"`
 	// A message describing the _status_code_ of the operation. Visit <a href=\"https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\" target=\"_blank\">this page</a> for more information.
 	StatusText *string `json:"status_text,omitempty"`
 	// The error code of the operation. Visit <a href=\"https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\" target=\"_blank\">this page</a> for more information. If no error occurred, the value is **null**.
-	ErrorCode NullableInt32 `json:"error_code,omitempty"`
+	ErrorCode NullableString `json:"error_code,omitempty"`
 	// A message describing the _error_code_ of the operation. Visit <a href=\"https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\" target=\"_blank\">this page</a> for more information. If no error occurred, the value is **null**.
 	ErrorText NullableString `json:"error_text,omitempty"`
 	// The generated ID of the message.
-	MessageId *int32 `json:"message_id,omitempty"`
+	MessageId *string `json:"message_id,omitempty"`
 	// The number of parts the message was broken into. To look at how many parts your message is broken down into, use the <a href=\"http://smscharactercount.com/\" target=\"_blank\"><strong>SMS Character Count</strong></a>.
-	MessageParts *int32 `json:"message_parts,omitempty"`
+	MessageParts *string `json:"message_parts,omitempty"`
 	// The price of this message. This depends on the total number of parts of the message.
-	MessagePrice *float32 `json:"message_price,omitempty"`
+	MessagePrice *string `json:"message_price,omitempty"`
 	// The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS
 	FromEmail *string `json:"from_email,omitempty"`
 	// The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request.
@@ -281,9 +281,9 @@ func (o *ViewSmsHistoryDataAllOfDataInner) SetFrom(v string) {
 }
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetSchedule() int32 {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetSchedule() string {
 	if o == nil || IsNil(o.Schedule) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Schedule
@@ -291,7 +291,7 @@ func (o *ViewSmsHistoryDataAllOfDataInner) GetSchedule() int32 {
 
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetScheduleOk() (*int32, bool) {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetScheduleOk() (*string, bool) {
 	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
@@ -307,15 +307,15 @@ func (o *ViewSmsHistoryDataAllOfDataInner) HasSchedule() bool {
 	return false
 }
 
-// SetSchedule gets a reference to the given int32 and assigns it to the Schedule field.
-func (o *ViewSmsHistoryDataAllOfDataInner) SetSchedule(v int32) {
+// SetSchedule gets a reference to the given string and assigns it to the Schedule field.
+func (o *ViewSmsHistoryDataAllOfDataInner) SetSchedule(v string) {
 	o.Schedule = &v
 }
 
 // GetStatusCode returns the StatusCode field value if set, zero value otherwise.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCode() int32 {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCode() string {
 	if o == nil || IsNil(o.StatusCode) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.StatusCode
@@ -323,7 +323,7 @@ func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCode() int32 {
 
 // GetStatusCodeOk returns a tuple with the StatusCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCodeOk() (*int32, bool) {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetStatusCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.StatusCode) {
 		return nil, false
 	}
@@ -339,8 +339,8 @@ func (o *ViewSmsHistoryDataAllOfDataInner) HasStatusCode() bool {
 	return false
 }
 
-// SetStatusCode gets a reference to the given int32 and assigns it to the StatusCode field.
-func (o *ViewSmsHistoryDataAllOfDataInner) SetStatusCode(v int32) {
+// SetStatusCode gets a reference to the given string and assigns it to the StatusCode field.
+func (o *ViewSmsHistoryDataAllOfDataInner) SetStatusCode(v string) {
 	o.StatusCode = &v
 }
 
@@ -377,9 +377,9 @@ func (o *ViewSmsHistoryDataAllOfDataInner) SetStatusText(v string) {
 }
 
 // GetErrorCode returns the ErrorCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCode() int32 {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCode() string {
 	if o == nil || IsNil(o.ErrorCode.Get()) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.ErrorCode.Get()
@@ -388,7 +388,7 @@ func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCode() int32 {
 // GetErrorCodeOk returns a tuple with the ErrorCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCodeOk() (*int32, bool) {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetErrorCodeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -404,8 +404,8 @@ func (o *ViewSmsHistoryDataAllOfDataInner) HasErrorCode() bool {
 	return false
 }
 
-// SetErrorCode gets a reference to the given NullableInt32 and assigns it to the ErrorCode field.
-func (o *ViewSmsHistoryDataAllOfDataInner) SetErrorCode(v int32) {
+// SetErrorCode gets a reference to the given NullableString and assigns it to the ErrorCode field.
+func (o *ViewSmsHistoryDataAllOfDataInner) SetErrorCode(v string) {
 	o.ErrorCode.Set(&v)
 }
 // SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
@@ -461,9 +461,9 @@ func (o *ViewSmsHistoryDataAllOfDataInner) UnsetErrorText() {
 }
 
 // GetMessageId returns the MessageId field value if set, zero value otherwise.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageId() int32 {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageId() string {
 	if o == nil || IsNil(o.MessageId) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.MessageId
@@ -471,7 +471,7 @@ func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageId() int32 {
 
 // GetMessageIdOk returns a tuple with the MessageId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageIdOk() (*int32, bool) {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageIdOk() (*string, bool) {
 	if o == nil || IsNil(o.MessageId) {
 		return nil, false
 	}
@@ -487,15 +487,15 @@ func (o *ViewSmsHistoryDataAllOfDataInner) HasMessageId() bool {
 	return false
 }
 
-// SetMessageId gets a reference to the given int32 and assigns it to the MessageId field.
-func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageId(v int32) {
+// SetMessageId gets a reference to the given string and assigns it to the MessageId field.
+func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageId(v string) {
 	o.MessageId = &v
 }
 
 // GetMessageParts returns the MessageParts field value if set, zero value otherwise.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() int32 {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() string {
 	if o == nil || IsNil(o.MessageParts) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.MessageParts
@@ -503,7 +503,7 @@ func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() int32 {
 
 // GetMessagePartsOk returns a tuple with the MessageParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePartsOk() (*int32, bool) {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePartsOk() (*string, bool) {
 	if o == nil || IsNil(o.MessageParts) {
 		return nil, false
 	}
@@ -519,15 +519,15 @@ func (o *ViewSmsHistoryDataAllOfDataInner) HasMessageParts() bool {
 	return false
 }
 
-// SetMessageParts gets a reference to the given int32 and assigns it to the MessageParts field.
-func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageParts(v int32) {
+// SetMessageParts gets a reference to the given string and assigns it to the MessageParts field.
+func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageParts(v string) {
 	o.MessageParts = &v
 }
 
 // GetMessagePrice returns the MessagePrice field value if set, zero value otherwise.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePrice() float32 {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePrice() string {
 	if o == nil || IsNil(o.MessagePrice) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.MessagePrice
@@ -535,7 +535,7 @@ func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePrice() float32 {
 
 // GetMessagePriceOk returns a tuple with the MessagePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePriceOk() (*float32, bool) {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePriceOk() (*string, bool) {
 	if o == nil || IsNil(o.MessagePrice) {
 		return nil, false
 	}
@@ -551,8 +551,8 @@ func (o *ViewSmsHistoryDataAllOfDataInner) HasMessagePrice() bool {
 	return false
 }
 
-// SetMessagePrice gets a reference to the given float32 and assigns it to the MessagePrice field.
-func (o *ViewSmsHistoryDataAllOfDataInner) SetMessagePrice(v float32) {
+// SetMessagePrice gets a reference to the given string and assigns it to the MessagePrice field.
+func (o *ViewSmsHistoryDataAllOfDataInner) SetMessagePrice(v string) {
 	o.MessagePrice = &v
 }
 

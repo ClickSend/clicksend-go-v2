@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **HttpCode** | Pointer to **int32** | The HTTP status code of the response. | [optional] 
 **ResponseCode** | Pointer to **string** | The response code indicating the status of the operation. | [optional] 
 **ResponseMsg** | Pointer to **string** | A message describing the outcome of the operation. | [optional] 
-**Data** | Pointer to [**[]ViewAvailableNumbersDataInner**](ViewAvailableNumbersDataInner.md) |  | [optional] 
+**Data** | Pointer to [**ViewAvailableNumbersData**](ViewAvailableNumbersData.md) |  | [optional] 
 **Currency** | Pointer to [**Currency**](Currency.md) |  | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasResponseMsg returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *ViewAvailableNumbers) GetData() []ViewAvailableNumbersDataInner`
+`func (o *ViewAvailableNumbers) GetData() ViewAvailableNumbersData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ViewAvailableNumbers) GetDataOk() (*[]ViewAvailableNumbersDataInner, bool)`
+`func (o *ViewAvailableNumbers) GetDataOk() (*ViewAvailableNumbersData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ViewAvailableNumbers) SetData(v []ViewAvailableNumbersDataInner)`
+`func (o *ViewAvailableNumbers) SetData(v ViewAvailableNumbersData)`
 
 SetData sets Data field to given value.
 

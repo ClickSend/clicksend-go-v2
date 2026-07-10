@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | The total count of outbound calls. | [optional] 
-**Price** | Pointer to **string** | The total price of outbound calls. | [optional] 
+**Price** | Pointer to **float32** | The total price of outbound calls. | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasCount returns a boolean if a field has been set.
 
 ### GetPrice
 
-`func (o *ViewVoiceStatisticsDataTotalOutbound) GetPrice() string`
+`func (o *ViewVoiceStatisticsDataTotalOutbound) GetPrice() float32`
 
 GetPrice returns the Price field if non-nil, zero value otherwise.
 
 ### GetPriceOk
 
-`func (o *ViewVoiceStatisticsDataTotalOutbound) GetPriceOk() (*string, bool)`
+`func (o *ViewVoiceStatisticsDataTotalOutbound) GetPriceOk() (*float32, bool)`
 
 GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrice
 
-`func (o *ViewVoiceStatisticsDataTotalOutbound) SetPrice(v string)`
+`func (o *ViewVoiceStatisticsDataTotalOutbound) SetPrice(v float32)`
 
 SetPrice sets Price field to given value.
 

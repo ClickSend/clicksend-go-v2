@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **To** | Pointer to **string** | The phone number of the recipient. It should be in &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/E.164\&quot; target&#x3D;\&quot;_blank\&quot;&gt;E.164 format&lt;/a&gt;. | [optional] 
 **Body** | Pointer to **string** | The message sent. The price of sending a message depends on the number of characters and the type of message. There are two types:  - Standard message - Contains only characters in the &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/GSM_03.38\&quot; target&#x3D;\&quot;_blank\&quot;&gt;GSM&lt;/a&gt; set, with a maximum of 160 characters.      - Unicode message - Contains characters outside the &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/GSM_03.38\&quot; target&#x3D;\&quot;_blank\&quot;&gt;GSM&lt;/a&gt; set, with a maximum of 70 characters.       Longer messages will be sent as multiple messages (parts), but the recipient will receive them as a single long message. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/h474eseq3a-how-many-characters-can-i-send-in-an-sms\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; to learn more about the number of characters per message, and &lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; to count the number of characters. | [optional] 
 **From** | Pointer to **string** | The sender of the message. This is also referred to as the **Sender ID**. If your **Sender ID** has a different country code to the recipient’s, it&#39;ll be replaced by a local number, except in &lt;a href&#x3D;\&quot;https://help.clicksend.com/category/mfdctha7f0-country-specific-features-and-restrictions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;certain countries&lt;/a&gt;. If the sender number is blocked, a different number will replace it. | [optional] 
-**Schedule** | Pointer to **int32** | The scheduled date of the message. It is in &lt;a href&#x3D;\&quot;http://help.clicksend.com/what-is-a-unix-timestamp\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Unix format&lt;/a&gt;. | [optional] 
+**Schedule** | Pointer to **string** | The scheduled date of the message. It is in &lt;a href&#x3D;\&quot;http://help.clicksend.com/what-is-a-unix-timestamp\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Unix format&lt;/a&gt;. | [optional] 
 **MessageId** | Pointer to **string** | The generated ID of the message. This ID is typically used as a reference for &lt;a href&#x3D;\&quot;https://www.clicksend.com/au/help/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;customer support&lt;/a&gt; in case of any issues. | [optional] 
 **MessageParts** | Pointer to **int32** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the **&lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot;&gt;SMS Character Count&lt;/a&gt;**. | [optional] 
-**MessagePrice** | Pointer to **float32** | The price of this message. This depends on the total number of parts of the message. | [optional] 
+**MessagePrice** | Pointer to **string** | The price of this message. This depends on the total number of parts of the message. | [optional] 
 **CustomString** | Pointer to **string** | A note that was sent from the request. | [optional] 
 **ContactId** | Pointer to **string** | This is the ID of the contact. This parameter will have a **null** value if you didn’t provide a _contact_id_ in the request. | [optional] 
 **IsSharedSystemNumber** | Pointer to **bool** | Indicates whether you use a shared number to send a message:  - **True** \\- if the sender is randomly selected.      - **False** \\- if the sender is specified and passed the validation process. | [optional] 
@@ -139,20 +139,20 @@ HasFrom returns a boolean if a field has been set.
 
 ### GetSchedule
 
-`func (o *Sms) GetSchedule() int32`
+`func (o *Sms) GetSchedule() string`
 
 GetSchedule returns the Schedule field if non-nil, zero value otherwise.
 
 ### GetScheduleOk
 
-`func (o *Sms) GetScheduleOk() (*int32, bool)`
+`func (o *Sms) GetScheduleOk() (*string, bool)`
 
 GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchedule
 
-`func (o *Sms) SetSchedule(v int32)`
+`func (o *Sms) SetSchedule(v string)`
 
 SetSchedule sets Schedule field to given value.
 
@@ -214,20 +214,20 @@ HasMessageParts returns a boolean if a field has been set.
 
 ### GetMessagePrice
 
-`func (o *Sms) GetMessagePrice() float32`
+`func (o *Sms) GetMessagePrice() string`
 
 GetMessagePrice returns the MessagePrice field if non-nil, zero value otherwise.
 
 ### GetMessagePriceOk
 
-`func (o *Sms) GetMessagePriceOk() (*float32, bool)`
+`func (o *Sms) GetMessagePriceOk() (*string, bool)`
 
 GetMessagePriceOk returns a tuple with the MessagePrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessagePrice
 
-`func (o *Sms) SetMessagePrice(v float32)`
+`func (o *Sms) SetMessagePrice(v string)`
 
 SetMessagePrice sets MessagePrice field to given value.
 

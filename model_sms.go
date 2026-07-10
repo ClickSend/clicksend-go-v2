@@ -28,13 +28,13 @@ type Sms struct {
 	// The sender of the message. This is also referred to as the **Sender ID**. If your **Sender ID** has a different country code to the recipient’s, it'll be replaced by a local number, except in <a href=\"https://help.clicksend.com/category/mfdctha7f0-country-specific-features-and-restrictions\" target=\"_blank\">certain countries</a>. If the sender number is blocked, a different number will replace it.
 	From *string `json:"from,omitempty"`
 	// The scheduled date of the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
-	Schedule *int32 `json:"schedule,omitempty"`
+	Schedule *string `json:"schedule,omitempty"`
 	// The generated ID of the message. This ID is typically used as a reference for <a href=\"https://www.clicksend.com/au/help/\" target=\"_blank\">customer support</a> in case of any issues.
 	MessageId *string `json:"message_id,omitempty"`
 	// The number of parts the message was broken into. To look at how many parts your message is broken down into, use the **<a href=\"http://smscharactercount.com/\">SMS Character Count</a>**.
 	MessageParts *int32 `json:"message_parts,omitempty"`
 	// The price of this message. This depends on the total number of parts of the message.
-	MessagePrice *float32 `json:"message_price,omitempty"`
+	MessagePrice *string `json:"message_price,omitempty"`
 	// A note that was sent from the request.
 	CustomString *string `json:"custom_string,omitempty"`
 	// This is the ID of the contact. This parameter will have a **null** value if you didn’t provide a _contact_id_ in the request.
@@ -193,9 +193,9 @@ func (o *Sms) SetFrom(v string) {
 }
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *Sms) GetSchedule() int32 {
+func (o *Sms) GetSchedule() string {
 	if o == nil || IsNil(o.Schedule) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Schedule
@@ -203,7 +203,7 @@ func (o *Sms) GetSchedule() int32 {
 
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Sms) GetScheduleOk() (*int32, bool) {
+func (o *Sms) GetScheduleOk() (*string, bool) {
 	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
@@ -219,8 +219,8 @@ func (o *Sms) HasSchedule() bool {
 	return false
 }
 
-// SetSchedule gets a reference to the given int32 and assigns it to the Schedule field.
-func (o *Sms) SetSchedule(v int32) {
+// SetSchedule gets a reference to the given string and assigns it to the Schedule field.
+func (o *Sms) SetSchedule(v string) {
 	o.Schedule = &v
 }
 
@@ -289,9 +289,9 @@ func (o *Sms) SetMessageParts(v int32) {
 }
 
 // GetMessagePrice returns the MessagePrice field value if set, zero value otherwise.
-func (o *Sms) GetMessagePrice() float32 {
+func (o *Sms) GetMessagePrice() string {
 	if o == nil || IsNil(o.MessagePrice) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.MessagePrice
@@ -299,7 +299,7 @@ func (o *Sms) GetMessagePrice() float32 {
 
 // GetMessagePriceOk returns a tuple with the MessagePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Sms) GetMessagePriceOk() (*float32, bool) {
+func (o *Sms) GetMessagePriceOk() (*string, bool) {
 	if o == nil || IsNil(o.MessagePrice) {
 		return nil, false
 	}
@@ -315,8 +315,8 @@ func (o *Sms) HasMessagePrice() bool {
 	return false
 }
 
-// SetMessagePrice gets a reference to the given float32 and assigns it to the MessagePrice field.
-func (o *Sms) SetMessagePrice(v float32) {
+// SetMessagePrice gets a reference to the given string and assigns it to the MessagePrice field.
+func (o *Sms) SetMessagePrice(v string) {
 	o.MessagePrice = &v
 }
 
