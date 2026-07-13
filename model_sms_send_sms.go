@@ -38,13 +38,13 @@ type SmsSendSms struct {
 	// The price of this message. This depends on the total number of parts of the message.
 	MessagePrice *string `json:"message_price,omitempty"`
 	// The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS.
-	FromEmail *string `json:"from_email,omitempty"`
+	FromEmail NullableString `json:"from_email,omitempty"`
 	// The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request.
-	ListId *string `json:"list_id,omitempty"`
+	ListId NullableString `json:"list_id,omitempty"`
 	// A note that was sent from the request.
-	CustomString *string `json:"custom_string,omitempty"`
+	CustomString NullableString `json:"custom_string,omitempty"`
 	// This is the ID of the contact. This parameter will have a **null** value if you didn’t provide a _contact_id_ in the request.
-	ContactId *string `json:"contact_id,omitempty"`
+	ContactId NullableString `json:"contact_id,omitempty"`
 	// The unique user ID of the sender.
 	UserId *int32 `json:"user_id,omitempty"`
 	// This sub-account of the user. A user can have multiple sub-accounts.
@@ -364,132 +364,172 @@ func (o *SmsSendSms) SetMessagePrice(v string) {
 	o.MessagePrice = &v
 }
 
-// GetFromEmail returns the FromEmail field value if set, zero value otherwise.
+// GetFromEmail returns the FromEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmsSendSms) GetFromEmail() string {
-	if o == nil || IsNil(o.FromEmail) {
+	if o == nil || IsNil(o.FromEmail.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FromEmail
+	return *o.FromEmail.Get()
 }
 
 // GetFromEmailOk returns a tuple with the FromEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmsSendSms) GetFromEmailOk() (*string, bool) {
-	if o == nil || IsNil(o.FromEmail) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FromEmail, true
+	return o.FromEmail.Get(), o.FromEmail.IsSet()
 }
 
 // HasFromEmail returns a boolean if a field has been set.
 func (o *SmsSendSms) HasFromEmail() bool {
-	if o != nil && !IsNil(o.FromEmail) {
+	if o != nil && o.FromEmail.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFromEmail gets a reference to the given string and assigns it to the FromEmail field.
+// SetFromEmail gets a reference to the given NullableString and assigns it to the FromEmail field.
 func (o *SmsSendSms) SetFromEmail(v string) {
-	o.FromEmail = &v
+	o.FromEmail.Set(&v)
+}
+// SetFromEmailNil sets the value for FromEmail to be an explicit nil
+func (o *SmsSendSms) SetFromEmailNil() {
+	o.FromEmail.Set(nil)
 }
 
-// GetListId returns the ListId field value if set, zero value otherwise.
+// UnsetFromEmail ensures that no value is present for FromEmail, not even an explicit nil
+func (o *SmsSendSms) UnsetFromEmail() {
+	o.FromEmail.Unset()
+}
+
+// GetListId returns the ListId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmsSendSms) GetListId() string {
-	if o == nil || IsNil(o.ListId) {
+	if o == nil || IsNil(o.ListId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ListId
+	return *o.ListId.Get()
 }
 
 // GetListIdOk returns a tuple with the ListId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmsSendSms) GetListIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ListId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ListId, true
+	return o.ListId.Get(), o.ListId.IsSet()
 }
 
 // HasListId returns a boolean if a field has been set.
 func (o *SmsSendSms) HasListId() bool {
-	if o != nil && !IsNil(o.ListId) {
+	if o != nil && o.ListId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetListId gets a reference to the given string and assigns it to the ListId field.
+// SetListId gets a reference to the given NullableString and assigns it to the ListId field.
 func (o *SmsSendSms) SetListId(v string) {
-	o.ListId = &v
+	o.ListId.Set(&v)
+}
+// SetListIdNil sets the value for ListId to be an explicit nil
+func (o *SmsSendSms) SetListIdNil() {
+	o.ListId.Set(nil)
 }
 
-// GetCustomString returns the CustomString field value if set, zero value otherwise.
+// UnsetListId ensures that no value is present for ListId, not even an explicit nil
+func (o *SmsSendSms) UnsetListId() {
+	o.ListId.Unset()
+}
+
+// GetCustomString returns the CustomString field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmsSendSms) GetCustomString() string {
-	if o == nil || IsNil(o.CustomString) {
+	if o == nil || IsNil(o.CustomString.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CustomString
+	return *o.CustomString.Get()
 }
 
 // GetCustomStringOk returns a tuple with the CustomString field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmsSendSms) GetCustomStringOk() (*string, bool) {
-	if o == nil || IsNil(o.CustomString) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CustomString, true
+	return o.CustomString.Get(), o.CustomString.IsSet()
 }
 
 // HasCustomString returns a boolean if a field has been set.
 func (o *SmsSendSms) HasCustomString() bool {
-	if o != nil && !IsNil(o.CustomString) {
+	if o != nil && o.CustomString.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomString gets a reference to the given string and assigns it to the CustomString field.
+// SetCustomString gets a reference to the given NullableString and assigns it to the CustomString field.
 func (o *SmsSendSms) SetCustomString(v string) {
-	o.CustomString = &v
+	o.CustomString.Set(&v)
+}
+// SetCustomStringNil sets the value for CustomString to be an explicit nil
+func (o *SmsSendSms) SetCustomStringNil() {
+	o.CustomString.Set(nil)
 }
 
-// GetContactId returns the ContactId field value if set, zero value otherwise.
+// UnsetCustomString ensures that no value is present for CustomString, not even an explicit nil
+func (o *SmsSendSms) UnsetCustomString() {
+	o.CustomString.Unset()
+}
+
+// GetContactId returns the ContactId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmsSendSms) GetContactId() string {
-	if o == nil || IsNil(o.ContactId) {
+	if o == nil || IsNil(o.ContactId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ContactId
+	return *o.ContactId.Get()
 }
 
 // GetContactIdOk returns a tuple with the ContactId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmsSendSms) GetContactIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ContactId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ContactId, true
+	return o.ContactId.Get(), o.ContactId.IsSet()
 }
 
 // HasContactId returns a boolean if a field has been set.
 func (o *SmsSendSms) HasContactId() bool {
-	if o != nil && !IsNil(o.ContactId) {
+	if o != nil && o.ContactId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContactId gets a reference to the given string and assigns it to the ContactId field.
+// SetContactId gets a reference to the given NullableString and assigns it to the ContactId field.
 func (o *SmsSendSms) SetContactId(v string) {
-	o.ContactId = &v
+	o.ContactId.Set(&v)
+}
+// SetContactIdNil sets the value for ContactId to be an explicit nil
+func (o *SmsSendSms) SetContactIdNil() {
+	o.ContactId.Set(nil)
+}
+
+// UnsetContactId ensures that no value is present for ContactId, not even an explicit nil
+func (o *SmsSendSms) UnsetContactId() {
+	o.ContactId.Unset()
 }
 
 // GetUserId returns the UserId field value if set, zero value otherwise.
@@ -721,17 +761,17 @@ func (o SmsSendSms) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MessagePrice) {
 		toSerialize["message_price"] = o.MessagePrice
 	}
-	if !IsNil(o.FromEmail) {
-		toSerialize["from_email"] = o.FromEmail
+	if o.FromEmail.IsSet() {
+		toSerialize["from_email"] = o.FromEmail.Get()
 	}
-	if !IsNil(o.ListId) {
-		toSerialize["list_id"] = o.ListId
+	if o.ListId.IsSet() {
+		toSerialize["list_id"] = o.ListId.Get()
 	}
-	if !IsNil(o.CustomString) {
-		toSerialize["custom_string"] = o.CustomString
+	if o.CustomString.IsSet() {
+		toSerialize["custom_string"] = o.CustomString.Get()
 	}
-	if !IsNil(o.ContactId) {
-		toSerialize["contact_id"] = o.ContactId
+	if o.ContactId.IsSet() {
+		toSerialize["contact_id"] = o.ContactId.Get()
 	}
 	if !IsNil(o.UserId) {
 		toSerialize["user_id"] = o.UserId

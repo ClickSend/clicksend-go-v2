@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **MessageId** | Pointer to **string** | The generated ID of the message. This ID is typically used as a reference for &lt;a href&#x3D;\&quot;https://www.clicksend.com/au/help/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;customer support&lt;/a&gt; in case of any issues. | [optional] 
 **MessageParts** | Pointer to **int32** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the **&lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot;&gt;SMS Character Count&lt;/a&gt;**. | [optional] 
 **MessagePrice** | Pointer to **string** | The price of this message. This depends on the total number of parts of the message. | [optional] 
-**FromEmail** | Pointer to **string** | The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. | [optional] 
-**ListId** | Pointer to **string** | The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request. | [optional] 
-**CustomString** | Pointer to **string** | A note that was sent from the request. | [optional] 
-**ContactId** | Pointer to **string** | This is the ID of the contact. This parameter will have a **null** value if you didn’t provide a _contact_id_ in the request. | [optional] 
+**FromEmail** | Pointer to **NullableString** | The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. | [optional] 
+**ListId** | Pointer to **NullableString** | The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request. | [optional] 
+**CustomString** | Pointer to **NullableString** | A note that was sent from the request. | [optional] 
+**ContactId** | Pointer to **NullableString** | This is the ID of the contact. This parameter will have a **null** value if you didn’t provide a _contact_id_ in the request. | [optional] 
 **UserId** | Pointer to **int32** | The unique user ID of the sender. | [optional] 
 **SubaccountId** | Pointer to **int32** | This sub-account of the user. A user can have multiple sub-accounts. | [optional] 
 **IsSharedSystemNumber** | Pointer to **bool** | Indicates whether you use a shared number to send a message:  - **True** \\- if the sender is randomly selected.      - **False** \\- if the sender is specified and passed the validation process. | [optional] 
@@ -293,6 +293,16 @@ SetFromEmail sets FromEmail field to given value.
 
 HasFromEmail returns a boolean if a field has been set.
 
+### SetFromEmailNil
+
+`func (o *SmsSendSms) SetFromEmailNil(b bool)`
+
+ SetFromEmailNil sets the value for FromEmail to be an explicit nil
+
+### UnsetFromEmail
+`func (o *SmsSendSms) UnsetFromEmail()`
+
+UnsetFromEmail ensures that no value is present for FromEmail, not even an explicit nil
 ### GetListId
 
 `func (o *SmsSendSms) GetListId() string`
@@ -318,6 +328,16 @@ SetListId sets ListId field to given value.
 
 HasListId returns a boolean if a field has been set.
 
+### SetListIdNil
+
+`func (o *SmsSendSms) SetListIdNil(b bool)`
+
+ SetListIdNil sets the value for ListId to be an explicit nil
+
+### UnsetListId
+`func (o *SmsSendSms) UnsetListId()`
+
+UnsetListId ensures that no value is present for ListId, not even an explicit nil
 ### GetCustomString
 
 `func (o *SmsSendSms) GetCustomString() string`
@@ -343,6 +363,16 @@ SetCustomString sets CustomString field to given value.
 
 HasCustomString returns a boolean if a field has been set.
 
+### SetCustomStringNil
+
+`func (o *SmsSendSms) SetCustomStringNil(b bool)`
+
+ SetCustomStringNil sets the value for CustomString to be an explicit nil
+
+### UnsetCustomString
+`func (o *SmsSendSms) UnsetCustomString()`
+
+UnsetCustomString ensures that no value is present for CustomString, not even an explicit nil
 ### GetContactId
 
 `func (o *SmsSendSms) GetContactId() string`
@@ -368,6 +398,16 @@ SetContactId sets ContactId field to given value.
 
 HasContactId returns a boolean if a field has been set.
 
+### SetContactIdNil
+
+`func (o *SmsSendSms) SetContactIdNil(b bool)`
+
+ SetContactIdNil sets the value for ContactId to be an explicit nil
+
+### UnsetContactId
+`func (o *SmsSendSms) UnsetContactId()`
+
+UnsetContactId ensures that no value is present for ContactId, not even an explicit nil
 ### GetUserId
 
 `func (o *SmsSendSms) GetUserId() int32`
