@@ -22,9 +22,9 @@ type SendFaxData struct {
 	// The total price of the fax.
 	TotalPrice *float32 `json:"total_price,omitempty"`
 	// The total count of the fax.
-	TotalCount *string `json:"total_count,omitempty"`
+	TotalCount *int32 `json:"total_count,omitempty"`
 	// The count of the queued fax.
-	QueuedCount *string `json:"queued_count,omitempty"`
+	QueuedCount *int32 `json:"queued_count,omitempty"`
 	// The list of messages that were sent.
 	Messages []Fax `json:"messages,omitempty"`
 	Currency *Currency `json:"_currency,omitempty"`
@@ -80,9 +80,9 @@ func (o *SendFaxData) SetTotalPrice(v float32) {
 }
 
 // GetTotalCount returns the TotalCount field value if set, zero value otherwise.
-func (o *SendFaxData) GetTotalCount() string {
+func (o *SendFaxData) GetTotalCount() int32 {
 	if o == nil || IsNil(o.TotalCount) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.TotalCount
@@ -90,7 +90,7 @@ func (o *SendFaxData) GetTotalCount() string {
 
 // GetTotalCountOk returns a tuple with the TotalCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SendFaxData) GetTotalCountOk() (*string, bool) {
+func (o *SendFaxData) GetTotalCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.TotalCount) {
 		return nil, false
 	}
@@ -106,15 +106,15 @@ func (o *SendFaxData) HasTotalCount() bool {
 	return false
 }
 
-// SetTotalCount gets a reference to the given string and assigns it to the TotalCount field.
-func (o *SendFaxData) SetTotalCount(v string) {
+// SetTotalCount gets a reference to the given int32 and assigns it to the TotalCount field.
+func (o *SendFaxData) SetTotalCount(v int32) {
 	o.TotalCount = &v
 }
 
 // GetQueuedCount returns the QueuedCount field value if set, zero value otherwise.
-func (o *SendFaxData) GetQueuedCount() string {
+func (o *SendFaxData) GetQueuedCount() int32 {
 	if o == nil || IsNil(o.QueuedCount) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.QueuedCount
@@ -122,7 +122,7 @@ func (o *SendFaxData) GetQueuedCount() string {
 
 // GetQueuedCountOk returns a tuple with the QueuedCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SendFaxData) GetQueuedCountOk() (*string, bool) {
+func (o *SendFaxData) GetQueuedCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.QueuedCount) {
 		return nil, false
 	}
@@ -138,8 +138,8 @@ func (o *SendFaxData) HasQueuedCount() bool {
 	return false
 }
 
-// SetQueuedCount gets a reference to the given string and assigns it to the QueuedCount field.
-func (o *SendFaxData) SetQueuedCount(v string) {
+// SetQueuedCount gets a reference to the given int32 and assigns it to the QueuedCount field.
+func (o *SendFaxData) SetQueuedCount(v int32) {
 	o.QueuedCount = &v
 }
 

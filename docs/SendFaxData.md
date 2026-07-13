@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TotalPrice** | Pointer to **float32** | The total price of the fax. | [optional] 
-**TotalCount** | Pointer to **string** | The total count of the fax. | [optional] 
-**QueuedCount** | Pointer to **string** | The count of the queued fax. | [optional] 
+**TotalCount** | Pointer to **int32** | The total count of the fax. | [optional] 
+**QueuedCount** | Pointer to **int32** | The count of the queued fax. | [optional] 
 **Messages** | Pointer to [**[]Fax**](Fax.md) | The list of messages that were sent. | [optional] 
 **Currency** | Pointer to [**Currency**](Currency.md) |  | [optional] 
 
@@ -56,20 +56,20 @@ HasTotalPrice returns a boolean if a field has been set.
 
 ### GetTotalCount
 
-`func (o *SendFaxData) GetTotalCount() string`
+`func (o *SendFaxData) GetTotalCount() int32`
 
 GetTotalCount returns the TotalCount field if non-nil, zero value otherwise.
 
 ### GetTotalCountOk
 
-`func (o *SendFaxData) GetTotalCountOk() (*string, bool)`
+`func (o *SendFaxData) GetTotalCountOk() (*int32, bool)`
 
 GetTotalCountOk returns a tuple with the TotalCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalCount
 
-`func (o *SendFaxData) SetTotalCount(v string)`
+`func (o *SendFaxData) SetTotalCount(v int32)`
 
 SetTotalCount sets TotalCount field to given value.
 
@@ -81,20 +81,20 @@ HasTotalCount returns a boolean if a field has been set.
 
 ### GetQueuedCount
 
-`func (o *SendFaxData) GetQueuedCount() string`
+`func (o *SendFaxData) GetQueuedCount() int32`
 
 GetQueuedCount returns the QueuedCount field if non-nil, zero value otherwise.
 
 ### GetQueuedCountOk
 
-`func (o *SendFaxData) GetQueuedCountOk() (*string, bool)`
+`func (o *SendFaxData) GetQueuedCountOk() (*int32, bool)`
 
 GetQueuedCountOk returns a tuple with the QueuedCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueuedCount
 
-`func (o *SendFaxData) SetQueuedCount(v string)`
+`func (o *SendFaxData) SetQueuedCount(v int32)`
 
 SetQueuedCount sets QueuedCount field to given value.
 

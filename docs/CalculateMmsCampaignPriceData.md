@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TotalCount** | Pointer to **string** | The total number of records. | [optional] 
+**TotalCount** | Pointer to **int32** | The total number of records. | [optional] 
 **TotalPrice** | Pointer to **string** | The total price of the MMS campaign. | [optional] 
 **Data** | Pointer to [**CalculateMmsCampaignPriceDataData**](CalculateMmsCampaignPriceDataData.md) |  | [optional] 
 **Currency** | Pointer to [**Currency**](Currency.md) |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTotalCount
 
-`func (o *CalculateMmsCampaignPriceData) GetTotalCount() string`
+`func (o *CalculateMmsCampaignPriceData) GetTotalCount() int32`
 
 GetTotalCount returns the TotalCount field if non-nil, zero value otherwise.
 
 ### GetTotalCountOk
 
-`func (o *CalculateMmsCampaignPriceData) GetTotalCountOk() (*string, bool)`
+`func (o *CalculateMmsCampaignPriceData) GetTotalCountOk() (*int32, bool)`
 
 GetTotalCountOk returns a tuple with the TotalCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalCount
 
-`func (o *CalculateMmsCampaignPriceData) SetTotalCount(v string)`
+`func (o *CalculateMmsCampaignPriceData) SetTotalCount(v int32)`
 
 SetTotalCount sets TotalCount field to given value.
 

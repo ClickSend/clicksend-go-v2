@@ -20,7 +20,7 @@ var _ MappedNullable = &ViewASpecificSmsTemplate{}
 // ViewASpecificSmsTemplate struct for ViewASpecificSmsTemplate
 type ViewASpecificSmsTemplate struct {
 	// The HTTP status code of the response.
-	HttpCode *string `json:"http_code,omitempty"`
+	HttpCode *int32 `json:"http_code,omitempty"`
 	// The response code indicating the status of the operation.
 	ResponseCode *string `json:"response_code,omitempty"`
 	// A message describing the outcome of the operation.
@@ -46,9 +46,9 @@ func NewViewASpecificSmsTemplateWithDefaults() *ViewASpecificSmsTemplate {
 }
 
 // GetHttpCode returns the HttpCode field value if set, zero value otherwise.
-func (o *ViewASpecificSmsTemplate) GetHttpCode() string {
+func (o *ViewASpecificSmsTemplate) GetHttpCode() int32 {
 	if o == nil || IsNil(o.HttpCode) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.HttpCode
@@ -56,7 +56,7 @@ func (o *ViewASpecificSmsTemplate) GetHttpCode() string {
 
 // GetHttpCodeOk returns a tuple with the HttpCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewASpecificSmsTemplate) GetHttpCodeOk() (*string, bool) {
+func (o *ViewASpecificSmsTemplate) GetHttpCodeOk() (*int32, bool) {
 	if o == nil || IsNil(o.HttpCode) {
 		return nil, false
 	}
@@ -72,8 +72,8 @@ func (o *ViewASpecificSmsTemplate) HasHttpCode() bool {
 	return false
 }
 
-// SetHttpCode gets a reference to the given string and assigns it to the HttpCode field.
-func (o *ViewASpecificSmsTemplate) SetHttpCode(v string) {
+// SetHttpCode gets a reference to the given int32 and assigns it to the HttpCode field.
+func (o *ViewASpecificSmsTemplate) SetHttpCode(v int32) {
 	o.HttpCode = &v
 }
 

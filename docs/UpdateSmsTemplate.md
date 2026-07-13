@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HttpCode** | Pointer to **string** | The HTTP code of the response. Visit [this page](/#status-codes) for more information. | [optional] 
+**HttpCode** | Pointer to **int32** | The HTTP code of the response. Visit [this page](/#status-codes) for more information. | [optional] 
 **ResponseCode** | Pointer to **string** | The response code of the operation. Visit [this page](/#status-codes) for more information. | [optional] 
 **ResponseMsg** | Pointer to **string** | A message describing the outcome of the operation. | [optional] 
 **Data** | Pointer to [**SmsTemplateUpdate**](SmsTemplateUpdate.md) |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetHttpCode
 
-`func (o *UpdateSmsTemplate) GetHttpCode() string`
+`func (o *UpdateSmsTemplate) GetHttpCode() int32`
 
 GetHttpCode returns the HttpCode field if non-nil, zero value otherwise.
 
 ### GetHttpCodeOk
 
-`func (o *UpdateSmsTemplate) GetHttpCodeOk() (*string, bool)`
+`func (o *UpdateSmsTemplate) GetHttpCodeOk() (*int32, bool)`
 
 GetHttpCodeOk returns a tuple with the HttpCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpCode
 
-`func (o *UpdateSmsTemplate) SetHttpCode(v string)`
+`func (o *UpdateSmsTemplate) SetHttpCode(v int32)`
 
 SetHttpCode sets HttpCode field to given value.
 

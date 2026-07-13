@@ -36,7 +36,7 @@ type SmsSendSms struct {
 	// The number of parts the message was broken into. To look at how many parts your message is broken down into, use the **<a href=\"http://smscharactercount.com/\">SMS Character Count</a>**.
 	MessageParts *int32 `json:"message_parts,omitempty"`
 	// The price of this message. This depends on the total number of parts of the message.
-	MessagePrice *float32 `json:"message_price,omitempty"`
+	MessagePrice *string `json:"message_price,omitempty"`
 	// The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS.
 	FromEmail *string `json:"from_email,omitempty"`
 	// The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request.
@@ -333,9 +333,9 @@ func (o *SmsSendSms) SetMessageParts(v int32) {
 }
 
 // GetMessagePrice returns the MessagePrice field value if set, zero value otherwise.
-func (o *SmsSendSms) GetMessagePrice() float32 {
+func (o *SmsSendSms) GetMessagePrice() string {
 	if o == nil || IsNil(o.MessagePrice) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.MessagePrice
@@ -343,7 +343,7 @@ func (o *SmsSendSms) GetMessagePrice() float32 {
 
 // GetMessagePriceOk returns a tuple with the MessagePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SmsSendSms) GetMessagePriceOk() (*float32, bool) {
+func (o *SmsSendSms) GetMessagePriceOk() (*string, bool) {
 	if o == nil || IsNil(o.MessagePrice) {
 		return nil, false
 	}
@@ -359,8 +359,8 @@ func (o *SmsSendSms) HasMessagePrice() bool {
 	return false
 }
 
-// SetMessagePrice gets a reference to the given float32 and assigns it to the MessagePrice field.
-func (o *SmsSendSms) SetMessagePrice(v float32) {
+// SetMessagePrice gets a reference to the given string and assigns it to the MessagePrice field.
+func (o *SmsSendSms) SetMessagePrice(v string) {
 	o.MessagePrice = &v
 }
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Schedule** | Pointer to **int32** | The scheduled date of the message. It is in &lt;a href&#x3D;\&quot;http://help.clicksend.com/what-is-a-unix-timestamp\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Unix format&lt;/a&gt;. | [optional] 
 **MessageId** | Pointer to **string** | The generated ID of the message. This ID is typically used as a reference for &lt;a href&#x3D;\&quot;https://www.clicksend.com/au/help/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;customer support&lt;/a&gt; in case of any issues. | [optional] 
 **MessageParts** | Pointer to **int32** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the **&lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot;&gt;SMS Character Count&lt;/a&gt;**. | [optional] 
-**MessagePrice** | Pointer to **float32** | The price of this message. This depends on the total number of parts of the message. | [optional] 
+**MessagePrice** | Pointer to **string** | The price of this message. This depends on the total number of parts of the message. | [optional] 
 **FromEmail** | Pointer to **string** | The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS. | [optional] 
 **ListId** | Pointer to **string** | The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request. | [optional] 
 **CustomString** | Pointer to **string** | A note that was sent from the request. | [optional] 
@@ -245,20 +245,20 @@ HasMessageParts returns a boolean if a field has been set.
 
 ### GetMessagePrice
 
-`func (o *SmsSendSms) GetMessagePrice() float32`
+`func (o *SmsSendSms) GetMessagePrice() string`
 
 GetMessagePrice returns the MessagePrice field if non-nil, zero value otherwise.
 
 ### GetMessagePriceOk
 
-`func (o *SmsSendSms) GetMessagePriceOk() (*float32, bool)`
+`func (o *SmsSendSms) GetMessagePriceOk() (*string, bool)`
 
 GetMessagePriceOk returns a tuple with the MessagePrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessagePrice
 
-`func (o *SmsSendSms) SetMessagePrice(v float32)`
+`func (o *SmsSendSms) SetMessagePrice(v string)`
 
 SetMessagePrice sets MessagePrice field to given value.
 

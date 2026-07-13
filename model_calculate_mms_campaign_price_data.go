@@ -20,7 +20,7 @@ var _ MappedNullable = &CalculateMmsCampaignPriceData{}
 // CalculateMmsCampaignPriceData struct for CalculateMmsCampaignPriceData
 type CalculateMmsCampaignPriceData struct {
 	// The total number of records.
-	TotalCount *string `json:"total_count,omitempty"`
+	TotalCount *int32 `json:"total_count,omitempty"`
 	// The total price of the MMS campaign.
 	TotalPrice *string `json:"total_price,omitempty"`
 	Data *CalculateMmsCampaignPriceDataData `json:"data,omitempty"`
@@ -45,9 +45,9 @@ func NewCalculateMmsCampaignPriceDataWithDefaults() *CalculateMmsCampaignPriceDa
 }
 
 // GetTotalCount returns the TotalCount field value if set, zero value otherwise.
-func (o *CalculateMmsCampaignPriceData) GetTotalCount() string {
+func (o *CalculateMmsCampaignPriceData) GetTotalCount() int32 {
 	if o == nil || IsNil(o.TotalCount) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.TotalCount
@@ -55,7 +55,7 @@ func (o *CalculateMmsCampaignPriceData) GetTotalCount() string {
 
 // GetTotalCountOk returns a tuple with the TotalCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CalculateMmsCampaignPriceData) GetTotalCountOk() (*string, bool) {
+func (o *CalculateMmsCampaignPriceData) GetTotalCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.TotalCount) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *CalculateMmsCampaignPriceData) HasTotalCount() bool {
 	return false
 }
 
-// SetTotalCount gets a reference to the given string and assigns it to the TotalCount field.
-func (o *CalculateMmsCampaignPriceData) SetTotalCount(v string) {
+// SetTotalCount gets a reference to the given int32 and assigns it to the TotalCount field.
+func (o *CalculateMmsCampaignPriceData) SetTotalCount(v int32) {
 	o.TotalCount = &v
 }
 

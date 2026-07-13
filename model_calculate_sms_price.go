@@ -20,7 +20,7 @@ var _ MappedNullable = &CalculateSmsPrice{}
 // CalculateSmsPrice struct for CalculateSmsPrice
 type CalculateSmsPrice struct {
 	// The HTTP code of the response. Visit [this page](/#status-codes) for more information.  This parameter doesn’t reflect the status of each message. Check the status parameter of the message object to view the status of the individual message.
-	HttpCode *string `json:"http_code,omitempty"`
+	HttpCode *int32 `json:"http_code,omitempty"`
 	// The response code of the operation. Visit [this page](/#status-codes) for more information.
 	ResponseCode *string `json:"response_code,omitempty"`
 	// A message describing the outcome of the operation.
@@ -46,9 +46,9 @@ func NewCalculateSmsPriceWithDefaults() *CalculateSmsPrice {
 }
 
 // GetHttpCode returns the HttpCode field value if set, zero value otherwise.
-func (o *CalculateSmsPrice) GetHttpCode() string {
+func (o *CalculateSmsPrice) GetHttpCode() int32 {
 	if o == nil || IsNil(o.HttpCode) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.HttpCode
@@ -56,7 +56,7 @@ func (o *CalculateSmsPrice) GetHttpCode() string {
 
 // GetHttpCodeOk returns a tuple with the HttpCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CalculateSmsPrice) GetHttpCodeOk() (*string, bool) {
+func (o *CalculateSmsPrice) GetHttpCodeOk() (*int32, bool) {
 	if o == nil || IsNil(o.HttpCode) {
 		return nil, false
 	}
@@ -72,8 +72,8 @@ func (o *CalculateSmsPrice) HasHttpCode() bool {
 	return false
 }
 
-// SetHttpCode gets a reference to the given string and assigns it to the HttpCode field.
-func (o *CalculateSmsPrice) SetHttpCode(v string) {
+// SetHttpCode gets a reference to the given int32 and assigns it to the HttpCode field.
+func (o *CalculateSmsPrice) SetHttpCode(v int32) {
 	o.HttpCode = &v
 }
 
