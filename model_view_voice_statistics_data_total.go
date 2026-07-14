@@ -20,7 +20,7 @@ var _ MappedNullable = &ViewVoiceStatisticsDataTotal{}
 // ViewVoiceStatisticsDataTotal struct for ViewVoiceStatisticsDataTotal
 type ViewVoiceStatisticsDataTotal struct {
 	Outbound *ViewVoiceStatisticsDataTotalOutbound `json:"outbound,omitempty"`
-	Bounced *CancelAllSmsData `json:"bounced,omitempty"`
+	Bounced *ViewVoiceStatisticsDataTotalOutbound `json:"bounced,omitempty"`
 }
 
 // NewViewVoiceStatisticsDataTotal instantiates a new ViewVoiceStatisticsDataTotal object
@@ -73,9 +73,9 @@ func (o *ViewVoiceStatisticsDataTotal) SetOutbound(v ViewVoiceStatisticsDataTota
 }
 
 // GetBounced returns the Bounced field value if set, zero value otherwise.
-func (o *ViewVoiceStatisticsDataTotal) GetBounced() CancelAllSmsData {
+func (o *ViewVoiceStatisticsDataTotal) GetBounced() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Bounced) {
-		var ret CancelAllSmsData
+		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
 	}
 	return *o.Bounced
@@ -83,7 +83,7 @@ func (o *ViewVoiceStatisticsDataTotal) GetBounced() CancelAllSmsData {
 
 // GetBouncedOk returns a tuple with the Bounced field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewVoiceStatisticsDataTotal) GetBouncedOk() (*CancelAllSmsData, bool) {
+func (o *ViewVoiceStatisticsDataTotal) GetBouncedOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Bounced) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *ViewVoiceStatisticsDataTotal) HasBounced() bool {
 	return false
 }
 
-// SetBounced gets a reference to the given CancelAllSmsData and assigns it to the Bounced field.
-func (o *ViewVoiceStatisticsDataTotal) SetBounced(v CancelAllSmsData) {
+// SetBounced gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Bounced field.
+func (o *ViewVoiceStatisticsDataTotal) SetBounced(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Bounced = &v
 }
 

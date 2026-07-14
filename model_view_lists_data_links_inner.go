@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewSmsInboundAutomationsDataAllOfLinksInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewSmsInboundAutomationsDataAllOfLinksInner{}
+// checks if the ViewListsDataLinksInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ViewListsDataLinksInner{}
 
-// ViewSmsInboundAutomationsDataAllOfLinksInner struct for ViewSmsInboundAutomationsDataAllOfLinksInner
-type ViewSmsInboundAutomationsDataAllOfLinksInner struct {
+// ViewListsDataLinksInner struct for ViewListsDataLinksInner
+type ViewListsDataLinksInner struct {
 	// The URL of this page link.
 	Url NullableString `json:"url,omitempty"`
 	// The display label for this page link.
@@ -29,25 +29,25 @@ type ViewSmsInboundAutomationsDataAllOfLinksInner struct {
 	Active *bool `json:"active,omitempty"`
 }
 
-// NewViewSmsInboundAutomationsDataAllOfLinksInner instantiates a new ViewSmsInboundAutomationsDataAllOfLinksInner object
+// NewViewListsDataLinksInner instantiates a new ViewListsDataLinksInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewSmsInboundAutomationsDataAllOfLinksInner() *ViewSmsInboundAutomationsDataAllOfLinksInner {
-	this := ViewSmsInboundAutomationsDataAllOfLinksInner{}
+func NewViewListsDataLinksInner() *ViewListsDataLinksInner {
+	this := ViewListsDataLinksInner{}
 	return &this
 }
 
-// NewViewSmsInboundAutomationsDataAllOfLinksInnerWithDefaults instantiates a new ViewSmsInboundAutomationsDataAllOfLinksInner object
+// NewViewListsDataLinksInnerWithDefaults instantiates a new ViewListsDataLinksInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewSmsInboundAutomationsDataAllOfLinksInnerWithDefaults() *ViewSmsInboundAutomationsDataAllOfLinksInner {
-	this := ViewSmsInboundAutomationsDataAllOfLinksInner{}
+func NewViewListsDataLinksInnerWithDefaults() *ViewListsDataLinksInner {
+	this := ViewListsDataLinksInner{}
 	return &this
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetUrl() string {
+func (o *ViewListsDataLinksInner) GetUrl() string {
 	if o == nil || IsNil(o.Url.Get()) {
 		var ret string
 		return ret
@@ -58,7 +58,7 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetUrl() string {
 // GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetUrlOk() (*string, bool) {
+func (o *ViewListsDataLinksInner) GetUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetUrlOk() (*string, bool
 }
 
 // HasUrl returns a boolean if a field has been set.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) HasUrl() bool {
+func (o *ViewListsDataLinksInner) HasUrl() bool {
 	if o != nil && o.Url.IsSet() {
 		return true
 	}
@@ -75,21 +75,21 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) HasUrl() bool {
 }
 
 // SetUrl gets a reference to the given NullableString and assigns it to the Url field.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) SetUrl(v string) {
+func (o *ViewListsDataLinksInner) SetUrl(v string) {
 	o.Url.Set(&v)
 }
 // SetUrlNil sets the value for Url to be an explicit nil
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) SetUrlNil() {
+func (o *ViewListsDataLinksInner) SetUrlNil() {
 	o.Url.Set(nil)
 }
 
 // UnsetUrl ensures that no value is present for Url, not even an explicit nil
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) UnsetUrl() {
+func (o *ViewListsDataLinksInner) UnsetUrl() {
 	o.Url.Unset()
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetLabel() string {
+func (o *ViewListsDataLinksInner) GetLabel() string {
 	if o == nil || IsNil(o.Label) {
 		var ret string
 		return ret
@@ -99,7 +99,7 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetLabelOk() (*string, bool) {
+func (o *ViewListsDataLinksInner) GetLabelOk() (*string, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -107,7 +107,7 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetLabelOk() (*string, bo
 }
 
 // HasLabel returns a boolean if a field has been set.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) HasLabel() bool {
+func (o *ViewListsDataLinksInner) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -116,12 +116,12 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) HasLabel() bool {
 }
 
 // SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) SetLabel(v string) {
+func (o *ViewListsDataLinksInner) SetLabel(v string) {
 	o.Label = &v
 }
 
 // GetPage returns the Page field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetPage() int32 {
+func (o *ViewListsDataLinksInner) GetPage() int32 {
 	if o == nil || IsNil(o.Page.Get()) {
 		var ret int32
 		return ret
@@ -132,7 +132,7 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetPage() int32 {
 // GetPageOk returns a tuple with the Page field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetPageOk() (*int32, bool) {
+func (o *ViewListsDataLinksInner) GetPageOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -140,7 +140,7 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetPageOk() (*int32, bool
 }
 
 // HasPage returns a boolean if a field has been set.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) HasPage() bool {
+func (o *ViewListsDataLinksInner) HasPage() bool {
 	if o != nil && o.Page.IsSet() {
 		return true
 	}
@@ -149,21 +149,21 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) HasPage() bool {
 }
 
 // SetPage gets a reference to the given NullableInt32 and assigns it to the Page field.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) SetPage(v int32) {
+func (o *ViewListsDataLinksInner) SetPage(v int32) {
 	o.Page.Set(&v)
 }
 // SetPageNil sets the value for Page to be an explicit nil
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) SetPageNil() {
+func (o *ViewListsDataLinksInner) SetPageNil() {
 	o.Page.Set(nil)
 }
 
 // UnsetPage ensures that no value is present for Page, not even an explicit nil
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) UnsetPage() {
+func (o *ViewListsDataLinksInner) UnsetPage() {
 	o.Page.Unset()
 }
 
 // GetActive returns the Active field value if set, zero value otherwise.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetActive() bool {
+func (o *ViewListsDataLinksInner) GetActive() bool {
 	if o == nil || IsNil(o.Active) {
 		var ret bool
 		return ret
@@ -173,7 +173,7 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetActive() bool {
 
 // GetActiveOk returns a tuple with the Active field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetActiveOk() (*bool, bool) {
+func (o *ViewListsDataLinksInner) GetActiveOk() (*bool, bool) {
 	if o == nil || IsNil(o.Active) {
 		return nil, false
 	}
@@ -181,7 +181,7 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) GetActiveOk() (*bool, boo
 }
 
 // HasActive returns a boolean if a field has been set.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) HasActive() bool {
+func (o *ViewListsDataLinksInner) HasActive() bool {
 	if o != nil && !IsNil(o.Active) {
 		return true
 	}
@@ -190,11 +190,11 @@ func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) HasActive() bool {
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
-func (o *ViewSmsInboundAutomationsDataAllOfLinksInner) SetActive(v bool) {
+func (o *ViewListsDataLinksInner) SetActive(v bool) {
 	o.Active = &v
 }
 
-func (o ViewSmsInboundAutomationsDataAllOfLinksInner) MarshalJSON() ([]byte, error) {
+func (o ViewListsDataLinksInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -202,7 +202,7 @@ func (o ViewSmsInboundAutomationsDataAllOfLinksInner) MarshalJSON() ([]byte, err
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewSmsInboundAutomationsDataAllOfLinksInner) ToMap() (map[string]interface{}, error) {
+func (o ViewListsDataLinksInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Url.IsSet() {
 		toSerialize["url"] = o.Url.Get()
@@ -219,38 +219,38 @@ func (o ViewSmsInboundAutomationsDataAllOfLinksInner) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 
-type NullableViewSmsInboundAutomationsDataAllOfLinksInner struct {
-	value *ViewSmsInboundAutomationsDataAllOfLinksInner
+type NullableViewListsDataLinksInner struct {
+	value *ViewListsDataLinksInner
 	isSet bool
 }
 
-func (v NullableViewSmsInboundAutomationsDataAllOfLinksInner) Get() *ViewSmsInboundAutomationsDataAllOfLinksInner {
+func (v NullableViewListsDataLinksInner) Get() *ViewListsDataLinksInner {
 	return v.value
 }
 
-func (v *NullableViewSmsInboundAutomationsDataAllOfLinksInner) Set(val *ViewSmsInboundAutomationsDataAllOfLinksInner) {
+func (v *NullableViewListsDataLinksInner) Set(val *ViewListsDataLinksInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewSmsInboundAutomationsDataAllOfLinksInner) IsSet() bool {
+func (v NullableViewListsDataLinksInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewSmsInboundAutomationsDataAllOfLinksInner) Unset() {
+func (v *NullableViewListsDataLinksInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewSmsInboundAutomationsDataAllOfLinksInner(val *ViewSmsInboundAutomationsDataAllOfLinksInner) *NullableViewSmsInboundAutomationsDataAllOfLinksInner {
-	return &NullableViewSmsInboundAutomationsDataAllOfLinksInner{value: val, isSet: true}
+func NewNullableViewListsDataLinksInner(val *ViewListsDataLinksInner) *NullableViewListsDataLinksInner {
+	return &NullableViewListsDataLinksInner{value: val, isSet: true}
 }
 
-func (v NullableViewSmsInboundAutomationsDataAllOfLinksInner) MarshalJSON() ([]byte, error) {
+func (v NullableViewListsDataLinksInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewSmsInboundAutomationsDataAllOfLinksInner) UnmarshalJSON(src []byte) error {
+func (v *NullableViewListsDataLinksInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ActionAddress** | Pointer to **string** | The action address to be used in the inbound rule. | [optional] 
 **Body** | Pointer to **NullableString** | The body of the inbound rule. | [optional] 
 **Enabled** | Pointer to **int32** | The status of the inbound rule. | [optional] 
+**WebhookType** | Pointer to **NullableString** | The format used when calling the webhook (e.g. post, json). | [optional] 
 
 ## Methods
 
@@ -268,6 +269,41 @@ SetEnabled sets Enabled field to given value.
 
 HasEnabled returns a boolean if a field has been set.
 
+### GetWebhookType
+
+`func (o *SmsInboundRule) GetWebhookType() string`
+
+GetWebhookType returns the WebhookType field if non-nil, zero value otherwise.
+
+### GetWebhookTypeOk
+
+`func (o *SmsInboundRule) GetWebhookTypeOk() (*string, bool)`
+
+GetWebhookTypeOk returns a tuple with the WebhookType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookType
+
+`func (o *SmsInboundRule) SetWebhookType(v string)`
+
+SetWebhookType sets WebhookType field to given value.
+
+### HasWebhookType
+
+`func (o *SmsInboundRule) HasWebhookType() bool`
+
+HasWebhookType returns a boolean if a field has been set.
+
+### SetWebhookTypeNil
+
+`func (o *SmsInboundRule) SetWebhookTypeNil(b bool)`
+
+ SetWebhookTypeNil sets the value for WebhookType to be an explicit nil
+
+### UnsetWebhookType
+`func (o *SmsInboundRule) UnsetWebhookType()`
+
+UnsetWebhookType ensures that no value is present for WebhookType, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

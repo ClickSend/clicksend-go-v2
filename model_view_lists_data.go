@@ -35,6 +35,14 @@ type ViewListsData struct {
 	From *int32 `json:"from,omitempty"`
 	// The number of the last contact on the current page.
 	To *int32 `json:"to,omitempty"`
+	// The URL of the first page of records.
+	FirstPageUrl NullableString `json:"first_page_url,omitempty"`
+	// The URL of the last page of records.
+	LastPageUrl NullableString `json:"last_page_url,omitempty"`
+	// The base URL path used to build pagination links.
+	Path *string `json:"path,omitempty"`
+	// The list of pagination links.
+	Links []ViewListsDataLinksInner `json:"links,omitempty"`
 	// The contacts in the list.
 	Data []ContactList `json:"data,omitempty"`
 }
@@ -312,6 +320,154 @@ func (o *ViewListsData) SetTo(v int32) {
 	o.To = &v
 }
 
+// GetFirstPageUrl returns the FirstPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewListsData) GetFirstPageUrl() string {
+	if o == nil || IsNil(o.FirstPageUrl.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.FirstPageUrl.Get()
+}
+
+// GetFirstPageUrlOk returns a tuple with the FirstPageUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewListsData) GetFirstPageUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.FirstPageUrl.Get(), o.FirstPageUrl.IsSet()
+}
+
+// HasFirstPageUrl returns a boolean if a field has been set.
+func (o *ViewListsData) HasFirstPageUrl() bool {
+	if o != nil && o.FirstPageUrl.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstPageUrl gets a reference to the given NullableString and assigns it to the FirstPageUrl field.
+func (o *ViewListsData) SetFirstPageUrl(v string) {
+	o.FirstPageUrl.Set(&v)
+}
+// SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
+func (o *ViewListsData) SetFirstPageUrlNil() {
+	o.FirstPageUrl.Set(nil)
+}
+
+// UnsetFirstPageUrl ensures that no value is present for FirstPageUrl, not even an explicit nil
+func (o *ViewListsData) UnsetFirstPageUrl() {
+	o.FirstPageUrl.Unset()
+}
+
+// GetLastPageUrl returns the LastPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewListsData) GetLastPageUrl() string {
+	if o == nil || IsNil(o.LastPageUrl.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.LastPageUrl.Get()
+}
+
+// GetLastPageUrlOk returns a tuple with the LastPageUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewListsData) GetLastPageUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LastPageUrl.Get(), o.LastPageUrl.IsSet()
+}
+
+// HasLastPageUrl returns a boolean if a field has been set.
+func (o *ViewListsData) HasLastPageUrl() bool {
+	if o != nil && o.LastPageUrl.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastPageUrl gets a reference to the given NullableString and assigns it to the LastPageUrl field.
+func (o *ViewListsData) SetLastPageUrl(v string) {
+	o.LastPageUrl.Set(&v)
+}
+// SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
+func (o *ViewListsData) SetLastPageUrlNil() {
+	o.LastPageUrl.Set(nil)
+}
+
+// UnsetLastPageUrl ensures that no value is present for LastPageUrl, not even an explicit nil
+func (o *ViewListsData) UnsetLastPageUrl() {
+	o.LastPageUrl.Unset()
+}
+
+// GetPath returns the Path field value if set, zero value otherwise.
+func (o *ViewListsData) GetPath() string {
+	if o == nil || IsNil(o.Path) {
+		var ret string
+		return ret
+	}
+	return *o.Path
+}
+
+// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewListsData) GetPathOk() (*string, bool) {
+	if o == nil || IsNil(o.Path) {
+		return nil, false
+	}
+	return o.Path, true
+}
+
+// HasPath returns a boolean if a field has been set.
+func (o *ViewListsData) HasPath() bool {
+	if o != nil && !IsNil(o.Path) {
+		return true
+	}
+
+	return false
+}
+
+// SetPath gets a reference to the given string and assigns it to the Path field.
+func (o *ViewListsData) SetPath(v string) {
+	o.Path = &v
+}
+
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *ViewListsData) GetLinks() []ViewListsDataLinksInner {
+	if o == nil || IsNil(o.Links) {
+		var ret []ViewListsDataLinksInner
+		return ret
+	}
+	return o.Links
+}
+
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewListsData) GetLinksOk() ([]ViewListsDataLinksInner, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
+	}
+	return o.Links, true
+}
+
+// HasLinks returns a boolean if a field has been set.
+func (o *ViewListsData) HasLinks() bool {
+	if o != nil && !IsNil(o.Links) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinks gets a reference to the given []ViewListsDataLinksInner and assigns it to the Links field.
+func (o *ViewListsData) SetLinks(v []ViewListsDataLinksInner) {
+	o.Links = v
+}
+
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ViewListsData) GetData() []ContactList {
 	if o == nil || IsNil(o.Data) {
@@ -377,6 +533,18 @@ func (o ViewListsData) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.To) {
 		toSerialize["to"] = o.To
+	}
+	if o.FirstPageUrl.IsSet() {
+		toSerialize["first_page_url"] = o.FirstPageUrl.Get()
+	}
+	if o.LastPageUrl.IsSet() {
+		toSerialize["last_page_url"] = o.LastPageUrl.Get()
+	}
+	if !IsNil(o.Path) {
+		toSerialize["path"] = o.Path
+	}
+	if !IsNil(o.Links) {
+		toSerialize["links"] = o.Links
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data

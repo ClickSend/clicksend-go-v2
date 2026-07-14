@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Date** | Pointer to **float32** | The date. | [optional] 
 **Outbound** | Pointer to [**ViewVoiceStatisticsDataTotalOutbound**](ViewVoiceStatisticsDataTotalOutbound.md) |  | [optional] 
-**Bounced** | Pointer to [**CancelAllSmsData**](CancelAllSmsData.md) |  | [optional] 
+**Bounced** | Pointer to [**ViewVoiceStatisticsDataTotalOutbound**](ViewVoiceStatisticsDataTotalOutbound.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasOutbound returns a boolean if a field has been set.
 
 ### GetBounced
 
-`func (o *ViewVoiceStatisticsDataStatsInner) GetBounced() CancelAllSmsData`
+`func (o *ViewVoiceStatisticsDataStatsInner) GetBounced() ViewVoiceStatisticsDataTotalOutbound`
 
 GetBounced returns the Bounced field if non-nil, zero value otherwise.
 
 ### GetBouncedOk
 
-`func (o *ViewVoiceStatisticsDataStatsInner) GetBouncedOk() (*CancelAllSmsData, bool)`
+`func (o *ViewVoiceStatisticsDataStatsInner) GetBouncedOk() (*ViewVoiceStatisticsDataTotalOutbound, bool)`
 
 GetBouncedOk returns a tuple with the Bounced field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBounced
 
-`func (o *ViewVoiceStatisticsDataStatsInner) SetBounced(v CancelAllSmsData)`
+`func (o *ViewVoiceStatisticsDataStatsInner) SetBounced(v ViewVoiceStatisticsDataTotalOutbound)`
 
 SetBounced sets Bounced field to given value.
 

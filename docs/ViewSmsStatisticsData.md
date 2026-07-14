@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Total** | Pointer to [**ViewSmsStatisticsDataTotal**](ViewSmsStatisticsDataTotal.md) |  | [optional] 
-**Stat** | Pointer to [**[]ViewSmsStatisticsDataStatInner**](ViewSmsStatisticsDataStatInner.md) |  | [optional] 
+**Stats** | Pointer to [**[]ViewSmsStatisticsDataStatsInner**](ViewSmsStatisticsDataStatsInner.md) |  | [optional] 
 **Currency** | Pointer to [**Currency**](Currency.md) |  | [optional] 
 
 ## Methods
@@ -52,30 +52,30 @@ SetTotal sets Total field to given value.
 
 HasTotal returns a boolean if a field has been set.
 
-### GetStat
+### GetStats
 
-`func (o *ViewSmsStatisticsData) GetStat() []ViewSmsStatisticsDataStatInner`
+`func (o *ViewSmsStatisticsData) GetStats() []ViewSmsStatisticsDataStatsInner`
 
-GetStat returns the Stat field if non-nil, zero value otherwise.
+GetStats returns the Stats field if non-nil, zero value otherwise.
 
-### GetStatOk
+### GetStatsOk
 
-`func (o *ViewSmsStatisticsData) GetStatOk() (*[]ViewSmsStatisticsDataStatInner, bool)`
+`func (o *ViewSmsStatisticsData) GetStatsOk() (*[]ViewSmsStatisticsDataStatsInner, bool)`
 
-GetStatOk returns a tuple with the Stat field if it's non-nil, zero value otherwise
+GetStatsOk returns a tuple with the Stats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStat
+### SetStats
 
-`func (o *ViewSmsStatisticsData) SetStat(v []ViewSmsStatisticsDataStatInner)`
+`func (o *ViewSmsStatisticsData) SetStats(v []ViewSmsStatisticsDataStatsInner)`
 
-SetStat sets Stat field to given value.
+SetStats sets Stats field to given value.
 
-### HasStat
+### HasStats
 
-`func (o *ViewSmsStatisticsData) HasStat() bool`
+`func (o *ViewSmsStatisticsData) HasStats() bool`
 
-HasStat returns a boolean if a field has been set.
+HasStats returns a boolean if a field has been set.
 
 ### GetCurrency
 

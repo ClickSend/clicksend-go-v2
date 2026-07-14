@@ -14,37 +14,37 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewSmsStatisticsDataStatInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewSmsStatisticsDataStatInner{}
+// checks if the ViewSmsStatisticsDataStatsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ViewSmsStatisticsDataStatsInner{}
 
-// ViewSmsStatisticsDataStatInner struct for ViewSmsStatisticsDataStatInner
-type ViewSmsStatisticsDataStatInner struct {
+// ViewSmsStatisticsDataStatsInner struct for ViewSmsStatisticsDataStatsInner
+type ViewSmsStatisticsDataStatsInner struct {
 	// The date.
 	Date *float32 `json:"date,omitempty"`
 	Outbound *ViewVoiceStatisticsDataTotalOutbound `json:"outbound,omitempty"`
-	Inbound *CancelAllSmsData `json:"inbound,omitempty"`
-	Bounced *CancelAllSmsData `json:"bounced,omitempty"`
+	Inbound *ViewVoiceStatisticsDataTotalOutbound `json:"inbound,omitempty"`
+	Bounced *ViewVoiceStatisticsDataTotalOutbound `json:"bounced,omitempty"`
 }
 
-// NewViewSmsStatisticsDataStatInner instantiates a new ViewSmsStatisticsDataStatInner object
+// NewViewSmsStatisticsDataStatsInner instantiates a new ViewSmsStatisticsDataStatsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewSmsStatisticsDataStatInner() *ViewSmsStatisticsDataStatInner {
-	this := ViewSmsStatisticsDataStatInner{}
+func NewViewSmsStatisticsDataStatsInner() *ViewSmsStatisticsDataStatsInner {
+	this := ViewSmsStatisticsDataStatsInner{}
 	return &this
 }
 
-// NewViewSmsStatisticsDataStatInnerWithDefaults instantiates a new ViewSmsStatisticsDataStatInner object
+// NewViewSmsStatisticsDataStatsInnerWithDefaults instantiates a new ViewSmsStatisticsDataStatsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewSmsStatisticsDataStatInnerWithDefaults() *ViewSmsStatisticsDataStatInner {
-	this := ViewSmsStatisticsDataStatInner{}
+func NewViewSmsStatisticsDataStatsInnerWithDefaults() *ViewSmsStatisticsDataStatsInner {
+	this := ViewSmsStatisticsDataStatsInner{}
 	return &this
 }
 
 // GetDate returns the Date field value if set, zero value otherwise.
-func (o *ViewSmsStatisticsDataStatInner) GetDate() float32 {
+func (o *ViewSmsStatisticsDataStatsInner) GetDate() float32 {
 	if o == nil || IsNil(o.Date) {
 		var ret float32
 		return ret
@@ -54,7 +54,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetDate() float32 {
 
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsStatisticsDataStatInner) GetDateOk() (*float32, bool) {
+func (o *ViewSmsStatisticsDataStatsInner) GetDateOk() (*float32, bool) {
 	if o == nil || IsNil(o.Date) {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetDateOk() (*float32, bool) {
 }
 
 // HasDate returns a boolean if a field has been set.
-func (o *ViewSmsStatisticsDataStatInner) HasDate() bool {
+func (o *ViewSmsStatisticsDataStatsInner) HasDate() bool {
 	if o != nil && !IsNil(o.Date) {
 		return true
 	}
@@ -71,12 +71,12 @@ func (o *ViewSmsStatisticsDataStatInner) HasDate() bool {
 }
 
 // SetDate gets a reference to the given float32 and assigns it to the Date field.
-func (o *ViewSmsStatisticsDataStatInner) SetDate(v float32) {
+func (o *ViewSmsStatisticsDataStatsInner) SetDate(v float32) {
 	o.Date = &v
 }
 
 // GetOutbound returns the Outbound field value if set, zero value otherwise.
-func (o *ViewSmsStatisticsDataStatInner) GetOutbound() ViewVoiceStatisticsDataTotalOutbound {
+func (o *ViewSmsStatisticsDataStatsInner) GetOutbound() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Outbound) {
 		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
@@ -86,7 +86,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetOutbound() ViewVoiceStatisticsDataTo
 
 // GetOutboundOk returns a tuple with the Outbound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsStatisticsDataStatInner) GetOutboundOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
+func (o *ViewSmsStatisticsDataStatsInner) GetOutboundOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Outbound) {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetOutboundOk() (*ViewVoiceStatisticsDa
 }
 
 // HasOutbound returns a boolean if a field has been set.
-func (o *ViewSmsStatisticsDataStatInner) HasOutbound() bool {
+func (o *ViewSmsStatisticsDataStatsInner) HasOutbound() bool {
 	if o != nil && !IsNil(o.Outbound) {
 		return true
 	}
@@ -103,14 +103,14 @@ func (o *ViewSmsStatisticsDataStatInner) HasOutbound() bool {
 }
 
 // SetOutbound gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Outbound field.
-func (o *ViewSmsStatisticsDataStatInner) SetOutbound(v ViewVoiceStatisticsDataTotalOutbound) {
+func (o *ViewSmsStatisticsDataStatsInner) SetOutbound(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Outbound = &v
 }
 
 // GetInbound returns the Inbound field value if set, zero value otherwise.
-func (o *ViewSmsStatisticsDataStatInner) GetInbound() CancelAllSmsData {
+func (o *ViewSmsStatisticsDataStatsInner) GetInbound() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Inbound) {
-		var ret CancelAllSmsData
+		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
 	}
 	return *o.Inbound
@@ -118,7 +118,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetInbound() CancelAllSmsData {
 
 // GetInboundOk returns a tuple with the Inbound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsStatisticsDataStatInner) GetInboundOk() (*CancelAllSmsData, bool) {
+func (o *ViewSmsStatisticsDataStatsInner) GetInboundOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Inbound) {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetInboundOk() (*CancelAllSmsData, bool
 }
 
 // HasInbound returns a boolean if a field has been set.
-func (o *ViewSmsStatisticsDataStatInner) HasInbound() bool {
+func (o *ViewSmsStatisticsDataStatsInner) HasInbound() bool {
 	if o != nil && !IsNil(o.Inbound) {
 		return true
 	}
@@ -134,15 +134,15 @@ func (o *ViewSmsStatisticsDataStatInner) HasInbound() bool {
 	return false
 }
 
-// SetInbound gets a reference to the given CancelAllSmsData and assigns it to the Inbound field.
-func (o *ViewSmsStatisticsDataStatInner) SetInbound(v CancelAllSmsData) {
+// SetInbound gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Inbound field.
+func (o *ViewSmsStatisticsDataStatsInner) SetInbound(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Inbound = &v
 }
 
 // GetBounced returns the Bounced field value if set, zero value otherwise.
-func (o *ViewSmsStatisticsDataStatInner) GetBounced() CancelAllSmsData {
+func (o *ViewSmsStatisticsDataStatsInner) GetBounced() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Bounced) {
-		var ret CancelAllSmsData
+		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
 	}
 	return *o.Bounced
@@ -150,7 +150,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetBounced() CancelAllSmsData {
 
 // GetBouncedOk returns a tuple with the Bounced field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsStatisticsDataStatInner) GetBouncedOk() (*CancelAllSmsData, bool) {
+func (o *ViewSmsStatisticsDataStatsInner) GetBouncedOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Bounced) {
 		return nil, false
 	}
@@ -158,7 +158,7 @@ func (o *ViewSmsStatisticsDataStatInner) GetBouncedOk() (*CancelAllSmsData, bool
 }
 
 // HasBounced returns a boolean if a field has been set.
-func (o *ViewSmsStatisticsDataStatInner) HasBounced() bool {
+func (o *ViewSmsStatisticsDataStatsInner) HasBounced() bool {
 	if o != nil && !IsNil(o.Bounced) {
 		return true
 	}
@@ -166,12 +166,12 @@ func (o *ViewSmsStatisticsDataStatInner) HasBounced() bool {
 	return false
 }
 
-// SetBounced gets a reference to the given CancelAllSmsData and assigns it to the Bounced field.
-func (o *ViewSmsStatisticsDataStatInner) SetBounced(v CancelAllSmsData) {
+// SetBounced gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Bounced field.
+func (o *ViewSmsStatisticsDataStatsInner) SetBounced(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Bounced = &v
 }
 
-func (o ViewSmsStatisticsDataStatInner) MarshalJSON() ([]byte, error) {
+func (o ViewSmsStatisticsDataStatsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -179,7 +179,7 @@ func (o ViewSmsStatisticsDataStatInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewSmsStatisticsDataStatInner) ToMap() (map[string]interface{}, error) {
+func (o ViewSmsStatisticsDataStatsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Date) {
 		toSerialize["date"] = o.Date
@@ -196,38 +196,38 @@ func (o ViewSmsStatisticsDataStatInner) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 
-type NullableViewSmsStatisticsDataStatInner struct {
-	value *ViewSmsStatisticsDataStatInner
+type NullableViewSmsStatisticsDataStatsInner struct {
+	value *ViewSmsStatisticsDataStatsInner
 	isSet bool
 }
 
-func (v NullableViewSmsStatisticsDataStatInner) Get() *ViewSmsStatisticsDataStatInner {
+func (v NullableViewSmsStatisticsDataStatsInner) Get() *ViewSmsStatisticsDataStatsInner {
 	return v.value
 }
 
-func (v *NullableViewSmsStatisticsDataStatInner) Set(val *ViewSmsStatisticsDataStatInner) {
+func (v *NullableViewSmsStatisticsDataStatsInner) Set(val *ViewSmsStatisticsDataStatsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewSmsStatisticsDataStatInner) IsSet() bool {
+func (v NullableViewSmsStatisticsDataStatsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewSmsStatisticsDataStatInner) Unset() {
+func (v *NullableViewSmsStatisticsDataStatsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewSmsStatisticsDataStatInner(val *ViewSmsStatisticsDataStatInner) *NullableViewSmsStatisticsDataStatInner {
-	return &NullableViewSmsStatisticsDataStatInner{value: val, isSet: true}
+func NewNullableViewSmsStatisticsDataStatsInner(val *ViewSmsStatisticsDataStatsInner) *NullableViewSmsStatisticsDataStatsInner {
+	return &NullableViewSmsStatisticsDataStatsInner{value: val, isSet: true}
 }
 
-func (v NullableViewSmsStatisticsDataStatInner) MarshalJSON() ([]byte, error) {
+func (v NullableViewSmsStatisticsDataStatsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewSmsStatisticsDataStatInner) UnmarshalJSON(src []byte) error {
+func (v *NullableViewSmsStatisticsDataStatsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

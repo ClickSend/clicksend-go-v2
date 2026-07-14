@@ -12,6 +12,10 @@ Name | Type | Description | Notes
 **PrevPageUrl** | Pointer to **string** | The URL of the previous page of contacts. | [optional] 
 **From** | Pointer to **int32** | The number of the first contact on the current page. | [optional] 
 **To** | Pointer to **int32** | The number of the last contact on the current page. | [optional] 
+**FirstPageUrl** | Pointer to **NullableString** | The URL of the first page of records. | [optional] 
+**LastPageUrl** | Pointer to **NullableString** | The URL of the last page of records. | [optional] 
+**Path** | Pointer to **string** | The base URL path used to build pagination links. | [optional] 
+**Links** | Pointer to [**[]ViewListsDataLinksInner**](ViewListsDataLinksInner.md) | The list of pagination links. | [optional] 
 **Data** | Pointer to [**[]ContactList**](ContactList.md) | The contacts in the list. | [optional] 
 
 ## Methods
@@ -232,6 +236,126 @@ SetTo sets To field to given value.
 `func (o *ViewListsData) HasTo() bool`
 
 HasTo returns a boolean if a field has been set.
+
+### GetFirstPageUrl
+
+`func (o *ViewListsData) GetFirstPageUrl() string`
+
+GetFirstPageUrl returns the FirstPageUrl field if non-nil, zero value otherwise.
+
+### GetFirstPageUrlOk
+
+`func (o *ViewListsData) GetFirstPageUrlOk() (*string, bool)`
+
+GetFirstPageUrlOk returns a tuple with the FirstPageUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirstPageUrl
+
+`func (o *ViewListsData) SetFirstPageUrl(v string)`
+
+SetFirstPageUrl sets FirstPageUrl field to given value.
+
+### HasFirstPageUrl
+
+`func (o *ViewListsData) HasFirstPageUrl() bool`
+
+HasFirstPageUrl returns a boolean if a field has been set.
+
+### SetFirstPageUrlNil
+
+`func (o *ViewListsData) SetFirstPageUrlNil(b bool)`
+
+ SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
+
+### UnsetFirstPageUrl
+`func (o *ViewListsData) UnsetFirstPageUrl()`
+
+UnsetFirstPageUrl ensures that no value is present for FirstPageUrl, not even an explicit nil
+### GetLastPageUrl
+
+`func (o *ViewListsData) GetLastPageUrl() string`
+
+GetLastPageUrl returns the LastPageUrl field if non-nil, zero value otherwise.
+
+### GetLastPageUrlOk
+
+`func (o *ViewListsData) GetLastPageUrlOk() (*string, bool)`
+
+GetLastPageUrlOk returns a tuple with the LastPageUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastPageUrl
+
+`func (o *ViewListsData) SetLastPageUrl(v string)`
+
+SetLastPageUrl sets LastPageUrl field to given value.
+
+### HasLastPageUrl
+
+`func (o *ViewListsData) HasLastPageUrl() bool`
+
+HasLastPageUrl returns a boolean if a field has been set.
+
+### SetLastPageUrlNil
+
+`func (o *ViewListsData) SetLastPageUrlNil(b bool)`
+
+ SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
+
+### UnsetLastPageUrl
+`func (o *ViewListsData) UnsetLastPageUrl()`
+
+UnsetLastPageUrl ensures that no value is present for LastPageUrl, not even an explicit nil
+### GetPath
+
+`func (o *ViewListsData) GetPath() string`
+
+GetPath returns the Path field if non-nil, zero value otherwise.
+
+### GetPathOk
+
+`func (o *ViewListsData) GetPathOk() (*string, bool)`
+
+GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPath
+
+`func (o *ViewListsData) SetPath(v string)`
+
+SetPath sets Path field to given value.
+
+### HasPath
+
+`func (o *ViewListsData) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
+
+### GetLinks
+
+`func (o *ViewListsData) GetLinks() []ViewListsDataLinksInner`
+
+GetLinks returns the Links field if non-nil, zero value otherwise.
+
+### GetLinksOk
+
+`func (o *ViewListsData) GetLinksOk() (*[]ViewListsDataLinksInner, bool)`
+
+GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinks
+
+`func (o *ViewListsData) SetLinks(v []ViewListsDataLinksInner)`
+
+SetLinks sets Links field to given value.
+
+### HasLinks
+
+`func (o *ViewListsData) HasLinks() bool`
+
+HasLinks returns a boolean if a field has been set.
 
 ### GetData
 

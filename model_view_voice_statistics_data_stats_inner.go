@@ -22,7 +22,7 @@ type ViewVoiceStatisticsDataStatsInner struct {
 	// The date.
 	Date *float32 `json:"date,omitempty"`
 	Outbound *ViewVoiceStatisticsDataTotalOutbound `json:"outbound,omitempty"`
-	Bounced *CancelAllSmsData `json:"bounced,omitempty"`
+	Bounced *ViewVoiceStatisticsDataTotalOutbound `json:"bounced,omitempty"`
 }
 
 // NewViewVoiceStatisticsDataStatsInner instantiates a new ViewVoiceStatisticsDataStatsInner object
@@ -107,9 +107,9 @@ func (o *ViewVoiceStatisticsDataStatsInner) SetOutbound(v ViewVoiceStatisticsDat
 }
 
 // GetBounced returns the Bounced field value if set, zero value otherwise.
-func (o *ViewVoiceStatisticsDataStatsInner) GetBounced() CancelAllSmsData {
+func (o *ViewVoiceStatisticsDataStatsInner) GetBounced() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Bounced) {
-		var ret CancelAllSmsData
+		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
 	}
 	return *o.Bounced
@@ -117,7 +117,7 @@ func (o *ViewVoiceStatisticsDataStatsInner) GetBounced() CancelAllSmsData {
 
 // GetBouncedOk returns a tuple with the Bounced field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewVoiceStatisticsDataStatsInner) GetBouncedOk() (*CancelAllSmsData, bool) {
+func (o *ViewVoiceStatisticsDataStatsInner) GetBouncedOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Bounced) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *ViewVoiceStatisticsDataStatsInner) HasBounced() bool {
 	return false
 }
 
-// SetBounced gets a reference to the given CancelAllSmsData and assigns it to the Bounced field.
-func (o *ViewVoiceStatisticsDataStatsInner) SetBounced(v CancelAllSmsData) {
+// SetBounced gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Bounced field.
+func (o *ViewVoiceStatisticsDataStatsInner) SetBounced(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Bounced = &v
 }
 

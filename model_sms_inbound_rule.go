@@ -37,6 +37,8 @@ type SmsInboundRule struct {
 	Body NullableString `json:"body,omitempty"`
 	// The status of the inbound rule.
 	Enabled *int32 `json:"enabled,omitempty"`
+	// The format used when calling the webhook (e.g. post, json).
+	WebhookType NullableString `json:"webhook_type,omitempty"`
 }
 
 // NewSmsInboundRule instantiates a new SmsInboundRule object
@@ -354,6 +356,48 @@ func (o *SmsInboundRule) SetEnabled(v int32) {
 	o.Enabled = &v
 }
 
+// GetWebhookType returns the WebhookType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SmsInboundRule) GetWebhookType() string {
+	if o == nil || IsNil(o.WebhookType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.WebhookType.Get()
+}
+
+// GetWebhookTypeOk returns a tuple with the WebhookType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SmsInboundRule) GetWebhookTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.WebhookType.Get(), o.WebhookType.IsSet()
+}
+
+// HasWebhookType returns a boolean if a field has been set.
+func (o *SmsInboundRule) HasWebhookType() bool {
+	if o != nil && o.WebhookType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetWebhookType gets a reference to the given NullableString and assigns it to the WebhookType field.
+func (o *SmsInboundRule) SetWebhookType(v string) {
+	o.WebhookType.Set(&v)
+}
+// SetWebhookTypeNil sets the value for WebhookType to be an explicit nil
+func (o *SmsInboundRule) SetWebhookTypeNil() {
+	o.WebhookType.Set(nil)
+}
+
+// UnsetWebhookType ensures that no value is present for WebhookType, not even an explicit nil
+func (o *SmsInboundRule) UnsetWebhookType() {
+	o.WebhookType.Unset()
+}
+
 func (o SmsInboundRule) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -390,6 +434,9 @@ func (o SmsInboundRule) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if o.WebhookType.IsSet() {
+		toSerialize["webhook_type"] = o.WebhookType.Get()
 	}
 	return toSerialize, nil
 }

@@ -20,7 +20,7 @@ var _ MappedNullable = &ViewSmsStatisticsData{}
 // ViewSmsStatisticsData struct for ViewSmsStatisticsData
 type ViewSmsStatisticsData struct {
 	Total *ViewSmsStatisticsDataTotal `json:"total,omitempty"`
-	Stat []ViewSmsStatisticsDataStatInner `json:"stat,omitempty"`
+	Stats []ViewSmsStatisticsDataStatsInner `json:"stats,omitempty"`
 	Currency *Currency `json:"_currency,omitempty"`
 }
 
@@ -73,36 +73,36 @@ func (o *ViewSmsStatisticsData) SetTotal(v ViewSmsStatisticsDataTotal) {
 	o.Total = &v
 }
 
-// GetStat returns the Stat field value if set, zero value otherwise.
-func (o *ViewSmsStatisticsData) GetStat() []ViewSmsStatisticsDataStatInner {
-	if o == nil || IsNil(o.Stat) {
-		var ret []ViewSmsStatisticsDataStatInner
+// GetStats returns the Stats field value if set, zero value otherwise.
+func (o *ViewSmsStatisticsData) GetStats() []ViewSmsStatisticsDataStatsInner {
+	if o == nil || IsNil(o.Stats) {
+		var ret []ViewSmsStatisticsDataStatsInner
 		return ret
 	}
-	return o.Stat
+	return o.Stats
 }
 
-// GetStatOk returns a tuple with the Stat field value if set, nil otherwise
+// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsStatisticsData) GetStatOk() ([]ViewSmsStatisticsDataStatInner, bool) {
-	if o == nil || IsNil(o.Stat) {
+func (o *ViewSmsStatisticsData) GetStatsOk() ([]ViewSmsStatisticsDataStatsInner, bool) {
+	if o == nil || IsNil(o.Stats) {
 		return nil, false
 	}
-	return o.Stat, true
+	return o.Stats, true
 }
 
-// HasStat returns a boolean if a field has been set.
-func (o *ViewSmsStatisticsData) HasStat() bool {
-	if o != nil && !IsNil(o.Stat) {
+// HasStats returns a boolean if a field has been set.
+func (o *ViewSmsStatisticsData) HasStats() bool {
+	if o != nil && !IsNil(o.Stats) {
 		return true
 	}
 
 	return false
 }
 
-// SetStat gets a reference to the given []ViewSmsStatisticsDataStatInner and assigns it to the Stat field.
-func (o *ViewSmsStatisticsData) SetStat(v []ViewSmsStatisticsDataStatInner) {
-	o.Stat = v
+// SetStats gets a reference to the given []ViewSmsStatisticsDataStatsInner and assigns it to the Stats field.
+func (o *ViewSmsStatisticsData) SetStats(v []ViewSmsStatisticsDataStatsInner) {
+	o.Stats = v
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
@@ -150,8 +150,8 @@ func (o ViewSmsStatisticsData) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total
 	}
-	if !IsNil(o.Stat) {
-		toSerialize["stat"] = o.Stat
+	if !IsNil(o.Stats) {
+		toSerialize["stats"] = o.Stats
 	}
 	if !IsNil(o.Currency) {
 		toSerialize["_currency"] = o.Currency

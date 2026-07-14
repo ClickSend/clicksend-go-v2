@@ -42,7 +42,7 @@ type ViewSmsInboundAutomationsData struct {
 	// The base URL path used to build pagination links.
 	Path *string `json:"path,omitempty"`
 	// The list of pagination links.
-	Links []ViewSmsInboundAutomationsDataAllOfLinksInner `json:"links,omitempty"`
+	Links []ViewListsDataLinksInner `json:"links,omitempty"`
 	Data []SmsInboundRule `json:"data,omitempty"`
 }
 
@@ -456,9 +456,9 @@ func (o *ViewSmsInboundAutomationsData) SetPath(v string) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *ViewSmsInboundAutomationsData) GetLinks() []ViewSmsInboundAutomationsDataAllOfLinksInner {
+func (o *ViewSmsInboundAutomationsData) GetLinks() []ViewListsDataLinksInner {
 	if o == nil || IsNil(o.Links) {
-		var ret []ViewSmsInboundAutomationsDataAllOfLinksInner
+		var ret []ViewListsDataLinksInner
 		return ret
 	}
 	return o.Links
@@ -466,7 +466,7 @@ func (o *ViewSmsInboundAutomationsData) GetLinks() []ViewSmsInboundAutomationsDa
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsInboundAutomationsData) GetLinksOk() ([]ViewSmsInboundAutomationsDataAllOfLinksInner, bool) {
+func (o *ViewSmsInboundAutomationsData) GetLinksOk() ([]ViewListsDataLinksInner, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -482,8 +482,8 @@ func (o *ViewSmsInboundAutomationsData) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given []ViewSmsInboundAutomationsDataAllOfLinksInner and assigns it to the Links field.
-func (o *ViewSmsInboundAutomationsData) SetLinks(v []ViewSmsInboundAutomationsDataAllOfLinksInner) {
+// SetLinks gets a reference to the given []ViewListsDataLinksInner and assigns it to the Links field.
+func (o *ViewSmsInboundAutomationsData) SetLinks(v []ViewListsDataLinksInner) {
 	o.Links = v
 }
 

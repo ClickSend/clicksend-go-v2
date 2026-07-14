@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **FirstPageUrl** | Pointer to **NullableString** | The URL of the first page of records. | [optional] 
 **LastPageUrl** | Pointer to **NullableString** | The URL of the last page of records. | [optional] 
 **Path** | Pointer to **string** | The base URL path used to build pagination links. | [optional] 
-**Links** | Pointer to [**[]ViewSmsInboundAutomationsDataAllOfLinksInner**](ViewSmsInboundAutomationsDataAllOfLinksInner.md) | The list of pagination links. | [optional] 
+**Links** | Pointer to [**[]ViewListsDataLinksInner**](ViewListsDataLinksInner.md) | The list of pagination links. | [optional] 
 **Data** | Pointer to [**[]SmsInboundRule**](SmsInboundRule.md) |  | [optional] 
 
 ## Methods
@@ -354,20 +354,20 @@ HasPath returns a boolean if a field has been set.
 
 ### GetLinks
 
-`func (o *ViewSmsInboundAutomationsData) GetLinks() []ViewSmsInboundAutomationsDataAllOfLinksInner`
+`func (o *ViewSmsInboundAutomationsData) GetLinks() []ViewListsDataLinksInner`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ViewSmsInboundAutomationsData) GetLinksOk() (*[]ViewSmsInboundAutomationsDataAllOfLinksInner, bool)`
+`func (o *ViewSmsInboundAutomationsData) GetLinksOk() (*[]ViewListsDataLinksInner, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ViewSmsInboundAutomationsData) SetLinks(v []ViewSmsInboundAutomationsDataAllOfLinksInner)`
+`func (o *ViewSmsInboundAutomationsData) SetLinks(v []ViewListsDataLinksInner)`
 
 SetLinks sets Links field to given value.
 

@@ -20,8 +20,8 @@ var _ MappedNullable = &ViewSmsStatisticsDataTotal{}
 // ViewSmsStatisticsDataTotal struct for ViewSmsStatisticsDataTotal
 type ViewSmsStatisticsDataTotal struct {
 	Outbound *ViewVoiceStatisticsDataTotalOutbound `json:"outbound,omitempty"`
-	Inbound *CancelAllSmsData `json:"inbound,omitempty"`
-	Bounced *CancelAllSmsData `json:"bounced,omitempty"`
+	Inbound *ViewVoiceStatisticsDataTotalOutbound `json:"inbound,omitempty"`
+	Bounced *ViewVoiceStatisticsDataTotalOutbound `json:"bounced,omitempty"`
 }
 
 // NewViewSmsStatisticsDataTotal instantiates a new ViewSmsStatisticsDataTotal object
@@ -74,9 +74,9 @@ func (o *ViewSmsStatisticsDataTotal) SetOutbound(v ViewVoiceStatisticsDataTotalO
 }
 
 // GetInbound returns the Inbound field value if set, zero value otherwise.
-func (o *ViewSmsStatisticsDataTotal) GetInbound() CancelAllSmsData {
+func (o *ViewSmsStatisticsDataTotal) GetInbound() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Inbound) {
-		var ret CancelAllSmsData
+		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
 	}
 	return *o.Inbound
@@ -84,7 +84,7 @@ func (o *ViewSmsStatisticsDataTotal) GetInbound() CancelAllSmsData {
 
 // GetInboundOk returns a tuple with the Inbound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsStatisticsDataTotal) GetInboundOk() (*CancelAllSmsData, bool) {
+func (o *ViewSmsStatisticsDataTotal) GetInboundOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Inbound) {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *ViewSmsStatisticsDataTotal) HasInbound() bool {
 	return false
 }
 
-// SetInbound gets a reference to the given CancelAllSmsData and assigns it to the Inbound field.
-func (o *ViewSmsStatisticsDataTotal) SetInbound(v CancelAllSmsData) {
+// SetInbound gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Inbound field.
+func (o *ViewSmsStatisticsDataTotal) SetInbound(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Inbound = &v
 }
 
 // GetBounced returns the Bounced field value if set, zero value otherwise.
-func (o *ViewSmsStatisticsDataTotal) GetBounced() CancelAllSmsData {
+func (o *ViewSmsStatisticsDataTotal) GetBounced() ViewVoiceStatisticsDataTotalOutbound {
 	if o == nil || IsNil(o.Bounced) {
-		var ret CancelAllSmsData
+		var ret ViewVoiceStatisticsDataTotalOutbound
 		return ret
 	}
 	return *o.Bounced
@@ -116,7 +116,7 @@ func (o *ViewSmsStatisticsDataTotal) GetBounced() CancelAllSmsData {
 
 // GetBouncedOk returns a tuple with the Bounced field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsStatisticsDataTotal) GetBouncedOk() (*CancelAllSmsData, bool) {
+func (o *ViewSmsStatisticsDataTotal) GetBouncedOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
 	if o == nil || IsNil(o.Bounced) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ViewSmsStatisticsDataTotal) HasBounced() bool {
 	return false
 }
 
-// SetBounced gets a reference to the given CancelAllSmsData and assigns it to the Bounced field.
-func (o *ViewSmsStatisticsDataTotal) SetBounced(v CancelAllSmsData) {
+// SetBounced gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the Bounced field.
+func (o *ViewSmsStatisticsDataTotal) SetBounced(v ViewVoiceStatisticsDataTotalOutbound) {
 	o.Bounced = &v
 }
 
