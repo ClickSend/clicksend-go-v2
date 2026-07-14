@@ -27,6 +27,10 @@ type Currency struct {
 	CurrencyPrefixC *string `json:"currency_prefix_c,omitempty"`
 	// The full name of the currency.
 	CurrencyNameLong *string `json:"currency_name_long,omitempty"`
+	// The minimum amount that can be used to recharge the account, in this currency.
+	MinRechargeAmount *string `json:"min_recharge_amount,omitempty"`
+	// The maximum amount that can be used to recharge the account, in this currency.
+	MaxRechargeAmount *string `json:"max_recharge_amount,omitempty"`
 }
 
 // NewCurrency instantiates a new Currency object
@@ -174,6 +178,70 @@ func (o *Currency) SetCurrencyNameLong(v string) {
 	o.CurrencyNameLong = &v
 }
 
+// GetMinRechargeAmount returns the MinRechargeAmount field value if set, zero value otherwise.
+func (o *Currency) GetMinRechargeAmount() string {
+	if o == nil || IsNil(o.MinRechargeAmount) {
+		var ret string
+		return ret
+	}
+	return *o.MinRechargeAmount
+}
+
+// GetMinRechargeAmountOk returns a tuple with the MinRechargeAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Currency) GetMinRechargeAmountOk() (*string, bool) {
+	if o == nil || IsNil(o.MinRechargeAmount) {
+		return nil, false
+	}
+	return o.MinRechargeAmount, true
+}
+
+// HasMinRechargeAmount returns a boolean if a field has been set.
+func (o *Currency) HasMinRechargeAmount() bool {
+	if o != nil && !IsNil(o.MinRechargeAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetMinRechargeAmount gets a reference to the given string and assigns it to the MinRechargeAmount field.
+func (o *Currency) SetMinRechargeAmount(v string) {
+	o.MinRechargeAmount = &v
+}
+
+// GetMaxRechargeAmount returns the MaxRechargeAmount field value if set, zero value otherwise.
+func (o *Currency) GetMaxRechargeAmount() string {
+	if o == nil || IsNil(o.MaxRechargeAmount) {
+		var ret string
+		return ret
+	}
+	return *o.MaxRechargeAmount
+}
+
+// GetMaxRechargeAmountOk returns a tuple with the MaxRechargeAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Currency) GetMaxRechargeAmountOk() (*string, bool) {
+	if o == nil || IsNil(o.MaxRechargeAmount) {
+		return nil, false
+	}
+	return o.MaxRechargeAmount, true
+}
+
+// HasMaxRechargeAmount returns a boolean if a field has been set.
+func (o *Currency) HasMaxRechargeAmount() bool {
+	if o != nil && !IsNil(o.MaxRechargeAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxRechargeAmount gets a reference to the given string and assigns it to the MaxRechargeAmount field.
+func (o *Currency) SetMaxRechargeAmount(v string) {
+	o.MaxRechargeAmount = &v
+}
+
 func (o Currency) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -195,6 +263,12 @@ func (o Currency) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CurrencyNameLong) {
 		toSerialize["currency_name_long"] = o.CurrencyNameLong
+	}
+	if !IsNil(o.MinRechargeAmount) {
+		toSerialize["min_recharge_amount"] = o.MinRechargeAmount
+	}
+	if !IsNil(o.MaxRechargeAmount) {
+		toSerialize["max_recharge_amount"] = o.MaxRechargeAmount
 	}
 	return toSerialize, nil
 }

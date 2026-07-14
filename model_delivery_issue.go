@@ -40,7 +40,7 @@ type DeliveryIssue struct {
 	// Flag indicating if the delivery issue is resolved.
 	Resolved *float32 `json:"resolved,omitempty"`
 	// The user's email address.
-	EmailAddress *string `json:"email-address,omitempty"`
+	EmailAddress *string `json:"email_address,omitempty"`
 }
 
 // NewDeliveryIssue instantiates a new DeliveryIssue object
@@ -483,7 +483,7 @@ func (o DeliveryIssue) ToMap() (map[string]interface{}, error) {
 		toSerialize["resolved"] = o.Resolved
 	}
 	if !IsNil(o.EmailAddress) {
-		toSerialize["email-address"] = o.EmailAddress
+		toSerialize["email_address"] = o.EmailAddress
 	}
 	return toSerialize, nil
 }

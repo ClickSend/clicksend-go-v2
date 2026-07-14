@@ -14,36 +14,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewStrippedStringRulesDataDataInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewStrippedStringRulesDataDataInner{}
+// checks if the ViewStrippedStringRulesDataAllOfDataInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ViewStrippedStringRulesDataAllOfDataInner{}
 
-// ViewStrippedStringRulesDataDataInner struct for ViewStrippedStringRulesDataDataInner
-type ViewStrippedStringRulesDataDataInner struct {
+// ViewStrippedStringRulesDataAllOfDataInner struct for ViewStrippedStringRulesDataAllOfDataInner
+type ViewStrippedStringRulesDataAllOfDataInner struct {
 	// The ID of the rule.
 	RuleId *int32 `json:"rule_id,omitempty"`
 	// The string to be stripped.
 	StripString *string `json:"strip_string,omitempty"`
 }
 
-// NewViewStrippedStringRulesDataDataInner instantiates a new ViewStrippedStringRulesDataDataInner object
+// NewViewStrippedStringRulesDataAllOfDataInner instantiates a new ViewStrippedStringRulesDataAllOfDataInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewStrippedStringRulesDataDataInner() *ViewStrippedStringRulesDataDataInner {
-	this := ViewStrippedStringRulesDataDataInner{}
+func NewViewStrippedStringRulesDataAllOfDataInner() *ViewStrippedStringRulesDataAllOfDataInner {
+	this := ViewStrippedStringRulesDataAllOfDataInner{}
 	return &this
 }
 
-// NewViewStrippedStringRulesDataDataInnerWithDefaults instantiates a new ViewStrippedStringRulesDataDataInner object
+// NewViewStrippedStringRulesDataAllOfDataInnerWithDefaults instantiates a new ViewStrippedStringRulesDataAllOfDataInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewStrippedStringRulesDataDataInnerWithDefaults() *ViewStrippedStringRulesDataDataInner {
-	this := ViewStrippedStringRulesDataDataInner{}
+func NewViewStrippedStringRulesDataAllOfDataInnerWithDefaults() *ViewStrippedStringRulesDataAllOfDataInner {
+	this := ViewStrippedStringRulesDataAllOfDataInner{}
 	return &this
 }
 
 // GetRuleId returns the RuleId field value if set, zero value otherwise.
-func (o *ViewStrippedStringRulesDataDataInner) GetRuleId() int32 {
+func (o *ViewStrippedStringRulesDataAllOfDataInner) GetRuleId() int32 {
 	if o == nil || IsNil(o.RuleId) {
 		var ret int32
 		return ret
@@ -53,7 +53,7 @@ func (o *ViewStrippedStringRulesDataDataInner) GetRuleId() int32 {
 
 // GetRuleIdOk returns a tuple with the RuleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewStrippedStringRulesDataDataInner) GetRuleIdOk() (*int32, bool) {
+func (o *ViewStrippedStringRulesDataAllOfDataInner) GetRuleIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.RuleId) {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *ViewStrippedStringRulesDataDataInner) GetRuleIdOk() (*int32, bool) {
 }
 
 // HasRuleId returns a boolean if a field has been set.
-func (o *ViewStrippedStringRulesDataDataInner) HasRuleId() bool {
+func (o *ViewStrippedStringRulesDataAllOfDataInner) HasRuleId() bool {
 	if o != nil && !IsNil(o.RuleId) {
 		return true
 	}
@@ -70,12 +70,12 @@ func (o *ViewStrippedStringRulesDataDataInner) HasRuleId() bool {
 }
 
 // SetRuleId gets a reference to the given int32 and assigns it to the RuleId field.
-func (o *ViewStrippedStringRulesDataDataInner) SetRuleId(v int32) {
+func (o *ViewStrippedStringRulesDataAllOfDataInner) SetRuleId(v int32) {
 	o.RuleId = &v
 }
 
 // GetStripString returns the StripString field value if set, zero value otherwise.
-func (o *ViewStrippedStringRulesDataDataInner) GetStripString() string {
+func (o *ViewStrippedStringRulesDataAllOfDataInner) GetStripString() string {
 	if o == nil || IsNil(o.StripString) {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *ViewStrippedStringRulesDataDataInner) GetStripString() string {
 
 // GetStripStringOk returns a tuple with the StripString field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewStrippedStringRulesDataDataInner) GetStripStringOk() (*string, bool) {
+func (o *ViewStrippedStringRulesDataAllOfDataInner) GetStripStringOk() (*string, bool) {
 	if o == nil || IsNil(o.StripString) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *ViewStrippedStringRulesDataDataInner) GetStripStringOk() (*string, bool
 }
 
 // HasStripString returns a boolean if a field has been set.
-func (o *ViewStrippedStringRulesDataDataInner) HasStripString() bool {
+func (o *ViewStrippedStringRulesDataAllOfDataInner) HasStripString() bool {
 	if o != nil && !IsNil(o.StripString) {
 		return true
 	}
@@ -102,11 +102,11 @@ func (o *ViewStrippedStringRulesDataDataInner) HasStripString() bool {
 }
 
 // SetStripString gets a reference to the given string and assigns it to the StripString field.
-func (o *ViewStrippedStringRulesDataDataInner) SetStripString(v string) {
+func (o *ViewStrippedStringRulesDataAllOfDataInner) SetStripString(v string) {
 	o.StripString = &v
 }
 
-func (o ViewStrippedStringRulesDataDataInner) MarshalJSON() ([]byte, error) {
+func (o ViewStrippedStringRulesDataAllOfDataInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -114,7 +114,7 @@ func (o ViewStrippedStringRulesDataDataInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewStrippedStringRulesDataDataInner) ToMap() (map[string]interface{}, error) {
+func (o ViewStrippedStringRulesDataAllOfDataInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.RuleId) {
 		toSerialize["rule_id"] = o.RuleId
@@ -125,38 +125,38 @@ func (o ViewStrippedStringRulesDataDataInner) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 
-type NullableViewStrippedStringRulesDataDataInner struct {
-	value *ViewStrippedStringRulesDataDataInner
+type NullableViewStrippedStringRulesDataAllOfDataInner struct {
+	value *ViewStrippedStringRulesDataAllOfDataInner
 	isSet bool
 }
 
-func (v NullableViewStrippedStringRulesDataDataInner) Get() *ViewStrippedStringRulesDataDataInner {
+func (v NullableViewStrippedStringRulesDataAllOfDataInner) Get() *ViewStrippedStringRulesDataAllOfDataInner {
 	return v.value
 }
 
-func (v *NullableViewStrippedStringRulesDataDataInner) Set(val *ViewStrippedStringRulesDataDataInner) {
+func (v *NullableViewStrippedStringRulesDataAllOfDataInner) Set(val *ViewStrippedStringRulesDataAllOfDataInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewStrippedStringRulesDataDataInner) IsSet() bool {
+func (v NullableViewStrippedStringRulesDataAllOfDataInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewStrippedStringRulesDataDataInner) Unset() {
+func (v *NullableViewStrippedStringRulesDataAllOfDataInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewStrippedStringRulesDataDataInner(val *ViewStrippedStringRulesDataDataInner) *NullableViewStrippedStringRulesDataDataInner {
-	return &NullableViewStrippedStringRulesDataDataInner{value: val, isSet: true}
+func NewNullableViewStrippedStringRulesDataAllOfDataInner(val *ViewStrippedStringRulesDataAllOfDataInner) *NullableViewStrippedStringRulesDataAllOfDataInner {
+	return &NullableViewStrippedStringRulesDataAllOfDataInner{value: val, isSet: true}
 }
 
-func (v NullableViewStrippedStringRulesDataDataInner) MarshalJSON() ([]byte, error) {
+func (v NullableViewStrippedStringRulesDataAllOfDataInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewStrippedStringRulesDataDataInner) UnmarshalJSON(src []byte) error {
+func (v *NullableViewStrippedStringRulesDataAllOfDataInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

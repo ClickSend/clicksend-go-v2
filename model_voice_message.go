@@ -19,8 +19,12 @@ var _ MappedNullable = &VoiceMessage{}
 
 // VoiceMessage struct for VoiceMessage
 type VoiceMessage struct {
-	// The date.
-	Date *float32 `json:"date,omitempty"`
+	// The date, if applicable. May be null; see also `date_added`.
+	Date NullableString `json:"date,omitempty"`
+	// The Unix timestamp when the message was added.
+	DateAdded *int32 `json:"date_added,omitempty"`
+	// The ID of the list associated with the message, if applicable.
+	ListId NullableString `json:"list_id,omitempty"`
 	// The recipient's phone number.
 	To *string `json:"to,omitempty"`
 	// The type of recipient.
@@ -33,12 +37,12 @@ type VoiceMessage struct {
 	Lang *string `json:"lang,omitempty"`
 	// The voice of the message.
 	Voice *string `json:"voice,omitempty"`
-	// The timestamp when the message should be sent.
-	Schedule *int32 `json:"schedule,omitempty"`
+	// The timestamp when the message should be sent. Returned as a string since it may be an empty string when no schedule was set.
+	Schedule *string `json:"schedule,omitempty"`
 	// The ID of the message.
 	MessageId *string `json:"message_id,omitempty"`
 	// The number of parts in the message.
-	MessageParts *int32 `json:"message_parts,omitempty"`
+	MessageParts *string `json:"message_parts,omitempty"`
 	// The price of the message.
 	MessagePrice *string `json:"message_price,omitempty"`
 	// The custom string of the message.
@@ -53,8 +57,20 @@ type VoiceMessage struct {
 	RequireInput *float32 `json:"require_input,omitempty"`
 	// The machine detection of the message.
 	MachineDetection *float32 `json:"machine_detection,omitempty"`
+	// Flag indicating if an answering machine was detected.
+	MachineDetected NullableFloat32 `json:"machine_detected,omitempty"`
+	// The digits entered by the recipient, if any input was collected.
+	Digits NullableString `json:"digits,omitempty"`
+	// The carrier of the recipient's phone number.
+	Carrier NullableString `json:"carrier,omitempty"`
+	// The status code of the message.
+	StatusCode NullableString `json:"status_code,omitempty"`
+	// A human-readable description of the status.
+	StatusText NullableString `json:"status_text,omitempty"`
 	// The status of the message.
 	Status *string `json:"status,omitempty"`
+	// The API username associated with the message.
+	ApiUsername *string `json:"_api_username,omitempty"`
 }
 
 // NewVoiceMessage instantiates a new VoiceMessage object
@@ -74,36 +90,120 @@ func NewVoiceMessageWithDefaults() *VoiceMessage {
 	return &this
 }
 
-// GetDate returns the Date field value if set, zero value otherwise.
-func (o *VoiceMessage) GetDate() float32 {
-	if o == nil || IsNil(o.Date) {
-		var ret float32
+// GetDate returns the Date field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VoiceMessage) GetDate() string {
+	if o == nil || IsNil(o.Date.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.Date
+	return *o.Date.Get()
 }
 
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetDateOk() (*float32, bool) {
-	if o == nil || IsNil(o.Date) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VoiceMessage) GetDateOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Date, true
+	return o.Date.Get(), o.Date.IsSet()
 }
 
 // HasDate returns a boolean if a field has been set.
 func (o *VoiceMessage) HasDate() bool {
-	if o != nil && !IsNil(o.Date) {
+	if o != nil && o.Date.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDate gets a reference to the given float32 and assigns it to the Date field.
-func (o *VoiceMessage) SetDate(v float32) {
-	o.Date = &v
+// SetDate gets a reference to the given NullableString and assigns it to the Date field.
+func (o *VoiceMessage) SetDate(v string) {
+	o.Date.Set(&v)
+}
+// SetDateNil sets the value for Date to be an explicit nil
+func (o *VoiceMessage) SetDateNil() {
+	o.Date.Set(nil)
+}
+
+// UnsetDate ensures that no value is present for Date, not even an explicit nil
+func (o *VoiceMessage) UnsetDate() {
+	o.Date.Unset()
+}
+
+// GetDateAdded returns the DateAdded field value if set, zero value otherwise.
+func (o *VoiceMessage) GetDateAdded() int32 {
+	if o == nil || IsNil(o.DateAdded) {
+		var ret int32
+		return ret
+	}
+	return *o.DateAdded
+}
+
+// GetDateAddedOk returns a tuple with the DateAdded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VoiceMessage) GetDateAddedOk() (*int32, bool) {
+	if o == nil || IsNil(o.DateAdded) {
+		return nil, false
+	}
+	return o.DateAdded, true
+}
+
+// HasDateAdded returns a boolean if a field has been set.
+func (o *VoiceMessage) HasDateAdded() bool {
+	if o != nil && !IsNil(o.DateAdded) {
+		return true
+	}
+
+	return false
+}
+
+// SetDateAdded gets a reference to the given int32 and assigns it to the DateAdded field.
+func (o *VoiceMessage) SetDateAdded(v int32) {
+	o.DateAdded = &v
+}
+
+// GetListId returns the ListId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VoiceMessage) GetListId() string {
+	if o == nil || IsNil(o.ListId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ListId.Get()
+}
+
+// GetListIdOk returns a tuple with the ListId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VoiceMessage) GetListIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ListId.Get(), o.ListId.IsSet()
+}
+
+// HasListId returns a boolean if a field has been set.
+func (o *VoiceMessage) HasListId() bool {
+	if o != nil && o.ListId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetListId gets a reference to the given NullableString and assigns it to the ListId field.
+func (o *VoiceMessage) SetListId(v string) {
+	o.ListId.Set(&v)
+}
+// SetListIdNil sets the value for ListId to be an explicit nil
+func (o *VoiceMessage) SetListIdNil() {
+	o.ListId.Set(nil)
+}
+
+// UnsetListId ensures that no value is present for ListId, not even an explicit nil
+func (o *VoiceMessage) UnsetListId() {
+	o.ListId.Unset()
 }
 
 // GetTo returns the To field value if set, zero value otherwise.
@@ -309,9 +409,9 @@ func (o *VoiceMessage) SetVoice(v string) {
 }
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *VoiceMessage) GetSchedule() int32 {
+func (o *VoiceMessage) GetSchedule() string {
 	if o == nil || IsNil(o.Schedule) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Schedule
@@ -319,7 +419,7 @@ func (o *VoiceMessage) GetSchedule() int32 {
 
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetScheduleOk() (*int32, bool) {
+func (o *VoiceMessage) GetScheduleOk() (*string, bool) {
 	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
@@ -335,8 +435,8 @@ func (o *VoiceMessage) HasSchedule() bool {
 	return false
 }
 
-// SetSchedule gets a reference to the given int32 and assigns it to the Schedule field.
-func (o *VoiceMessage) SetSchedule(v int32) {
+// SetSchedule gets a reference to the given string and assigns it to the Schedule field.
+func (o *VoiceMessage) SetSchedule(v string) {
 	o.Schedule = &v
 }
 
@@ -373,9 +473,9 @@ func (o *VoiceMessage) SetMessageId(v string) {
 }
 
 // GetMessageParts returns the MessageParts field value if set, zero value otherwise.
-func (o *VoiceMessage) GetMessageParts() int32 {
+func (o *VoiceMessage) GetMessageParts() string {
 	if o == nil || IsNil(o.MessageParts) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.MessageParts
@@ -383,7 +483,7 @@ func (o *VoiceMessage) GetMessageParts() int32 {
 
 // GetMessagePartsOk returns a tuple with the MessageParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetMessagePartsOk() (*int32, bool) {
+func (o *VoiceMessage) GetMessagePartsOk() (*string, bool) {
 	if o == nil || IsNil(o.MessageParts) {
 		return nil, false
 	}
@@ -399,8 +499,8 @@ func (o *VoiceMessage) HasMessageParts() bool {
 	return false
 }
 
-// SetMessageParts gets a reference to the given int32 and assigns it to the MessageParts field.
-func (o *VoiceMessage) SetMessageParts(v int32) {
+// SetMessageParts gets a reference to the given string and assigns it to the MessageParts field.
+func (o *VoiceMessage) SetMessageParts(v string) {
 	o.MessageParts = &v
 }
 
@@ -628,6 +728,216 @@ func (o *VoiceMessage) SetMachineDetection(v float32) {
 	o.MachineDetection = &v
 }
 
+// GetMachineDetected returns the MachineDetected field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VoiceMessage) GetMachineDetected() float32 {
+	if o == nil || IsNil(o.MachineDetected.Get()) {
+		var ret float32
+		return ret
+	}
+	return *o.MachineDetected.Get()
+}
+
+// GetMachineDetectedOk returns a tuple with the MachineDetected field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VoiceMessage) GetMachineDetectedOk() (*float32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MachineDetected.Get(), o.MachineDetected.IsSet()
+}
+
+// HasMachineDetected returns a boolean if a field has been set.
+func (o *VoiceMessage) HasMachineDetected() bool {
+	if o != nil && o.MachineDetected.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMachineDetected gets a reference to the given NullableFloat32 and assigns it to the MachineDetected field.
+func (o *VoiceMessage) SetMachineDetected(v float32) {
+	o.MachineDetected.Set(&v)
+}
+// SetMachineDetectedNil sets the value for MachineDetected to be an explicit nil
+func (o *VoiceMessage) SetMachineDetectedNil() {
+	o.MachineDetected.Set(nil)
+}
+
+// UnsetMachineDetected ensures that no value is present for MachineDetected, not even an explicit nil
+func (o *VoiceMessage) UnsetMachineDetected() {
+	o.MachineDetected.Unset()
+}
+
+// GetDigits returns the Digits field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VoiceMessage) GetDigits() string {
+	if o == nil || IsNil(o.Digits.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Digits.Get()
+}
+
+// GetDigitsOk returns a tuple with the Digits field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VoiceMessage) GetDigitsOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Digits.Get(), o.Digits.IsSet()
+}
+
+// HasDigits returns a boolean if a field has been set.
+func (o *VoiceMessage) HasDigits() bool {
+	if o != nil && o.Digits.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDigits gets a reference to the given NullableString and assigns it to the Digits field.
+func (o *VoiceMessage) SetDigits(v string) {
+	o.Digits.Set(&v)
+}
+// SetDigitsNil sets the value for Digits to be an explicit nil
+func (o *VoiceMessage) SetDigitsNil() {
+	o.Digits.Set(nil)
+}
+
+// UnsetDigits ensures that no value is present for Digits, not even an explicit nil
+func (o *VoiceMessage) UnsetDigits() {
+	o.Digits.Unset()
+}
+
+// GetCarrier returns the Carrier field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VoiceMessage) GetCarrier() string {
+	if o == nil || IsNil(o.Carrier.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Carrier.Get()
+}
+
+// GetCarrierOk returns a tuple with the Carrier field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VoiceMessage) GetCarrierOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Carrier.Get(), o.Carrier.IsSet()
+}
+
+// HasCarrier returns a boolean if a field has been set.
+func (o *VoiceMessage) HasCarrier() bool {
+	if o != nil && o.Carrier.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCarrier gets a reference to the given NullableString and assigns it to the Carrier field.
+func (o *VoiceMessage) SetCarrier(v string) {
+	o.Carrier.Set(&v)
+}
+// SetCarrierNil sets the value for Carrier to be an explicit nil
+func (o *VoiceMessage) SetCarrierNil() {
+	o.Carrier.Set(nil)
+}
+
+// UnsetCarrier ensures that no value is present for Carrier, not even an explicit nil
+func (o *VoiceMessage) UnsetCarrier() {
+	o.Carrier.Unset()
+}
+
+// GetStatusCode returns the StatusCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VoiceMessage) GetStatusCode() string {
+	if o == nil || IsNil(o.StatusCode.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.StatusCode.Get()
+}
+
+// GetStatusCodeOk returns a tuple with the StatusCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VoiceMessage) GetStatusCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.StatusCode.Get(), o.StatusCode.IsSet()
+}
+
+// HasStatusCode returns a boolean if a field has been set.
+func (o *VoiceMessage) HasStatusCode() bool {
+	if o != nil && o.StatusCode.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusCode gets a reference to the given NullableString and assigns it to the StatusCode field.
+func (o *VoiceMessage) SetStatusCode(v string) {
+	o.StatusCode.Set(&v)
+}
+// SetStatusCodeNil sets the value for StatusCode to be an explicit nil
+func (o *VoiceMessage) SetStatusCodeNil() {
+	o.StatusCode.Set(nil)
+}
+
+// UnsetStatusCode ensures that no value is present for StatusCode, not even an explicit nil
+func (o *VoiceMessage) UnsetStatusCode() {
+	o.StatusCode.Unset()
+}
+
+// GetStatusText returns the StatusText field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VoiceMessage) GetStatusText() string {
+	if o == nil || IsNil(o.StatusText.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.StatusText.Get()
+}
+
+// GetStatusTextOk returns a tuple with the StatusText field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VoiceMessage) GetStatusTextOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.StatusText.Get(), o.StatusText.IsSet()
+}
+
+// HasStatusText returns a boolean if a field has been set.
+func (o *VoiceMessage) HasStatusText() bool {
+	if o != nil && o.StatusText.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusText gets a reference to the given NullableString and assigns it to the StatusText field.
+func (o *VoiceMessage) SetStatusText(v string) {
+	o.StatusText.Set(&v)
+}
+// SetStatusTextNil sets the value for StatusText to be an explicit nil
+func (o *VoiceMessage) SetStatusTextNil() {
+	o.StatusText.Set(nil)
+}
+
+// UnsetStatusText ensures that no value is present for StatusText, not even an explicit nil
+func (o *VoiceMessage) UnsetStatusText() {
+	o.StatusText.Unset()
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *VoiceMessage) GetStatus() string {
 	if o == nil || IsNil(o.Status) {
@@ -660,6 +970,38 @@ func (o *VoiceMessage) SetStatus(v string) {
 	o.Status = &v
 }
 
+// GetApiUsername returns the ApiUsername field value if set, zero value otherwise.
+func (o *VoiceMessage) GetApiUsername() string {
+	if o == nil || IsNil(o.ApiUsername) {
+		var ret string
+		return ret
+	}
+	return *o.ApiUsername
+}
+
+// GetApiUsernameOk returns a tuple with the ApiUsername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VoiceMessage) GetApiUsernameOk() (*string, bool) {
+	if o == nil || IsNil(o.ApiUsername) {
+		return nil, false
+	}
+	return o.ApiUsername, true
+}
+
+// HasApiUsername returns a boolean if a field has been set.
+func (o *VoiceMessage) HasApiUsername() bool {
+	if o != nil && !IsNil(o.ApiUsername) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiUsername gets a reference to the given string and assigns it to the ApiUsername field.
+func (o *VoiceMessage) SetApiUsername(v string) {
+	o.ApiUsername = &v
+}
+
 func (o VoiceMessage) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -670,8 +1012,14 @@ func (o VoiceMessage) MarshalJSON() ([]byte, error) {
 
 func (o VoiceMessage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Date) {
-		toSerialize["date"] = o.Date
+	if o.Date.IsSet() {
+		toSerialize["date"] = o.Date.Get()
+	}
+	if !IsNil(o.DateAdded) {
+		toSerialize["date_added"] = o.DateAdded
+	}
+	if o.ListId.IsSet() {
+		toSerialize["list_id"] = o.ListId.Get()
 	}
 	if !IsNil(o.To) {
 		toSerialize["to"] = o.To
@@ -721,8 +1069,26 @@ func (o VoiceMessage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MachineDetection) {
 		toSerialize["machine_detection"] = o.MachineDetection
 	}
+	if o.MachineDetected.IsSet() {
+		toSerialize["machine_detected"] = o.MachineDetected.Get()
+	}
+	if o.Digits.IsSet() {
+		toSerialize["digits"] = o.Digits.Get()
+	}
+	if o.Carrier.IsSet() {
+		toSerialize["carrier"] = o.Carrier.Get()
+	}
+	if o.StatusCode.IsSet() {
+		toSerialize["status_code"] = o.StatusCode.Get()
+	}
+	if o.StatusText.IsSet() {
+		toSerialize["status_text"] = o.StatusText.Get()
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.ApiUsername) {
+		toSerialize["_api_username"] = o.ApiUsername
 	}
 	return toSerialize, nil
 }

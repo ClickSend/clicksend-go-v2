@@ -38,6 +38,8 @@ type OwnNumber struct {
 	Status *string `json:"status,omitempty"`
 	// The timestamp when the phone number was verified.
 	VerifiedTimestamp *time.Time `json:"verified_timestamp,omitempty"`
+	// The timestamp when the user was last notified about this number, if applicable.
+	NotifiedTimestamp NullableString `json:"notified_timestamp,omitempty"`
 	// Indicates whether the phone number verification is nearing its expiration date: - **true:** The verification was completed more than 11 months ago and will expire soon. You should re-verify your phone number to maintain uninterrupted service. - **false:** The verification is still valid and not approaching expiration.
 	IsNearingExpiration *bool `json:"is_nearing_expiration,omitempty"`
 	// The timestamp when the record was created.
@@ -351,6 +353,48 @@ func (o *OwnNumber) SetVerifiedTimestamp(v time.Time) {
 	o.VerifiedTimestamp = &v
 }
 
+// GetNotifiedTimestamp returns the NotifiedTimestamp field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *OwnNumber) GetNotifiedTimestamp() string {
+	if o == nil || IsNil(o.NotifiedTimestamp.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.NotifiedTimestamp.Get()
+}
+
+// GetNotifiedTimestampOk returns a tuple with the NotifiedTimestamp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *OwnNumber) GetNotifiedTimestampOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.NotifiedTimestamp.Get(), o.NotifiedTimestamp.IsSet()
+}
+
+// HasNotifiedTimestamp returns a boolean if a field has been set.
+func (o *OwnNumber) HasNotifiedTimestamp() bool {
+	if o != nil && o.NotifiedTimestamp.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetNotifiedTimestamp gets a reference to the given NullableString and assigns it to the NotifiedTimestamp field.
+func (o *OwnNumber) SetNotifiedTimestamp(v string) {
+	o.NotifiedTimestamp.Set(&v)
+}
+// SetNotifiedTimestampNil sets the value for NotifiedTimestamp to be an explicit nil
+func (o *OwnNumber) SetNotifiedTimestampNil() {
+	o.NotifiedTimestamp.Set(nil)
+}
+
+// UnsetNotifiedTimestamp ensures that no value is present for NotifiedTimestamp, not even an explicit nil
+func (o *OwnNumber) UnsetNotifiedTimestamp() {
+	o.NotifiedTimestamp.Unset()
+}
+
 // GetIsNearingExpiration returns the IsNearingExpiration field value if set, zero value otherwise.
 func (o *OwnNumber) GetIsNearingExpiration() bool {
 	if o == nil || IsNil(o.IsNearingExpiration) {
@@ -483,6 +527,9 @@ func (o OwnNumber) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VerifiedTimestamp) {
 		toSerialize["verified_timestamp"] = o.VerifiedTimestamp
+	}
+	if o.NotifiedTimestamp.IsSet() {
+		toSerialize["notified_timestamp"] = o.NotifiedTimestamp.Get()
 	}
 	if !IsNil(o.IsNearingExpiration) {
 		toSerialize["is_nearing_expiration"] = o.IsNearingExpiration

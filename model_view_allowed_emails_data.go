@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewAllMmsCampaignsData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewAllMmsCampaignsData{}
+// checks if the ViewAllowedEmailsData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ViewAllowedEmailsData{}
 
-// ViewAllMmsCampaignsData struct for ViewAllMmsCampaignsData
-type ViewAllMmsCampaignsData struct {
+// ViewAllowedEmailsData struct for ViewAllowedEmailsData
+type ViewAllowedEmailsData struct {
 	// The total number of items available for viewing.
 	Total *int32 `json:"total,omitempty"`
 	// The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
@@ -35,28 +35,28 @@ type ViewAllMmsCampaignsData struct {
 	From *int32 `json:"from,omitempty"`
 	// The number of the last result in the current page.
 	To *int32 `json:"to,omitempty"`
-	Data []MmsCampaign `json:"data,omitempty"`
+	Data []ViewAllowedEmailsDataAllOfDataInner `json:"data,omitempty"`
 }
 
-// NewViewAllMmsCampaignsData instantiates a new ViewAllMmsCampaignsData object
+// NewViewAllowedEmailsData instantiates a new ViewAllowedEmailsData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewAllMmsCampaignsData() *ViewAllMmsCampaignsData {
-	this := ViewAllMmsCampaignsData{}
+func NewViewAllowedEmailsData() *ViewAllowedEmailsData {
+	this := ViewAllowedEmailsData{}
 	return &this
 }
 
-// NewViewAllMmsCampaignsDataWithDefaults instantiates a new ViewAllMmsCampaignsData object
+// NewViewAllowedEmailsDataWithDefaults instantiates a new ViewAllowedEmailsData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewAllMmsCampaignsDataWithDefaults() *ViewAllMmsCampaignsData {
-	this := ViewAllMmsCampaignsData{}
+func NewViewAllowedEmailsDataWithDefaults() *ViewAllowedEmailsData {
+	this := ViewAllowedEmailsData{}
 	return &this
 }
 
 // GetTotal returns the Total field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaignsData) GetTotal() int32 {
+func (o *ViewAllowedEmailsData) GetTotal() int32 {
 	if o == nil || IsNil(o.Total) {
 		var ret int32
 		return ret
@@ -66,7 +66,7 @@ func (o *ViewAllMmsCampaignsData) GetTotal() int32 {
 
 // GetTotalOk returns a tuple with the Total field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaignsData) GetTotalOk() (*int32, bool) {
+func (o *ViewAllowedEmailsData) GetTotalOk() (*int32, bool) {
 	if o == nil || IsNil(o.Total) {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *ViewAllMmsCampaignsData) GetTotalOk() (*int32, bool) {
 }
 
 // HasTotal returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasTotal() bool {
+func (o *ViewAllowedEmailsData) HasTotal() bool {
 	if o != nil && !IsNil(o.Total) {
 		return true
 	}
@@ -83,12 +83,12 @@ func (o *ViewAllMmsCampaignsData) HasTotal() bool {
 }
 
 // SetTotal gets a reference to the given int32 and assigns it to the Total field.
-func (o *ViewAllMmsCampaignsData) SetTotal(v int32) {
+func (o *ViewAllowedEmailsData) SetTotal(v int32) {
 	o.Total = &v
 }
 
 // GetPerPage returns the PerPage field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaignsData) GetPerPage() int32 {
+func (o *ViewAllowedEmailsData) GetPerPage() int32 {
 	if o == nil || IsNil(o.PerPage) {
 		var ret int32
 		return ret
@@ -98,7 +98,7 @@ func (o *ViewAllMmsCampaignsData) GetPerPage() int32 {
 
 // GetPerPageOk returns a tuple with the PerPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaignsData) GetPerPageOk() (*int32, bool) {
+func (o *ViewAllowedEmailsData) GetPerPageOk() (*int32, bool) {
 	if o == nil || IsNil(o.PerPage) {
 		return nil, false
 	}
@@ -106,7 +106,7 @@ func (o *ViewAllMmsCampaignsData) GetPerPageOk() (*int32, bool) {
 }
 
 // HasPerPage returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasPerPage() bool {
+func (o *ViewAllowedEmailsData) HasPerPage() bool {
 	if o != nil && !IsNil(o.PerPage) {
 		return true
 	}
@@ -115,12 +115,12 @@ func (o *ViewAllMmsCampaignsData) HasPerPage() bool {
 }
 
 // SetPerPage gets a reference to the given int32 and assigns it to the PerPage field.
-func (o *ViewAllMmsCampaignsData) SetPerPage(v int32) {
+func (o *ViewAllowedEmailsData) SetPerPage(v int32) {
 	o.PerPage = &v
 }
 
 // GetCurrentPage returns the CurrentPage field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaignsData) GetCurrentPage() int32 {
+func (o *ViewAllowedEmailsData) GetCurrentPage() int32 {
 	if o == nil || IsNil(o.CurrentPage) {
 		var ret int32
 		return ret
@@ -130,7 +130,7 @@ func (o *ViewAllMmsCampaignsData) GetCurrentPage() int32 {
 
 // GetCurrentPageOk returns a tuple with the CurrentPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaignsData) GetCurrentPageOk() (*int32, bool) {
+func (o *ViewAllowedEmailsData) GetCurrentPageOk() (*int32, bool) {
 	if o == nil || IsNil(o.CurrentPage) {
 		return nil, false
 	}
@@ -138,7 +138,7 @@ func (o *ViewAllMmsCampaignsData) GetCurrentPageOk() (*int32, bool) {
 }
 
 // HasCurrentPage returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasCurrentPage() bool {
+func (o *ViewAllowedEmailsData) HasCurrentPage() bool {
 	if o != nil && !IsNil(o.CurrentPage) {
 		return true
 	}
@@ -147,12 +147,12 @@ func (o *ViewAllMmsCampaignsData) HasCurrentPage() bool {
 }
 
 // SetCurrentPage gets a reference to the given int32 and assigns it to the CurrentPage field.
-func (o *ViewAllMmsCampaignsData) SetCurrentPage(v int32) {
+func (o *ViewAllowedEmailsData) SetCurrentPage(v int32) {
 	o.CurrentPage = &v
 }
 
 // GetLastPage returns the LastPage field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaignsData) GetLastPage() int32 {
+func (o *ViewAllowedEmailsData) GetLastPage() int32 {
 	if o == nil || IsNil(o.LastPage) {
 		var ret int32
 		return ret
@@ -162,7 +162,7 @@ func (o *ViewAllMmsCampaignsData) GetLastPage() int32 {
 
 // GetLastPageOk returns a tuple with the LastPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaignsData) GetLastPageOk() (*int32, bool) {
+func (o *ViewAllowedEmailsData) GetLastPageOk() (*int32, bool) {
 	if o == nil || IsNil(o.LastPage) {
 		return nil, false
 	}
@@ -170,7 +170,7 @@ func (o *ViewAllMmsCampaignsData) GetLastPageOk() (*int32, bool) {
 }
 
 // HasLastPage returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasLastPage() bool {
+func (o *ViewAllowedEmailsData) HasLastPage() bool {
 	if o != nil && !IsNil(o.LastPage) {
 		return true
 	}
@@ -179,12 +179,12 @@ func (o *ViewAllMmsCampaignsData) HasLastPage() bool {
 }
 
 // SetLastPage gets a reference to the given int32 and assigns it to the LastPage field.
-func (o *ViewAllMmsCampaignsData) SetLastPage(v int32) {
+func (o *ViewAllowedEmailsData) SetLastPage(v int32) {
 	o.LastPage = &v
 }
 
 // GetNextPageUrl returns the NextPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ViewAllMmsCampaignsData) GetNextPageUrl() string {
+func (o *ViewAllowedEmailsData) GetNextPageUrl() string {
 	if o == nil || IsNil(o.NextPageUrl.Get()) {
 		var ret string
 		return ret
@@ -195,7 +195,7 @@ func (o *ViewAllMmsCampaignsData) GetNextPageUrl() string {
 // GetNextPageUrlOk returns a tuple with the NextPageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ViewAllMmsCampaignsData) GetNextPageUrlOk() (*string, bool) {
+func (o *ViewAllowedEmailsData) GetNextPageUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -203,7 +203,7 @@ func (o *ViewAllMmsCampaignsData) GetNextPageUrlOk() (*string, bool) {
 }
 
 // HasNextPageUrl returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasNextPageUrl() bool {
+func (o *ViewAllowedEmailsData) HasNextPageUrl() bool {
 	if o != nil && o.NextPageUrl.IsSet() {
 		return true
 	}
@@ -212,21 +212,21 @@ func (o *ViewAllMmsCampaignsData) HasNextPageUrl() bool {
 }
 
 // SetNextPageUrl gets a reference to the given NullableString and assigns it to the NextPageUrl field.
-func (o *ViewAllMmsCampaignsData) SetNextPageUrl(v string) {
+func (o *ViewAllowedEmailsData) SetNextPageUrl(v string) {
 	o.NextPageUrl.Set(&v)
 }
 // SetNextPageUrlNil sets the value for NextPageUrl to be an explicit nil
-func (o *ViewAllMmsCampaignsData) SetNextPageUrlNil() {
+func (o *ViewAllowedEmailsData) SetNextPageUrlNil() {
 	o.NextPageUrl.Set(nil)
 }
 
 // UnsetNextPageUrl ensures that no value is present for NextPageUrl, not even an explicit nil
-func (o *ViewAllMmsCampaignsData) UnsetNextPageUrl() {
+func (o *ViewAllowedEmailsData) UnsetNextPageUrl() {
 	o.NextPageUrl.Unset()
 }
 
 // GetPrevPageUrl returns the PrevPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ViewAllMmsCampaignsData) GetPrevPageUrl() string {
+func (o *ViewAllowedEmailsData) GetPrevPageUrl() string {
 	if o == nil || IsNil(o.PrevPageUrl.Get()) {
 		var ret string
 		return ret
@@ -237,7 +237,7 @@ func (o *ViewAllMmsCampaignsData) GetPrevPageUrl() string {
 // GetPrevPageUrlOk returns a tuple with the PrevPageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ViewAllMmsCampaignsData) GetPrevPageUrlOk() (*string, bool) {
+func (o *ViewAllowedEmailsData) GetPrevPageUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -245,7 +245,7 @@ func (o *ViewAllMmsCampaignsData) GetPrevPageUrlOk() (*string, bool) {
 }
 
 // HasPrevPageUrl returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasPrevPageUrl() bool {
+func (o *ViewAllowedEmailsData) HasPrevPageUrl() bool {
 	if o != nil && o.PrevPageUrl.IsSet() {
 		return true
 	}
@@ -254,21 +254,21 @@ func (o *ViewAllMmsCampaignsData) HasPrevPageUrl() bool {
 }
 
 // SetPrevPageUrl gets a reference to the given NullableString and assigns it to the PrevPageUrl field.
-func (o *ViewAllMmsCampaignsData) SetPrevPageUrl(v string) {
+func (o *ViewAllowedEmailsData) SetPrevPageUrl(v string) {
 	o.PrevPageUrl.Set(&v)
 }
 // SetPrevPageUrlNil sets the value for PrevPageUrl to be an explicit nil
-func (o *ViewAllMmsCampaignsData) SetPrevPageUrlNil() {
+func (o *ViewAllowedEmailsData) SetPrevPageUrlNil() {
 	o.PrevPageUrl.Set(nil)
 }
 
 // UnsetPrevPageUrl ensures that no value is present for PrevPageUrl, not even an explicit nil
-func (o *ViewAllMmsCampaignsData) UnsetPrevPageUrl() {
+func (o *ViewAllowedEmailsData) UnsetPrevPageUrl() {
 	o.PrevPageUrl.Unset()
 }
 
 // GetFrom returns the From field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaignsData) GetFrom() int32 {
+func (o *ViewAllowedEmailsData) GetFrom() int32 {
 	if o == nil || IsNil(o.From) {
 		var ret int32
 		return ret
@@ -278,7 +278,7 @@ func (o *ViewAllMmsCampaignsData) GetFrom() int32 {
 
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaignsData) GetFromOk() (*int32, bool) {
+func (o *ViewAllowedEmailsData) GetFromOk() (*int32, bool) {
 	if o == nil || IsNil(o.From) {
 		return nil, false
 	}
@@ -286,7 +286,7 @@ func (o *ViewAllMmsCampaignsData) GetFromOk() (*int32, bool) {
 }
 
 // HasFrom returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasFrom() bool {
+func (o *ViewAllowedEmailsData) HasFrom() bool {
 	if o != nil && !IsNil(o.From) {
 		return true
 	}
@@ -295,12 +295,12 @@ func (o *ViewAllMmsCampaignsData) HasFrom() bool {
 }
 
 // SetFrom gets a reference to the given int32 and assigns it to the From field.
-func (o *ViewAllMmsCampaignsData) SetFrom(v int32) {
+func (o *ViewAllowedEmailsData) SetFrom(v int32) {
 	o.From = &v
 }
 
 // GetTo returns the To field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaignsData) GetTo() int32 {
+func (o *ViewAllowedEmailsData) GetTo() int32 {
 	if o == nil || IsNil(o.To) {
 		var ret int32
 		return ret
@@ -310,7 +310,7 @@ func (o *ViewAllMmsCampaignsData) GetTo() int32 {
 
 // GetToOk returns a tuple with the To field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaignsData) GetToOk() (*int32, bool) {
+func (o *ViewAllowedEmailsData) GetToOk() (*int32, bool) {
 	if o == nil || IsNil(o.To) {
 		return nil, false
 	}
@@ -318,7 +318,7 @@ func (o *ViewAllMmsCampaignsData) GetToOk() (*int32, bool) {
 }
 
 // HasTo returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasTo() bool {
+func (o *ViewAllowedEmailsData) HasTo() bool {
 	if o != nil && !IsNil(o.To) {
 		return true
 	}
@@ -327,14 +327,14 @@ func (o *ViewAllMmsCampaignsData) HasTo() bool {
 }
 
 // SetTo gets a reference to the given int32 and assigns it to the To field.
-func (o *ViewAllMmsCampaignsData) SetTo(v int32) {
+func (o *ViewAllowedEmailsData) SetTo(v int32) {
 	o.To = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaignsData) GetData() []MmsCampaign {
+func (o *ViewAllowedEmailsData) GetData() []ViewAllowedEmailsDataAllOfDataInner {
 	if o == nil || IsNil(o.Data) {
-		var ret []MmsCampaign
+		var ret []ViewAllowedEmailsDataAllOfDataInner
 		return ret
 	}
 	return o.Data
@@ -342,7 +342,7 @@ func (o *ViewAllMmsCampaignsData) GetData() []MmsCampaign {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaignsData) GetDataOk() ([]MmsCampaign, bool) {
+func (o *ViewAllowedEmailsData) GetDataOk() ([]ViewAllowedEmailsDataAllOfDataInner, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -350,7 +350,7 @@ func (o *ViewAllMmsCampaignsData) GetDataOk() ([]MmsCampaign, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaignsData) HasData() bool {
+func (o *ViewAllowedEmailsData) HasData() bool {
 	if o != nil && !IsNil(o.Data) {
 		return true
 	}
@@ -358,12 +358,12 @@ func (o *ViewAllMmsCampaignsData) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []MmsCampaign and assigns it to the Data field.
-func (o *ViewAllMmsCampaignsData) SetData(v []MmsCampaign) {
+// SetData gets a reference to the given []ViewAllowedEmailsDataAllOfDataInner and assigns it to the Data field.
+func (o *ViewAllowedEmailsData) SetData(v []ViewAllowedEmailsDataAllOfDataInner) {
 	o.Data = v
 }
 
-func (o ViewAllMmsCampaignsData) MarshalJSON() ([]byte, error) {
+func (o ViewAllowedEmailsData) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -371,7 +371,7 @@ func (o ViewAllMmsCampaignsData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewAllMmsCampaignsData) ToMap() (map[string]interface{}, error) {
+func (o ViewAllowedEmailsData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total
@@ -403,38 +403,38 @@ func (o ViewAllMmsCampaignsData) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableViewAllMmsCampaignsData struct {
-	value *ViewAllMmsCampaignsData
+type NullableViewAllowedEmailsData struct {
+	value *ViewAllowedEmailsData
 	isSet bool
 }
 
-func (v NullableViewAllMmsCampaignsData) Get() *ViewAllMmsCampaignsData {
+func (v NullableViewAllowedEmailsData) Get() *ViewAllowedEmailsData {
 	return v.value
 }
 
-func (v *NullableViewAllMmsCampaignsData) Set(val *ViewAllMmsCampaignsData) {
+func (v *NullableViewAllowedEmailsData) Set(val *ViewAllowedEmailsData) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewAllMmsCampaignsData) IsSet() bool {
+func (v NullableViewAllowedEmailsData) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewAllMmsCampaignsData) Unset() {
+func (v *NullableViewAllowedEmailsData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewAllMmsCampaignsData(val *ViewAllMmsCampaignsData) *NullableViewAllMmsCampaignsData {
-	return &NullableViewAllMmsCampaignsData{value: val, isSet: true}
+func NewNullableViewAllowedEmailsData(val *ViewAllowedEmailsData) *NullableViewAllowedEmailsData {
+	return &NullableViewAllowedEmailsData{value: val, isSet: true}
 }
 
-func (v NullableViewAllMmsCampaignsData) MarshalJSON() ([]byte, error) {
+func (v NullableViewAllowedEmailsData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewAllMmsCampaignsData) UnmarshalJSON(src []byte) error {
+func (v *NullableViewAllowedEmailsData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

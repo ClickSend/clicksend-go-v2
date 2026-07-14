@@ -19,13 +19,23 @@ var _ MappedNullable = &ViewAllMmsCampaigns{}
 
 // ViewAllMmsCampaigns struct for ViewAllMmsCampaigns
 type ViewAllMmsCampaigns struct {
-	// The HTTP status code of the response.
-	HttpCode *int32 `json:"http_code,omitempty"`
-	// The response code indicating the status of the operation.
-	ResponseCode *string `json:"response_code,omitempty"`
-	// A message describing the outcome of the operation.
-	ResponseMsg *string `json:"response_msg,omitempty"`
-	Data *ViewAllMmsCampaignsData `json:"data,omitempty"`
+	// The total number of items available for viewing.
+	Total *int32 `json:"total,omitempty"`
+	// The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
+	PerPage *int32 `json:"per_page,omitempty"`
+	// The current page number.
+	CurrentPage *int32 `json:"current_page,omitempty"`
+	// The last page number.
+	LastPage *int32 `json:"last_page,omitempty"`
+	// A URL of the next page. It will return **null** if there’s no next page.
+	NextPageUrl NullableString `json:"next_page_url,omitempty"`
+	// A URL of the previous page. It will return **null** if there’s no previous page.
+	PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
+	// The number of the first result in the current page.
+	From *int32 `json:"from,omitempty"`
+	// The number of the last result in the current page.
+	To *int32 `json:"to,omitempty"`
+	Data []MmsCampaign `json:"data,omitempty"`
 }
 
 // NewViewAllMmsCampaigns instantiates a new ViewAllMmsCampaigns object
@@ -45,114 +55,294 @@ func NewViewAllMmsCampaignsWithDefaults() *ViewAllMmsCampaigns {
 	return &this
 }
 
-// GetHttpCode returns the HttpCode field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaigns) GetHttpCode() int32 {
-	if o == nil || IsNil(o.HttpCode) {
+// GetTotal returns the Total field value if set, zero value otherwise.
+func (o *ViewAllMmsCampaigns) GetTotal() int32 {
+	if o == nil || IsNil(o.Total) {
 		var ret int32
 		return ret
 	}
-	return *o.HttpCode
+	return *o.Total
 }
 
-// GetHttpCodeOk returns a tuple with the HttpCode field value if set, nil otherwise
+// GetTotalOk returns a tuple with the Total field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaigns) GetHttpCodeOk() (*int32, bool) {
-	if o == nil || IsNil(o.HttpCode) {
+func (o *ViewAllMmsCampaigns) GetTotalOk() (*int32, bool) {
+	if o == nil || IsNil(o.Total) {
 		return nil, false
 	}
-	return o.HttpCode, true
+	return o.Total, true
 }
 
-// HasHttpCode returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaigns) HasHttpCode() bool {
-	if o != nil && !IsNil(o.HttpCode) {
+// HasTotal returns a boolean if a field has been set.
+func (o *ViewAllMmsCampaigns) HasTotal() bool {
+	if o != nil && !IsNil(o.Total) {
 		return true
 	}
 
 	return false
 }
 
-// SetHttpCode gets a reference to the given int32 and assigns it to the HttpCode field.
-func (o *ViewAllMmsCampaigns) SetHttpCode(v int32) {
-	o.HttpCode = &v
+// SetTotal gets a reference to the given int32 and assigns it to the Total field.
+func (o *ViewAllMmsCampaigns) SetTotal(v int32) {
+	o.Total = &v
 }
 
-// GetResponseCode returns the ResponseCode field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaigns) GetResponseCode() string {
-	if o == nil || IsNil(o.ResponseCode) {
+// GetPerPage returns the PerPage field value if set, zero value otherwise.
+func (o *ViewAllMmsCampaigns) GetPerPage() int32 {
+	if o == nil || IsNil(o.PerPage) {
+		var ret int32
+		return ret
+	}
+	return *o.PerPage
+}
+
+// GetPerPageOk returns a tuple with the PerPage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAllMmsCampaigns) GetPerPageOk() (*int32, bool) {
+	if o == nil || IsNil(o.PerPage) {
+		return nil, false
+	}
+	return o.PerPage, true
+}
+
+// HasPerPage returns a boolean if a field has been set.
+func (o *ViewAllMmsCampaigns) HasPerPage() bool {
+	if o != nil && !IsNil(o.PerPage) {
+		return true
+	}
+
+	return false
+}
+
+// SetPerPage gets a reference to the given int32 and assigns it to the PerPage field.
+func (o *ViewAllMmsCampaigns) SetPerPage(v int32) {
+	o.PerPage = &v
+}
+
+// GetCurrentPage returns the CurrentPage field value if set, zero value otherwise.
+func (o *ViewAllMmsCampaigns) GetCurrentPage() int32 {
+	if o == nil || IsNil(o.CurrentPage) {
+		var ret int32
+		return ret
+	}
+	return *o.CurrentPage
+}
+
+// GetCurrentPageOk returns a tuple with the CurrentPage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAllMmsCampaigns) GetCurrentPageOk() (*int32, bool) {
+	if o == nil || IsNil(o.CurrentPage) {
+		return nil, false
+	}
+	return o.CurrentPage, true
+}
+
+// HasCurrentPage returns a boolean if a field has been set.
+func (o *ViewAllMmsCampaigns) HasCurrentPage() bool {
+	if o != nil && !IsNil(o.CurrentPage) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentPage gets a reference to the given int32 and assigns it to the CurrentPage field.
+func (o *ViewAllMmsCampaigns) SetCurrentPage(v int32) {
+	o.CurrentPage = &v
+}
+
+// GetLastPage returns the LastPage field value if set, zero value otherwise.
+func (o *ViewAllMmsCampaigns) GetLastPage() int32 {
+	if o == nil || IsNil(o.LastPage) {
+		var ret int32
+		return ret
+	}
+	return *o.LastPage
+}
+
+// GetLastPageOk returns a tuple with the LastPage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAllMmsCampaigns) GetLastPageOk() (*int32, bool) {
+	if o == nil || IsNil(o.LastPage) {
+		return nil, false
+	}
+	return o.LastPage, true
+}
+
+// HasLastPage returns a boolean if a field has been set.
+func (o *ViewAllMmsCampaigns) HasLastPage() bool {
+	if o != nil && !IsNil(o.LastPage) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastPage gets a reference to the given int32 and assigns it to the LastPage field.
+func (o *ViewAllMmsCampaigns) SetLastPage(v int32) {
+	o.LastPage = &v
+}
+
+// GetNextPageUrl returns the NextPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewAllMmsCampaigns) GetNextPageUrl() string {
+	if o == nil || IsNil(o.NextPageUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResponseCode
+	return *o.NextPageUrl.Get()
 }
 
-// GetResponseCodeOk returns a tuple with the ResponseCode field value if set, nil otherwise
+// GetNextPageUrlOk returns a tuple with the NextPageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaigns) GetResponseCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ResponseCode) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewAllMmsCampaigns) GetNextPageUrlOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResponseCode, true
+	return o.NextPageUrl.Get(), o.NextPageUrl.IsSet()
 }
 
-// HasResponseCode returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaigns) HasResponseCode() bool {
-	if o != nil && !IsNil(o.ResponseCode) {
+// HasNextPageUrl returns a boolean if a field has been set.
+func (o *ViewAllMmsCampaigns) HasNextPageUrl() bool {
+	if o != nil && o.NextPageUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResponseCode gets a reference to the given string and assigns it to the ResponseCode field.
-func (o *ViewAllMmsCampaigns) SetResponseCode(v string) {
-	o.ResponseCode = &v
+// SetNextPageUrl gets a reference to the given NullableString and assigns it to the NextPageUrl field.
+func (o *ViewAllMmsCampaigns) SetNextPageUrl(v string) {
+	o.NextPageUrl.Set(&v)
+}
+// SetNextPageUrlNil sets the value for NextPageUrl to be an explicit nil
+func (o *ViewAllMmsCampaigns) SetNextPageUrlNil() {
+	o.NextPageUrl.Set(nil)
 }
 
-// GetResponseMsg returns the ResponseMsg field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaigns) GetResponseMsg() string {
-	if o == nil || IsNil(o.ResponseMsg) {
+// UnsetNextPageUrl ensures that no value is present for NextPageUrl, not even an explicit nil
+func (o *ViewAllMmsCampaigns) UnsetNextPageUrl() {
+	o.NextPageUrl.Unset()
+}
+
+// GetPrevPageUrl returns the PrevPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewAllMmsCampaigns) GetPrevPageUrl() string {
+	if o == nil || IsNil(o.PrevPageUrl.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResponseMsg
+	return *o.PrevPageUrl.Get()
 }
 
-// GetResponseMsgOk returns a tuple with the ResponseMsg field value if set, nil otherwise
+// GetPrevPageUrlOk returns a tuple with the PrevPageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaigns) GetResponseMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.ResponseMsg) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewAllMmsCampaigns) GetPrevPageUrlOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResponseMsg, true
+	return o.PrevPageUrl.Get(), o.PrevPageUrl.IsSet()
 }
 
-// HasResponseMsg returns a boolean if a field has been set.
-func (o *ViewAllMmsCampaigns) HasResponseMsg() bool {
-	if o != nil && !IsNil(o.ResponseMsg) {
+// HasPrevPageUrl returns a boolean if a field has been set.
+func (o *ViewAllMmsCampaigns) HasPrevPageUrl() bool {
+	if o != nil && o.PrevPageUrl.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResponseMsg gets a reference to the given string and assigns it to the ResponseMsg field.
-func (o *ViewAllMmsCampaigns) SetResponseMsg(v string) {
-	o.ResponseMsg = &v
+// SetPrevPageUrl gets a reference to the given NullableString and assigns it to the PrevPageUrl field.
+func (o *ViewAllMmsCampaigns) SetPrevPageUrl(v string) {
+	o.PrevPageUrl.Set(&v)
+}
+// SetPrevPageUrlNil sets the value for PrevPageUrl to be an explicit nil
+func (o *ViewAllMmsCampaigns) SetPrevPageUrlNil() {
+	o.PrevPageUrl.Set(nil)
+}
+
+// UnsetPrevPageUrl ensures that no value is present for PrevPageUrl, not even an explicit nil
+func (o *ViewAllMmsCampaigns) UnsetPrevPageUrl() {
+	o.PrevPageUrl.Unset()
+}
+
+// GetFrom returns the From field value if set, zero value otherwise.
+func (o *ViewAllMmsCampaigns) GetFrom() int32 {
+	if o == nil || IsNil(o.From) {
+		var ret int32
+		return ret
+	}
+	return *o.From
+}
+
+// GetFromOk returns a tuple with the From field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAllMmsCampaigns) GetFromOk() (*int32, bool) {
+	if o == nil || IsNil(o.From) {
+		return nil, false
+	}
+	return o.From, true
+}
+
+// HasFrom returns a boolean if a field has been set.
+func (o *ViewAllMmsCampaigns) HasFrom() bool {
+	if o != nil && !IsNil(o.From) {
+		return true
+	}
+
+	return false
+}
+
+// SetFrom gets a reference to the given int32 and assigns it to the From field.
+func (o *ViewAllMmsCampaigns) SetFrom(v int32) {
+	o.From = &v
+}
+
+// GetTo returns the To field value if set, zero value otherwise.
+func (o *ViewAllMmsCampaigns) GetTo() int32 {
+	if o == nil || IsNil(o.To) {
+		var ret int32
+		return ret
+	}
+	return *o.To
+}
+
+// GetToOk returns a tuple with the To field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAllMmsCampaigns) GetToOk() (*int32, bool) {
+	if o == nil || IsNil(o.To) {
+		return nil, false
+	}
+	return o.To, true
+}
+
+// HasTo returns a boolean if a field has been set.
+func (o *ViewAllMmsCampaigns) HasTo() bool {
+	if o != nil && !IsNil(o.To) {
+		return true
+	}
+
+	return false
+}
+
+// SetTo gets a reference to the given int32 and assigns it to the To field.
+func (o *ViewAllMmsCampaigns) SetTo(v int32) {
+	o.To = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ViewAllMmsCampaigns) GetData() ViewAllMmsCampaignsData {
+func (o *ViewAllMmsCampaigns) GetData() []MmsCampaign {
 	if o == nil || IsNil(o.Data) {
-		var ret ViewAllMmsCampaignsData
+		var ret []MmsCampaign
 		return ret
 	}
-	return *o.Data
+	return o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllMmsCampaigns) GetDataOk() (*ViewAllMmsCampaignsData, bool) {
+func (o *ViewAllMmsCampaigns) GetDataOk() ([]MmsCampaign, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -168,9 +358,9 @@ func (o *ViewAllMmsCampaigns) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given ViewAllMmsCampaignsData and assigns it to the Data field.
-func (o *ViewAllMmsCampaigns) SetData(v ViewAllMmsCampaignsData) {
-	o.Data = &v
+// SetData gets a reference to the given []MmsCampaign and assigns it to the Data field.
+func (o *ViewAllMmsCampaigns) SetData(v []MmsCampaign) {
+	o.Data = v
 }
 
 func (o ViewAllMmsCampaigns) MarshalJSON() ([]byte, error) {
@@ -183,14 +373,29 @@ func (o ViewAllMmsCampaigns) MarshalJSON() ([]byte, error) {
 
 func (o ViewAllMmsCampaigns) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.HttpCode) {
-		toSerialize["http_code"] = o.HttpCode
+	if !IsNil(o.Total) {
+		toSerialize["total"] = o.Total
 	}
-	if !IsNil(o.ResponseCode) {
-		toSerialize["response_code"] = o.ResponseCode
+	if !IsNil(o.PerPage) {
+		toSerialize["per_page"] = o.PerPage
 	}
-	if !IsNil(o.ResponseMsg) {
-		toSerialize["response_msg"] = o.ResponseMsg
+	if !IsNil(o.CurrentPage) {
+		toSerialize["current_page"] = o.CurrentPage
+	}
+	if !IsNil(o.LastPage) {
+		toSerialize["last_page"] = o.LastPage
+	}
+	if o.NextPageUrl.IsSet() {
+		toSerialize["next_page_url"] = o.NextPageUrl.Get()
+	}
+	if o.PrevPageUrl.IsSet() {
+		toSerialize["prev_page_url"] = o.PrevPageUrl.Get()
+	}
+	if !IsNil(o.From) {
+		toSerialize["from"] = o.From
+	}
+	if !IsNil(o.To) {
+		toSerialize["to"] = o.To
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data

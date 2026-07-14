@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | The status of the record. | [optional] 
 **Reason** | Pointer to **string** | The reason for the status. | [optional] 
 **Countries** | Pointer to **[]string** | List of country codes where the alpha tag is requested. If not provided, it means a global alpha tag. | [optional] 
-**CreatedTimestamp** | Pointer to **time.Time** | The timestamp when the record was created. | [optional] 
-**UpdatedTimestamp** | Pointer to **time.Time** | The timestamp when the record was last updated. | [optional] 
+**CreatedTimestamp** | Pointer to **string** | The timestamp when the record was created. Usually ISO 8601 (e.g. \&quot;2021-05-11T01:00:00.123Z\&quot;), but returned as a plain string rather than a strict date-time since some older records don&#39;t include a UTC offset (e.g. \&quot;2024-01-10T10:55:26.818097\&quot;). | [optional] 
+**UpdatedTimestamp** | Pointer to **string** | The timestamp when the record was last updated. Usually ISO 8601 (e.g. \&quot;2021-05-11T01:05:00.123Z\&quot;), but returned as a plain string rather than a strict date-time since some older records don&#39;t include a UTC offset. | [optional] 
 
 ## Methods
 
@@ -246,20 +246,20 @@ HasCountries returns a boolean if a field has been set.
 UnsetCountries ensures that no value is present for Countries, not even an explicit nil
 ### GetCreatedTimestamp
 
-`func (o *AlphaTag) GetCreatedTimestamp() time.Time`
+`func (o *AlphaTag) GetCreatedTimestamp() string`
 
 GetCreatedTimestamp returns the CreatedTimestamp field if non-nil, zero value otherwise.
 
 ### GetCreatedTimestampOk
 
-`func (o *AlphaTag) GetCreatedTimestampOk() (*time.Time, bool)`
+`func (o *AlphaTag) GetCreatedTimestampOk() (*string, bool)`
 
 GetCreatedTimestampOk returns a tuple with the CreatedTimestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedTimestamp
 
-`func (o *AlphaTag) SetCreatedTimestamp(v time.Time)`
+`func (o *AlphaTag) SetCreatedTimestamp(v string)`
 
 SetCreatedTimestamp sets CreatedTimestamp field to given value.
 
@@ -271,20 +271,20 @@ HasCreatedTimestamp returns a boolean if a field has been set.
 
 ### GetUpdatedTimestamp
 
-`func (o *AlphaTag) GetUpdatedTimestamp() time.Time`
+`func (o *AlphaTag) GetUpdatedTimestamp() string`
 
 GetUpdatedTimestamp returns the UpdatedTimestamp field if non-nil, zero value otherwise.
 
 ### GetUpdatedTimestampOk
 
-`func (o *AlphaTag) GetUpdatedTimestampOk() (*time.Time, bool)`
+`func (o *AlphaTag) GetUpdatedTimestampOk() (*string, bool)`
 
 GetUpdatedTimestampOk returns a tuple with the UpdatedTimestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedTimestamp
 
-`func (o *AlphaTag) SetUpdatedTimestamp(v time.Time)`
+`func (o *AlphaTag) SetUpdatedTimestamp(v string)`
 
 SetUpdatedTimestamp sets UpdatedTimestamp field to given value.
 

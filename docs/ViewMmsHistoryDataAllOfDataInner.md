@@ -8,9 +8,13 @@ Name | Type | Description | Notes
 **Date** | Pointer to **string** | The date of the message. | [optional] 
 **To** | Pointer to **string** | The recipient of the message. | [optional] 
 **Body** | Pointer to **string** | The body of the message. | [optional] 
+**Subject** | Pointer to **NullableString** | The subject of the message. | [optional] 
+**Priority** | Pointer to **int32** | The priority of the message. | [optional] 
+**MediaFileUrl** | Pointer to **NullableString** | A temporary, signed URL to download the message&#39;s media attachment. | [optional] 
 **Status** | Pointer to **string** | The status of the message. | [optional] 
 **From** | Pointer to **string** | The sender of the message. | [optional] 
 **Schedule** | Pointer to **string** | The schedule time of the message. | [optional] 
+**DateAdded** | Pointer to **int32** | The Unix timestamp when the message was added. | [optional] 
 **StatusCode** | Pointer to **NullableString** | The status code (if applicable). | [optional] 
 **StatusText** | Pointer to **NullableString** | The status text (if applicable). | [optional] 
 **ErrorCode** | Pointer to **NullableString** | The error code (if applicable). | [optional] 
@@ -149,6 +153,101 @@ SetBody sets Body field to given value.
 
 HasBody returns a boolean if a field has been set.
 
+### GetSubject
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) GetSubject() string`
+
+GetSubject returns the Subject field if non-nil, zero value otherwise.
+
+### GetSubjectOk
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) GetSubjectOk() (*string, bool)`
+
+GetSubjectOk returns a tuple with the Subject field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubject
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) SetSubject(v string)`
+
+SetSubject sets Subject field to given value.
+
+### HasSubject
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) HasSubject() bool`
+
+HasSubject returns a boolean if a field has been set.
+
+### SetSubjectNil
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) SetSubjectNil(b bool)`
+
+ SetSubjectNil sets the value for Subject to be an explicit nil
+
+### UnsetSubject
+`func (o *ViewMmsHistoryDataAllOfDataInner) UnsetSubject()`
+
+UnsetSubject ensures that no value is present for Subject, not even an explicit nil
+### GetPriority
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) GetPriority() int32`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) GetPriorityOk() (*int32, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) SetPriority(v int32)`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
+
+### GetMediaFileUrl
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) GetMediaFileUrl() string`
+
+GetMediaFileUrl returns the MediaFileUrl field if non-nil, zero value otherwise.
+
+### GetMediaFileUrlOk
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) GetMediaFileUrlOk() (*string, bool)`
+
+GetMediaFileUrlOk returns a tuple with the MediaFileUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMediaFileUrl
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) SetMediaFileUrl(v string)`
+
+SetMediaFileUrl sets MediaFileUrl field to given value.
+
+### HasMediaFileUrl
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) HasMediaFileUrl() bool`
+
+HasMediaFileUrl returns a boolean if a field has been set.
+
+### SetMediaFileUrlNil
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) SetMediaFileUrlNil(b bool)`
+
+ SetMediaFileUrlNil sets the value for MediaFileUrl to be an explicit nil
+
+### UnsetMediaFileUrl
+`func (o *ViewMmsHistoryDataAllOfDataInner) UnsetMediaFileUrl()`
+
+UnsetMediaFileUrl ensures that no value is present for MediaFileUrl, not even an explicit nil
 ### GetStatus
 
 `func (o *ViewMmsHistoryDataAllOfDataInner) GetStatus() string`
@@ -223,6 +322,31 @@ SetSchedule sets Schedule field to given value.
 `func (o *ViewMmsHistoryDataAllOfDataInner) HasSchedule() bool`
 
 HasSchedule returns a boolean if a field has been set.
+
+### GetDateAdded
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) GetDateAdded() int32`
+
+GetDateAdded returns the DateAdded field if non-nil, zero value otherwise.
+
+### GetDateAddedOk
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) GetDateAddedOk() (*int32, bool)`
+
+GetDateAddedOk returns a tuple with the DateAdded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDateAdded
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) SetDateAdded(v int32)`
+
+SetDateAdded sets DateAdded field to given value.
+
+### HasDateAdded
+
+`func (o *ViewMmsHistoryDataAllOfDataInner) HasDateAdded() bool`
+
+HasDateAdded returns a boolean if a field has been set.
 
 ### GetStatusCode
 

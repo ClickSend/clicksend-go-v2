@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **ResponseCode** | Pointer to **string** | The response code indicating the status of the operation. | [optional] 
 **ResponseMsg** | Pointer to **string** | A message describing the outcome of the operation. | [optional] 
 **Data** | Pointer to [**ViewAvailableNumbersData**](ViewAvailableNumbersData.md) |  | [optional] 
-**Currency** | Pointer to [**Currency**](Currency.md) |  | [optional] 
 
 ## Methods
 
@@ -128,31 +127,6 @@ SetData sets Data field to given value.
 `func (o *ViewAvailableNumbers) HasData() bool`
 
 HasData returns a boolean if a field has been set.
-
-### GetCurrency
-
-`func (o *ViewAvailableNumbers) GetCurrency() Currency`
-
-GetCurrency returns the Currency field if non-nil, zero value otherwise.
-
-### GetCurrencyOk
-
-`func (o *ViewAvailableNumbers) GetCurrencyOk() (*Currency, bool)`
-
-GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCurrency
-
-`func (o *ViewAvailableNumbers) SetCurrency(v Currency)`
-
-SetCurrency sets Currency field to given value.
-
-### HasCurrency
-
-`func (o *ViewAvailableNumbers) HasCurrency() bool`
-
-HasCurrency returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

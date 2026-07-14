@@ -1,4 +1,4 @@
-# ViewAccountUsageDataSmsInner
+# ViewAccountUsageDataMmsInner
 
 ## Properties
 
@@ -6,162 +6,162 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SubaccountId** | Pointer to **int32** | The subaccount identifier. | [optional] 
 **Username** | Pointer to **string** | The username associated with the subaccount. | [optional] 
-**TotalCount** | Pointer to **string** | The total count of SMS. | [optional] 
-**TotalPrice** | Pointer to **float32** | The total price of SMS. | [optional] 
+**TotalCount** | Pointer to **string** | The total count of MMS. | [optional] 
+**TotalPrice** | Pointer to **string** | The total price of MMS. | [optional] 
 **Notes** | Pointer to **NullableString** | Optional notes. | [optional] 
 
 ## Methods
 
-### NewViewAccountUsageDataSmsInner
+### NewViewAccountUsageDataMmsInner
 
-`func NewViewAccountUsageDataSmsInner() *ViewAccountUsageDataSmsInner`
+`func NewViewAccountUsageDataMmsInner() *ViewAccountUsageDataMmsInner`
 
-NewViewAccountUsageDataSmsInner instantiates a new ViewAccountUsageDataSmsInner object
+NewViewAccountUsageDataMmsInner instantiates a new ViewAccountUsageDataMmsInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewViewAccountUsageDataSmsInnerWithDefaults
+### NewViewAccountUsageDataMmsInnerWithDefaults
 
-`func NewViewAccountUsageDataSmsInnerWithDefaults() *ViewAccountUsageDataSmsInner`
+`func NewViewAccountUsageDataMmsInnerWithDefaults() *ViewAccountUsageDataMmsInner`
 
-NewViewAccountUsageDataSmsInnerWithDefaults instantiates a new ViewAccountUsageDataSmsInner object
+NewViewAccountUsageDataMmsInnerWithDefaults instantiates a new ViewAccountUsageDataMmsInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetSubaccountId
 
-`func (o *ViewAccountUsageDataSmsInner) GetSubaccountId() int32`
+`func (o *ViewAccountUsageDataMmsInner) GetSubaccountId() int32`
 
 GetSubaccountId returns the SubaccountId field if non-nil, zero value otherwise.
 
 ### GetSubaccountIdOk
 
-`func (o *ViewAccountUsageDataSmsInner) GetSubaccountIdOk() (*int32, bool)`
+`func (o *ViewAccountUsageDataMmsInner) GetSubaccountIdOk() (*int32, bool)`
 
 GetSubaccountIdOk returns a tuple with the SubaccountId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubaccountId
 
-`func (o *ViewAccountUsageDataSmsInner) SetSubaccountId(v int32)`
+`func (o *ViewAccountUsageDataMmsInner) SetSubaccountId(v int32)`
 
 SetSubaccountId sets SubaccountId field to given value.
 
 ### HasSubaccountId
 
-`func (o *ViewAccountUsageDataSmsInner) HasSubaccountId() bool`
+`func (o *ViewAccountUsageDataMmsInner) HasSubaccountId() bool`
 
 HasSubaccountId returns a boolean if a field has been set.
 
 ### GetUsername
 
-`func (o *ViewAccountUsageDataSmsInner) GetUsername() string`
+`func (o *ViewAccountUsageDataMmsInner) GetUsername() string`
 
 GetUsername returns the Username field if non-nil, zero value otherwise.
 
 ### GetUsernameOk
 
-`func (o *ViewAccountUsageDataSmsInner) GetUsernameOk() (*string, bool)`
+`func (o *ViewAccountUsageDataMmsInner) GetUsernameOk() (*string, bool)`
 
 GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsername
 
-`func (o *ViewAccountUsageDataSmsInner) SetUsername(v string)`
+`func (o *ViewAccountUsageDataMmsInner) SetUsername(v string)`
 
 SetUsername sets Username field to given value.
 
 ### HasUsername
 
-`func (o *ViewAccountUsageDataSmsInner) HasUsername() bool`
+`func (o *ViewAccountUsageDataMmsInner) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
 
 ### GetTotalCount
 
-`func (o *ViewAccountUsageDataSmsInner) GetTotalCount() string`
+`func (o *ViewAccountUsageDataMmsInner) GetTotalCount() string`
 
 GetTotalCount returns the TotalCount field if non-nil, zero value otherwise.
 
 ### GetTotalCountOk
 
-`func (o *ViewAccountUsageDataSmsInner) GetTotalCountOk() (*string, bool)`
+`func (o *ViewAccountUsageDataMmsInner) GetTotalCountOk() (*string, bool)`
 
 GetTotalCountOk returns a tuple with the TotalCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalCount
 
-`func (o *ViewAccountUsageDataSmsInner) SetTotalCount(v string)`
+`func (o *ViewAccountUsageDataMmsInner) SetTotalCount(v string)`
 
 SetTotalCount sets TotalCount field to given value.
 
 ### HasTotalCount
 
-`func (o *ViewAccountUsageDataSmsInner) HasTotalCount() bool`
+`func (o *ViewAccountUsageDataMmsInner) HasTotalCount() bool`
 
 HasTotalCount returns a boolean if a field has been set.
 
 ### GetTotalPrice
 
-`func (o *ViewAccountUsageDataSmsInner) GetTotalPrice() float32`
+`func (o *ViewAccountUsageDataMmsInner) GetTotalPrice() string`
 
 GetTotalPrice returns the TotalPrice field if non-nil, zero value otherwise.
 
 ### GetTotalPriceOk
 
-`func (o *ViewAccountUsageDataSmsInner) GetTotalPriceOk() (*float32, bool)`
+`func (o *ViewAccountUsageDataMmsInner) GetTotalPriceOk() (*string, bool)`
 
 GetTotalPriceOk returns a tuple with the TotalPrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalPrice
 
-`func (o *ViewAccountUsageDataSmsInner) SetTotalPrice(v float32)`
+`func (o *ViewAccountUsageDataMmsInner) SetTotalPrice(v string)`
 
 SetTotalPrice sets TotalPrice field to given value.
 
 ### HasTotalPrice
 
-`func (o *ViewAccountUsageDataSmsInner) HasTotalPrice() bool`
+`func (o *ViewAccountUsageDataMmsInner) HasTotalPrice() bool`
 
 HasTotalPrice returns a boolean if a field has been set.
 
 ### GetNotes
 
-`func (o *ViewAccountUsageDataSmsInner) GetNotes() string`
+`func (o *ViewAccountUsageDataMmsInner) GetNotes() string`
 
 GetNotes returns the Notes field if non-nil, zero value otherwise.
 
 ### GetNotesOk
 
-`func (o *ViewAccountUsageDataSmsInner) GetNotesOk() (*string, bool)`
+`func (o *ViewAccountUsageDataMmsInner) GetNotesOk() (*string, bool)`
 
 GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotes
 
-`func (o *ViewAccountUsageDataSmsInner) SetNotes(v string)`
+`func (o *ViewAccountUsageDataMmsInner) SetNotes(v string)`
 
 SetNotes sets Notes field to given value.
 
 ### HasNotes
 
-`func (o *ViewAccountUsageDataSmsInner) HasNotes() bool`
+`func (o *ViewAccountUsageDataMmsInner) HasNotes() bool`
 
 HasNotes returns a boolean if a field has been set.
 
 ### SetNotesNil
 
-`func (o *ViewAccountUsageDataSmsInner) SetNotesNil(b bool)`
+`func (o *ViewAccountUsageDataMmsInner) SetNotesNil(b bool)`
 
  SetNotesNil sets the value for Notes to be an explicit nil
 
 ### UnsetNotes
-`func (o *ViewAccountUsageDataSmsInner) UnsetNotes()`
+`func (o *ViewAccountUsageDataMmsInner) UnsetNotes()`
 
 UnsetNotes ensures that no value is present for Notes, not even an explicit nil
 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **UserEmail** | Pointer to **string** | The email address of the user. | [optional] 
 **Active** | Pointer to **int32** | Flag indicating if the user account is active. | [optional] 
 **Banned** | Pointer to **int32** | Flag indicating if the user account is banned. | [optional] 
+**DateSignUp** | Pointer to **int32** | The Unix timestamp of when the account was created. | [optional] 
 **Balance** | Pointer to **string** | The balance of the user&#39;s account. | [optional] 
 **UserPhone** | Pointer to **string** | The phone number of the user. | [optional] 
 **ReplyTo** | Pointer to **string** | The email address to reply to. | [optional] 
@@ -19,7 +20,9 @@ Name | Type | Description | Notes
 **AccountName** | Pointer to **string** | The name of the account. | [optional] 
 **AccountBillingEmail** | Pointer to **string** | The billing email address of the account. | [optional] 
 **AccountBillingMobile** | Pointer to **string** | The billing mobile number of the account. | [optional] 
+**Priority** | Pointer to **int32** | The account&#39;s priority tier. | [optional] 
 **Country** | Pointer to **string** | The country of the user. | [optional] 
+**CountryIp** | Pointer to **string** | The country the user is currently connecting from, based on IP address. | [optional] 
 **DefaultCountrySms** | Pointer to **string** | The default country for SMS. | [optional] 
 **AutoRecharge** | Pointer to **int32** | Flag indicating if auto-recharge is enabled. | [optional] 
 **AutoRechargeAmount** | Pointer to **string** | The auto-recharge amount. | [optional] 
@@ -32,8 +35,16 @@ Name | Type | Description | Notes
 **BalanceCommission** | Pointer to **string** | The balance commission. | [optional] 
 **Timezone** | Pointer to **string** | The timezone of the user. | [optional] 
 **PriceRate** | Pointer to **int32** | The pricing tier used to determine the cost per message. | [optional] 
+**PrivateUploads** | Pointer to **int32** | Flag indicating if uploaded media is kept private. | [optional] 
+**FaxQuality** | Pointer to **int32** | The quality setting used for outgoing faxes. | [optional] 
+**SettingSmsHideYourNumber** | Pointer to **int32** | Flag indicating if your number is hidden on outgoing SMS. | [optional] 
+**SettingSmsHideBusinessName** | Pointer to **int32** | Flag indicating if the business name is hidden on outgoing SMS. | [optional] 
+**PricingVariant** | Pointer to **int32** | The pricing variant applied to the account. | [optional] 
+**OnTrial** | Pointer to **int32** | Flag indicating if the account is currently on a trial. | [optional] 
+**TrialExpiry** | Pointer to **NullableString** | The date the trial expires, if the account is on a trial. | [optional] 
 **Currency** | Pointer to [**Currency**](Currency.md) |  | [optional] 
 **Subaccount** | Pointer to [**Subaccount**](Subaccount.md) |  | [optional] 
+**ReferrerChosen** | Pointer to [**NullableAccountReferrerChosen**](AccountReferrerChosen.md) |  | [optional] 
 
 ## Methods
 
@@ -178,6 +189,31 @@ SetBanned sets Banned field to given value.
 `func (o *Account) HasBanned() bool`
 
 HasBanned returns a boolean if a field has been set.
+
+### GetDateSignUp
+
+`func (o *Account) GetDateSignUp() int32`
+
+GetDateSignUp returns the DateSignUp field if non-nil, zero value otherwise.
+
+### GetDateSignUpOk
+
+`func (o *Account) GetDateSignUpOk() (*int32, bool)`
+
+GetDateSignUpOk returns a tuple with the DateSignUp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDateSignUp
+
+`func (o *Account) SetDateSignUp(v int32)`
+
+SetDateSignUp sets DateSignUp field to given value.
+
+### HasDateSignUp
+
+`func (o *Account) HasDateSignUp() bool`
+
+HasDateSignUp returns a boolean if a field has been set.
 
 ### GetBalance
 
@@ -439,6 +475,31 @@ SetAccountBillingMobile sets AccountBillingMobile field to given value.
 
 HasAccountBillingMobile returns a boolean if a field has been set.
 
+### GetPriority
+
+`func (o *Account) GetPriority() int32`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *Account) GetPriorityOk() (*int32, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *Account) SetPriority(v int32)`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *Account) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
+
 ### GetCountry
 
 `func (o *Account) GetCountry() string`
@@ -463,6 +524,31 @@ SetCountry sets Country field to given value.
 `func (o *Account) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
+
+### GetCountryIp
+
+`func (o *Account) GetCountryIp() string`
+
+GetCountryIp returns the CountryIp field if non-nil, zero value otherwise.
+
+### GetCountryIpOk
+
+`func (o *Account) GetCountryIpOk() (*string, bool)`
+
+GetCountryIpOk returns a tuple with the CountryIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryIp
+
+`func (o *Account) SetCountryIp(v string)`
+
+SetCountryIp sets CountryIp field to given value.
+
+### HasCountryIp
+
+`func (o *Account) HasCountryIp() bool`
+
+HasCountryIp returns a boolean if a field has been set.
 
 ### GetDefaultCountrySms
 
@@ -764,6 +850,191 @@ SetPriceRate sets PriceRate field to given value.
 
 HasPriceRate returns a boolean if a field has been set.
 
+### GetPrivateUploads
+
+`func (o *Account) GetPrivateUploads() int32`
+
+GetPrivateUploads returns the PrivateUploads field if non-nil, zero value otherwise.
+
+### GetPrivateUploadsOk
+
+`func (o *Account) GetPrivateUploadsOk() (*int32, bool)`
+
+GetPrivateUploadsOk returns a tuple with the PrivateUploads field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrivateUploads
+
+`func (o *Account) SetPrivateUploads(v int32)`
+
+SetPrivateUploads sets PrivateUploads field to given value.
+
+### HasPrivateUploads
+
+`func (o *Account) HasPrivateUploads() bool`
+
+HasPrivateUploads returns a boolean if a field has been set.
+
+### GetFaxQuality
+
+`func (o *Account) GetFaxQuality() int32`
+
+GetFaxQuality returns the FaxQuality field if non-nil, zero value otherwise.
+
+### GetFaxQualityOk
+
+`func (o *Account) GetFaxQualityOk() (*int32, bool)`
+
+GetFaxQualityOk returns a tuple with the FaxQuality field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFaxQuality
+
+`func (o *Account) SetFaxQuality(v int32)`
+
+SetFaxQuality sets FaxQuality field to given value.
+
+### HasFaxQuality
+
+`func (o *Account) HasFaxQuality() bool`
+
+HasFaxQuality returns a boolean if a field has been set.
+
+### GetSettingSmsHideYourNumber
+
+`func (o *Account) GetSettingSmsHideYourNumber() int32`
+
+GetSettingSmsHideYourNumber returns the SettingSmsHideYourNumber field if non-nil, zero value otherwise.
+
+### GetSettingSmsHideYourNumberOk
+
+`func (o *Account) GetSettingSmsHideYourNumberOk() (*int32, bool)`
+
+GetSettingSmsHideYourNumberOk returns a tuple with the SettingSmsHideYourNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSettingSmsHideYourNumber
+
+`func (o *Account) SetSettingSmsHideYourNumber(v int32)`
+
+SetSettingSmsHideYourNumber sets SettingSmsHideYourNumber field to given value.
+
+### HasSettingSmsHideYourNumber
+
+`func (o *Account) HasSettingSmsHideYourNumber() bool`
+
+HasSettingSmsHideYourNumber returns a boolean if a field has been set.
+
+### GetSettingSmsHideBusinessName
+
+`func (o *Account) GetSettingSmsHideBusinessName() int32`
+
+GetSettingSmsHideBusinessName returns the SettingSmsHideBusinessName field if non-nil, zero value otherwise.
+
+### GetSettingSmsHideBusinessNameOk
+
+`func (o *Account) GetSettingSmsHideBusinessNameOk() (*int32, bool)`
+
+GetSettingSmsHideBusinessNameOk returns a tuple with the SettingSmsHideBusinessName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSettingSmsHideBusinessName
+
+`func (o *Account) SetSettingSmsHideBusinessName(v int32)`
+
+SetSettingSmsHideBusinessName sets SettingSmsHideBusinessName field to given value.
+
+### HasSettingSmsHideBusinessName
+
+`func (o *Account) HasSettingSmsHideBusinessName() bool`
+
+HasSettingSmsHideBusinessName returns a boolean if a field has been set.
+
+### GetPricingVariant
+
+`func (o *Account) GetPricingVariant() int32`
+
+GetPricingVariant returns the PricingVariant field if non-nil, zero value otherwise.
+
+### GetPricingVariantOk
+
+`func (o *Account) GetPricingVariantOk() (*int32, bool)`
+
+GetPricingVariantOk returns a tuple with the PricingVariant field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPricingVariant
+
+`func (o *Account) SetPricingVariant(v int32)`
+
+SetPricingVariant sets PricingVariant field to given value.
+
+### HasPricingVariant
+
+`func (o *Account) HasPricingVariant() bool`
+
+HasPricingVariant returns a boolean if a field has been set.
+
+### GetOnTrial
+
+`func (o *Account) GetOnTrial() int32`
+
+GetOnTrial returns the OnTrial field if non-nil, zero value otherwise.
+
+### GetOnTrialOk
+
+`func (o *Account) GetOnTrialOk() (*int32, bool)`
+
+GetOnTrialOk returns a tuple with the OnTrial field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnTrial
+
+`func (o *Account) SetOnTrial(v int32)`
+
+SetOnTrial sets OnTrial field to given value.
+
+### HasOnTrial
+
+`func (o *Account) HasOnTrial() bool`
+
+HasOnTrial returns a boolean if a field has been set.
+
+### GetTrialExpiry
+
+`func (o *Account) GetTrialExpiry() string`
+
+GetTrialExpiry returns the TrialExpiry field if non-nil, zero value otherwise.
+
+### GetTrialExpiryOk
+
+`func (o *Account) GetTrialExpiryOk() (*string, bool)`
+
+GetTrialExpiryOk returns a tuple with the TrialExpiry field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialExpiry
+
+`func (o *Account) SetTrialExpiry(v string)`
+
+SetTrialExpiry sets TrialExpiry field to given value.
+
+### HasTrialExpiry
+
+`func (o *Account) HasTrialExpiry() bool`
+
+HasTrialExpiry returns a boolean if a field has been set.
+
+### SetTrialExpiryNil
+
+`func (o *Account) SetTrialExpiryNil(b bool)`
+
+ SetTrialExpiryNil sets the value for TrialExpiry to be an explicit nil
+
+### UnsetTrialExpiry
+`func (o *Account) UnsetTrialExpiry()`
+
+UnsetTrialExpiry ensures that no value is present for TrialExpiry, not even an explicit nil
 ### GetCurrency
 
 `func (o *Account) GetCurrency() Currency`
@@ -814,6 +1085,41 @@ SetSubaccount sets Subaccount field to given value.
 
 HasSubaccount returns a boolean if a field has been set.
 
+### GetReferrerChosen
+
+`func (o *Account) GetReferrerChosen() AccountReferrerChosen`
+
+GetReferrerChosen returns the ReferrerChosen field if non-nil, zero value otherwise.
+
+### GetReferrerChosenOk
+
+`func (o *Account) GetReferrerChosenOk() (*AccountReferrerChosen, bool)`
+
+GetReferrerChosenOk returns a tuple with the ReferrerChosen field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferrerChosen
+
+`func (o *Account) SetReferrerChosen(v AccountReferrerChosen)`
+
+SetReferrerChosen sets ReferrerChosen field to given value.
+
+### HasReferrerChosen
+
+`func (o *Account) HasReferrerChosen() bool`
+
+HasReferrerChosen returns a boolean if a field has been set.
+
+### SetReferrerChosenNil
+
+`func (o *Account) SetReferrerChosenNil(b bool)`
+
+ SetReferrerChosenNil sets the value for ReferrerChosen to be an explicit nil
+
+### UnsetReferrerChosen
+`func (o *Account) UnsetReferrerChosen()`
+
+UnsetReferrerChosen ensures that no value is present for ReferrerChosen, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

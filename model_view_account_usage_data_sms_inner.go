@@ -27,6 +27,8 @@ type ViewAccountUsageDataSmsInner struct {
 	TotalCount *string `json:"total_count,omitempty"`
 	// The total price of SMS.
 	TotalPrice *float32 `json:"total_price,omitempty"`
+	// Optional notes.
+	Notes NullableString `json:"notes,omitempty"`
 }
 
 // NewViewAccountUsageDataSmsInner instantiates a new ViewAccountUsageDataSmsInner object
@@ -174,6 +176,48 @@ func (o *ViewAccountUsageDataSmsInner) SetTotalPrice(v float32) {
 	o.TotalPrice = &v
 }
 
+// GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewAccountUsageDataSmsInner) GetNotes() string {
+	if o == nil || IsNil(o.Notes.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Notes.Get()
+}
+
+// GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewAccountUsageDataSmsInner) GetNotesOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Notes.Get(), o.Notes.IsSet()
+}
+
+// HasNotes returns a boolean if a field has been set.
+func (o *ViewAccountUsageDataSmsInner) HasNotes() bool {
+	if o != nil && o.Notes.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
+func (o *ViewAccountUsageDataSmsInner) SetNotes(v string) {
+	o.Notes.Set(&v)
+}
+// SetNotesNil sets the value for Notes to be an explicit nil
+func (o *ViewAccountUsageDataSmsInner) SetNotesNil() {
+	o.Notes.Set(nil)
+}
+
+// UnsetNotes ensures that no value is present for Notes, not even an explicit nil
+func (o *ViewAccountUsageDataSmsInner) UnsetNotes() {
+	o.Notes.Unset()
+}
+
 func (o ViewAccountUsageDataSmsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -195,6 +239,9 @@ func (o ViewAccountUsageDataSmsInner) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TotalPrice) {
 		toSerialize["total_price"] = o.TotalPrice
+	}
+	if o.Notes.IsSet() {
+		toSerialize["notes"] = o.Notes.Get()
 	}
 	return toSerialize, nil
 }

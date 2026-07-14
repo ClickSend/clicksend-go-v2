@@ -9,10 +9,14 @@ Name | Type | Description | Notes
 **PriceRate** | Pointer to **int32** | The pricing tier used to determine the cost per message. | [optional] 
 **SmsPrice** | Pointer to **float32** | The price of the SMS. | [optional] 
 **SmsQuantity** | Pointer to **float32** | The quantity of the SMS. | [optional] 
+**PriceSmsCarrierFee** | Pointer to **NullableString** | The carrier fee applied to SMS in this package. | [optional] 
 **VoiceMobilePrice** | Pointer to **float32** | The price of the voice mobile. | [optional] 
 **VoiceMobileQuantity** | Pointer to **float32** | The quantity of the voice mobile. | [optional] 
 **VoiceLandlinePrice** | Pointer to **float32** | The price of the voice landline. | [optional] 
 **VoiceLandlineQuantity** | Pointer to **float32** | The quantity of the voice landline. | [optional] 
+**MmsPrice** | Pointer to **float32** | The price of the MMS. | [optional] 
+**MmsQuantity** | Pointer to **float32** | The quantity of the MMS. | [optional] 
+**PriceMmsCarrierFee** | Pointer to **NullableString** | The carrier fee applied to MMS in this package. | [optional] 
 **FaxPrice** | Pointer to **float32** | The price of the fax. | [optional] 
 **FaxQuantity** | Pointer to **float32** | The quantity of the fax. | [optional] 
 **EmailPrice** | Pointer to **float32** | The price of the email. | [optional] 
@@ -174,6 +178,41 @@ SetSmsQuantity sets SmsQuantity field to given value.
 
 HasSmsQuantity returns a boolean if a field has been set.
 
+### GetPriceSmsCarrierFee
+
+`func (o *ViewRechargePackagesDataPackagesInner) GetPriceSmsCarrierFee() string`
+
+GetPriceSmsCarrierFee returns the PriceSmsCarrierFee field if non-nil, zero value otherwise.
+
+### GetPriceSmsCarrierFeeOk
+
+`func (o *ViewRechargePackagesDataPackagesInner) GetPriceSmsCarrierFeeOk() (*string, bool)`
+
+GetPriceSmsCarrierFeeOk returns a tuple with the PriceSmsCarrierFee field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceSmsCarrierFee
+
+`func (o *ViewRechargePackagesDataPackagesInner) SetPriceSmsCarrierFee(v string)`
+
+SetPriceSmsCarrierFee sets PriceSmsCarrierFee field to given value.
+
+### HasPriceSmsCarrierFee
+
+`func (o *ViewRechargePackagesDataPackagesInner) HasPriceSmsCarrierFee() bool`
+
+HasPriceSmsCarrierFee returns a boolean if a field has been set.
+
+### SetPriceSmsCarrierFeeNil
+
+`func (o *ViewRechargePackagesDataPackagesInner) SetPriceSmsCarrierFeeNil(b bool)`
+
+ SetPriceSmsCarrierFeeNil sets the value for PriceSmsCarrierFee to be an explicit nil
+
+### UnsetPriceSmsCarrierFee
+`func (o *ViewRechargePackagesDataPackagesInner) UnsetPriceSmsCarrierFee()`
+
+UnsetPriceSmsCarrierFee ensures that no value is present for PriceSmsCarrierFee, not even an explicit nil
 ### GetVoiceMobilePrice
 
 `func (o *ViewRechargePackagesDataPackagesInner) GetVoiceMobilePrice() float32`
@@ -274,6 +313,91 @@ SetVoiceLandlineQuantity sets VoiceLandlineQuantity field to given value.
 
 HasVoiceLandlineQuantity returns a boolean if a field has been set.
 
+### GetMmsPrice
+
+`func (o *ViewRechargePackagesDataPackagesInner) GetMmsPrice() float32`
+
+GetMmsPrice returns the MmsPrice field if non-nil, zero value otherwise.
+
+### GetMmsPriceOk
+
+`func (o *ViewRechargePackagesDataPackagesInner) GetMmsPriceOk() (*float32, bool)`
+
+GetMmsPriceOk returns a tuple with the MmsPrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMmsPrice
+
+`func (o *ViewRechargePackagesDataPackagesInner) SetMmsPrice(v float32)`
+
+SetMmsPrice sets MmsPrice field to given value.
+
+### HasMmsPrice
+
+`func (o *ViewRechargePackagesDataPackagesInner) HasMmsPrice() bool`
+
+HasMmsPrice returns a boolean if a field has been set.
+
+### GetMmsQuantity
+
+`func (o *ViewRechargePackagesDataPackagesInner) GetMmsQuantity() float32`
+
+GetMmsQuantity returns the MmsQuantity field if non-nil, zero value otherwise.
+
+### GetMmsQuantityOk
+
+`func (o *ViewRechargePackagesDataPackagesInner) GetMmsQuantityOk() (*float32, bool)`
+
+GetMmsQuantityOk returns a tuple with the MmsQuantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMmsQuantity
+
+`func (o *ViewRechargePackagesDataPackagesInner) SetMmsQuantity(v float32)`
+
+SetMmsQuantity sets MmsQuantity field to given value.
+
+### HasMmsQuantity
+
+`func (o *ViewRechargePackagesDataPackagesInner) HasMmsQuantity() bool`
+
+HasMmsQuantity returns a boolean if a field has been set.
+
+### GetPriceMmsCarrierFee
+
+`func (o *ViewRechargePackagesDataPackagesInner) GetPriceMmsCarrierFee() string`
+
+GetPriceMmsCarrierFee returns the PriceMmsCarrierFee field if non-nil, zero value otherwise.
+
+### GetPriceMmsCarrierFeeOk
+
+`func (o *ViewRechargePackagesDataPackagesInner) GetPriceMmsCarrierFeeOk() (*string, bool)`
+
+GetPriceMmsCarrierFeeOk returns a tuple with the PriceMmsCarrierFee field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceMmsCarrierFee
+
+`func (o *ViewRechargePackagesDataPackagesInner) SetPriceMmsCarrierFee(v string)`
+
+SetPriceMmsCarrierFee sets PriceMmsCarrierFee field to given value.
+
+### HasPriceMmsCarrierFee
+
+`func (o *ViewRechargePackagesDataPackagesInner) HasPriceMmsCarrierFee() bool`
+
+HasPriceMmsCarrierFee returns a boolean if a field has been set.
+
+### SetPriceMmsCarrierFeeNil
+
+`func (o *ViewRechargePackagesDataPackagesInner) SetPriceMmsCarrierFeeNil(b bool)`
+
+ SetPriceMmsCarrierFeeNil sets the value for PriceMmsCarrierFee to be an explicit nil
+
+### UnsetPriceMmsCarrierFee
+`func (o *ViewRechargePackagesDataPackagesInner) UnsetPriceMmsCarrierFee()`
+
+UnsetPriceMmsCarrierFee ensures that no value is present for PriceMmsCarrierFee, not even an explicit nil
 ### GetFaxPrice
 
 `func (o *ViewRechargePackagesDataPackagesInner) GetFaxPrice() float32`

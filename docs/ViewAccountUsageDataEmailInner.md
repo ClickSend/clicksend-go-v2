@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Username** | Pointer to **string** | The username associated with the subaccount. | [optional] 
 **TotalCount** | Pointer to **int32** | The total count of emails. | [optional] 
 **TotalPrice** | Pointer to **string** |  | [optional] 
+**Notes** | Pointer to **NullableString** | Optional notes. | [optional] 
 
 ## Methods
 
@@ -128,6 +129,41 @@ SetTotalPrice sets TotalPrice field to given value.
 
 HasTotalPrice returns a boolean if a field has been set.
 
+### GetNotes
+
+`func (o *ViewAccountUsageDataEmailInner) GetNotes() string`
+
+GetNotes returns the Notes field if non-nil, zero value otherwise.
+
+### GetNotesOk
+
+`func (o *ViewAccountUsageDataEmailInner) GetNotesOk() (*string, bool)`
+
+GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotes
+
+`func (o *ViewAccountUsageDataEmailInner) SetNotes(v string)`
+
+SetNotes sets Notes field to given value.
+
+### HasNotes
+
+`func (o *ViewAccountUsageDataEmailInner) HasNotes() bool`
+
+HasNotes returns a boolean if a field has been set.
+
+### SetNotesNil
+
+`func (o *ViewAccountUsageDataEmailInner) SetNotesNil(b bool)`
+
+ SetNotesNil sets the value for Notes to be an explicit nil
+
+### UnsetNotes
+`func (o *ViewAccountUsageDataEmailInner) UnsetNotes()`
+
+UnsetNotes ensures that no value is present for Notes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

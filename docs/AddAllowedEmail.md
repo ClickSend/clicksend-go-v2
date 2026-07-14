@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **HttpCode** | Pointer to **int32** | The HTTP status code of the response. | [optional] 
 **ResponseCode** | Pointer to **string** | The response code indicating the status of the operation. | [optional] 
 **ResponseMsg** | Pointer to **string** | A message describing the outcome of the operation. | [optional] 
-**Data** | Pointer to [**ViewAllowedEmailsDataInner**](ViewAllowedEmailsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**AddAllowedEmailData**](AddAllowedEmailData.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasResponseMsg returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *AddAllowedEmail) GetData() ViewAllowedEmailsDataInner`
+`func (o *AddAllowedEmail) GetData() AddAllowedEmailData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AddAllowedEmail) GetDataOk() (*ViewAllowedEmailsDataInner, bool)`
+`func (o *AddAllowedEmail) GetDataOk() (*AddAllowedEmailData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AddAllowedEmail) SetData(v ViewAllowedEmailsDataInner)`
+`func (o *AddAllowedEmail) SetData(v AddAllowedEmailData)`
 
 SetData sets Data field to given value.
 

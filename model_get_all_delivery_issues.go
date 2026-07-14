@@ -25,7 +25,7 @@ type GetAllDeliveryIssues struct {
 	ResponseCode *string `json:"response_code,omitempty"`
 	// A message describing the outcome of the operation.
 	ResponseMsg *string `json:"response_msg,omitempty"`
-	Data []DeliveryIssue `json:"data,omitempty"`
+	Data *GetAllDeliveryIssuesData `json:"data,omitempty"`
 }
 
 // NewGetAllDeliveryIssues instantiates a new GetAllDeliveryIssues object
@@ -142,17 +142,17 @@ func (o *GetAllDeliveryIssues) SetResponseMsg(v string) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GetAllDeliveryIssues) GetData() []DeliveryIssue {
+func (o *GetAllDeliveryIssues) GetData() GetAllDeliveryIssuesData {
 	if o == nil || IsNil(o.Data) {
-		var ret []DeliveryIssue
+		var ret GetAllDeliveryIssuesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAllDeliveryIssues) GetDataOk() ([]DeliveryIssue, bool) {
+func (o *GetAllDeliveryIssues) GetDataOk() (*GetAllDeliveryIssuesData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -168,9 +168,9 @@ func (o *GetAllDeliveryIssues) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []DeliveryIssue and assigns it to the Data field.
-func (o *GetAllDeliveryIssues) SetData(v []DeliveryIssue) {
-	o.Data = v
+// SetData gets a reference to the given GetAllDeliveryIssuesData and assigns it to the Data field.
+func (o *GetAllDeliveryIssues) SetData(v GetAllDeliveryIssuesData) {
+	o.Data = &v
 }
 
 func (o GetAllDeliveryIssues) MarshalJSON() ([]byte, error) {

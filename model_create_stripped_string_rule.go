@@ -25,7 +25,7 @@ type CreateStrippedStringRule struct {
 	ResponseCode *string `json:"response_code,omitempty"`
 	// A message describing the outcome of the operation.
 	ResponseMsg *string `json:"response_msg,omitempty"`
-	Data *ViewStrippedStringRulesDataDataInner `json:"data,omitempty"`
+	Data *ViewStrippedStringRulesDataAllOfDataInner `json:"data,omitempty"`
 }
 
 // NewCreateStrippedStringRule instantiates a new CreateStrippedStringRule object
@@ -142,9 +142,9 @@ func (o *CreateStrippedStringRule) SetResponseMsg(v string) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *CreateStrippedStringRule) GetData() ViewStrippedStringRulesDataDataInner {
+func (o *CreateStrippedStringRule) GetData() ViewStrippedStringRulesDataAllOfDataInner {
 	if o == nil || IsNil(o.Data) {
-		var ret ViewStrippedStringRulesDataDataInner
+		var ret ViewStrippedStringRulesDataAllOfDataInner
 		return ret
 	}
 	return *o.Data
@@ -152,7 +152,7 @@ func (o *CreateStrippedStringRule) GetData() ViewStrippedStringRulesDataDataInne
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateStrippedStringRule) GetDataOk() (*ViewStrippedStringRulesDataDataInner, bool) {
+func (o *CreateStrippedStringRule) GetDataOk() (*ViewStrippedStringRulesDataAllOfDataInner, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *CreateStrippedStringRule) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given ViewStrippedStringRulesDataDataInner and assigns it to the Data field.
-func (o *CreateStrippedStringRule) SetData(v ViewStrippedStringRulesDataDataInner) {
+// SetData gets a reference to the given ViewStrippedStringRulesDataAllOfDataInner and assigns it to the Data field.
+func (o *CreateStrippedStringRule) SetData(v ViewStrippedStringRulesDataAllOfDataInner) {
 	o.Data = &v
 }
 

@@ -25,7 +25,7 @@ type AddAllowedEmail struct {
 	ResponseCode *string `json:"response_code,omitempty"`
 	// A message describing the outcome of the operation.
 	ResponseMsg *string `json:"response_msg,omitempty"`
-	Data *ViewAllowedEmailsDataInner `json:"data,omitempty"`
+	Data *AddAllowedEmailData `json:"data,omitempty"`
 }
 
 // NewAddAllowedEmail instantiates a new AddAllowedEmail object
@@ -142,9 +142,9 @@ func (o *AddAllowedEmail) SetResponseMsg(v string) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AddAllowedEmail) GetData() ViewAllowedEmailsDataInner {
+func (o *AddAllowedEmail) GetData() AddAllowedEmailData {
 	if o == nil || IsNil(o.Data) {
-		var ret ViewAllowedEmailsDataInner
+		var ret AddAllowedEmailData
 		return ret
 	}
 	return *o.Data
@@ -152,7 +152,7 @@ func (o *AddAllowedEmail) GetData() ViewAllowedEmailsDataInner {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddAllowedEmail) GetDataOk() (*ViewAllowedEmailsDataInner, bool) {
+func (o *AddAllowedEmail) GetDataOk() (*AddAllowedEmailData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *AddAllowedEmail) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given ViewAllowedEmailsDataInner and assigns it to the Data field.
-func (o *AddAllowedEmail) SetData(v ViewAllowedEmailsDataInner) {
+// SetData gets a reference to the given AddAllowedEmailData and assigns it to the Data field.
+func (o *AddAllowedEmail) SetData(v AddAllowedEmailData) {
 	o.Data = &v
 }
 

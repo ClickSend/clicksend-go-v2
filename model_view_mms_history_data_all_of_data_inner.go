@@ -27,12 +27,20 @@ type ViewMmsHistoryDataAllOfDataInner struct {
 	To *string `json:"to,omitempty"`
 	// The body of the message.
 	Body *string `json:"body,omitempty"`
+	// The subject of the message.
+	Subject NullableString `json:"subject,omitempty"`
+	// The priority of the message.
+	Priority *int32 `json:"priority,omitempty"`
+	// A temporary, signed URL to download the message's media attachment.
+	MediaFileUrl NullableString `json:"_media_file_url,omitempty"`
 	// The status of the message.
 	Status *string `json:"status,omitempty"`
 	// The sender of the message.
 	From *string `json:"from,omitempty"`
 	// The schedule time of the message.
 	Schedule *string `json:"schedule,omitempty"`
+	// The Unix timestamp when the message was added.
+	DateAdded *int32 `json:"date_added,omitempty"`
 	// The status code (if applicable).
 	StatusCode NullableString `json:"status_code,omitempty"`
 	// The status text (if applicable).
@@ -216,6 +224,122 @@ func (o *ViewMmsHistoryDataAllOfDataInner) SetBody(v string) {
 	o.Body = &v
 }
 
+// GetSubject returns the Subject field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewMmsHistoryDataAllOfDataInner) GetSubject() string {
+	if o == nil || IsNil(o.Subject.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Subject.Get()
+}
+
+// GetSubjectOk returns a tuple with the Subject field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewMmsHistoryDataAllOfDataInner) GetSubjectOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Subject.Get(), o.Subject.IsSet()
+}
+
+// HasSubject returns a boolean if a field has been set.
+func (o *ViewMmsHistoryDataAllOfDataInner) HasSubject() bool {
+	if o != nil && o.Subject.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSubject gets a reference to the given NullableString and assigns it to the Subject field.
+func (o *ViewMmsHistoryDataAllOfDataInner) SetSubject(v string) {
+	o.Subject.Set(&v)
+}
+// SetSubjectNil sets the value for Subject to be an explicit nil
+func (o *ViewMmsHistoryDataAllOfDataInner) SetSubjectNil() {
+	o.Subject.Set(nil)
+}
+
+// UnsetSubject ensures that no value is present for Subject, not even an explicit nil
+func (o *ViewMmsHistoryDataAllOfDataInner) UnsetSubject() {
+	o.Subject.Unset()
+}
+
+// GetPriority returns the Priority field value if set, zero value otherwise.
+func (o *ViewMmsHistoryDataAllOfDataInner) GetPriority() int32 {
+	if o == nil || IsNil(o.Priority) {
+		var ret int32
+		return ret
+	}
+	return *o.Priority
+}
+
+// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewMmsHistoryDataAllOfDataInner) GetPriorityOk() (*int32, bool) {
+	if o == nil || IsNil(o.Priority) {
+		return nil, false
+	}
+	return o.Priority, true
+}
+
+// HasPriority returns a boolean if a field has been set.
+func (o *ViewMmsHistoryDataAllOfDataInner) HasPriority() bool {
+	if o != nil && !IsNil(o.Priority) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriority gets a reference to the given int32 and assigns it to the Priority field.
+func (o *ViewMmsHistoryDataAllOfDataInner) SetPriority(v int32) {
+	o.Priority = &v
+}
+
+// GetMediaFileUrl returns the MediaFileUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewMmsHistoryDataAllOfDataInner) GetMediaFileUrl() string {
+	if o == nil || IsNil(o.MediaFileUrl.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.MediaFileUrl.Get()
+}
+
+// GetMediaFileUrlOk returns a tuple with the MediaFileUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewMmsHistoryDataAllOfDataInner) GetMediaFileUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MediaFileUrl.Get(), o.MediaFileUrl.IsSet()
+}
+
+// HasMediaFileUrl returns a boolean if a field has been set.
+func (o *ViewMmsHistoryDataAllOfDataInner) HasMediaFileUrl() bool {
+	if o != nil && o.MediaFileUrl.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMediaFileUrl gets a reference to the given NullableString and assigns it to the MediaFileUrl field.
+func (o *ViewMmsHistoryDataAllOfDataInner) SetMediaFileUrl(v string) {
+	o.MediaFileUrl.Set(&v)
+}
+// SetMediaFileUrlNil sets the value for MediaFileUrl to be an explicit nil
+func (o *ViewMmsHistoryDataAllOfDataInner) SetMediaFileUrlNil() {
+	o.MediaFileUrl.Set(nil)
+}
+
+// UnsetMediaFileUrl ensures that no value is present for MediaFileUrl, not even an explicit nil
+func (o *ViewMmsHistoryDataAllOfDataInner) UnsetMediaFileUrl() {
+	o.MediaFileUrl.Unset()
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ViewMmsHistoryDataAllOfDataInner) GetStatus() string {
 	if o == nil || IsNil(o.Status) {
@@ -310,6 +434,38 @@ func (o *ViewMmsHistoryDataAllOfDataInner) HasSchedule() bool {
 // SetSchedule gets a reference to the given string and assigns it to the Schedule field.
 func (o *ViewMmsHistoryDataAllOfDataInner) SetSchedule(v string) {
 	o.Schedule = &v
+}
+
+// GetDateAdded returns the DateAdded field value if set, zero value otherwise.
+func (o *ViewMmsHistoryDataAllOfDataInner) GetDateAdded() int32 {
+	if o == nil || IsNil(o.DateAdded) {
+		var ret int32
+		return ret
+	}
+	return *o.DateAdded
+}
+
+// GetDateAddedOk returns a tuple with the DateAdded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewMmsHistoryDataAllOfDataInner) GetDateAddedOk() (*int32, bool) {
+	if o == nil || IsNil(o.DateAdded) {
+		return nil, false
+	}
+	return o.DateAdded, true
+}
+
+// HasDateAdded returns a boolean if a field has been set.
+func (o *ViewMmsHistoryDataAllOfDataInner) HasDateAdded() bool {
+	if o != nil && !IsNil(o.DateAdded) {
+		return true
+	}
+
+	return false
+}
+
+// SetDateAdded gets a reference to the given int32 and assigns it to the DateAdded field.
+func (o *ViewMmsHistoryDataAllOfDataInner) SetDateAdded(v int32) {
+	o.DateAdded = &v
 }
 
 // GetStatusCode returns the StatusCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -960,6 +1116,15 @@ func (o ViewMmsHistoryDataAllOfDataInner) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Body) {
 		toSerialize["body"] = o.Body
 	}
+	if o.Subject.IsSet() {
+		toSerialize["subject"] = o.Subject.Get()
+	}
+	if !IsNil(o.Priority) {
+		toSerialize["priority"] = o.Priority
+	}
+	if o.MediaFileUrl.IsSet() {
+		toSerialize["_media_file_url"] = o.MediaFileUrl.Get()
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
@@ -968,6 +1133,9 @@ func (o ViewMmsHistoryDataAllOfDataInner) ToMap() (map[string]interface{}, error
 	}
 	if !IsNil(o.Schedule) {
 		toSerialize["schedule"] = o.Schedule
+	}
+	if !IsNil(o.DateAdded) {
+		toSerialize["date_added"] = o.DateAdded
 	}
 	if o.StatusCode.IsSet() {
 		toSerialize["status_code"] = o.StatusCode.Get()

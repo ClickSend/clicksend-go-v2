@@ -12,7 +12,6 @@ package clicksend
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the AlphaTag type satisfies the MappedNullable interface at compile time
@@ -36,10 +35,10 @@ type AlphaTag struct {
 	Reason *string `json:"reason,omitempty"`
 	// List of country codes where the alpha tag is requested. If not provided, it means a global alpha tag.
 	Countries []string `json:"countries,omitempty"`
-	// The timestamp when the record was created.
-	CreatedTimestamp *time.Time `json:"created_timestamp,omitempty"`
-	// The timestamp when the record was last updated.
-	UpdatedTimestamp *time.Time `json:"updated_timestamp,omitempty"`
+	// The timestamp when the record was created. Usually ISO 8601 (e.g. \"2021-05-11T01:00:00.123Z\"), but returned as a plain string rather than a strict date-time since some older records don't include a UTC offset (e.g. \"2024-01-10T10:55:26.818097\").
+	CreatedTimestamp *string `json:"created_timestamp,omitempty"`
+	// The timestamp when the record was last updated. Usually ISO 8601 (e.g. \"2021-05-11T01:05:00.123Z\"), but returned as a plain string rather than a strict date-time since some older records don't include a UTC offset.
+	UpdatedTimestamp *string `json:"updated_timestamp,omitempty"`
 }
 
 // NewAlphaTag instantiates a new AlphaTag object
@@ -317,9 +316,9 @@ func (o *AlphaTag) SetCountries(v []string) {
 }
 
 // GetCreatedTimestamp returns the CreatedTimestamp field value if set, zero value otherwise.
-func (o *AlphaTag) GetCreatedTimestamp() time.Time {
+func (o *AlphaTag) GetCreatedTimestamp() string {
 	if o == nil || IsNil(o.CreatedTimestamp) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.CreatedTimestamp
@@ -327,7 +326,7 @@ func (o *AlphaTag) GetCreatedTimestamp() time.Time {
 
 // GetCreatedTimestampOk returns a tuple with the CreatedTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlphaTag) GetCreatedTimestampOk() (*time.Time, bool) {
+func (o *AlphaTag) GetCreatedTimestampOk() (*string, bool) {
 	if o == nil || IsNil(o.CreatedTimestamp) {
 		return nil, false
 	}
@@ -343,15 +342,15 @@ func (o *AlphaTag) HasCreatedTimestamp() bool {
 	return false
 }
 
-// SetCreatedTimestamp gets a reference to the given time.Time and assigns it to the CreatedTimestamp field.
-func (o *AlphaTag) SetCreatedTimestamp(v time.Time) {
+// SetCreatedTimestamp gets a reference to the given string and assigns it to the CreatedTimestamp field.
+func (o *AlphaTag) SetCreatedTimestamp(v string) {
 	o.CreatedTimestamp = &v
 }
 
 // GetUpdatedTimestamp returns the UpdatedTimestamp field value if set, zero value otherwise.
-func (o *AlphaTag) GetUpdatedTimestamp() time.Time {
+func (o *AlphaTag) GetUpdatedTimestamp() string {
 	if o == nil || IsNil(o.UpdatedTimestamp) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.UpdatedTimestamp
@@ -359,7 +358,7 @@ func (o *AlphaTag) GetUpdatedTimestamp() time.Time {
 
 // GetUpdatedTimestampOk returns a tuple with the UpdatedTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlphaTag) GetUpdatedTimestampOk() (*time.Time, bool) {
+func (o *AlphaTag) GetUpdatedTimestampOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdatedTimestamp) {
 		return nil, false
 	}
@@ -375,8 +374,8 @@ func (o *AlphaTag) HasUpdatedTimestamp() bool {
 	return false
 }
 
-// SetUpdatedTimestamp gets a reference to the given time.Time and assigns it to the UpdatedTimestamp field.
-func (o *AlphaTag) SetUpdatedTimestamp(v time.Time) {
+// SetUpdatedTimestamp gets a reference to the given string and assigns it to the UpdatedTimestamp field.
+func (o *AlphaTag) SetUpdatedTimestamp(v string) {
 	o.UpdatedTimestamp = &v
 }
 

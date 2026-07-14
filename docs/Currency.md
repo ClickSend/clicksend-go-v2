@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **CurrencyPrefixD** | Pointer to **string** | The symbol used to indicate the currency of the sender (e.g. $ , €, etc). | [optional] 
 **CurrencyPrefixC** | Pointer to **string** | The currency basic unit (e.g. cents). | [optional] 
 **CurrencyNameLong** | Pointer to **string** | The full name of the currency. | [optional] 
+**MinRechargeAmount** | Pointer to **string** | The minimum amount that can be used to recharge the account, in this currency. | [optional] 
+**MaxRechargeAmount** | Pointer to **string** | The maximum amount that can be used to recharge the account, in this currency. | [optional] 
 
 ## Methods
 
@@ -127,6 +129,56 @@ SetCurrencyNameLong sets CurrencyNameLong field to given value.
 `func (o *Currency) HasCurrencyNameLong() bool`
 
 HasCurrencyNameLong returns a boolean if a field has been set.
+
+### GetMinRechargeAmount
+
+`func (o *Currency) GetMinRechargeAmount() string`
+
+GetMinRechargeAmount returns the MinRechargeAmount field if non-nil, zero value otherwise.
+
+### GetMinRechargeAmountOk
+
+`func (o *Currency) GetMinRechargeAmountOk() (*string, bool)`
+
+GetMinRechargeAmountOk returns a tuple with the MinRechargeAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinRechargeAmount
+
+`func (o *Currency) SetMinRechargeAmount(v string)`
+
+SetMinRechargeAmount sets MinRechargeAmount field to given value.
+
+### HasMinRechargeAmount
+
+`func (o *Currency) HasMinRechargeAmount() bool`
+
+HasMinRechargeAmount returns a boolean if a field has been set.
+
+### GetMaxRechargeAmount
+
+`func (o *Currency) GetMaxRechargeAmount() string`
+
+GetMaxRechargeAmount returns the MaxRechargeAmount field if non-nil, zero value otherwise.
+
+### GetMaxRechargeAmountOk
+
+`func (o *Currency) GetMaxRechargeAmountOk() (*string, bool)`
+
+GetMaxRechargeAmountOk returns a tuple with the MaxRechargeAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxRechargeAmount
+
+`func (o *Currency) SetMaxRechargeAmount(v string)`
+
+SetMaxRechargeAmount sets MaxRechargeAmount field to given value.
+
+### HasMaxRechargeAmount
+
+`func (o *Currency) HasMaxRechargeAmount() bool`
+
+HasMaxRechargeAmount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

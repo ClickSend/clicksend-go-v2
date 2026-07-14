@@ -19,19 +19,23 @@ var _ MappedNullable = &ViewStrippedStringRulesData{}
 
 // ViewStrippedStringRulesData struct for ViewStrippedStringRulesData
 type ViewStrippedStringRulesData struct {
-	// The total number of records in the response.
+	// The total number of items available for viewing.
 	Total *int32 `json:"total,omitempty"`
-	// The number of records per page.
+	// The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
 	PerPage *int32 `json:"per_page,omitempty"`
 	// The current page number.
 	CurrentPage *int32 `json:"current_page,omitempty"`
 	// The last page number.
 	LastPage *int32 `json:"last_page,omitempty"`
-	// The URL of the next page of records.
+	// A URL of the next page. It will return **null** if there’s no next page.
 	NextPageUrl NullableString `json:"next_page_url,omitempty"`
-	// The URL of the previous page of records.
+	// A URL of the previous page. It will return **null** if there’s no previous page.
 	PrevPageUrl NullableString `json:"prev_page_url,omitempty"`
-	Data []ViewStrippedStringRulesDataDataInner `json:"data,omitempty"`
+	// The number of the first result in the current page.
+	From *int32 `json:"from,omitempty"`
+	// The number of the last result in the current page.
+	To *int32 `json:"to,omitempty"`
+	Data []ViewStrippedStringRulesDataAllOfDataInner `json:"data,omitempty"`
 }
 
 // NewViewStrippedStringRulesData instantiates a new ViewStrippedStringRulesData object
@@ -263,10 +267,74 @@ func (o *ViewStrippedStringRulesData) UnsetPrevPageUrl() {
 	o.PrevPageUrl.Unset()
 }
 
+// GetFrom returns the From field value if set, zero value otherwise.
+func (o *ViewStrippedStringRulesData) GetFrom() int32 {
+	if o == nil || IsNil(o.From) {
+		var ret int32
+		return ret
+	}
+	return *o.From
+}
+
+// GetFromOk returns a tuple with the From field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewStrippedStringRulesData) GetFromOk() (*int32, bool) {
+	if o == nil || IsNil(o.From) {
+		return nil, false
+	}
+	return o.From, true
+}
+
+// HasFrom returns a boolean if a field has been set.
+func (o *ViewStrippedStringRulesData) HasFrom() bool {
+	if o != nil && !IsNil(o.From) {
+		return true
+	}
+
+	return false
+}
+
+// SetFrom gets a reference to the given int32 and assigns it to the From field.
+func (o *ViewStrippedStringRulesData) SetFrom(v int32) {
+	o.From = &v
+}
+
+// GetTo returns the To field value if set, zero value otherwise.
+func (o *ViewStrippedStringRulesData) GetTo() int32 {
+	if o == nil || IsNil(o.To) {
+		var ret int32
+		return ret
+	}
+	return *o.To
+}
+
+// GetToOk returns a tuple with the To field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewStrippedStringRulesData) GetToOk() (*int32, bool) {
+	if o == nil || IsNil(o.To) {
+		return nil, false
+	}
+	return o.To, true
+}
+
+// HasTo returns a boolean if a field has been set.
+func (o *ViewStrippedStringRulesData) HasTo() bool {
+	if o != nil && !IsNil(o.To) {
+		return true
+	}
+
+	return false
+}
+
+// SetTo gets a reference to the given int32 and assigns it to the To field.
+func (o *ViewStrippedStringRulesData) SetTo(v int32) {
+	o.To = &v
+}
+
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ViewStrippedStringRulesData) GetData() []ViewStrippedStringRulesDataDataInner {
+func (o *ViewStrippedStringRulesData) GetData() []ViewStrippedStringRulesDataAllOfDataInner {
 	if o == nil || IsNil(o.Data) {
-		var ret []ViewStrippedStringRulesDataDataInner
+		var ret []ViewStrippedStringRulesDataAllOfDataInner
 		return ret
 	}
 	return o.Data
@@ -274,7 +342,7 @@ func (o *ViewStrippedStringRulesData) GetData() []ViewStrippedStringRulesDataDat
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewStrippedStringRulesData) GetDataOk() ([]ViewStrippedStringRulesDataDataInner, bool) {
+func (o *ViewStrippedStringRulesData) GetDataOk() ([]ViewStrippedStringRulesDataAllOfDataInner, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -290,8 +358,8 @@ func (o *ViewStrippedStringRulesData) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []ViewStrippedStringRulesDataDataInner and assigns it to the Data field.
-func (o *ViewStrippedStringRulesData) SetData(v []ViewStrippedStringRulesDataDataInner) {
+// SetData gets a reference to the given []ViewStrippedStringRulesDataAllOfDataInner and assigns it to the Data field.
+func (o *ViewStrippedStringRulesData) SetData(v []ViewStrippedStringRulesDataAllOfDataInner) {
 	o.Data = v
 }
 
@@ -322,6 +390,12 @@ func (o ViewStrippedStringRulesData) ToMap() (map[string]interface{}, error) {
 	}
 	if o.PrevPageUrl.IsSet() {
 		toSerialize["prev_page_url"] = o.PrevPageUrl.Get()
+	}
+	if !IsNil(o.From) {
+		toSerialize["from"] = o.From
+	}
+	if !IsNil(o.To) {
+		toSerialize["to"] = o.To
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data

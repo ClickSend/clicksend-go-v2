@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **FirstName** | Pointer to **string** | The first name of the subaccount. | [optional] 
 **LastName** | Pointer to **string** | The last name of the subaccount. | [optional] 
 **ApiKey** | Pointer to **string** | The API key of the subaccount. | [optional] 
+**AccessSmpp** | Pointer to **int32** | Flag indicating if the subaccount has access to SMPP. | [optional] 
 **AccessUsers** | Pointer to **int32** | Flag indicating if the subaccount has access to users. | [optional] 
 **AccessBilling** | Pointer to **int32** | Flag indicating if the subaccount has access to billing. | [optional] 
 **AccessReporting** | Pointer to **int32** | Flag indicating if the subaccount has access to reporting. | [optional] 
@@ -22,9 +23,13 @@ Name | Type | Description | Notes
 **AccessFax** | Pointer to **int32** | Flag indicating if the subaccount has access to fax services. | [optional] 
 **AccessPost** | Pointer to **int32** | Flag indicating if the subaccount has access to post services. | [optional] 
 **AccessReseller** | Pointer to **int32** | Flag indicating if the subaccount has access to reseller services. | [optional] 
+**AccessGlobalSending** | Pointer to **int32** | Flag indicating if the subaccount has access to global sending. | [optional] 
 **AccessMms** | Pointer to **int32** | Flag indicating if the subaccount has access to MMS services. | [optional] 
+**HidePricing** | Pointer to **int32** | Flag indicating if pricing is hidden for the subaccount. | [optional] 
 **ShareCampaigns** | Pointer to **int32** | Flag indicating if the subaccount can share campaigns. | [optional] 
 **Notes** | Pointer to **NullableString** | Additional notes for the subaccount. | [optional] 
+**IsMain** | Pointer to **int32** | Flag indicating if this is the main account rather than a subaccount. | [optional] 
+**SignUpType** | Pointer to **NullableString** | The sign-up type used to create the subaccount, if applicable. | [optional] 
 
 ## Methods
 
@@ -219,6 +224,31 @@ SetApiKey sets ApiKey field to given value.
 `func (o *Subaccount) HasApiKey() bool`
 
 HasApiKey returns a boolean if a field has been set.
+
+### GetAccessSmpp
+
+`func (o *Subaccount) GetAccessSmpp() int32`
+
+GetAccessSmpp returns the AccessSmpp field if non-nil, zero value otherwise.
+
+### GetAccessSmppOk
+
+`func (o *Subaccount) GetAccessSmppOk() (*int32, bool)`
+
+GetAccessSmppOk returns a tuple with the AccessSmpp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessSmpp
+
+`func (o *Subaccount) SetAccessSmpp(v int32)`
+
+SetAccessSmpp sets AccessSmpp field to given value.
+
+### HasAccessSmpp
+
+`func (o *Subaccount) HasAccessSmpp() bool`
+
+HasAccessSmpp returns a boolean if a field has been set.
 
 ### GetAccessUsers
 
@@ -495,6 +525,31 @@ SetAccessReseller sets AccessReseller field to given value.
 
 HasAccessReseller returns a boolean if a field has been set.
 
+### GetAccessGlobalSending
+
+`func (o *Subaccount) GetAccessGlobalSending() int32`
+
+GetAccessGlobalSending returns the AccessGlobalSending field if non-nil, zero value otherwise.
+
+### GetAccessGlobalSendingOk
+
+`func (o *Subaccount) GetAccessGlobalSendingOk() (*int32, bool)`
+
+GetAccessGlobalSendingOk returns a tuple with the AccessGlobalSending field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessGlobalSending
+
+`func (o *Subaccount) SetAccessGlobalSending(v int32)`
+
+SetAccessGlobalSending sets AccessGlobalSending field to given value.
+
+### HasAccessGlobalSending
+
+`func (o *Subaccount) HasAccessGlobalSending() bool`
+
+HasAccessGlobalSending returns a boolean if a field has been set.
+
 ### GetAccessMms
 
 `func (o *Subaccount) GetAccessMms() int32`
@@ -519,6 +574,31 @@ SetAccessMms sets AccessMms field to given value.
 `func (o *Subaccount) HasAccessMms() bool`
 
 HasAccessMms returns a boolean if a field has been set.
+
+### GetHidePricing
+
+`func (o *Subaccount) GetHidePricing() int32`
+
+GetHidePricing returns the HidePricing field if non-nil, zero value otherwise.
+
+### GetHidePricingOk
+
+`func (o *Subaccount) GetHidePricingOk() (*int32, bool)`
+
+GetHidePricingOk returns a tuple with the HidePricing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHidePricing
+
+`func (o *Subaccount) SetHidePricing(v int32)`
+
+SetHidePricing sets HidePricing field to given value.
+
+### HasHidePricing
+
+`func (o *Subaccount) HasHidePricing() bool`
+
+HasHidePricing returns a boolean if a field has been set.
 
 ### GetShareCampaigns
 
@@ -580,6 +660,66 @@ HasNotes returns a boolean if a field has been set.
 `func (o *Subaccount) UnsetNotes()`
 
 UnsetNotes ensures that no value is present for Notes, not even an explicit nil
+### GetIsMain
+
+`func (o *Subaccount) GetIsMain() int32`
+
+GetIsMain returns the IsMain field if non-nil, zero value otherwise.
+
+### GetIsMainOk
+
+`func (o *Subaccount) GetIsMainOk() (*int32, bool)`
+
+GetIsMainOk returns a tuple with the IsMain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsMain
+
+`func (o *Subaccount) SetIsMain(v int32)`
+
+SetIsMain sets IsMain field to given value.
+
+### HasIsMain
+
+`func (o *Subaccount) HasIsMain() bool`
+
+HasIsMain returns a boolean if a field has been set.
+
+### GetSignUpType
+
+`func (o *Subaccount) GetSignUpType() string`
+
+GetSignUpType returns the SignUpType field if non-nil, zero value otherwise.
+
+### GetSignUpTypeOk
+
+`func (o *Subaccount) GetSignUpTypeOk() (*string, bool)`
+
+GetSignUpTypeOk returns a tuple with the SignUpType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSignUpType
+
+`func (o *Subaccount) SetSignUpType(v string)`
+
+SetSignUpType sets SignUpType field to given value.
+
+### HasSignUpType
+
+`func (o *Subaccount) HasSignUpType() bool`
+
+HasSignUpType returns a boolean if a field has been set.
+
+### SetSignUpTypeNil
+
+`func (o *Subaccount) SetSignUpTypeNil(b bool)`
+
+ SetSignUpTypeNil sets the value for SignUpType to be an explicit nil
+
+### UnsetSignUpType
+`func (o *Subaccount) UnsetSignUpType()`
+
+UnsetSignUpType ensures that no value is present for SignUpType, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

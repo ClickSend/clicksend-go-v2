@@ -26,7 +26,6 @@ type ViewAvailableNumbers struct {
 	// A message describing the outcome of the operation.
 	ResponseMsg *string `json:"response_msg,omitempty"`
 	Data *ViewAvailableNumbersData `json:"data,omitempty"`
-	Currency *Currency `json:"_currency,omitempty"`
 }
 
 // NewViewAvailableNumbers instantiates a new ViewAvailableNumbers object
@@ -174,38 +173,6 @@ func (o *ViewAvailableNumbers) SetData(v ViewAvailableNumbersData) {
 	o.Data = &v
 }
 
-// GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *ViewAvailableNumbers) GetCurrency() Currency {
-	if o == nil || IsNil(o.Currency) {
-		var ret Currency
-		return ret
-	}
-	return *o.Currency
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ViewAvailableNumbers) GetCurrencyOk() (*Currency, bool) {
-	if o == nil || IsNil(o.Currency) {
-		return nil, false
-	}
-	return o.Currency, true
-}
-
-// HasCurrency returns a boolean if a field has been set.
-func (o *ViewAvailableNumbers) HasCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
-// SetCurrency gets a reference to the given Currency and assigns it to the Currency field.
-func (o *ViewAvailableNumbers) SetCurrency(v Currency) {
-	o.Currency = &v
-}
-
 func (o ViewAvailableNumbers) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -227,9 +194,6 @@ func (o ViewAvailableNumbers) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
-	}
-	if !IsNil(o.Currency) {
-		toSerialize["_currency"] = o.Currency
 	}
 	return toSerialize, nil
 }

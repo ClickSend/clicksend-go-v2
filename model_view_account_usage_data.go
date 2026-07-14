@@ -20,15 +20,22 @@ var _ MappedNullable = &ViewAccountUsageData{}
 // ViewAccountUsageData struct for ViewAccountUsageData
 type ViewAccountUsageData struct {
 	Sms []ViewAccountUsageDataSmsInner `json:"sms,omitempty"`
-	Voice []ViewAccountUsageDataVoiceInner `json:"voice,omitempty"`
-	Fax []ViewAccountUsageDataVoiceInner `json:"fax,omitempty"`
-	Post []ViewAccountUsageDataVoiceInner `json:"post,omitempty"`
+	Mms []ViewAccountUsageDataMmsInner `json:"mms,omitempty"`
+	Voice []ViewAccountUsageDataMmsInner `json:"voice,omitempty"`
+	Fax []ViewAccountUsageDataMmsInner `json:"fax,omitempty"`
+	Post []ViewAccountUsageDataMmsInner `json:"post,omitempty"`
 	Email []ViewAccountUsageDataEmailInner `json:"email,omitempty"`
+	EmailTransactional []ViewAccountUsageDataEmailInner `json:"email_transactional,omitempty"`
+	Postcards []ViewAccountUsageDataMmsInner `json:"postcards,omitempty"`
 	SmsTotal *ViewAccountUsageDataSmsTotal `json:"sms_total,omitempty"`
 	VoiceTotal *ViewAccountUsageDataSmsTotal `json:"voice_total,omitempty"`
 	FaxTotal *ViewAccountUsageDataSmsTotal `json:"fax_total,omitempty"`
 	PostTotal *ViewAccountUsageDataSmsTotal `json:"post_total,omitempty"`
 	EmailTotal *ViewAccountUsageDataEmailTotal `json:"email_total,omitempty"`
+	MmsTotal *ViewVoiceStatisticsDataTotalOutbound `json:"mms_total,omitempty"`
+	EmailTransactionalTotal *ViewVoiceStatisticsDataTotalOutbound `json:"email_transactional_total,omitempty"`
+	PostcardsTotal *ViewVoiceStatisticsDataTotalOutbound `json:"postcards_total,omitempty"`
+	Currency *Currency `json:"_currency,omitempty"`
 }
 
 // NewViewAccountUsageData instantiates a new ViewAccountUsageData object
@@ -80,10 +87,42 @@ func (o *ViewAccountUsageData) SetSms(v []ViewAccountUsageDataSmsInner) {
 	o.Sms = v
 }
 
+// GetMms returns the Mms field value if set, zero value otherwise.
+func (o *ViewAccountUsageData) GetMms() []ViewAccountUsageDataMmsInner {
+	if o == nil || IsNil(o.Mms) {
+		var ret []ViewAccountUsageDataMmsInner
+		return ret
+	}
+	return o.Mms
+}
+
+// GetMmsOk returns a tuple with the Mms field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAccountUsageData) GetMmsOk() ([]ViewAccountUsageDataMmsInner, bool) {
+	if o == nil || IsNil(o.Mms) {
+		return nil, false
+	}
+	return o.Mms, true
+}
+
+// HasMms returns a boolean if a field has been set.
+func (o *ViewAccountUsageData) HasMms() bool {
+	if o != nil && !IsNil(o.Mms) {
+		return true
+	}
+
+	return false
+}
+
+// SetMms gets a reference to the given []ViewAccountUsageDataMmsInner and assigns it to the Mms field.
+func (o *ViewAccountUsageData) SetMms(v []ViewAccountUsageDataMmsInner) {
+	o.Mms = v
+}
+
 // GetVoice returns the Voice field value if set, zero value otherwise.
-func (o *ViewAccountUsageData) GetVoice() []ViewAccountUsageDataVoiceInner {
+func (o *ViewAccountUsageData) GetVoice() []ViewAccountUsageDataMmsInner {
 	if o == nil || IsNil(o.Voice) {
-		var ret []ViewAccountUsageDataVoiceInner
+		var ret []ViewAccountUsageDataMmsInner
 		return ret
 	}
 	return o.Voice
@@ -91,7 +130,7 @@ func (o *ViewAccountUsageData) GetVoice() []ViewAccountUsageDataVoiceInner {
 
 // GetVoiceOk returns a tuple with the Voice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageData) GetVoiceOk() ([]ViewAccountUsageDataVoiceInner, bool) {
+func (o *ViewAccountUsageData) GetVoiceOk() ([]ViewAccountUsageDataMmsInner, bool) {
 	if o == nil || IsNil(o.Voice) {
 		return nil, false
 	}
@@ -107,15 +146,15 @@ func (o *ViewAccountUsageData) HasVoice() bool {
 	return false
 }
 
-// SetVoice gets a reference to the given []ViewAccountUsageDataVoiceInner and assigns it to the Voice field.
-func (o *ViewAccountUsageData) SetVoice(v []ViewAccountUsageDataVoiceInner) {
+// SetVoice gets a reference to the given []ViewAccountUsageDataMmsInner and assigns it to the Voice field.
+func (o *ViewAccountUsageData) SetVoice(v []ViewAccountUsageDataMmsInner) {
 	o.Voice = v
 }
 
 // GetFax returns the Fax field value if set, zero value otherwise.
-func (o *ViewAccountUsageData) GetFax() []ViewAccountUsageDataVoiceInner {
+func (o *ViewAccountUsageData) GetFax() []ViewAccountUsageDataMmsInner {
 	if o == nil || IsNil(o.Fax) {
-		var ret []ViewAccountUsageDataVoiceInner
+		var ret []ViewAccountUsageDataMmsInner
 		return ret
 	}
 	return o.Fax
@@ -123,7 +162,7 @@ func (o *ViewAccountUsageData) GetFax() []ViewAccountUsageDataVoiceInner {
 
 // GetFaxOk returns a tuple with the Fax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageData) GetFaxOk() ([]ViewAccountUsageDataVoiceInner, bool) {
+func (o *ViewAccountUsageData) GetFaxOk() ([]ViewAccountUsageDataMmsInner, bool) {
 	if o == nil || IsNil(o.Fax) {
 		return nil, false
 	}
@@ -139,15 +178,15 @@ func (o *ViewAccountUsageData) HasFax() bool {
 	return false
 }
 
-// SetFax gets a reference to the given []ViewAccountUsageDataVoiceInner and assigns it to the Fax field.
-func (o *ViewAccountUsageData) SetFax(v []ViewAccountUsageDataVoiceInner) {
+// SetFax gets a reference to the given []ViewAccountUsageDataMmsInner and assigns it to the Fax field.
+func (o *ViewAccountUsageData) SetFax(v []ViewAccountUsageDataMmsInner) {
 	o.Fax = v
 }
 
 // GetPost returns the Post field value if set, zero value otherwise.
-func (o *ViewAccountUsageData) GetPost() []ViewAccountUsageDataVoiceInner {
+func (o *ViewAccountUsageData) GetPost() []ViewAccountUsageDataMmsInner {
 	if o == nil || IsNil(o.Post) {
-		var ret []ViewAccountUsageDataVoiceInner
+		var ret []ViewAccountUsageDataMmsInner
 		return ret
 	}
 	return o.Post
@@ -155,7 +194,7 @@ func (o *ViewAccountUsageData) GetPost() []ViewAccountUsageDataVoiceInner {
 
 // GetPostOk returns a tuple with the Post field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageData) GetPostOk() ([]ViewAccountUsageDataVoiceInner, bool) {
+func (o *ViewAccountUsageData) GetPostOk() ([]ViewAccountUsageDataMmsInner, bool) {
 	if o == nil || IsNil(o.Post) {
 		return nil, false
 	}
@@ -171,8 +210,8 @@ func (o *ViewAccountUsageData) HasPost() bool {
 	return false
 }
 
-// SetPost gets a reference to the given []ViewAccountUsageDataVoiceInner and assigns it to the Post field.
-func (o *ViewAccountUsageData) SetPost(v []ViewAccountUsageDataVoiceInner) {
+// SetPost gets a reference to the given []ViewAccountUsageDataMmsInner and assigns it to the Post field.
+func (o *ViewAccountUsageData) SetPost(v []ViewAccountUsageDataMmsInner) {
 	o.Post = v
 }
 
@@ -206,6 +245,70 @@ func (o *ViewAccountUsageData) HasEmail() bool {
 // SetEmail gets a reference to the given []ViewAccountUsageDataEmailInner and assigns it to the Email field.
 func (o *ViewAccountUsageData) SetEmail(v []ViewAccountUsageDataEmailInner) {
 	o.Email = v
+}
+
+// GetEmailTransactional returns the EmailTransactional field value if set, zero value otherwise.
+func (o *ViewAccountUsageData) GetEmailTransactional() []ViewAccountUsageDataEmailInner {
+	if o == nil || IsNil(o.EmailTransactional) {
+		var ret []ViewAccountUsageDataEmailInner
+		return ret
+	}
+	return o.EmailTransactional
+}
+
+// GetEmailTransactionalOk returns a tuple with the EmailTransactional field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAccountUsageData) GetEmailTransactionalOk() ([]ViewAccountUsageDataEmailInner, bool) {
+	if o == nil || IsNil(o.EmailTransactional) {
+		return nil, false
+	}
+	return o.EmailTransactional, true
+}
+
+// HasEmailTransactional returns a boolean if a field has been set.
+func (o *ViewAccountUsageData) HasEmailTransactional() bool {
+	if o != nil && !IsNil(o.EmailTransactional) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmailTransactional gets a reference to the given []ViewAccountUsageDataEmailInner and assigns it to the EmailTransactional field.
+func (o *ViewAccountUsageData) SetEmailTransactional(v []ViewAccountUsageDataEmailInner) {
+	o.EmailTransactional = v
+}
+
+// GetPostcards returns the Postcards field value if set, zero value otherwise.
+func (o *ViewAccountUsageData) GetPostcards() []ViewAccountUsageDataMmsInner {
+	if o == nil || IsNil(o.Postcards) {
+		var ret []ViewAccountUsageDataMmsInner
+		return ret
+	}
+	return o.Postcards
+}
+
+// GetPostcardsOk returns a tuple with the Postcards field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAccountUsageData) GetPostcardsOk() ([]ViewAccountUsageDataMmsInner, bool) {
+	if o == nil || IsNil(o.Postcards) {
+		return nil, false
+	}
+	return o.Postcards, true
+}
+
+// HasPostcards returns a boolean if a field has been set.
+func (o *ViewAccountUsageData) HasPostcards() bool {
+	if o != nil && !IsNil(o.Postcards) {
+		return true
+	}
+
+	return false
+}
+
+// SetPostcards gets a reference to the given []ViewAccountUsageDataMmsInner and assigns it to the Postcards field.
+func (o *ViewAccountUsageData) SetPostcards(v []ViewAccountUsageDataMmsInner) {
+	o.Postcards = v
 }
 
 // GetSmsTotal returns the SmsTotal field value if set, zero value otherwise.
@@ -368,6 +471,134 @@ func (o *ViewAccountUsageData) SetEmailTotal(v ViewAccountUsageDataEmailTotal) {
 	o.EmailTotal = &v
 }
 
+// GetMmsTotal returns the MmsTotal field value if set, zero value otherwise.
+func (o *ViewAccountUsageData) GetMmsTotal() ViewVoiceStatisticsDataTotalOutbound {
+	if o == nil || IsNil(o.MmsTotal) {
+		var ret ViewVoiceStatisticsDataTotalOutbound
+		return ret
+	}
+	return *o.MmsTotal
+}
+
+// GetMmsTotalOk returns a tuple with the MmsTotal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAccountUsageData) GetMmsTotalOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
+	if o == nil || IsNil(o.MmsTotal) {
+		return nil, false
+	}
+	return o.MmsTotal, true
+}
+
+// HasMmsTotal returns a boolean if a field has been set.
+func (o *ViewAccountUsageData) HasMmsTotal() bool {
+	if o != nil && !IsNil(o.MmsTotal) {
+		return true
+	}
+
+	return false
+}
+
+// SetMmsTotal gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the MmsTotal field.
+func (o *ViewAccountUsageData) SetMmsTotal(v ViewVoiceStatisticsDataTotalOutbound) {
+	o.MmsTotal = &v
+}
+
+// GetEmailTransactionalTotal returns the EmailTransactionalTotal field value if set, zero value otherwise.
+func (o *ViewAccountUsageData) GetEmailTransactionalTotal() ViewVoiceStatisticsDataTotalOutbound {
+	if o == nil || IsNil(o.EmailTransactionalTotal) {
+		var ret ViewVoiceStatisticsDataTotalOutbound
+		return ret
+	}
+	return *o.EmailTransactionalTotal
+}
+
+// GetEmailTransactionalTotalOk returns a tuple with the EmailTransactionalTotal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAccountUsageData) GetEmailTransactionalTotalOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
+	if o == nil || IsNil(o.EmailTransactionalTotal) {
+		return nil, false
+	}
+	return o.EmailTransactionalTotal, true
+}
+
+// HasEmailTransactionalTotal returns a boolean if a field has been set.
+func (o *ViewAccountUsageData) HasEmailTransactionalTotal() bool {
+	if o != nil && !IsNil(o.EmailTransactionalTotal) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmailTransactionalTotal gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the EmailTransactionalTotal field.
+func (o *ViewAccountUsageData) SetEmailTransactionalTotal(v ViewVoiceStatisticsDataTotalOutbound) {
+	o.EmailTransactionalTotal = &v
+}
+
+// GetPostcardsTotal returns the PostcardsTotal field value if set, zero value otherwise.
+func (o *ViewAccountUsageData) GetPostcardsTotal() ViewVoiceStatisticsDataTotalOutbound {
+	if o == nil || IsNil(o.PostcardsTotal) {
+		var ret ViewVoiceStatisticsDataTotalOutbound
+		return ret
+	}
+	return *o.PostcardsTotal
+}
+
+// GetPostcardsTotalOk returns a tuple with the PostcardsTotal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAccountUsageData) GetPostcardsTotalOk() (*ViewVoiceStatisticsDataTotalOutbound, bool) {
+	if o == nil || IsNil(o.PostcardsTotal) {
+		return nil, false
+	}
+	return o.PostcardsTotal, true
+}
+
+// HasPostcardsTotal returns a boolean if a field has been set.
+func (o *ViewAccountUsageData) HasPostcardsTotal() bool {
+	if o != nil && !IsNil(o.PostcardsTotal) {
+		return true
+	}
+
+	return false
+}
+
+// SetPostcardsTotal gets a reference to the given ViewVoiceStatisticsDataTotalOutbound and assigns it to the PostcardsTotal field.
+func (o *ViewAccountUsageData) SetPostcardsTotal(v ViewVoiceStatisticsDataTotalOutbound) {
+	o.PostcardsTotal = &v
+}
+
+// GetCurrency returns the Currency field value if set, zero value otherwise.
+func (o *ViewAccountUsageData) GetCurrency() Currency {
+	if o == nil || IsNil(o.Currency) {
+		var ret Currency
+		return ret
+	}
+	return *o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewAccountUsageData) GetCurrencyOk() (*Currency, bool) {
+	if o == nil || IsNil(o.Currency) {
+		return nil, false
+	}
+	return o.Currency, true
+}
+
+// HasCurrency returns a boolean if a field has been set.
+func (o *ViewAccountUsageData) HasCurrency() bool {
+	if o != nil && !IsNil(o.Currency) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrency gets a reference to the given Currency and assigns it to the Currency field.
+func (o *ViewAccountUsageData) SetCurrency(v Currency) {
+	o.Currency = &v
+}
+
 func (o ViewAccountUsageData) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -381,6 +612,9 @@ func (o ViewAccountUsageData) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Sms) {
 		toSerialize["sms"] = o.Sms
 	}
+	if !IsNil(o.Mms) {
+		toSerialize["mms"] = o.Mms
+	}
 	if !IsNil(o.Voice) {
 		toSerialize["voice"] = o.Voice
 	}
@@ -392,6 +626,12 @@ func (o ViewAccountUsageData) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
+	}
+	if !IsNil(o.EmailTransactional) {
+		toSerialize["email_transactional"] = o.EmailTransactional
+	}
+	if !IsNil(o.Postcards) {
+		toSerialize["postcards"] = o.Postcards
 	}
 	if !IsNil(o.SmsTotal) {
 		toSerialize["sms_total"] = o.SmsTotal
@@ -407,6 +647,18 @@ func (o ViewAccountUsageData) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EmailTotal) {
 		toSerialize["email_total"] = o.EmailTotal
+	}
+	if !IsNil(o.MmsTotal) {
+		toSerialize["mms_total"] = o.MmsTotal
+	}
+	if !IsNil(o.EmailTransactionalTotal) {
+		toSerialize["email_transactional_total"] = o.EmailTransactionalTotal
+	}
+	if !IsNil(o.PostcardsTotal) {
+		toSerialize["postcards_total"] = o.PostcardsTotal
+	}
+	if !IsNil(o.Currency) {
+		toSerialize["_currency"] = o.Currency
 	}
 	return toSerialize, nil
 }

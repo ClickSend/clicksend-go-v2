@@ -19,8 +19,8 @@ var _ MappedNullable = &Sms{}
 
 // Sms struct for Sms
 type Sms struct {
-	// The date you sent the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
-	Date *int32 `json:"date,omitempty"`
+	// The date you sent the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>. Returned as a string since it may be an empty string in price-calculation responses where no message has actually been sent yet.
+	Date *string `json:"date,omitempty"`
 	// The phone number of the recipient. It should be in <a href=\"https://en.wikipedia.org/wiki/E.164\" target=\"_blank\">E.164 format</a>.
 	To *string `json:"to,omitempty"`
 	// The message sent. The price of sending a message depends on the number of characters and the type of message. There are two types:  - Standard message - Contains only characters in the <a href=\"https://en.wikipedia.org/wiki/GSM_03.38\" target=\"_blank\">GSM</a> set, with a maximum of 160 characters.      - Unicode message - Contains characters outside the <a href=\"https://en.wikipedia.org/wiki/GSM_03.38\" target=\"_blank\">GSM</a> set, with a maximum of 70 characters.       Longer messages will be sent as multiple messages (parts), but the recipient will receive them as a single long message. Visit <a href=\"https://help.clicksend.com/article/h474eseq3a-how-many-characters-can-i-send-in-an-sms\" target=\"_blank\">this page</a> to learn more about the number of characters per message, and <a href=\"http://smscharactercount.com/\" target=\"_blank\">this page</a> to count the number of characters.
@@ -65,9 +65,9 @@ func NewSmsWithDefaults() *Sms {
 }
 
 // GetDate returns the Date field value if set, zero value otherwise.
-func (o *Sms) GetDate() int32 {
+func (o *Sms) GetDate() string {
 	if o == nil || IsNil(o.Date) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Date
@@ -75,7 +75,7 @@ func (o *Sms) GetDate() int32 {
 
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Sms) GetDateOk() (*int32, bool) {
+func (o *Sms) GetDateOk() (*string, bool) {
 	if o == nil || IsNil(o.Date) {
 		return nil, false
 	}
@@ -91,8 +91,8 @@ func (o *Sms) HasDate() bool {
 	return false
 }
 
-// SetDate gets a reference to the given int32 and assigns it to the Date field.
-func (o *Sms) SetDate(v int32) {
+// SetDate gets a reference to the given string and assigns it to the Date field.
+func (o *Sms) SetDate(v string) {
 	o.Date = &v
 }
 

@@ -29,21 +29,20 @@ type GlobalSending struct {
 	Region *string `json:"region,omitempty"`
 	// The date when the country was agreed upon.
 	AgreedAt NullableString `json:"agreed_at,omitempty"`
-	// The entity responsible for the registration.
-	RegistrationEntity NullableString `json:"registration_entity,omitempty"`
+	RegistrationEntity NullableAccountReferrerChosen `json:"registration_entity,omitempty"`
 	RegistrationStatus *GlobalSendingRegistrationStatus `json:"registration_status,omitempty"`
 	// The ID of the country in JotForm.
 	JotformId *string `json:"jotform_id,omitempty"`
 	// The type of SMS registration.
 	SmsRegistrationType *int32 `json:"sms_registration_type,omitempty"`
 	// Indicates if registration is blocked.
-	BlockRegistration *int32 `json:"block_registration,omitempty"`
+	BlockRegistration *bool `json:"block_registration,omitempty"`
 	// Indicates if leads are blocked.
-	BlockLeads *int32 `json:"block_leads,omitempty"`
+	BlockLeads *bool `json:"block_leads,omitempty"`
 	// The trial from address.
 	TrialFromAddress *string `json:"trial_from_address,omitempty"`
 	// Indicates if sending is restricted.
-	RestrictedSending *int32 `json:"restricted_sending,omitempty"`
+	RestrictedSending *bool `json:"restricted_sending,omitempty"`
 	// Indicates if trial sending is allowed.
 	TrialSending *int32 `json:"trial_sending,omitempty"`
 	// Description of trial sending.
@@ -244,9 +243,9 @@ func (o *GlobalSending) UnsetAgreedAt() {
 }
 
 // GetRegistrationEntity returns the RegistrationEntity field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GlobalSending) GetRegistrationEntity() string {
+func (o *GlobalSending) GetRegistrationEntity() AccountReferrerChosen {
 	if o == nil || IsNil(o.RegistrationEntity.Get()) {
-		var ret string
+		var ret AccountReferrerChosen
 		return ret
 	}
 	return *o.RegistrationEntity.Get()
@@ -255,7 +254,7 @@ func (o *GlobalSending) GetRegistrationEntity() string {
 // GetRegistrationEntityOk returns a tuple with the RegistrationEntity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GlobalSending) GetRegistrationEntityOk() (*string, bool) {
+func (o *GlobalSending) GetRegistrationEntityOk() (*AccountReferrerChosen, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -271,8 +270,8 @@ func (o *GlobalSending) HasRegistrationEntity() bool {
 	return false
 }
 
-// SetRegistrationEntity gets a reference to the given NullableString and assigns it to the RegistrationEntity field.
-func (o *GlobalSending) SetRegistrationEntity(v string) {
+// SetRegistrationEntity gets a reference to the given NullableAccountReferrerChosen and assigns it to the RegistrationEntity field.
+func (o *GlobalSending) SetRegistrationEntity(v AccountReferrerChosen) {
 	o.RegistrationEntity.Set(&v)
 }
 // SetRegistrationEntityNil sets the value for RegistrationEntity to be an explicit nil
@@ -382,9 +381,9 @@ func (o *GlobalSending) SetSmsRegistrationType(v int32) {
 }
 
 // GetBlockRegistration returns the BlockRegistration field value if set, zero value otherwise.
-func (o *GlobalSending) GetBlockRegistration() int32 {
+func (o *GlobalSending) GetBlockRegistration() bool {
 	if o == nil || IsNil(o.BlockRegistration) {
-		var ret int32
+		var ret bool
 		return ret
 	}
 	return *o.BlockRegistration
@@ -392,7 +391,7 @@ func (o *GlobalSending) GetBlockRegistration() int32 {
 
 // GetBlockRegistrationOk returns a tuple with the BlockRegistration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalSending) GetBlockRegistrationOk() (*int32, bool) {
+func (o *GlobalSending) GetBlockRegistrationOk() (*bool, bool) {
 	if o == nil || IsNil(o.BlockRegistration) {
 		return nil, false
 	}
@@ -408,15 +407,15 @@ func (o *GlobalSending) HasBlockRegistration() bool {
 	return false
 }
 
-// SetBlockRegistration gets a reference to the given int32 and assigns it to the BlockRegistration field.
-func (o *GlobalSending) SetBlockRegistration(v int32) {
+// SetBlockRegistration gets a reference to the given bool and assigns it to the BlockRegistration field.
+func (o *GlobalSending) SetBlockRegistration(v bool) {
 	o.BlockRegistration = &v
 }
 
 // GetBlockLeads returns the BlockLeads field value if set, zero value otherwise.
-func (o *GlobalSending) GetBlockLeads() int32 {
+func (o *GlobalSending) GetBlockLeads() bool {
 	if o == nil || IsNil(o.BlockLeads) {
-		var ret int32
+		var ret bool
 		return ret
 	}
 	return *o.BlockLeads
@@ -424,7 +423,7 @@ func (o *GlobalSending) GetBlockLeads() int32 {
 
 // GetBlockLeadsOk returns a tuple with the BlockLeads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalSending) GetBlockLeadsOk() (*int32, bool) {
+func (o *GlobalSending) GetBlockLeadsOk() (*bool, bool) {
 	if o == nil || IsNil(o.BlockLeads) {
 		return nil, false
 	}
@@ -440,8 +439,8 @@ func (o *GlobalSending) HasBlockLeads() bool {
 	return false
 }
 
-// SetBlockLeads gets a reference to the given int32 and assigns it to the BlockLeads field.
-func (o *GlobalSending) SetBlockLeads(v int32) {
+// SetBlockLeads gets a reference to the given bool and assigns it to the BlockLeads field.
+func (o *GlobalSending) SetBlockLeads(v bool) {
 	o.BlockLeads = &v
 }
 
@@ -478,9 +477,9 @@ func (o *GlobalSending) SetTrialFromAddress(v string) {
 }
 
 // GetRestrictedSending returns the RestrictedSending field value if set, zero value otherwise.
-func (o *GlobalSending) GetRestrictedSending() int32 {
+func (o *GlobalSending) GetRestrictedSending() bool {
 	if o == nil || IsNil(o.RestrictedSending) {
-		var ret int32
+		var ret bool
 		return ret
 	}
 	return *o.RestrictedSending
@@ -488,7 +487,7 @@ func (o *GlobalSending) GetRestrictedSending() int32 {
 
 // GetRestrictedSendingOk returns a tuple with the RestrictedSending field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalSending) GetRestrictedSendingOk() (*int32, bool) {
+func (o *GlobalSending) GetRestrictedSendingOk() (*bool, bool) {
 	if o == nil || IsNil(o.RestrictedSending) {
 		return nil, false
 	}
@@ -504,8 +503,8 @@ func (o *GlobalSending) HasRestrictedSending() bool {
 	return false
 }
 
-// SetRestrictedSending gets a reference to the given int32 and assigns it to the RestrictedSending field.
-func (o *GlobalSending) SetRestrictedSending(v int32) {
+// SetRestrictedSending gets a reference to the given bool and assigns it to the RestrictedSending field.
+func (o *GlobalSending) SetRestrictedSending(v bool) {
 	o.RestrictedSending = &v
 }
 

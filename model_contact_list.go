@@ -27,6 +27,10 @@ type ContactList struct {
 	ListEmailId *string `json:"list_email_id,omitempty"`
 	// The number of contacts in the list.
 	ContactsCount *int32 `json:"_contacts_count,omitempty"`
+	// Flag indicating if a contact import is currently in progress for this list.
+	ImportInProgress *int32 `json:"_import_in_progress,omitempty"`
+	// Flag indicating if an opt-out removal is currently in progress for this list.
+	OptoutInProgress *int32 `json:"_optout_in_progress,omitempty"`
 }
 
 // NewContactList instantiates a new ContactList object
@@ -174,6 +178,70 @@ func (o *ContactList) SetContactsCount(v int32) {
 	o.ContactsCount = &v
 }
 
+// GetImportInProgress returns the ImportInProgress field value if set, zero value otherwise.
+func (o *ContactList) GetImportInProgress() int32 {
+	if o == nil || IsNil(o.ImportInProgress) {
+		var ret int32
+		return ret
+	}
+	return *o.ImportInProgress
+}
+
+// GetImportInProgressOk returns a tuple with the ImportInProgress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContactList) GetImportInProgressOk() (*int32, bool) {
+	if o == nil || IsNil(o.ImportInProgress) {
+		return nil, false
+	}
+	return o.ImportInProgress, true
+}
+
+// HasImportInProgress returns a boolean if a field has been set.
+func (o *ContactList) HasImportInProgress() bool {
+	if o != nil && !IsNil(o.ImportInProgress) {
+		return true
+	}
+
+	return false
+}
+
+// SetImportInProgress gets a reference to the given int32 and assigns it to the ImportInProgress field.
+func (o *ContactList) SetImportInProgress(v int32) {
+	o.ImportInProgress = &v
+}
+
+// GetOptoutInProgress returns the OptoutInProgress field value if set, zero value otherwise.
+func (o *ContactList) GetOptoutInProgress() int32 {
+	if o == nil || IsNil(o.OptoutInProgress) {
+		var ret int32
+		return ret
+	}
+	return *o.OptoutInProgress
+}
+
+// GetOptoutInProgressOk returns a tuple with the OptoutInProgress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContactList) GetOptoutInProgressOk() (*int32, bool) {
+	if o == nil || IsNil(o.OptoutInProgress) {
+		return nil, false
+	}
+	return o.OptoutInProgress, true
+}
+
+// HasOptoutInProgress returns a boolean if a field has been set.
+func (o *ContactList) HasOptoutInProgress() bool {
+	if o != nil && !IsNil(o.OptoutInProgress) {
+		return true
+	}
+
+	return false
+}
+
+// SetOptoutInProgress gets a reference to the given int32 and assigns it to the OptoutInProgress field.
+func (o *ContactList) SetOptoutInProgress(v int32) {
+	o.OptoutInProgress = &v
+}
+
 func (o ContactList) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -195,6 +263,12 @@ func (o ContactList) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ContactsCount) {
 		toSerialize["_contacts_count"] = o.ContactsCount
+	}
+	if !IsNil(o.ImportInProgress) {
+		toSerialize["_import_in_progress"] = o.ImportInProgress
+	}
+	if !IsNil(o.OptoutInProgress) {
+		toSerialize["_optout_in_progress"] = o.OptoutInProgress
 	}
 	return toSerialize, nil
 }

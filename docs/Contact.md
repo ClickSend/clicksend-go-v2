@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **Custom2** | Pointer to **string** | Custom field 2. | [optional] 
 **Custom3** | Pointer to **string** | Custom field 3. | [optional] 
 **Custom4** | Pointer to **string** | Custom field 4. | [optional] 
-**DateAdded** | Pointer to **time.Time** | The date when the contact was added. | [optional] 
-**DateUpdated** | Pointer to **time.Time** | The date when the contact was last updated. | [optional] 
+**DateAdded** | Pointer to **string** | The date when the contact was added. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \&quot;1783997542\&quot;) instead of ISO 8601. | [optional] 
+**DateUpdated** | Pointer to **string** | The date when the contact was last updated. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \&quot;1783997542\&quot;) instead of ISO 8601. | [optional] 
 **FaxNumber** | Pointer to **NullableString** | The fax number of the contact. | [optional] 
 **OrganizationName** | Pointer to **NullableString** | The organization name of the contact. | [optional] 
 **Email** | Pointer to **NullableString** | The email address of the contact. | [optional] 
@@ -272,20 +272,20 @@ HasCustom4 returns a boolean if a field has been set.
 
 ### GetDateAdded
 
-`func (o *Contact) GetDateAdded() time.Time`
+`func (o *Contact) GetDateAdded() string`
 
 GetDateAdded returns the DateAdded field if non-nil, zero value otherwise.
 
 ### GetDateAddedOk
 
-`func (o *Contact) GetDateAddedOk() (*time.Time, bool)`
+`func (o *Contact) GetDateAddedOk() (*string, bool)`
 
 GetDateAddedOk returns a tuple with the DateAdded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateAdded
 
-`func (o *Contact) SetDateAdded(v time.Time)`
+`func (o *Contact) SetDateAdded(v string)`
 
 SetDateAdded sets DateAdded field to given value.
 
@@ -297,20 +297,20 @@ HasDateAdded returns a boolean if a field has been set.
 
 ### GetDateUpdated
 
-`func (o *Contact) GetDateUpdated() time.Time`
+`func (o *Contact) GetDateUpdated() string`
 
 GetDateUpdated returns the DateUpdated field if non-nil, zero value otherwise.
 
 ### GetDateUpdatedOk
 
-`func (o *Contact) GetDateUpdatedOk() (*time.Time, bool)`
+`func (o *Contact) GetDateUpdatedOk() (*string, bool)`
 
 GetDateUpdatedOk returns a tuple with the DateUpdated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateUpdated
 
-`func (o *Contact) SetDateUpdated(v time.Time)`
+`func (o *Contact) SetDateUpdated(v string)`
 
 SetDateUpdated sets DateUpdated field to given value.
 

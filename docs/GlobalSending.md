@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** | The country code. | [optional] 
 **Region** | Pointer to **string** | The region of the country. | [optional] 
 **AgreedAt** | Pointer to **NullableString** | The date when the country was agreed upon. | [optional] 
-**RegistrationEntity** | Pointer to **NullableString** | The entity responsible for the registration. | [optional] 
+**RegistrationEntity** | Pointer to [**NullableAccountReferrerChosen**](AccountReferrerChosen.md) |  | [optional] 
 **RegistrationStatus** | Pointer to [**GlobalSendingRegistrationStatus**](GlobalSendingRegistrationStatus.md) |  | [optional] 
 **JotformId** | Pointer to **string** | The ID of the country in JotForm. | [optional] 
 **SmsRegistrationType** | Pointer to **int32** | The type of SMS registration. | [optional] 
-**BlockRegistration** | Pointer to **int32** | Indicates if registration is blocked. | [optional] 
-**BlockLeads** | Pointer to **int32** | Indicates if leads are blocked. | [optional] 
+**BlockRegistration** | Pointer to **bool** | Indicates if registration is blocked. | [optional] 
+**BlockLeads** | Pointer to **bool** | Indicates if leads are blocked. | [optional] 
 **TrialFromAddress** | Pointer to **string** | The trial from address. | [optional] 
-**RestrictedSending** | Pointer to **int32** | Indicates if sending is restricted. | [optional] 
+**RestrictedSending** | Pointer to **bool** | Indicates if sending is restricted. | [optional] 
 **TrialSending** | Pointer to **int32** | Indicates if trial sending is allowed. | [optional] 
 **TrialSendingDescription** | Pointer to **string** | Description of trial sending. | [optional] 
 **HasRegulationRequirements** | Pointer to **int32** | Indicates if there are regulation requirements. | [optional] 
@@ -179,20 +179,20 @@ HasAgreedAt returns a boolean if a field has been set.
 UnsetAgreedAt ensures that no value is present for AgreedAt, not even an explicit nil
 ### GetRegistrationEntity
 
-`func (o *GlobalSending) GetRegistrationEntity() string`
+`func (o *GlobalSending) GetRegistrationEntity() AccountReferrerChosen`
 
 GetRegistrationEntity returns the RegistrationEntity field if non-nil, zero value otherwise.
 
 ### GetRegistrationEntityOk
 
-`func (o *GlobalSending) GetRegistrationEntityOk() (*string, bool)`
+`func (o *GlobalSending) GetRegistrationEntityOk() (*AccountReferrerChosen, bool)`
 
 GetRegistrationEntityOk returns a tuple with the RegistrationEntity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegistrationEntity
 
-`func (o *GlobalSending) SetRegistrationEntity(v string)`
+`func (o *GlobalSending) SetRegistrationEntity(v AccountReferrerChosen)`
 
 SetRegistrationEntity sets RegistrationEntity field to given value.
 
@@ -289,20 +289,20 @@ HasSmsRegistrationType returns a boolean if a field has been set.
 
 ### GetBlockRegistration
 
-`func (o *GlobalSending) GetBlockRegistration() int32`
+`func (o *GlobalSending) GetBlockRegistration() bool`
 
 GetBlockRegistration returns the BlockRegistration field if non-nil, zero value otherwise.
 
 ### GetBlockRegistrationOk
 
-`func (o *GlobalSending) GetBlockRegistrationOk() (*int32, bool)`
+`func (o *GlobalSending) GetBlockRegistrationOk() (*bool, bool)`
 
 GetBlockRegistrationOk returns a tuple with the BlockRegistration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlockRegistration
 
-`func (o *GlobalSending) SetBlockRegistration(v int32)`
+`func (o *GlobalSending) SetBlockRegistration(v bool)`
 
 SetBlockRegistration sets BlockRegistration field to given value.
 
@@ -314,20 +314,20 @@ HasBlockRegistration returns a boolean if a field has been set.
 
 ### GetBlockLeads
 
-`func (o *GlobalSending) GetBlockLeads() int32`
+`func (o *GlobalSending) GetBlockLeads() bool`
 
 GetBlockLeads returns the BlockLeads field if non-nil, zero value otherwise.
 
 ### GetBlockLeadsOk
 
-`func (o *GlobalSending) GetBlockLeadsOk() (*int32, bool)`
+`func (o *GlobalSending) GetBlockLeadsOk() (*bool, bool)`
 
 GetBlockLeadsOk returns a tuple with the BlockLeads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlockLeads
 
-`func (o *GlobalSending) SetBlockLeads(v int32)`
+`func (o *GlobalSending) SetBlockLeads(v bool)`
 
 SetBlockLeads sets BlockLeads field to given value.
 
@@ -364,20 +364,20 @@ HasTrialFromAddress returns a boolean if a field has been set.
 
 ### GetRestrictedSending
 
-`func (o *GlobalSending) GetRestrictedSending() int32`
+`func (o *GlobalSending) GetRestrictedSending() bool`
 
 GetRestrictedSending returns the RestrictedSending field if non-nil, zero value otherwise.
 
 ### GetRestrictedSendingOk
 
-`func (o *GlobalSending) GetRestrictedSendingOk() (*int32, bool)`
+`func (o *GlobalSending) GetRestrictedSendingOk() (*bool, bool)`
 
 GetRestrictedSendingOk returns a tuple with the RestrictedSending field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRestrictedSending
 
-`func (o *GlobalSending) SetRestrictedSending(v int32)`
+`func (o *GlobalSending) SetRestrictedSending(v bool)`
 
 SetRestrictedSending sets RestrictedSending field to given value.
 

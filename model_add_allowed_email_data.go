@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewAllowedEmailsDataInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewAllowedEmailsDataInner{}
+// checks if the AddAllowedEmailData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAllowedEmailData{}
 
-// ViewAllowedEmailsDataInner struct for ViewAllowedEmailsDataInner
-type ViewAllowedEmailsDataInner struct {
+// AddAllowedEmailData struct for AddAllowedEmailData
+type AddAllowedEmailData struct {
 	// The ID of the email address.
 	EmailAddressId *float32 `json:"email_address_id,omitempty"`
 	// The email address.
@@ -27,25 +27,25 @@ type ViewAllowedEmailsDataInner struct {
 	From *string `json:"from,omitempty"`
 }
 
-// NewViewAllowedEmailsDataInner instantiates a new ViewAllowedEmailsDataInner object
+// NewAddAllowedEmailData instantiates a new AddAllowedEmailData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewAllowedEmailsDataInner() *ViewAllowedEmailsDataInner {
-	this := ViewAllowedEmailsDataInner{}
+func NewAddAllowedEmailData() *AddAllowedEmailData {
+	this := AddAllowedEmailData{}
 	return &this
 }
 
-// NewViewAllowedEmailsDataInnerWithDefaults instantiates a new ViewAllowedEmailsDataInner object
+// NewAddAllowedEmailDataWithDefaults instantiates a new AddAllowedEmailData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewAllowedEmailsDataInnerWithDefaults() *ViewAllowedEmailsDataInner {
-	this := ViewAllowedEmailsDataInner{}
+func NewAddAllowedEmailDataWithDefaults() *AddAllowedEmailData {
+	this := AddAllowedEmailData{}
 	return &this
 }
 
 // GetEmailAddressId returns the EmailAddressId field value if set, zero value otherwise.
-func (o *ViewAllowedEmailsDataInner) GetEmailAddressId() float32 {
+func (o *AddAllowedEmailData) GetEmailAddressId() float32 {
 	if o == nil || IsNil(o.EmailAddressId) {
 		var ret float32
 		return ret
@@ -55,7 +55,7 @@ func (o *ViewAllowedEmailsDataInner) GetEmailAddressId() float32 {
 
 // GetEmailAddressIdOk returns a tuple with the EmailAddressId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllowedEmailsDataInner) GetEmailAddressIdOk() (*float32, bool) {
+func (o *AddAllowedEmailData) GetEmailAddressIdOk() (*float32, bool) {
 	if o == nil || IsNil(o.EmailAddressId) {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *ViewAllowedEmailsDataInner) GetEmailAddressIdOk() (*float32, bool) {
 }
 
 // HasEmailAddressId returns a boolean if a field has been set.
-func (o *ViewAllowedEmailsDataInner) HasEmailAddressId() bool {
+func (o *AddAllowedEmailData) HasEmailAddressId() bool {
 	if o != nil && !IsNil(o.EmailAddressId) {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *ViewAllowedEmailsDataInner) HasEmailAddressId() bool {
 }
 
 // SetEmailAddressId gets a reference to the given float32 and assigns it to the EmailAddressId field.
-func (o *ViewAllowedEmailsDataInner) SetEmailAddressId(v float32) {
+func (o *AddAllowedEmailData) SetEmailAddressId(v float32) {
 	o.EmailAddressId = &v
 }
 
 // GetEmailAddress returns the EmailAddress field value if set, zero value otherwise.
-func (o *ViewAllowedEmailsDataInner) GetEmailAddress() string {
+func (o *AddAllowedEmailData) GetEmailAddress() string {
 	if o == nil || IsNil(o.EmailAddress) {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *ViewAllowedEmailsDataInner) GetEmailAddress() string {
 
 // GetEmailAddressOk returns a tuple with the EmailAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllowedEmailsDataInner) GetEmailAddressOk() (*string, bool) {
+func (o *AddAllowedEmailData) GetEmailAddressOk() (*string, bool) {
 	if o == nil || IsNil(o.EmailAddress) {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *ViewAllowedEmailsDataInner) GetEmailAddressOk() (*string, bool) {
 }
 
 // HasEmailAddress returns a boolean if a field has been set.
-func (o *ViewAllowedEmailsDataInner) HasEmailAddress() bool {
+func (o *AddAllowedEmailData) HasEmailAddress() bool {
 	if o != nil && !IsNil(o.EmailAddress) {
 		return true
 	}
@@ -104,12 +104,12 @@ func (o *ViewAllowedEmailsDataInner) HasEmailAddress() bool {
 }
 
 // SetEmailAddress gets a reference to the given string and assigns it to the EmailAddress field.
-func (o *ViewAllowedEmailsDataInner) SetEmailAddress(v string) {
+func (o *AddAllowedEmailData) SetEmailAddress(v string) {
 	o.EmailAddress = &v
 }
 
 // GetFrom returns the From field value if set, zero value otherwise.
-func (o *ViewAllowedEmailsDataInner) GetFrom() string {
+func (o *AddAllowedEmailData) GetFrom() string {
 	if o == nil || IsNil(o.From) {
 		var ret string
 		return ret
@@ -119,7 +119,7 @@ func (o *ViewAllowedEmailsDataInner) GetFrom() string {
 
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAllowedEmailsDataInner) GetFromOk() (*string, bool) {
+func (o *AddAllowedEmailData) GetFromOk() (*string, bool) {
 	if o == nil || IsNil(o.From) {
 		return nil, false
 	}
@@ -127,7 +127,7 @@ func (o *ViewAllowedEmailsDataInner) GetFromOk() (*string, bool) {
 }
 
 // HasFrom returns a boolean if a field has been set.
-func (o *ViewAllowedEmailsDataInner) HasFrom() bool {
+func (o *AddAllowedEmailData) HasFrom() bool {
 	if o != nil && !IsNil(o.From) {
 		return true
 	}
@@ -136,11 +136,11 @@ func (o *ViewAllowedEmailsDataInner) HasFrom() bool {
 }
 
 // SetFrom gets a reference to the given string and assigns it to the From field.
-func (o *ViewAllowedEmailsDataInner) SetFrom(v string) {
+func (o *AddAllowedEmailData) SetFrom(v string) {
 	o.From = &v
 }
 
-func (o ViewAllowedEmailsDataInner) MarshalJSON() ([]byte, error) {
+func (o AddAllowedEmailData) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -148,7 +148,7 @@ func (o ViewAllowedEmailsDataInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewAllowedEmailsDataInner) ToMap() (map[string]interface{}, error) {
+func (o AddAllowedEmailData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.EmailAddressId) {
 		toSerialize["email_address_id"] = o.EmailAddressId
@@ -162,38 +162,38 @@ func (o ViewAllowedEmailsDataInner) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableViewAllowedEmailsDataInner struct {
-	value *ViewAllowedEmailsDataInner
+type NullableAddAllowedEmailData struct {
+	value *AddAllowedEmailData
 	isSet bool
 }
 
-func (v NullableViewAllowedEmailsDataInner) Get() *ViewAllowedEmailsDataInner {
+func (v NullableAddAllowedEmailData) Get() *AddAllowedEmailData {
 	return v.value
 }
 
-func (v *NullableViewAllowedEmailsDataInner) Set(val *ViewAllowedEmailsDataInner) {
+func (v *NullableAddAllowedEmailData) Set(val *AddAllowedEmailData) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewAllowedEmailsDataInner) IsSet() bool {
+func (v NullableAddAllowedEmailData) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewAllowedEmailsDataInner) Unset() {
+func (v *NullableAddAllowedEmailData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewAllowedEmailsDataInner(val *ViewAllowedEmailsDataInner) *NullableViewAllowedEmailsDataInner {
-	return &NullableViewAllowedEmailsDataInner{value: val, isSet: true}
+func NewNullableAddAllowedEmailData(val *AddAllowedEmailData) *NullableAddAllowedEmailData {
+	return &NullableAddAllowedEmailData{value: val, isSet: true}
 }
 
-func (v NullableViewAllowedEmailsDataInner) MarshalJSON() ([]byte, error) {
+func (v NullableAddAllowedEmailData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewAllowedEmailsDataInner) UnmarshalJSON(src []byte) error {
+func (v *NullableAddAllowedEmailData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

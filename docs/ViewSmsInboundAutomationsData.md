@@ -12,6 +12,10 @@ Name | Type | Description | Notes
 **PrevPageUrl** | Pointer to **NullableString** | A URL of the previous page. It will return **null** if there’s no previous page. | [optional] 
 **From** | Pointer to **int32** | The number of the first result in the current page. | [optional] 
 **To** | Pointer to **int32** | The number of the last result in the current page. | [optional] 
+**FirstPageUrl** | Pointer to **NullableString** | The URL of the first page of records. | [optional] 
+**LastPageUrl** | Pointer to **NullableString** | The URL of the last page of records. | [optional] 
+**Path** | Pointer to **string** | The base URL path used to build pagination links. | [optional] 
+**Links** | Pointer to [**[]ViewSmsInboundAutomationsDataAllOfLinksInner**](ViewSmsInboundAutomationsDataAllOfLinksInner.md) | The list of pagination links. | [optional] 
 **Data** | Pointer to [**[]SmsInboundRule**](SmsInboundRule.md) |  | [optional] 
 
 ## Methods
@@ -252,6 +256,126 @@ SetTo sets To field to given value.
 `func (o *ViewSmsInboundAutomationsData) HasTo() bool`
 
 HasTo returns a boolean if a field has been set.
+
+### GetFirstPageUrl
+
+`func (o *ViewSmsInboundAutomationsData) GetFirstPageUrl() string`
+
+GetFirstPageUrl returns the FirstPageUrl field if non-nil, zero value otherwise.
+
+### GetFirstPageUrlOk
+
+`func (o *ViewSmsInboundAutomationsData) GetFirstPageUrlOk() (*string, bool)`
+
+GetFirstPageUrlOk returns a tuple with the FirstPageUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirstPageUrl
+
+`func (o *ViewSmsInboundAutomationsData) SetFirstPageUrl(v string)`
+
+SetFirstPageUrl sets FirstPageUrl field to given value.
+
+### HasFirstPageUrl
+
+`func (o *ViewSmsInboundAutomationsData) HasFirstPageUrl() bool`
+
+HasFirstPageUrl returns a boolean if a field has been set.
+
+### SetFirstPageUrlNil
+
+`func (o *ViewSmsInboundAutomationsData) SetFirstPageUrlNil(b bool)`
+
+ SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
+
+### UnsetFirstPageUrl
+`func (o *ViewSmsInboundAutomationsData) UnsetFirstPageUrl()`
+
+UnsetFirstPageUrl ensures that no value is present for FirstPageUrl, not even an explicit nil
+### GetLastPageUrl
+
+`func (o *ViewSmsInboundAutomationsData) GetLastPageUrl() string`
+
+GetLastPageUrl returns the LastPageUrl field if non-nil, zero value otherwise.
+
+### GetLastPageUrlOk
+
+`func (o *ViewSmsInboundAutomationsData) GetLastPageUrlOk() (*string, bool)`
+
+GetLastPageUrlOk returns a tuple with the LastPageUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastPageUrl
+
+`func (o *ViewSmsInboundAutomationsData) SetLastPageUrl(v string)`
+
+SetLastPageUrl sets LastPageUrl field to given value.
+
+### HasLastPageUrl
+
+`func (o *ViewSmsInboundAutomationsData) HasLastPageUrl() bool`
+
+HasLastPageUrl returns a boolean if a field has been set.
+
+### SetLastPageUrlNil
+
+`func (o *ViewSmsInboundAutomationsData) SetLastPageUrlNil(b bool)`
+
+ SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
+
+### UnsetLastPageUrl
+`func (o *ViewSmsInboundAutomationsData) UnsetLastPageUrl()`
+
+UnsetLastPageUrl ensures that no value is present for LastPageUrl, not even an explicit nil
+### GetPath
+
+`func (o *ViewSmsInboundAutomationsData) GetPath() string`
+
+GetPath returns the Path field if non-nil, zero value otherwise.
+
+### GetPathOk
+
+`func (o *ViewSmsInboundAutomationsData) GetPathOk() (*string, bool)`
+
+GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPath
+
+`func (o *ViewSmsInboundAutomationsData) SetPath(v string)`
+
+SetPath sets Path field to given value.
+
+### HasPath
+
+`func (o *ViewSmsInboundAutomationsData) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
+
+### GetLinks
+
+`func (o *ViewSmsInboundAutomationsData) GetLinks() []ViewSmsInboundAutomationsDataAllOfLinksInner`
+
+GetLinks returns the Links field if non-nil, zero value otherwise.
+
+### GetLinksOk
+
+`func (o *ViewSmsInboundAutomationsData) GetLinksOk() (*[]ViewSmsInboundAutomationsDataAllOfLinksInner, bool)`
+
+GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinks
+
+`func (o *ViewSmsInboundAutomationsData) SetLinks(v []ViewSmsInboundAutomationsDataAllOfLinksInner)`
+
+SetLinks sets Links field to given value.
+
+### HasLinks
+
+`func (o *ViewSmsInboundAutomationsData) HasLinks() bool`
+
+HasLinks returns a boolean if a field has been set.
 
 ### GetData
 

@@ -20,7 +20,7 @@ var _ MappedNullable = &ViewRechargePackagesData{}
 // ViewRechargePackagesData struct for ViewRechargePackagesData
 type ViewRechargePackagesData struct {
 	Packages []ViewRechargePackagesDataPackagesInner `json:"packages,omitempty"`
-	Currency *Currency `json:"_currency,omitempty"`
+	Currency *Currency `json:"currency,omitempty"`
 }
 
 // NewViewRechargePackagesData instantiates a new ViewRechargePackagesData object
@@ -118,7 +118,7 @@ func (o ViewRechargePackagesData) ToMap() (map[string]interface{}, error) {
 		toSerialize["packages"] = o.Packages
 	}
 	if !IsNil(o.Currency) {
-		toSerialize["_currency"] = o.Currency
+		toSerialize["currency"] = o.Currency
 	}
 	return toSerialize, nil
 }

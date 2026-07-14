@@ -29,6 +29,8 @@ type Account struct {
 	Active *int32 `json:"active,omitempty"`
 	// Flag indicating if the user account is banned.
 	Banned *int32 `json:"banned,omitempty"`
+	// The Unix timestamp of when the account was created.
+	DateSignUp *int32 `json:"date_sign_up,omitempty"`
 	// The balance of the user's account.
 	Balance *string `json:"balance,omitempty"`
 	// The phone number of the user.
@@ -49,8 +51,12 @@ type Account struct {
 	AccountBillingEmail *string `json:"account_billing_email,omitempty"`
 	// The billing mobile number of the account.
 	AccountBillingMobile *string `json:"account_billing_mobile,omitempty"`
+	// The account's priority tier.
+	Priority *int32 `json:"priority,omitempty"`
 	// The country of the user.
 	Country *string `json:"country,omitempty"`
+	// The country the user is currently connecting from, based on IP address.
+	CountryIp *string `json:"country_ip,omitempty"`
 	// The default country for SMS.
 	DefaultCountrySms *string `json:"default_country_sms,omitempty"`
 	// Flag indicating if auto-recharge is enabled.
@@ -75,8 +81,23 @@ type Account struct {
 	Timezone *string `json:"timezone,omitempty"`
 	// The pricing tier used to determine the cost per message.
 	PriceRate *int32 `json:"price_rate,omitempty"`
+	// Flag indicating if uploaded media is kept private.
+	PrivateUploads *int32 `json:"private_uploads,omitempty"`
+	// The quality setting used for outgoing faxes.
+	FaxQuality *int32 `json:"fax_quality,omitempty"`
+	// Flag indicating if your number is hidden on outgoing SMS.
+	SettingSmsHideYourNumber *int32 `json:"setting_sms_hide_your_number,omitempty"`
+	// Flag indicating if the business name is hidden on outgoing SMS.
+	SettingSmsHideBusinessName *int32 `json:"setting_sms_hide_business_name,omitempty"`
+	// The pricing variant applied to the account.
+	PricingVariant *int32 `json:"pricing_variant,omitempty"`
+	// Flag indicating if the account is currently on a trial.
+	OnTrial *int32 `json:"on_trial,omitempty"`
+	// The date the trial expires, if the account is on a trial.
+	TrialExpiry NullableString `json:"trial_expiry,omitempty"`
 	Currency *Currency `json:"_currency,omitempty"`
 	Subaccount *Subaccount `json:"_subaccount,omitempty"`
+	ReferrerChosen NullableAccountReferrerChosen `json:"_referrer_chosen,omitempty"`
 }
 
 // NewAccount instantiates a new Account object
@@ -254,6 +275,38 @@ func (o *Account) HasBanned() bool {
 // SetBanned gets a reference to the given int32 and assigns it to the Banned field.
 func (o *Account) SetBanned(v int32) {
 	o.Banned = &v
+}
+
+// GetDateSignUp returns the DateSignUp field value if set, zero value otherwise.
+func (o *Account) GetDateSignUp() int32 {
+	if o == nil || IsNil(o.DateSignUp) {
+		var ret int32
+		return ret
+	}
+	return *o.DateSignUp
+}
+
+// GetDateSignUpOk returns a tuple with the DateSignUp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetDateSignUpOk() (*int32, bool) {
+	if o == nil || IsNil(o.DateSignUp) {
+		return nil, false
+	}
+	return o.DateSignUp, true
+}
+
+// HasDateSignUp returns a boolean if a field has been set.
+func (o *Account) HasDateSignUp() bool {
+	if o != nil && !IsNil(o.DateSignUp) {
+		return true
+	}
+
+	return false
+}
+
+// SetDateSignUp gets a reference to the given int32 and assigns it to the DateSignUp field.
+func (o *Account) SetDateSignUp(v int32) {
+	o.DateSignUp = &v
 }
 
 // GetBalance returns the Balance field value if set, zero value otherwise.
@@ -586,6 +639,38 @@ func (o *Account) SetAccountBillingMobile(v string) {
 	o.AccountBillingMobile = &v
 }
 
+// GetPriority returns the Priority field value if set, zero value otherwise.
+func (o *Account) GetPriority() int32 {
+	if o == nil || IsNil(o.Priority) {
+		var ret int32
+		return ret
+	}
+	return *o.Priority
+}
+
+// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetPriorityOk() (*int32, bool) {
+	if o == nil || IsNil(o.Priority) {
+		return nil, false
+	}
+	return o.Priority, true
+}
+
+// HasPriority returns a boolean if a field has been set.
+func (o *Account) HasPriority() bool {
+	if o != nil && !IsNil(o.Priority) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriority gets a reference to the given int32 and assigns it to the Priority field.
+func (o *Account) SetPriority(v int32) {
+	o.Priority = &v
+}
+
 // GetCountry returns the Country field value if set, zero value otherwise.
 func (o *Account) GetCountry() string {
 	if o == nil || IsNil(o.Country) {
@@ -616,6 +701,38 @@ func (o *Account) HasCountry() bool {
 // SetCountry gets a reference to the given string and assigns it to the Country field.
 func (o *Account) SetCountry(v string) {
 	o.Country = &v
+}
+
+// GetCountryIp returns the CountryIp field value if set, zero value otherwise.
+func (o *Account) GetCountryIp() string {
+	if o == nil || IsNil(o.CountryIp) {
+		var ret string
+		return ret
+	}
+	return *o.CountryIp
+}
+
+// GetCountryIpOk returns a tuple with the CountryIp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetCountryIpOk() (*string, bool) {
+	if o == nil || IsNil(o.CountryIp) {
+		return nil, false
+	}
+	return o.CountryIp, true
+}
+
+// HasCountryIp returns a boolean if a field has been set.
+func (o *Account) HasCountryIp() bool {
+	if o != nil && !IsNil(o.CountryIp) {
+		return true
+	}
+
+	return false
+}
+
+// SetCountryIp gets a reference to the given string and assigns it to the CountryIp field.
+func (o *Account) SetCountryIp(v string) {
+	o.CountryIp = &v
 }
 
 // GetDefaultCountrySms returns the DefaultCountrySms field value if set, zero value otherwise.
@@ -1002,6 +1119,240 @@ func (o *Account) SetPriceRate(v int32) {
 	o.PriceRate = &v
 }
 
+// GetPrivateUploads returns the PrivateUploads field value if set, zero value otherwise.
+func (o *Account) GetPrivateUploads() int32 {
+	if o == nil || IsNil(o.PrivateUploads) {
+		var ret int32
+		return ret
+	}
+	return *o.PrivateUploads
+}
+
+// GetPrivateUploadsOk returns a tuple with the PrivateUploads field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetPrivateUploadsOk() (*int32, bool) {
+	if o == nil || IsNil(o.PrivateUploads) {
+		return nil, false
+	}
+	return o.PrivateUploads, true
+}
+
+// HasPrivateUploads returns a boolean if a field has been set.
+func (o *Account) HasPrivateUploads() bool {
+	if o != nil && !IsNil(o.PrivateUploads) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrivateUploads gets a reference to the given int32 and assigns it to the PrivateUploads field.
+func (o *Account) SetPrivateUploads(v int32) {
+	o.PrivateUploads = &v
+}
+
+// GetFaxQuality returns the FaxQuality field value if set, zero value otherwise.
+func (o *Account) GetFaxQuality() int32 {
+	if o == nil || IsNil(o.FaxQuality) {
+		var ret int32
+		return ret
+	}
+	return *o.FaxQuality
+}
+
+// GetFaxQualityOk returns a tuple with the FaxQuality field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetFaxQualityOk() (*int32, bool) {
+	if o == nil || IsNil(o.FaxQuality) {
+		return nil, false
+	}
+	return o.FaxQuality, true
+}
+
+// HasFaxQuality returns a boolean if a field has been set.
+func (o *Account) HasFaxQuality() bool {
+	if o != nil && !IsNil(o.FaxQuality) {
+		return true
+	}
+
+	return false
+}
+
+// SetFaxQuality gets a reference to the given int32 and assigns it to the FaxQuality field.
+func (o *Account) SetFaxQuality(v int32) {
+	o.FaxQuality = &v
+}
+
+// GetSettingSmsHideYourNumber returns the SettingSmsHideYourNumber field value if set, zero value otherwise.
+func (o *Account) GetSettingSmsHideYourNumber() int32 {
+	if o == nil || IsNil(o.SettingSmsHideYourNumber) {
+		var ret int32
+		return ret
+	}
+	return *o.SettingSmsHideYourNumber
+}
+
+// GetSettingSmsHideYourNumberOk returns a tuple with the SettingSmsHideYourNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetSettingSmsHideYourNumberOk() (*int32, bool) {
+	if o == nil || IsNil(o.SettingSmsHideYourNumber) {
+		return nil, false
+	}
+	return o.SettingSmsHideYourNumber, true
+}
+
+// HasSettingSmsHideYourNumber returns a boolean if a field has been set.
+func (o *Account) HasSettingSmsHideYourNumber() bool {
+	if o != nil && !IsNil(o.SettingSmsHideYourNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetSettingSmsHideYourNumber gets a reference to the given int32 and assigns it to the SettingSmsHideYourNumber field.
+func (o *Account) SetSettingSmsHideYourNumber(v int32) {
+	o.SettingSmsHideYourNumber = &v
+}
+
+// GetSettingSmsHideBusinessName returns the SettingSmsHideBusinessName field value if set, zero value otherwise.
+func (o *Account) GetSettingSmsHideBusinessName() int32 {
+	if o == nil || IsNil(o.SettingSmsHideBusinessName) {
+		var ret int32
+		return ret
+	}
+	return *o.SettingSmsHideBusinessName
+}
+
+// GetSettingSmsHideBusinessNameOk returns a tuple with the SettingSmsHideBusinessName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetSettingSmsHideBusinessNameOk() (*int32, bool) {
+	if o == nil || IsNil(o.SettingSmsHideBusinessName) {
+		return nil, false
+	}
+	return o.SettingSmsHideBusinessName, true
+}
+
+// HasSettingSmsHideBusinessName returns a boolean if a field has been set.
+func (o *Account) HasSettingSmsHideBusinessName() bool {
+	if o != nil && !IsNil(o.SettingSmsHideBusinessName) {
+		return true
+	}
+
+	return false
+}
+
+// SetSettingSmsHideBusinessName gets a reference to the given int32 and assigns it to the SettingSmsHideBusinessName field.
+func (o *Account) SetSettingSmsHideBusinessName(v int32) {
+	o.SettingSmsHideBusinessName = &v
+}
+
+// GetPricingVariant returns the PricingVariant field value if set, zero value otherwise.
+func (o *Account) GetPricingVariant() int32 {
+	if o == nil || IsNil(o.PricingVariant) {
+		var ret int32
+		return ret
+	}
+	return *o.PricingVariant
+}
+
+// GetPricingVariantOk returns a tuple with the PricingVariant field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetPricingVariantOk() (*int32, bool) {
+	if o == nil || IsNil(o.PricingVariant) {
+		return nil, false
+	}
+	return o.PricingVariant, true
+}
+
+// HasPricingVariant returns a boolean if a field has been set.
+func (o *Account) HasPricingVariant() bool {
+	if o != nil && !IsNil(o.PricingVariant) {
+		return true
+	}
+
+	return false
+}
+
+// SetPricingVariant gets a reference to the given int32 and assigns it to the PricingVariant field.
+func (o *Account) SetPricingVariant(v int32) {
+	o.PricingVariant = &v
+}
+
+// GetOnTrial returns the OnTrial field value if set, zero value otherwise.
+func (o *Account) GetOnTrial() int32 {
+	if o == nil || IsNil(o.OnTrial) {
+		var ret int32
+		return ret
+	}
+	return *o.OnTrial
+}
+
+// GetOnTrialOk returns a tuple with the OnTrial field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Account) GetOnTrialOk() (*int32, bool) {
+	if o == nil || IsNil(o.OnTrial) {
+		return nil, false
+	}
+	return o.OnTrial, true
+}
+
+// HasOnTrial returns a boolean if a field has been set.
+func (o *Account) HasOnTrial() bool {
+	if o != nil && !IsNil(o.OnTrial) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnTrial gets a reference to the given int32 and assigns it to the OnTrial field.
+func (o *Account) SetOnTrial(v int32) {
+	o.OnTrial = &v
+}
+
+// GetTrialExpiry returns the TrialExpiry field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Account) GetTrialExpiry() string {
+	if o == nil || IsNil(o.TrialExpiry.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.TrialExpiry.Get()
+}
+
+// GetTrialExpiryOk returns a tuple with the TrialExpiry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Account) GetTrialExpiryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.TrialExpiry.Get(), o.TrialExpiry.IsSet()
+}
+
+// HasTrialExpiry returns a boolean if a field has been set.
+func (o *Account) HasTrialExpiry() bool {
+	if o != nil && o.TrialExpiry.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTrialExpiry gets a reference to the given NullableString and assigns it to the TrialExpiry field.
+func (o *Account) SetTrialExpiry(v string) {
+	o.TrialExpiry.Set(&v)
+}
+// SetTrialExpiryNil sets the value for TrialExpiry to be an explicit nil
+func (o *Account) SetTrialExpiryNil() {
+	o.TrialExpiry.Set(nil)
+}
+
+// UnsetTrialExpiry ensures that no value is present for TrialExpiry, not even an explicit nil
+func (o *Account) UnsetTrialExpiry() {
+	o.TrialExpiry.Unset()
+}
+
 // GetCurrency returns the Currency field value if set, zero value otherwise.
 func (o *Account) GetCurrency() Currency {
 	if o == nil || IsNil(o.Currency) {
@@ -1066,6 +1417,48 @@ func (o *Account) SetSubaccount(v Subaccount) {
 	o.Subaccount = &v
 }
 
+// GetReferrerChosen returns the ReferrerChosen field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Account) GetReferrerChosen() AccountReferrerChosen {
+	if o == nil || IsNil(o.ReferrerChosen.Get()) {
+		var ret AccountReferrerChosen
+		return ret
+	}
+	return *o.ReferrerChosen.Get()
+}
+
+// GetReferrerChosenOk returns a tuple with the ReferrerChosen field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Account) GetReferrerChosenOk() (*AccountReferrerChosen, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ReferrerChosen.Get(), o.ReferrerChosen.IsSet()
+}
+
+// HasReferrerChosen returns a boolean if a field has been set.
+func (o *Account) HasReferrerChosen() bool {
+	if o != nil && o.ReferrerChosen.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetReferrerChosen gets a reference to the given NullableAccountReferrerChosen and assigns it to the ReferrerChosen field.
+func (o *Account) SetReferrerChosen(v AccountReferrerChosen) {
+	o.ReferrerChosen.Set(&v)
+}
+// SetReferrerChosenNil sets the value for ReferrerChosen to be an explicit nil
+func (o *Account) SetReferrerChosenNil() {
+	o.ReferrerChosen.Set(nil)
+}
+
+// UnsetReferrerChosen ensures that no value is present for ReferrerChosen, not even an explicit nil
+func (o *Account) UnsetReferrerChosen() {
+	o.ReferrerChosen.Unset()
+}
+
 func (o Account) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1090,6 +1483,9 @@ func (o Account) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Banned) {
 		toSerialize["banned"] = o.Banned
+	}
+	if !IsNil(o.DateSignUp) {
+		toSerialize["date_sign_up"] = o.DateSignUp
 	}
 	if !IsNil(o.Balance) {
 		toSerialize["balance"] = o.Balance
@@ -1121,8 +1517,14 @@ func (o Account) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AccountBillingMobile) {
 		toSerialize["account_billing_mobile"] = o.AccountBillingMobile
 	}
+	if !IsNil(o.Priority) {
+		toSerialize["priority"] = o.Priority
+	}
 	if !IsNil(o.Country) {
 		toSerialize["country"] = o.Country
+	}
+	if !IsNil(o.CountryIp) {
+		toSerialize["country_ip"] = o.CountryIp
 	}
 	if !IsNil(o.DefaultCountrySms) {
 		toSerialize["default_country_sms"] = o.DefaultCountrySms
@@ -1160,11 +1562,35 @@ func (o Account) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PriceRate) {
 		toSerialize["price_rate"] = o.PriceRate
 	}
+	if !IsNil(o.PrivateUploads) {
+		toSerialize["private_uploads"] = o.PrivateUploads
+	}
+	if !IsNil(o.FaxQuality) {
+		toSerialize["fax_quality"] = o.FaxQuality
+	}
+	if !IsNil(o.SettingSmsHideYourNumber) {
+		toSerialize["setting_sms_hide_your_number"] = o.SettingSmsHideYourNumber
+	}
+	if !IsNil(o.SettingSmsHideBusinessName) {
+		toSerialize["setting_sms_hide_business_name"] = o.SettingSmsHideBusinessName
+	}
+	if !IsNil(o.PricingVariant) {
+		toSerialize["pricing_variant"] = o.PricingVariant
+	}
+	if !IsNil(o.OnTrial) {
+		toSerialize["on_trial"] = o.OnTrial
+	}
+	if o.TrialExpiry.IsSet() {
+		toSerialize["trial_expiry"] = o.TrialExpiry.Get()
+	}
 	if !IsNil(o.Currency) {
 		toSerialize["_currency"] = o.Currency
 	}
 	if !IsNil(o.Subaccount) {
 		toSerialize["_subaccount"] = o.Subaccount
+	}
+	if o.ReferrerChosen.IsSet() {
+		toSerialize["_referrer_chosen"] = o.ReferrerChosen.Get()
 	}
 	return toSerialize, nil
 }

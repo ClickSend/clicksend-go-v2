@@ -14,40 +14,42 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewAccountUsageDataVoiceInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewAccountUsageDataVoiceInner{}
+// checks if the ViewAccountUsageDataMmsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ViewAccountUsageDataMmsInner{}
 
-// ViewAccountUsageDataVoiceInner struct for ViewAccountUsageDataVoiceInner
-type ViewAccountUsageDataVoiceInner struct {
+// ViewAccountUsageDataMmsInner struct for ViewAccountUsageDataMmsInner
+type ViewAccountUsageDataMmsInner struct {
 	// The subaccount identifier.
 	SubaccountId *int32 `json:"subaccount_id,omitempty"`
 	// The username associated with the subaccount.
 	Username *string `json:"username,omitempty"`
-	// The total count of voice calls.
+	// The total count of MMS.
 	TotalCount *string `json:"total_count,omitempty"`
-	// The total price of voice calls.
+	// The total price of MMS.
 	TotalPrice *string `json:"total_price,omitempty"`
+	// Optional notes.
+	Notes NullableString `json:"notes,omitempty"`
 }
 
-// NewViewAccountUsageDataVoiceInner instantiates a new ViewAccountUsageDataVoiceInner object
+// NewViewAccountUsageDataMmsInner instantiates a new ViewAccountUsageDataMmsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewAccountUsageDataVoiceInner() *ViewAccountUsageDataVoiceInner {
-	this := ViewAccountUsageDataVoiceInner{}
+func NewViewAccountUsageDataMmsInner() *ViewAccountUsageDataMmsInner {
+	this := ViewAccountUsageDataMmsInner{}
 	return &this
 }
 
-// NewViewAccountUsageDataVoiceInnerWithDefaults instantiates a new ViewAccountUsageDataVoiceInner object
+// NewViewAccountUsageDataMmsInnerWithDefaults instantiates a new ViewAccountUsageDataMmsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewAccountUsageDataVoiceInnerWithDefaults() *ViewAccountUsageDataVoiceInner {
-	this := ViewAccountUsageDataVoiceInner{}
+func NewViewAccountUsageDataMmsInnerWithDefaults() *ViewAccountUsageDataMmsInner {
+	this := ViewAccountUsageDataMmsInner{}
 	return &this
 }
 
 // GetSubaccountId returns the SubaccountId field value if set, zero value otherwise.
-func (o *ViewAccountUsageDataVoiceInner) GetSubaccountId() int32 {
+func (o *ViewAccountUsageDataMmsInner) GetSubaccountId() int32 {
 	if o == nil || IsNil(o.SubaccountId) {
 		var ret int32
 		return ret
@@ -57,7 +59,7 @@ func (o *ViewAccountUsageDataVoiceInner) GetSubaccountId() int32 {
 
 // GetSubaccountIdOk returns a tuple with the SubaccountId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageDataVoiceInner) GetSubaccountIdOk() (*int32, bool) {
+func (o *ViewAccountUsageDataMmsInner) GetSubaccountIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.SubaccountId) {
 		return nil, false
 	}
@@ -65,7 +67,7 @@ func (o *ViewAccountUsageDataVoiceInner) GetSubaccountIdOk() (*int32, bool) {
 }
 
 // HasSubaccountId returns a boolean if a field has been set.
-func (o *ViewAccountUsageDataVoiceInner) HasSubaccountId() bool {
+func (o *ViewAccountUsageDataMmsInner) HasSubaccountId() bool {
 	if o != nil && !IsNil(o.SubaccountId) {
 		return true
 	}
@@ -74,12 +76,12 @@ func (o *ViewAccountUsageDataVoiceInner) HasSubaccountId() bool {
 }
 
 // SetSubaccountId gets a reference to the given int32 and assigns it to the SubaccountId field.
-func (o *ViewAccountUsageDataVoiceInner) SetSubaccountId(v int32) {
+func (o *ViewAccountUsageDataMmsInner) SetSubaccountId(v int32) {
 	o.SubaccountId = &v
 }
 
 // GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ViewAccountUsageDataVoiceInner) GetUsername() string {
+func (o *ViewAccountUsageDataMmsInner) GetUsername() string {
 	if o == nil || IsNil(o.Username) {
 		var ret string
 		return ret
@@ -89,7 +91,7 @@ func (o *ViewAccountUsageDataVoiceInner) GetUsername() string {
 
 // GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageDataVoiceInner) GetUsernameOk() (*string, bool) {
+func (o *ViewAccountUsageDataMmsInner) GetUsernameOk() (*string, bool) {
 	if o == nil || IsNil(o.Username) {
 		return nil, false
 	}
@@ -97,7 +99,7 @@ func (o *ViewAccountUsageDataVoiceInner) GetUsernameOk() (*string, bool) {
 }
 
 // HasUsername returns a boolean if a field has been set.
-func (o *ViewAccountUsageDataVoiceInner) HasUsername() bool {
+func (o *ViewAccountUsageDataMmsInner) HasUsername() bool {
 	if o != nil && !IsNil(o.Username) {
 		return true
 	}
@@ -106,12 +108,12 @@ func (o *ViewAccountUsageDataVoiceInner) HasUsername() bool {
 }
 
 // SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ViewAccountUsageDataVoiceInner) SetUsername(v string) {
+func (o *ViewAccountUsageDataMmsInner) SetUsername(v string) {
 	o.Username = &v
 }
 
 // GetTotalCount returns the TotalCount field value if set, zero value otherwise.
-func (o *ViewAccountUsageDataVoiceInner) GetTotalCount() string {
+func (o *ViewAccountUsageDataMmsInner) GetTotalCount() string {
 	if o == nil || IsNil(o.TotalCount) {
 		var ret string
 		return ret
@@ -121,7 +123,7 @@ func (o *ViewAccountUsageDataVoiceInner) GetTotalCount() string {
 
 // GetTotalCountOk returns a tuple with the TotalCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageDataVoiceInner) GetTotalCountOk() (*string, bool) {
+func (o *ViewAccountUsageDataMmsInner) GetTotalCountOk() (*string, bool) {
 	if o == nil || IsNil(o.TotalCount) {
 		return nil, false
 	}
@@ -129,7 +131,7 @@ func (o *ViewAccountUsageDataVoiceInner) GetTotalCountOk() (*string, bool) {
 }
 
 // HasTotalCount returns a boolean if a field has been set.
-func (o *ViewAccountUsageDataVoiceInner) HasTotalCount() bool {
+func (o *ViewAccountUsageDataMmsInner) HasTotalCount() bool {
 	if o != nil && !IsNil(o.TotalCount) {
 		return true
 	}
@@ -138,12 +140,12 @@ func (o *ViewAccountUsageDataVoiceInner) HasTotalCount() bool {
 }
 
 // SetTotalCount gets a reference to the given string and assigns it to the TotalCount field.
-func (o *ViewAccountUsageDataVoiceInner) SetTotalCount(v string) {
+func (o *ViewAccountUsageDataMmsInner) SetTotalCount(v string) {
 	o.TotalCount = &v
 }
 
 // GetTotalPrice returns the TotalPrice field value if set, zero value otherwise.
-func (o *ViewAccountUsageDataVoiceInner) GetTotalPrice() string {
+func (o *ViewAccountUsageDataMmsInner) GetTotalPrice() string {
 	if o == nil || IsNil(o.TotalPrice) {
 		var ret string
 		return ret
@@ -153,7 +155,7 @@ func (o *ViewAccountUsageDataVoiceInner) GetTotalPrice() string {
 
 // GetTotalPriceOk returns a tuple with the TotalPrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageDataVoiceInner) GetTotalPriceOk() (*string, bool) {
+func (o *ViewAccountUsageDataMmsInner) GetTotalPriceOk() (*string, bool) {
 	if o == nil || IsNil(o.TotalPrice) {
 		return nil, false
 	}
@@ -161,7 +163,7 @@ func (o *ViewAccountUsageDataVoiceInner) GetTotalPriceOk() (*string, bool) {
 }
 
 // HasTotalPrice returns a boolean if a field has been set.
-func (o *ViewAccountUsageDataVoiceInner) HasTotalPrice() bool {
+func (o *ViewAccountUsageDataMmsInner) HasTotalPrice() bool {
 	if o != nil && !IsNil(o.TotalPrice) {
 		return true
 	}
@@ -170,11 +172,53 @@ func (o *ViewAccountUsageDataVoiceInner) HasTotalPrice() bool {
 }
 
 // SetTotalPrice gets a reference to the given string and assigns it to the TotalPrice field.
-func (o *ViewAccountUsageDataVoiceInner) SetTotalPrice(v string) {
+func (o *ViewAccountUsageDataMmsInner) SetTotalPrice(v string) {
 	o.TotalPrice = &v
 }
 
-func (o ViewAccountUsageDataVoiceInner) MarshalJSON() ([]byte, error) {
+// GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewAccountUsageDataMmsInner) GetNotes() string {
+	if o == nil || IsNil(o.Notes.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Notes.Get()
+}
+
+// GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewAccountUsageDataMmsInner) GetNotesOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Notes.Get(), o.Notes.IsSet()
+}
+
+// HasNotes returns a boolean if a field has been set.
+func (o *ViewAccountUsageDataMmsInner) HasNotes() bool {
+	if o != nil && o.Notes.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetNotes gets a reference to the given NullableString and assigns it to the Notes field.
+func (o *ViewAccountUsageDataMmsInner) SetNotes(v string) {
+	o.Notes.Set(&v)
+}
+// SetNotesNil sets the value for Notes to be an explicit nil
+func (o *ViewAccountUsageDataMmsInner) SetNotesNil() {
+	o.Notes.Set(nil)
+}
+
+// UnsetNotes ensures that no value is present for Notes, not even an explicit nil
+func (o *ViewAccountUsageDataMmsInner) UnsetNotes() {
+	o.Notes.Unset()
+}
+
+func (o ViewAccountUsageDataMmsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -182,7 +226,7 @@ func (o ViewAccountUsageDataVoiceInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewAccountUsageDataVoiceInner) ToMap() (map[string]interface{}, error) {
+func (o ViewAccountUsageDataMmsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.SubaccountId) {
 		toSerialize["subaccount_id"] = o.SubaccountId
@@ -196,41 +240,44 @@ func (o ViewAccountUsageDataVoiceInner) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.TotalPrice) {
 		toSerialize["total_price"] = o.TotalPrice
 	}
+	if o.Notes.IsSet() {
+		toSerialize["notes"] = o.Notes.Get()
+	}
 	return toSerialize, nil
 }
 
-type NullableViewAccountUsageDataVoiceInner struct {
-	value *ViewAccountUsageDataVoiceInner
+type NullableViewAccountUsageDataMmsInner struct {
+	value *ViewAccountUsageDataMmsInner
 	isSet bool
 }
 
-func (v NullableViewAccountUsageDataVoiceInner) Get() *ViewAccountUsageDataVoiceInner {
+func (v NullableViewAccountUsageDataMmsInner) Get() *ViewAccountUsageDataMmsInner {
 	return v.value
 }
 
-func (v *NullableViewAccountUsageDataVoiceInner) Set(val *ViewAccountUsageDataVoiceInner) {
+func (v *NullableViewAccountUsageDataMmsInner) Set(val *ViewAccountUsageDataMmsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewAccountUsageDataVoiceInner) IsSet() bool {
+func (v NullableViewAccountUsageDataMmsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewAccountUsageDataVoiceInner) Unset() {
+func (v *NullableViewAccountUsageDataMmsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewAccountUsageDataVoiceInner(val *ViewAccountUsageDataVoiceInner) *NullableViewAccountUsageDataVoiceInner {
-	return &NullableViewAccountUsageDataVoiceInner{value: val, isSet: true}
+func NewNullableViewAccountUsageDataMmsInner(val *ViewAccountUsageDataMmsInner) *NullableViewAccountUsageDataMmsInner {
+	return &NullableViewAccountUsageDataMmsInner{value: val, isSet: true}
 }
 
-func (v NullableViewAccountUsageDataVoiceInner) MarshalJSON() ([]byte, error) {
+func (v NullableViewAccountUsageDataMmsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewAccountUsageDataVoiceInner) UnmarshalJSON(src []byte) error {
+func (v *NullableViewAccountUsageDataMmsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

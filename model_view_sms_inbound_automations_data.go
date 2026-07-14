@@ -35,6 +35,14 @@ type ViewSmsInboundAutomationsData struct {
 	From *int32 `json:"from,omitempty"`
 	// The number of the last result in the current page.
 	To *int32 `json:"to,omitempty"`
+	// The URL of the first page of records.
+	FirstPageUrl NullableString `json:"first_page_url,omitempty"`
+	// The URL of the last page of records.
+	LastPageUrl NullableString `json:"last_page_url,omitempty"`
+	// The base URL path used to build pagination links.
+	Path *string `json:"path,omitempty"`
+	// The list of pagination links.
+	Links []ViewSmsInboundAutomationsDataAllOfLinksInner `json:"links,omitempty"`
 	Data []SmsInboundRule `json:"data,omitempty"`
 }
 
@@ -331,6 +339,154 @@ func (o *ViewSmsInboundAutomationsData) SetTo(v int32) {
 	o.To = &v
 }
 
+// GetFirstPageUrl returns the FirstPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewSmsInboundAutomationsData) GetFirstPageUrl() string {
+	if o == nil || IsNil(o.FirstPageUrl.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.FirstPageUrl.Get()
+}
+
+// GetFirstPageUrlOk returns a tuple with the FirstPageUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewSmsInboundAutomationsData) GetFirstPageUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.FirstPageUrl.Get(), o.FirstPageUrl.IsSet()
+}
+
+// HasFirstPageUrl returns a boolean if a field has been set.
+func (o *ViewSmsInboundAutomationsData) HasFirstPageUrl() bool {
+	if o != nil && o.FirstPageUrl.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstPageUrl gets a reference to the given NullableString and assigns it to the FirstPageUrl field.
+func (o *ViewSmsInboundAutomationsData) SetFirstPageUrl(v string) {
+	o.FirstPageUrl.Set(&v)
+}
+// SetFirstPageUrlNil sets the value for FirstPageUrl to be an explicit nil
+func (o *ViewSmsInboundAutomationsData) SetFirstPageUrlNil() {
+	o.FirstPageUrl.Set(nil)
+}
+
+// UnsetFirstPageUrl ensures that no value is present for FirstPageUrl, not even an explicit nil
+func (o *ViewSmsInboundAutomationsData) UnsetFirstPageUrl() {
+	o.FirstPageUrl.Unset()
+}
+
+// GetLastPageUrl returns the LastPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewSmsInboundAutomationsData) GetLastPageUrl() string {
+	if o == nil || IsNil(o.LastPageUrl.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.LastPageUrl.Get()
+}
+
+// GetLastPageUrlOk returns a tuple with the LastPageUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewSmsInboundAutomationsData) GetLastPageUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LastPageUrl.Get(), o.LastPageUrl.IsSet()
+}
+
+// HasLastPageUrl returns a boolean if a field has been set.
+func (o *ViewSmsInboundAutomationsData) HasLastPageUrl() bool {
+	if o != nil && o.LastPageUrl.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastPageUrl gets a reference to the given NullableString and assigns it to the LastPageUrl field.
+func (o *ViewSmsInboundAutomationsData) SetLastPageUrl(v string) {
+	o.LastPageUrl.Set(&v)
+}
+// SetLastPageUrlNil sets the value for LastPageUrl to be an explicit nil
+func (o *ViewSmsInboundAutomationsData) SetLastPageUrlNil() {
+	o.LastPageUrl.Set(nil)
+}
+
+// UnsetLastPageUrl ensures that no value is present for LastPageUrl, not even an explicit nil
+func (o *ViewSmsInboundAutomationsData) UnsetLastPageUrl() {
+	o.LastPageUrl.Unset()
+}
+
+// GetPath returns the Path field value if set, zero value otherwise.
+func (o *ViewSmsInboundAutomationsData) GetPath() string {
+	if o == nil || IsNil(o.Path) {
+		var ret string
+		return ret
+	}
+	return *o.Path
+}
+
+// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewSmsInboundAutomationsData) GetPathOk() (*string, bool) {
+	if o == nil || IsNil(o.Path) {
+		return nil, false
+	}
+	return o.Path, true
+}
+
+// HasPath returns a boolean if a field has been set.
+func (o *ViewSmsInboundAutomationsData) HasPath() bool {
+	if o != nil && !IsNil(o.Path) {
+		return true
+	}
+
+	return false
+}
+
+// SetPath gets a reference to the given string and assigns it to the Path field.
+func (o *ViewSmsInboundAutomationsData) SetPath(v string) {
+	o.Path = &v
+}
+
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *ViewSmsInboundAutomationsData) GetLinks() []ViewSmsInboundAutomationsDataAllOfLinksInner {
+	if o == nil || IsNil(o.Links) {
+		var ret []ViewSmsInboundAutomationsDataAllOfLinksInner
+		return ret
+	}
+	return o.Links
+}
+
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewSmsInboundAutomationsData) GetLinksOk() ([]ViewSmsInboundAutomationsDataAllOfLinksInner, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
+	}
+	return o.Links, true
+}
+
+// HasLinks returns a boolean if a field has been set.
+func (o *ViewSmsInboundAutomationsData) HasLinks() bool {
+	if o != nil && !IsNil(o.Links) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinks gets a reference to the given []ViewSmsInboundAutomationsDataAllOfLinksInner and assigns it to the Links field.
+func (o *ViewSmsInboundAutomationsData) SetLinks(v []ViewSmsInboundAutomationsDataAllOfLinksInner) {
+	o.Links = v
+}
+
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ViewSmsInboundAutomationsData) GetData() []SmsInboundRule {
 	if o == nil || IsNil(o.Data) {
@@ -396,6 +552,18 @@ func (o ViewSmsInboundAutomationsData) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.To) {
 		toSerialize["to"] = o.To
+	}
+	if o.FirstPageUrl.IsSet() {
+		toSerialize["first_page_url"] = o.FirstPageUrl.Get()
+	}
+	if o.LastPageUrl.IsSet() {
+		toSerialize["last_page_url"] = o.LastPageUrl.Get()
+	}
+	if !IsNil(o.Path) {
+		toSerialize["path"] = o.Path
+	}
+	if !IsNil(o.Links) {
+		toSerialize["links"] = o.Links
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data

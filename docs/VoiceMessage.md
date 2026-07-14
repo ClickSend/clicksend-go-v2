@@ -4,16 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Date** | Pointer to **float32** | The date. | [optional] 
+**Date** | Pointer to **NullableString** | The date, if applicable. May be null; see also &#x60;date_added&#x60;. | [optional] 
+**DateAdded** | Pointer to **int32** | The Unix timestamp when the message was added. | [optional] 
+**ListId** | Pointer to **NullableString** | The ID of the list associated with the message, if applicable. | [optional] 
 **To** | Pointer to **string** | The recipient&#39;s phone number. | [optional] 
 **ToType** | Pointer to **string** | The type of recipient. | [optional] 
 **Body** | Pointer to **string** | The body of the message. | [optional] 
 **From** | Pointer to **NullableString** | The sender&#39;s phone number. | [optional] 
 **Lang** | Pointer to **string** | The language of the message. | [optional] 
 **Voice** | Pointer to **string** | The voice of the message. | [optional] 
-**Schedule** | Pointer to **int32** | The timestamp when the message should be sent. | [optional] 
+**Schedule** | Pointer to **string** | The timestamp when the message should be sent. Returned as a string since it may be an empty string when no schedule was set. | [optional] 
 **MessageId** | Pointer to **string** | The ID of the message. | [optional] 
-**MessageParts** | Pointer to **int32** | The number of parts in the message. | [optional] 
+**MessageParts** | Pointer to **string** | The number of parts in the message. | [optional] 
 **MessagePrice** | Pointer to **string** | The price of the message. | [optional] 
 **CustomString** | Pointer to **string** | The custom string of the message. | [optional] 
 **UserId** | Pointer to **float32** | The ID of the user. | [optional] 
@@ -21,7 +23,13 @@ Name | Type | Description | Notes
 **Country** | Pointer to **string** | The country code of the message. | [optional] 
 **RequireInput** | Pointer to **float32** | The require input of the message. | [optional] 
 **MachineDetection** | Pointer to **float32** | The machine detection of the message. | [optional] 
+**MachineDetected** | Pointer to **NullableFloat32** | Flag indicating if an answering machine was detected. | [optional] 
+**Digits** | Pointer to **NullableString** | The digits entered by the recipient, if any input was collected. | [optional] 
+**Carrier** | Pointer to **NullableString** | The carrier of the recipient&#39;s phone number. | [optional] 
+**StatusCode** | Pointer to **NullableString** | The status code of the message. | [optional] 
+**StatusText** | Pointer to **NullableString** | A human-readable description of the status. | [optional] 
 **Status** | Pointer to **string** | The status of the message. | [optional] 
+**ApiUsername** | Pointer to **string** | The API username associated with the message. | [optional] 
 
 ## Methods
 
@@ -44,20 +52,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDate
 
-`func (o *VoiceMessage) GetDate() float32`
+`func (o *VoiceMessage) GetDate() string`
 
 GetDate returns the Date field if non-nil, zero value otherwise.
 
 ### GetDateOk
 
-`func (o *VoiceMessage) GetDateOk() (*float32, bool)`
+`func (o *VoiceMessage) GetDateOk() (*string, bool)`
 
 GetDateOk returns a tuple with the Date field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDate
 
-`func (o *VoiceMessage) SetDate(v float32)`
+`func (o *VoiceMessage) SetDate(v string)`
 
 SetDate sets Date field to given value.
 
@@ -67,6 +75,76 @@ SetDate sets Date field to given value.
 
 HasDate returns a boolean if a field has been set.
 
+### SetDateNil
+
+`func (o *VoiceMessage) SetDateNil(b bool)`
+
+ SetDateNil sets the value for Date to be an explicit nil
+
+### UnsetDate
+`func (o *VoiceMessage) UnsetDate()`
+
+UnsetDate ensures that no value is present for Date, not even an explicit nil
+### GetDateAdded
+
+`func (o *VoiceMessage) GetDateAdded() int32`
+
+GetDateAdded returns the DateAdded field if non-nil, zero value otherwise.
+
+### GetDateAddedOk
+
+`func (o *VoiceMessage) GetDateAddedOk() (*int32, bool)`
+
+GetDateAddedOk returns a tuple with the DateAdded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDateAdded
+
+`func (o *VoiceMessage) SetDateAdded(v int32)`
+
+SetDateAdded sets DateAdded field to given value.
+
+### HasDateAdded
+
+`func (o *VoiceMessage) HasDateAdded() bool`
+
+HasDateAdded returns a boolean if a field has been set.
+
+### GetListId
+
+`func (o *VoiceMessage) GetListId() string`
+
+GetListId returns the ListId field if non-nil, zero value otherwise.
+
+### GetListIdOk
+
+`func (o *VoiceMessage) GetListIdOk() (*string, bool)`
+
+GetListIdOk returns a tuple with the ListId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetListId
+
+`func (o *VoiceMessage) SetListId(v string)`
+
+SetListId sets ListId field to given value.
+
+### HasListId
+
+`func (o *VoiceMessage) HasListId() bool`
+
+HasListId returns a boolean if a field has been set.
+
+### SetListIdNil
+
+`func (o *VoiceMessage) SetListIdNil(b bool)`
+
+ SetListIdNil sets the value for ListId to be an explicit nil
+
+### UnsetListId
+`func (o *VoiceMessage) UnsetListId()`
+
+UnsetListId ensures that no value is present for ListId, not even an explicit nil
 ### GetTo
 
 `func (o *VoiceMessage) GetTo() string`
@@ -229,20 +307,20 @@ HasVoice returns a boolean if a field has been set.
 
 ### GetSchedule
 
-`func (o *VoiceMessage) GetSchedule() int32`
+`func (o *VoiceMessage) GetSchedule() string`
 
 GetSchedule returns the Schedule field if non-nil, zero value otherwise.
 
 ### GetScheduleOk
 
-`func (o *VoiceMessage) GetScheduleOk() (*int32, bool)`
+`func (o *VoiceMessage) GetScheduleOk() (*string, bool)`
 
 GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchedule
 
-`func (o *VoiceMessage) SetSchedule(v int32)`
+`func (o *VoiceMessage) SetSchedule(v string)`
 
 SetSchedule sets Schedule field to given value.
 
@@ -279,20 +357,20 @@ HasMessageId returns a boolean if a field has been set.
 
 ### GetMessageParts
 
-`func (o *VoiceMessage) GetMessageParts() int32`
+`func (o *VoiceMessage) GetMessageParts() string`
 
 GetMessageParts returns the MessageParts field if non-nil, zero value otherwise.
 
 ### GetMessagePartsOk
 
-`func (o *VoiceMessage) GetMessagePartsOk() (*int32, bool)`
+`func (o *VoiceMessage) GetMessagePartsOk() (*string, bool)`
 
 GetMessagePartsOk returns a tuple with the MessageParts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessageParts
 
-`func (o *VoiceMessage) SetMessageParts(v int32)`
+`func (o *VoiceMessage) SetMessageParts(v string)`
 
 SetMessageParts sets MessageParts field to given value.
 
@@ -477,6 +555,181 @@ SetMachineDetection sets MachineDetection field to given value.
 
 HasMachineDetection returns a boolean if a field has been set.
 
+### GetMachineDetected
+
+`func (o *VoiceMessage) GetMachineDetected() float32`
+
+GetMachineDetected returns the MachineDetected field if non-nil, zero value otherwise.
+
+### GetMachineDetectedOk
+
+`func (o *VoiceMessage) GetMachineDetectedOk() (*float32, bool)`
+
+GetMachineDetectedOk returns a tuple with the MachineDetected field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMachineDetected
+
+`func (o *VoiceMessage) SetMachineDetected(v float32)`
+
+SetMachineDetected sets MachineDetected field to given value.
+
+### HasMachineDetected
+
+`func (o *VoiceMessage) HasMachineDetected() bool`
+
+HasMachineDetected returns a boolean if a field has been set.
+
+### SetMachineDetectedNil
+
+`func (o *VoiceMessage) SetMachineDetectedNil(b bool)`
+
+ SetMachineDetectedNil sets the value for MachineDetected to be an explicit nil
+
+### UnsetMachineDetected
+`func (o *VoiceMessage) UnsetMachineDetected()`
+
+UnsetMachineDetected ensures that no value is present for MachineDetected, not even an explicit nil
+### GetDigits
+
+`func (o *VoiceMessage) GetDigits() string`
+
+GetDigits returns the Digits field if non-nil, zero value otherwise.
+
+### GetDigitsOk
+
+`func (o *VoiceMessage) GetDigitsOk() (*string, bool)`
+
+GetDigitsOk returns a tuple with the Digits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDigits
+
+`func (o *VoiceMessage) SetDigits(v string)`
+
+SetDigits sets Digits field to given value.
+
+### HasDigits
+
+`func (o *VoiceMessage) HasDigits() bool`
+
+HasDigits returns a boolean if a field has been set.
+
+### SetDigitsNil
+
+`func (o *VoiceMessage) SetDigitsNil(b bool)`
+
+ SetDigitsNil sets the value for Digits to be an explicit nil
+
+### UnsetDigits
+`func (o *VoiceMessage) UnsetDigits()`
+
+UnsetDigits ensures that no value is present for Digits, not even an explicit nil
+### GetCarrier
+
+`func (o *VoiceMessage) GetCarrier() string`
+
+GetCarrier returns the Carrier field if non-nil, zero value otherwise.
+
+### GetCarrierOk
+
+`func (o *VoiceMessage) GetCarrierOk() (*string, bool)`
+
+GetCarrierOk returns a tuple with the Carrier field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCarrier
+
+`func (o *VoiceMessage) SetCarrier(v string)`
+
+SetCarrier sets Carrier field to given value.
+
+### HasCarrier
+
+`func (o *VoiceMessage) HasCarrier() bool`
+
+HasCarrier returns a boolean if a field has been set.
+
+### SetCarrierNil
+
+`func (o *VoiceMessage) SetCarrierNil(b bool)`
+
+ SetCarrierNil sets the value for Carrier to be an explicit nil
+
+### UnsetCarrier
+`func (o *VoiceMessage) UnsetCarrier()`
+
+UnsetCarrier ensures that no value is present for Carrier, not even an explicit nil
+### GetStatusCode
+
+`func (o *VoiceMessage) GetStatusCode() string`
+
+GetStatusCode returns the StatusCode field if non-nil, zero value otherwise.
+
+### GetStatusCodeOk
+
+`func (o *VoiceMessage) GetStatusCodeOk() (*string, bool)`
+
+GetStatusCodeOk returns a tuple with the StatusCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatusCode
+
+`func (o *VoiceMessage) SetStatusCode(v string)`
+
+SetStatusCode sets StatusCode field to given value.
+
+### HasStatusCode
+
+`func (o *VoiceMessage) HasStatusCode() bool`
+
+HasStatusCode returns a boolean if a field has been set.
+
+### SetStatusCodeNil
+
+`func (o *VoiceMessage) SetStatusCodeNil(b bool)`
+
+ SetStatusCodeNil sets the value for StatusCode to be an explicit nil
+
+### UnsetStatusCode
+`func (o *VoiceMessage) UnsetStatusCode()`
+
+UnsetStatusCode ensures that no value is present for StatusCode, not even an explicit nil
+### GetStatusText
+
+`func (o *VoiceMessage) GetStatusText() string`
+
+GetStatusText returns the StatusText field if non-nil, zero value otherwise.
+
+### GetStatusTextOk
+
+`func (o *VoiceMessage) GetStatusTextOk() (*string, bool)`
+
+GetStatusTextOk returns a tuple with the StatusText field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatusText
+
+`func (o *VoiceMessage) SetStatusText(v string)`
+
+SetStatusText sets StatusText field to given value.
+
+### HasStatusText
+
+`func (o *VoiceMessage) HasStatusText() bool`
+
+HasStatusText returns a boolean if a field has been set.
+
+### SetStatusTextNil
+
+`func (o *VoiceMessage) SetStatusTextNil(b bool)`
+
+ SetStatusTextNil sets the value for StatusText to be an explicit nil
+
+### UnsetStatusText
+`func (o *VoiceMessage) UnsetStatusText()`
+
+UnsetStatusText ensures that no value is present for StatusText, not even an explicit nil
 ### GetStatus
 
 `func (o *VoiceMessage) GetStatus() string`
@@ -501,6 +754,31 @@ SetStatus sets Status field to given value.
 `func (o *VoiceMessage) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetApiUsername
+
+`func (o *VoiceMessage) GetApiUsername() string`
+
+GetApiUsername returns the ApiUsername field if non-nil, zero value otherwise.
+
+### GetApiUsernameOk
+
+`func (o *VoiceMessage) GetApiUsernameOk() (*string, bool)`
+
+GetApiUsernameOk returns a tuple with the ApiUsername field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiUsername
+
+`func (o *VoiceMessage) SetApiUsername(v string)`
+
+SetApiUsername sets ApiUsername field to given value.
+
+### HasApiUsername
+
+`func (o *VoiceMessage) HasApiUsername() bool`
+
+HasApiUsername returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

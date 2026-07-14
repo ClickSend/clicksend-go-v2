@@ -27,7 +27,7 @@ type CalculateSmsPriceData struct {
 	QueuedCount *int32 `json:"queued_count,omitempty"`
 	// The parameters related to messages.
 	Messages []Sms `json:"messages,omitempty"`
-	Currency *Currency `json:"currency,omitempty"`
+	Currency *Currency `json:"_currency,omitempty"`
 	Summary *CalculateSmsPriceDataSummary `json:"_summary,omitempty"`
 	// The number of messages unable to be sent. This is often caused by:  - Receipient’s country not enabled for global sending.      - Sender ID resitriction.      - Number registration restrcition.
 	BlockedCount *int32 `json:"blocked_count,omitempty"`
@@ -297,7 +297,7 @@ func (o CalculateSmsPriceData) ToMap() (map[string]interface{}, error) {
 		toSerialize["messages"] = o.Messages
 	}
 	if !IsNil(o.Currency) {
-		toSerialize["currency"] = o.Currency
+		toSerialize["_currency"] = o.Currency
 	}
 	if !IsNil(o.Summary) {
 		toSerialize["_summary"] = o.Summary

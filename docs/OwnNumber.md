@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | A label for the phone number. | [optional] 
 **Status** | Pointer to **string** | The status of the phone number. | [optional] 
 **VerifiedTimestamp** | Pointer to **time.Time** | The timestamp when the phone number was verified. | [optional] 
+**NotifiedTimestamp** | Pointer to **NullableString** | The timestamp when the user was last notified about this number, if applicable. | [optional] 
 **IsNearingExpiration** | Pointer to **bool** | Indicates whether the phone number verification is nearing its expiration date: - **true:** The verification was completed more than 11 months ago and will expire soon. You should re-verify your phone number to maintain uninterrupted service. - **false:** The verification is still valid and not approaching expiration. | [optional] 
 **CreatedTimestamp** | Pointer to **time.Time** | The timestamp when the record was created. | [optional] 
 **UpdatedTimestamp** | Pointer to **time.Time** | The timestamp when the record was last updated. | [optional] 
@@ -261,6 +262,41 @@ SetVerifiedTimestamp sets VerifiedTimestamp field to given value.
 
 HasVerifiedTimestamp returns a boolean if a field has been set.
 
+### GetNotifiedTimestamp
+
+`func (o *OwnNumber) GetNotifiedTimestamp() string`
+
+GetNotifiedTimestamp returns the NotifiedTimestamp field if non-nil, zero value otherwise.
+
+### GetNotifiedTimestampOk
+
+`func (o *OwnNumber) GetNotifiedTimestampOk() (*string, bool)`
+
+GetNotifiedTimestampOk returns a tuple with the NotifiedTimestamp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotifiedTimestamp
+
+`func (o *OwnNumber) SetNotifiedTimestamp(v string)`
+
+SetNotifiedTimestamp sets NotifiedTimestamp field to given value.
+
+### HasNotifiedTimestamp
+
+`func (o *OwnNumber) HasNotifiedTimestamp() bool`
+
+HasNotifiedTimestamp returns a boolean if a field has been set.
+
+### SetNotifiedTimestampNil
+
+`func (o *OwnNumber) SetNotifiedTimestampNil(b bool)`
+
+ SetNotifiedTimestampNil sets the value for NotifiedTimestamp to be an explicit nil
+
+### UnsetNotifiedTimestamp
+`func (o *OwnNumber) UnsetNotifiedTimestamp()`
+
+UnsetNotifiedTimestamp ensures that no value is present for NotifiedTimestamp, not even an explicit nil
 ### GetIsNearingExpiration
 
 `func (o *OwnNumber) GetIsNearingExpiration() bool`

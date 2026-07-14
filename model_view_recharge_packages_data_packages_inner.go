@@ -29,6 +29,8 @@ type ViewRechargePackagesDataPackagesInner struct {
 	SmsPrice *float32 `json:"sms_price,omitempty"`
 	// The quantity of the SMS.
 	SmsQuantity *float32 `json:"sms_quantity,omitempty"`
+	// The carrier fee applied to SMS in this package.
+	PriceSmsCarrierFee NullableString `json:"price_sms_carrier_fee,omitempty"`
 	// The price of the voice mobile.
 	VoiceMobilePrice *float32 `json:"voice_mobile_price,omitempty"`
 	// The quantity of the voice mobile.
@@ -37,6 +39,12 @@ type ViewRechargePackagesDataPackagesInner struct {
 	VoiceLandlinePrice *float32 `json:"voice_landline_price,omitempty"`
 	// The quantity of the voice landline.
 	VoiceLandlineQuantity *float32 `json:"voice_landline_quantity,omitempty"`
+	// The price of the MMS.
+	MmsPrice *float32 `json:"mms_price,omitempty"`
+	// The quantity of the MMS.
+	MmsQuantity *float32 `json:"mms_quantity,omitempty"`
+	// The carrier fee applied to MMS in this package.
+	PriceMmsCarrierFee NullableString `json:"price_mms_carrier_fee,omitempty"`
 	// The price of the fax.
 	FaxPrice *float32 `json:"fax_price,omitempty"`
 	// The quantity of the fax.
@@ -248,6 +256,48 @@ func (o *ViewRechargePackagesDataPackagesInner) SetSmsQuantity(v float32) {
 	o.SmsQuantity = &v
 }
 
+// GetPriceSmsCarrierFee returns the PriceSmsCarrierFee field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewRechargePackagesDataPackagesInner) GetPriceSmsCarrierFee() string {
+	if o == nil || IsNil(o.PriceSmsCarrierFee.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PriceSmsCarrierFee.Get()
+}
+
+// GetPriceSmsCarrierFeeOk returns a tuple with the PriceSmsCarrierFee field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewRechargePackagesDataPackagesInner) GetPriceSmsCarrierFeeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PriceSmsCarrierFee.Get(), o.PriceSmsCarrierFee.IsSet()
+}
+
+// HasPriceSmsCarrierFee returns a boolean if a field has been set.
+func (o *ViewRechargePackagesDataPackagesInner) HasPriceSmsCarrierFee() bool {
+	if o != nil && o.PriceSmsCarrierFee.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceSmsCarrierFee gets a reference to the given NullableString and assigns it to the PriceSmsCarrierFee field.
+func (o *ViewRechargePackagesDataPackagesInner) SetPriceSmsCarrierFee(v string) {
+	o.PriceSmsCarrierFee.Set(&v)
+}
+// SetPriceSmsCarrierFeeNil sets the value for PriceSmsCarrierFee to be an explicit nil
+func (o *ViewRechargePackagesDataPackagesInner) SetPriceSmsCarrierFeeNil() {
+	o.PriceSmsCarrierFee.Set(nil)
+}
+
+// UnsetPriceSmsCarrierFee ensures that no value is present for PriceSmsCarrierFee, not even an explicit nil
+func (o *ViewRechargePackagesDataPackagesInner) UnsetPriceSmsCarrierFee() {
+	o.PriceSmsCarrierFee.Unset()
+}
+
 // GetVoiceMobilePrice returns the VoiceMobilePrice field value if set, zero value otherwise.
 func (o *ViewRechargePackagesDataPackagesInner) GetVoiceMobilePrice() float32 {
 	if o == nil || IsNil(o.VoiceMobilePrice) {
@@ -374,6 +424,112 @@ func (o *ViewRechargePackagesDataPackagesInner) HasVoiceLandlineQuantity() bool 
 // SetVoiceLandlineQuantity gets a reference to the given float32 and assigns it to the VoiceLandlineQuantity field.
 func (o *ViewRechargePackagesDataPackagesInner) SetVoiceLandlineQuantity(v float32) {
 	o.VoiceLandlineQuantity = &v
+}
+
+// GetMmsPrice returns the MmsPrice field value if set, zero value otherwise.
+func (o *ViewRechargePackagesDataPackagesInner) GetMmsPrice() float32 {
+	if o == nil || IsNil(o.MmsPrice) {
+		var ret float32
+		return ret
+	}
+	return *o.MmsPrice
+}
+
+// GetMmsPriceOk returns a tuple with the MmsPrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewRechargePackagesDataPackagesInner) GetMmsPriceOk() (*float32, bool) {
+	if o == nil || IsNil(o.MmsPrice) {
+		return nil, false
+	}
+	return o.MmsPrice, true
+}
+
+// HasMmsPrice returns a boolean if a field has been set.
+func (o *ViewRechargePackagesDataPackagesInner) HasMmsPrice() bool {
+	if o != nil && !IsNil(o.MmsPrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetMmsPrice gets a reference to the given float32 and assigns it to the MmsPrice field.
+func (o *ViewRechargePackagesDataPackagesInner) SetMmsPrice(v float32) {
+	o.MmsPrice = &v
+}
+
+// GetMmsQuantity returns the MmsQuantity field value if set, zero value otherwise.
+func (o *ViewRechargePackagesDataPackagesInner) GetMmsQuantity() float32 {
+	if o == nil || IsNil(o.MmsQuantity) {
+		var ret float32
+		return ret
+	}
+	return *o.MmsQuantity
+}
+
+// GetMmsQuantityOk returns a tuple with the MmsQuantity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ViewRechargePackagesDataPackagesInner) GetMmsQuantityOk() (*float32, bool) {
+	if o == nil || IsNil(o.MmsQuantity) {
+		return nil, false
+	}
+	return o.MmsQuantity, true
+}
+
+// HasMmsQuantity returns a boolean if a field has been set.
+func (o *ViewRechargePackagesDataPackagesInner) HasMmsQuantity() bool {
+	if o != nil && !IsNil(o.MmsQuantity) {
+		return true
+	}
+
+	return false
+}
+
+// SetMmsQuantity gets a reference to the given float32 and assigns it to the MmsQuantity field.
+func (o *ViewRechargePackagesDataPackagesInner) SetMmsQuantity(v float32) {
+	o.MmsQuantity = &v
+}
+
+// GetPriceMmsCarrierFee returns the PriceMmsCarrierFee field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ViewRechargePackagesDataPackagesInner) GetPriceMmsCarrierFee() string {
+	if o == nil || IsNil(o.PriceMmsCarrierFee.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PriceMmsCarrierFee.Get()
+}
+
+// GetPriceMmsCarrierFeeOk returns a tuple with the PriceMmsCarrierFee field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ViewRechargePackagesDataPackagesInner) GetPriceMmsCarrierFeeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PriceMmsCarrierFee.Get(), o.PriceMmsCarrierFee.IsSet()
+}
+
+// HasPriceMmsCarrierFee returns a boolean if a field has been set.
+func (o *ViewRechargePackagesDataPackagesInner) HasPriceMmsCarrierFee() bool {
+	if o != nil && o.PriceMmsCarrierFee.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceMmsCarrierFee gets a reference to the given NullableString and assigns it to the PriceMmsCarrierFee field.
+func (o *ViewRechargePackagesDataPackagesInner) SetPriceMmsCarrierFee(v string) {
+	o.PriceMmsCarrierFee.Set(&v)
+}
+// SetPriceMmsCarrierFeeNil sets the value for PriceMmsCarrierFee to be an explicit nil
+func (o *ViewRechargePackagesDataPackagesInner) SetPriceMmsCarrierFeeNil() {
+	o.PriceMmsCarrierFee.Set(nil)
+}
+
+// UnsetPriceMmsCarrierFee ensures that no value is present for PriceMmsCarrierFee, not even an explicit nil
+func (o *ViewRechargePackagesDataPackagesInner) UnsetPriceMmsCarrierFee() {
+	o.PriceMmsCarrierFee.Unset()
 }
 
 // GetFaxPrice returns the FaxPrice field value if set, zero value otherwise.
@@ -913,6 +1069,9 @@ func (o ViewRechargePackagesDataPackagesInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.SmsQuantity) {
 		toSerialize["sms_quantity"] = o.SmsQuantity
 	}
+	if o.PriceSmsCarrierFee.IsSet() {
+		toSerialize["price_sms_carrier_fee"] = o.PriceSmsCarrierFee.Get()
+	}
 	if !IsNil(o.VoiceMobilePrice) {
 		toSerialize["voice_mobile_price"] = o.VoiceMobilePrice
 	}
@@ -924,6 +1083,15 @@ func (o ViewRechargePackagesDataPackagesInner) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.VoiceLandlineQuantity) {
 		toSerialize["voice_landline_quantity"] = o.VoiceLandlineQuantity
+	}
+	if !IsNil(o.MmsPrice) {
+		toSerialize["mms_price"] = o.MmsPrice
+	}
+	if !IsNil(o.MmsQuantity) {
+		toSerialize["mms_quantity"] = o.MmsQuantity
+	}
+	if o.PriceMmsCarrierFee.IsSet() {
+		toSerialize["price_mms_carrier_fee"] = o.PriceMmsCarrierFee.Get()
 	}
 	if !IsNil(o.FaxPrice) {
 		toSerialize["fax_price"] = o.FaxPrice

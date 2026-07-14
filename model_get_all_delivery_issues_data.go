@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ViewYourNumbersData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ViewYourNumbersData{}
+// checks if the GetAllDeliveryIssuesData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GetAllDeliveryIssuesData{}
 
-// ViewYourNumbersData struct for ViewYourNumbersData
-type ViewYourNumbersData struct {
+// GetAllDeliveryIssuesData struct for GetAllDeliveryIssuesData
+type GetAllDeliveryIssuesData struct {
 	// The total number of items available for viewing.
 	Total *int32 `json:"total,omitempty"`
 	// The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
@@ -35,29 +35,28 @@ type ViewYourNumbersData struct {
 	From *int32 `json:"from,omitempty"`
 	// The number of the last result in the current page.
 	To *int32 `json:"to,omitempty"`
-	Data []ViewYourNumbersDataAllOfDataInner `json:"data,omitempty"`
-	Currency *Currency `json:"_currency,omitempty"`
+	Data []DeliveryIssue `json:"data,omitempty"`
 }
 
-// NewViewYourNumbersData instantiates a new ViewYourNumbersData object
+// NewGetAllDeliveryIssuesData instantiates a new GetAllDeliveryIssuesData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViewYourNumbersData() *ViewYourNumbersData {
-	this := ViewYourNumbersData{}
+func NewGetAllDeliveryIssuesData() *GetAllDeliveryIssuesData {
+	this := GetAllDeliveryIssuesData{}
 	return &this
 }
 
-// NewViewYourNumbersDataWithDefaults instantiates a new ViewYourNumbersData object
+// NewGetAllDeliveryIssuesDataWithDefaults instantiates a new GetAllDeliveryIssuesData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewViewYourNumbersDataWithDefaults() *ViewYourNumbersData {
-	this := ViewYourNumbersData{}
+func NewGetAllDeliveryIssuesDataWithDefaults() *GetAllDeliveryIssuesData {
+	this := GetAllDeliveryIssuesData{}
 	return &this
 }
 
 // GetTotal returns the Total field value if set, zero value otherwise.
-func (o *ViewYourNumbersData) GetTotal() int32 {
+func (o *GetAllDeliveryIssuesData) GetTotal() int32 {
 	if o == nil || IsNil(o.Total) {
 		var ret int32
 		return ret
@@ -67,7 +66,7 @@ func (o *ViewYourNumbersData) GetTotal() int32 {
 
 // GetTotalOk returns a tuple with the Total field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewYourNumbersData) GetTotalOk() (*int32, bool) {
+func (o *GetAllDeliveryIssuesData) GetTotalOk() (*int32, bool) {
 	if o == nil || IsNil(o.Total) {
 		return nil, false
 	}
@@ -75,7 +74,7 @@ func (o *ViewYourNumbersData) GetTotalOk() (*int32, bool) {
 }
 
 // HasTotal returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasTotal() bool {
+func (o *GetAllDeliveryIssuesData) HasTotal() bool {
 	if o != nil && !IsNil(o.Total) {
 		return true
 	}
@@ -84,12 +83,12 @@ func (o *ViewYourNumbersData) HasTotal() bool {
 }
 
 // SetTotal gets a reference to the given int32 and assigns it to the Total field.
-func (o *ViewYourNumbersData) SetTotal(v int32) {
+func (o *GetAllDeliveryIssuesData) SetTotal(v int32) {
 	o.Total = &v
 }
 
 // GetPerPage returns the PerPage field value if set, zero value otherwise.
-func (o *ViewYourNumbersData) GetPerPage() int32 {
+func (o *GetAllDeliveryIssuesData) GetPerPage() int32 {
 	if o == nil || IsNil(o.PerPage) {
 		var ret int32
 		return ret
@@ -99,7 +98,7 @@ func (o *ViewYourNumbersData) GetPerPage() int32 {
 
 // GetPerPageOk returns a tuple with the PerPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewYourNumbersData) GetPerPageOk() (*int32, bool) {
+func (o *GetAllDeliveryIssuesData) GetPerPageOk() (*int32, bool) {
 	if o == nil || IsNil(o.PerPage) {
 		return nil, false
 	}
@@ -107,7 +106,7 @@ func (o *ViewYourNumbersData) GetPerPageOk() (*int32, bool) {
 }
 
 // HasPerPage returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasPerPage() bool {
+func (o *GetAllDeliveryIssuesData) HasPerPage() bool {
 	if o != nil && !IsNil(o.PerPage) {
 		return true
 	}
@@ -116,12 +115,12 @@ func (o *ViewYourNumbersData) HasPerPage() bool {
 }
 
 // SetPerPage gets a reference to the given int32 and assigns it to the PerPage field.
-func (o *ViewYourNumbersData) SetPerPage(v int32) {
+func (o *GetAllDeliveryIssuesData) SetPerPage(v int32) {
 	o.PerPage = &v
 }
 
 // GetCurrentPage returns the CurrentPage field value if set, zero value otherwise.
-func (o *ViewYourNumbersData) GetCurrentPage() int32 {
+func (o *GetAllDeliveryIssuesData) GetCurrentPage() int32 {
 	if o == nil || IsNil(o.CurrentPage) {
 		var ret int32
 		return ret
@@ -131,7 +130,7 @@ func (o *ViewYourNumbersData) GetCurrentPage() int32 {
 
 // GetCurrentPageOk returns a tuple with the CurrentPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewYourNumbersData) GetCurrentPageOk() (*int32, bool) {
+func (o *GetAllDeliveryIssuesData) GetCurrentPageOk() (*int32, bool) {
 	if o == nil || IsNil(o.CurrentPage) {
 		return nil, false
 	}
@@ -139,7 +138,7 @@ func (o *ViewYourNumbersData) GetCurrentPageOk() (*int32, bool) {
 }
 
 // HasCurrentPage returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasCurrentPage() bool {
+func (o *GetAllDeliveryIssuesData) HasCurrentPage() bool {
 	if o != nil && !IsNil(o.CurrentPage) {
 		return true
 	}
@@ -148,12 +147,12 @@ func (o *ViewYourNumbersData) HasCurrentPage() bool {
 }
 
 // SetCurrentPage gets a reference to the given int32 and assigns it to the CurrentPage field.
-func (o *ViewYourNumbersData) SetCurrentPage(v int32) {
+func (o *GetAllDeliveryIssuesData) SetCurrentPage(v int32) {
 	o.CurrentPage = &v
 }
 
 // GetLastPage returns the LastPage field value if set, zero value otherwise.
-func (o *ViewYourNumbersData) GetLastPage() int32 {
+func (o *GetAllDeliveryIssuesData) GetLastPage() int32 {
 	if o == nil || IsNil(o.LastPage) {
 		var ret int32
 		return ret
@@ -163,7 +162,7 @@ func (o *ViewYourNumbersData) GetLastPage() int32 {
 
 // GetLastPageOk returns a tuple with the LastPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewYourNumbersData) GetLastPageOk() (*int32, bool) {
+func (o *GetAllDeliveryIssuesData) GetLastPageOk() (*int32, bool) {
 	if o == nil || IsNil(o.LastPage) {
 		return nil, false
 	}
@@ -171,7 +170,7 @@ func (o *ViewYourNumbersData) GetLastPageOk() (*int32, bool) {
 }
 
 // HasLastPage returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasLastPage() bool {
+func (o *GetAllDeliveryIssuesData) HasLastPage() bool {
 	if o != nil && !IsNil(o.LastPage) {
 		return true
 	}
@@ -180,12 +179,12 @@ func (o *ViewYourNumbersData) HasLastPage() bool {
 }
 
 // SetLastPage gets a reference to the given int32 and assigns it to the LastPage field.
-func (o *ViewYourNumbersData) SetLastPage(v int32) {
+func (o *GetAllDeliveryIssuesData) SetLastPage(v int32) {
 	o.LastPage = &v
 }
 
 // GetNextPageUrl returns the NextPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ViewYourNumbersData) GetNextPageUrl() string {
+func (o *GetAllDeliveryIssuesData) GetNextPageUrl() string {
 	if o == nil || IsNil(o.NextPageUrl.Get()) {
 		var ret string
 		return ret
@@ -196,7 +195,7 @@ func (o *ViewYourNumbersData) GetNextPageUrl() string {
 // GetNextPageUrlOk returns a tuple with the NextPageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ViewYourNumbersData) GetNextPageUrlOk() (*string, bool) {
+func (o *GetAllDeliveryIssuesData) GetNextPageUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -204,7 +203,7 @@ func (o *ViewYourNumbersData) GetNextPageUrlOk() (*string, bool) {
 }
 
 // HasNextPageUrl returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasNextPageUrl() bool {
+func (o *GetAllDeliveryIssuesData) HasNextPageUrl() bool {
 	if o != nil && o.NextPageUrl.IsSet() {
 		return true
 	}
@@ -213,21 +212,21 @@ func (o *ViewYourNumbersData) HasNextPageUrl() bool {
 }
 
 // SetNextPageUrl gets a reference to the given NullableString and assigns it to the NextPageUrl field.
-func (o *ViewYourNumbersData) SetNextPageUrl(v string) {
+func (o *GetAllDeliveryIssuesData) SetNextPageUrl(v string) {
 	o.NextPageUrl.Set(&v)
 }
 // SetNextPageUrlNil sets the value for NextPageUrl to be an explicit nil
-func (o *ViewYourNumbersData) SetNextPageUrlNil() {
+func (o *GetAllDeliveryIssuesData) SetNextPageUrlNil() {
 	o.NextPageUrl.Set(nil)
 }
 
 // UnsetNextPageUrl ensures that no value is present for NextPageUrl, not even an explicit nil
-func (o *ViewYourNumbersData) UnsetNextPageUrl() {
+func (o *GetAllDeliveryIssuesData) UnsetNextPageUrl() {
 	o.NextPageUrl.Unset()
 }
 
 // GetPrevPageUrl returns the PrevPageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ViewYourNumbersData) GetPrevPageUrl() string {
+func (o *GetAllDeliveryIssuesData) GetPrevPageUrl() string {
 	if o == nil || IsNil(o.PrevPageUrl.Get()) {
 		var ret string
 		return ret
@@ -238,7 +237,7 @@ func (o *ViewYourNumbersData) GetPrevPageUrl() string {
 // GetPrevPageUrlOk returns a tuple with the PrevPageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ViewYourNumbersData) GetPrevPageUrlOk() (*string, bool) {
+func (o *GetAllDeliveryIssuesData) GetPrevPageUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -246,7 +245,7 @@ func (o *ViewYourNumbersData) GetPrevPageUrlOk() (*string, bool) {
 }
 
 // HasPrevPageUrl returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasPrevPageUrl() bool {
+func (o *GetAllDeliveryIssuesData) HasPrevPageUrl() bool {
 	if o != nil && o.PrevPageUrl.IsSet() {
 		return true
 	}
@@ -255,21 +254,21 @@ func (o *ViewYourNumbersData) HasPrevPageUrl() bool {
 }
 
 // SetPrevPageUrl gets a reference to the given NullableString and assigns it to the PrevPageUrl field.
-func (o *ViewYourNumbersData) SetPrevPageUrl(v string) {
+func (o *GetAllDeliveryIssuesData) SetPrevPageUrl(v string) {
 	o.PrevPageUrl.Set(&v)
 }
 // SetPrevPageUrlNil sets the value for PrevPageUrl to be an explicit nil
-func (o *ViewYourNumbersData) SetPrevPageUrlNil() {
+func (o *GetAllDeliveryIssuesData) SetPrevPageUrlNil() {
 	o.PrevPageUrl.Set(nil)
 }
 
 // UnsetPrevPageUrl ensures that no value is present for PrevPageUrl, not even an explicit nil
-func (o *ViewYourNumbersData) UnsetPrevPageUrl() {
+func (o *GetAllDeliveryIssuesData) UnsetPrevPageUrl() {
 	o.PrevPageUrl.Unset()
 }
 
 // GetFrom returns the From field value if set, zero value otherwise.
-func (o *ViewYourNumbersData) GetFrom() int32 {
+func (o *GetAllDeliveryIssuesData) GetFrom() int32 {
 	if o == nil || IsNil(o.From) {
 		var ret int32
 		return ret
@@ -279,7 +278,7 @@ func (o *ViewYourNumbersData) GetFrom() int32 {
 
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewYourNumbersData) GetFromOk() (*int32, bool) {
+func (o *GetAllDeliveryIssuesData) GetFromOk() (*int32, bool) {
 	if o == nil || IsNil(o.From) {
 		return nil, false
 	}
@@ -287,7 +286,7 @@ func (o *ViewYourNumbersData) GetFromOk() (*int32, bool) {
 }
 
 // HasFrom returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasFrom() bool {
+func (o *GetAllDeliveryIssuesData) HasFrom() bool {
 	if o != nil && !IsNil(o.From) {
 		return true
 	}
@@ -296,12 +295,12 @@ func (o *ViewYourNumbersData) HasFrom() bool {
 }
 
 // SetFrom gets a reference to the given int32 and assigns it to the From field.
-func (o *ViewYourNumbersData) SetFrom(v int32) {
+func (o *GetAllDeliveryIssuesData) SetFrom(v int32) {
 	o.From = &v
 }
 
 // GetTo returns the To field value if set, zero value otherwise.
-func (o *ViewYourNumbersData) GetTo() int32 {
+func (o *GetAllDeliveryIssuesData) GetTo() int32 {
 	if o == nil || IsNil(o.To) {
 		var ret int32
 		return ret
@@ -311,7 +310,7 @@ func (o *ViewYourNumbersData) GetTo() int32 {
 
 // GetToOk returns a tuple with the To field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewYourNumbersData) GetToOk() (*int32, bool) {
+func (o *GetAllDeliveryIssuesData) GetToOk() (*int32, bool) {
 	if o == nil || IsNil(o.To) {
 		return nil, false
 	}
@@ -319,7 +318,7 @@ func (o *ViewYourNumbersData) GetToOk() (*int32, bool) {
 }
 
 // HasTo returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasTo() bool {
+func (o *GetAllDeliveryIssuesData) HasTo() bool {
 	if o != nil && !IsNil(o.To) {
 		return true
 	}
@@ -328,14 +327,14 @@ func (o *ViewYourNumbersData) HasTo() bool {
 }
 
 // SetTo gets a reference to the given int32 and assigns it to the To field.
-func (o *ViewYourNumbersData) SetTo(v int32) {
+func (o *GetAllDeliveryIssuesData) SetTo(v int32) {
 	o.To = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ViewYourNumbersData) GetData() []ViewYourNumbersDataAllOfDataInner {
+func (o *GetAllDeliveryIssuesData) GetData() []DeliveryIssue {
 	if o == nil || IsNil(o.Data) {
-		var ret []ViewYourNumbersDataAllOfDataInner
+		var ret []DeliveryIssue
 		return ret
 	}
 	return o.Data
@@ -343,7 +342,7 @@ func (o *ViewYourNumbersData) GetData() []ViewYourNumbersDataAllOfDataInner {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewYourNumbersData) GetDataOk() ([]ViewYourNumbersDataAllOfDataInner, bool) {
+func (o *GetAllDeliveryIssuesData) GetDataOk() ([]DeliveryIssue, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -351,7 +350,7 @@ func (o *ViewYourNumbersData) GetDataOk() ([]ViewYourNumbersDataAllOfDataInner, 
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasData() bool {
+func (o *GetAllDeliveryIssuesData) HasData() bool {
 	if o != nil && !IsNil(o.Data) {
 		return true
 	}
@@ -359,44 +358,12 @@ func (o *ViewYourNumbersData) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []ViewYourNumbersDataAllOfDataInner and assigns it to the Data field.
-func (o *ViewYourNumbersData) SetData(v []ViewYourNumbersDataAllOfDataInner) {
+// SetData gets a reference to the given []DeliveryIssue and assigns it to the Data field.
+func (o *GetAllDeliveryIssuesData) SetData(v []DeliveryIssue) {
 	o.Data = v
 }
 
-// GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *ViewYourNumbersData) GetCurrency() Currency {
-	if o == nil || IsNil(o.Currency) {
-		var ret Currency
-		return ret
-	}
-	return *o.Currency
-}
-
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ViewYourNumbersData) GetCurrencyOk() (*Currency, bool) {
-	if o == nil || IsNil(o.Currency) {
-		return nil, false
-	}
-	return o.Currency, true
-}
-
-// HasCurrency returns a boolean if a field has been set.
-func (o *ViewYourNumbersData) HasCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
-		return true
-	}
-
-	return false
-}
-
-// SetCurrency gets a reference to the given Currency and assigns it to the Currency field.
-func (o *ViewYourNumbersData) SetCurrency(v Currency) {
-	o.Currency = &v
-}
-
-func (o ViewYourNumbersData) MarshalJSON() ([]byte, error) {
+func (o GetAllDeliveryIssuesData) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -404,7 +371,7 @@ func (o ViewYourNumbersData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ViewYourNumbersData) ToMap() (map[string]interface{}, error) {
+func (o GetAllDeliveryIssuesData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total
@@ -433,44 +400,41 @@ func (o ViewYourNumbersData) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
-	if !IsNil(o.Currency) {
-		toSerialize["_currency"] = o.Currency
-	}
 	return toSerialize, nil
 }
 
-type NullableViewYourNumbersData struct {
-	value *ViewYourNumbersData
+type NullableGetAllDeliveryIssuesData struct {
+	value *GetAllDeliveryIssuesData
 	isSet bool
 }
 
-func (v NullableViewYourNumbersData) Get() *ViewYourNumbersData {
+func (v NullableGetAllDeliveryIssuesData) Get() *GetAllDeliveryIssuesData {
 	return v.value
 }
 
-func (v *NullableViewYourNumbersData) Set(val *ViewYourNumbersData) {
+func (v *NullableGetAllDeliveryIssuesData) Set(val *GetAllDeliveryIssuesData) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableViewYourNumbersData) IsSet() bool {
+func (v NullableGetAllDeliveryIssuesData) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableViewYourNumbersData) Unset() {
+func (v *NullableGetAllDeliveryIssuesData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableViewYourNumbersData(val *ViewYourNumbersData) *NullableViewYourNumbersData {
-	return &NullableViewYourNumbersData{value: val, isSet: true}
+func NewNullableGetAllDeliveryIssuesData(val *GetAllDeliveryIssuesData) *NullableGetAllDeliveryIssuesData {
+	return &NullableGetAllDeliveryIssuesData{value: val, isSet: true}
 }
 
-func (v NullableViewYourNumbersData) MarshalJSON() ([]byte, error) {
+func (v NullableGetAllDeliveryIssuesData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableViewYourNumbersData) UnmarshalJSON(src []byte) error {
+func (v *NullableGetAllDeliveryIssuesData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

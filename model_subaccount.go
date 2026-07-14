@@ -33,6 +33,8 @@ type Subaccount struct {
 	LastName *string `json:"last_name,omitempty"`
 	// The API key of the subaccount.
 	ApiKey *string `json:"api_key,omitempty"`
+	// Flag indicating if the subaccount has access to SMPP.
+	AccessSmpp *int32 `json:"access_smpp,omitempty"`
 	// Flag indicating if the subaccount has access to users.
 	AccessUsers *int32 `json:"access_users,omitempty"`
 	// Flag indicating if the subaccount has access to billing.
@@ -55,12 +57,20 @@ type Subaccount struct {
 	AccessPost *int32 `json:"access_post,omitempty"`
 	// Flag indicating if the subaccount has access to reseller services.
 	AccessReseller *int32 `json:"access_reseller,omitempty"`
+	// Flag indicating if the subaccount has access to global sending.
+	AccessGlobalSending *int32 `json:"access_global_sending,omitempty"`
 	// Flag indicating if the subaccount has access to MMS services.
 	AccessMms *int32 `json:"access_mms,omitempty"`
+	// Flag indicating if pricing is hidden for the subaccount.
+	HidePricing *int32 `json:"hide_pricing,omitempty"`
 	// Flag indicating if the subaccount can share campaigns.
 	ShareCampaigns *int32 `json:"share_campaigns,omitempty"`
 	// Additional notes for the subaccount.
 	Notes NullableString `json:"notes,omitempty"`
+	// Flag indicating if this is the main account rather than a subaccount.
+	IsMain *int32 `json:"is_main,omitempty"`
+	// The sign-up type used to create the subaccount, if applicable.
+	SignUpType NullableString `json:"sign_up_type,omitempty"`
 }
 
 // NewSubaccount instantiates a new Subaccount object
@@ -302,6 +312,38 @@ func (o *Subaccount) HasApiKey() bool {
 // SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
 func (o *Subaccount) SetApiKey(v string) {
 	o.ApiKey = &v
+}
+
+// GetAccessSmpp returns the AccessSmpp field value if set, zero value otherwise.
+func (o *Subaccount) GetAccessSmpp() int32 {
+	if o == nil || IsNil(o.AccessSmpp) {
+		var ret int32
+		return ret
+	}
+	return *o.AccessSmpp
+}
+
+// GetAccessSmppOk returns a tuple with the AccessSmpp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Subaccount) GetAccessSmppOk() (*int32, bool) {
+	if o == nil || IsNil(o.AccessSmpp) {
+		return nil, false
+	}
+	return o.AccessSmpp, true
+}
+
+// HasAccessSmpp returns a boolean if a field has been set.
+func (o *Subaccount) HasAccessSmpp() bool {
+	if o != nil && !IsNil(o.AccessSmpp) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccessSmpp gets a reference to the given int32 and assigns it to the AccessSmpp field.
+func (o *Subaccount) SetAccessSmpp(v int32) {
+	o.AccessSmpp = &v
 }
 
 // GetAccessUsers returns the AccessUsers field value if set, zero value otherwise.
@@ -656,6 +698,38 @@ func (o *Subaccount) SetAccessReseller(v int32) {
 	o.AccessReseller = &v
 }
 
+// GetAccessGlobalSending returns the AccessGlobalSending field value if set, zero value otherwise.
+func (o *Subaccount) GetAccessGlobalSending() int32 {
+	if o == nil || IsNil(o.AccessGlobalSending) {
+		var ret int32
+		return ret
+	}
+	return *o.AccessGlobalSending
+}
+
+// GetAccessGlobalSendingOk returns a tuple with the AccessGlobalSending field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Subaccount) GetAccessGlobalSendingOk() (*int32, bool) {
+	if o == nil || IsNil(o.AccessGlobalSending) {
+		return nil, false
+	}
+	return o.AccessGlobalSending, true
+}
+
+// HasAccessGlobalSending returns a boolean if a field has been set.
+func (o *Subaccount) HasAccessGlobalSending() bool {
+	if o != nil && !IsNil(o.AccessGlobalSending) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccessGlobalSending gets a reference to the given int32 and assigns it to the AccessGlobalSending field.
+func (o *Subaccount) SetAccessGlobalSending(v int32) {
+	o.AccessGlobalSending = &v
+}
+
 // GetAccessMms returns the AccessMms field value if set, zero value otherwise.
 func (o *Subaccount) GetAccessMms() int32 {
 	if o == nil || IsNil(o.AccessMms) {
@@ -686,6 +760,38 @@ func (o *Subaccount) HasAccessMms() bool {
 // SetAccessMms gets a reference to the given int32 and assigns it to the AccessMms field.
 func (o *Subaccount) SetAccessMms(v int32) {
 	o.AccessMms = &v
+}
+
+// GetHidePricing returns the HidePricing field value if set, zero value otherwise.
+func (o *Subaccount) GetHidePricing() int32 {
+	if o == nil || IsNil(o.HidePricing) {
+		var ret int32
+		return ret
+	}
+	return *o.HidePricing
+}
+
+// GetHidePricingOk returns a tuple with the HidePricing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Subaccount) GetHidePricingOk() (*int32, bool) {
+	if o == nil || IsNil(o.HidePricing) {
+		return nil, false
+	}
+	return o.HidePricing, true
+}
+
+// HasHidePricing returns a boolean if a field has been set.
+func (o *Subaccount) HasHidePricing() bool {
+	if o != nil && !IsNil(o.HidePricing) {
+		return true
+	}
+
+	return false
+}
+
+// SetHidePricing gets a reference to the given int32 and assigns it to the HidePricing field.
+func (o *Subaccount) SetHidePricing(v int32) {
+	o.HidePricing = &v
 }
 
 // GetShareCampaigns returns the ShareCampaigns field value if set, zero value otherwise.
@@ -762,6 +868,80 @@ func (o *Subaccount) UnsetNotes() {
 	o.Notes.Unset()
 }
 
+// GetIsMain returns the IsMain field value if set, zero value otherwise.
+func (o *Subaccount) GetIsMain() int32 {
+	if o == nil || IsNil(o.IsMain) {
+		var ret int32
+		return ret
+	}
+	return *o.IsMain
+}
+
+// GetIsMainOk returns a tuple with the IsMain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Subaccount) GetIsMainOk() (*int32, bool) {
+	if o == nil || IsNil(o.IsMain) {
+		return nil, false
+	}
+	return o.IsMain, true
+}
+
+// HasIsMain returns a boolean if a field has been set.
+func (o *Subaccount) HasIsMain() bool {
+	if o != nil && !IsNil(o.IsMain) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsMain gets a reference to the given int32 and assigns it to the IsMain field.
+func (o *Subaccount) SetIsMain(v int32) {
+	o.IsMain = &v
+}
+
+// GetSignUpType returns the SignUpType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Subaccount) GetSignUpType() string {
+	if o == nil || IsNil(o.SignUpType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SignUpType.Get()
+}
+
+// GetSignUpTypeOk returns a tuple with the SignUpType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Subaccount) GetSignUpTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SignUpType.Get(), o.SignUpType.IsSet()
+}
+
+// HasSignUpType returns a boolean if a field has been set.
+func (o *Subaccount) HasSignUpType() bool {
+	if o != nil && o.SignUpType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSignUpType gets a reference to the given NullableString and assigns it to the SignUpType field.
+func (o *Subaccount) SetSignUpType(v string) {
+	o.SignUpType.Set(&v)
+}
+// SetSignUpTypeNil sets the value for SignUpType to be an explicit nil
+func (o *Subaccount) SetSignUpTypeNil() {
+	o.SignUpType.Set(nil)
+}
+
+// UnsetSignUpType ensures that no value is present for SignUpType, not even an explicit nil
+func (o *Subaccount) UnsetSignUpType() {
+	o.SignUpType.Unset()
+}
+
 func (o Subaccount) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -792,6 +972,9 @@ func (o Subaccount) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ApiKey) {
 		toSerialize["api_key"] = o.ApiKey
+	}
+	if !IsNil(o.AccessSmpp) {
+		toSerialize["access_smpp"] = o.AccessSmpp
 	}
 	if !IsNil(o.AccessUsers) {
 		toSerialize["access_users"] = o.AccessUsers
@@ -826,14 +1009,26 @@ func (o Subaccount) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AccessReseller) {
 		toSerialize["access_reseller"] = o.AccessReseller
 	}
+	if !IsNil(o.AccessGlobalSending) {
+		toSerialize["access_global_sending"] = o.AccessGlobalSending
+	}
 	if !IsNil(o.AccessMms) {
 		toSerialize["access_mms"] = o.AccessMms
+	}
+	if !IsNil(o.HidePricing) {
+		toSerialize["hide_pricing"] = o.HidePricing
 	}
 	if !IsNil(o.ShareCampaigns) {
 		toSerialize["share_campaigns"] = o.ShareCampaigns
 	}
 	if o.Notes.IsSet() {
 		toSerialize["notes"] = o.Notes.Get()
+	}
+	if !IsNil(o.IsMain) {
+		toSerialize["is_main"] = o.IsMain
+	}
+	if o.SignUpType.IsSet() {
+		toSerialize["sign_up_type"] = o.SignUpType.Get()
 	}
 	return toSerialize, nil
 }
