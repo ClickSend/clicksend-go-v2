@@ -24,7 +24,7 @@ type CalculateSmsCampaignPriceDataData struct {
 	// The message body.
 	Body *string `json:"body,omitempty"`
 	// The schedule timestamp.
-	Schedule *string `json:"schedule,omitempty"`
+	Schedule *int32 `json:"schedule,omitempty"`
 }
 
 // NewCalculateSmsCampaignPriceDataData instantiates a new CalculateSmsCampaignPriceDataData object
@@ -109,9 +109,9 @@ func (o *CalculateSmsCampaignPriceDataData) SetBody(v string) {
 }
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *CalculateSmsCampaignPriceDataData) GetSchedule() string {
+func (o *CalculateSmsCampaignPriceDataData) GetSchedule() int32 {
 	if o == nil || IsNil(o.Schedule) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.Schedule
@@ -119,7 +119,7 @@ func (o *CalculateSmsCampaignPriceDataData) GetSchedule() string {
 
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CalculateSmsCampaignPriceDataData) GetScheduleOk() (*string, bool) {
+func (o *CalculateSmsCampaignPriceDataData) GetScheduleOk() (*int32, bool) {
 	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *CalculateSmsCampaignPriceDataData) HasSchedule() bool {
 	return false
 }
 
-// SetSchedule gets a reference to the given string and assigns it to the Schedule field.
-func (o *CalculateSmsCampaignPriceDataData) SetSchedule(v string) {
+// SetSchedule gets a reference to the given int32 and assigns it to the Schedule field.
+func (o *CalculateSmsCampaignPriceDataData) SetSchedule(v int32) {
 	o.Schedule = &v
 }
 

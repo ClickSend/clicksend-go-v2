@@ -37,12 +37,11 @@ type VoiceMessage struct {
 	Lang *string `json:"lang,omitempty"`
 	// The voice of the message.
 	Voice *string `json:"voice,omitempty"`
-	// The timestamp when the message should be sent. Returned as a string since it may be an empty string when no schedule was set.
-	Schedule *string `json:"schedule,omitempty"`
+	Schedule *VoiceMessageSchedule `json:"schedule,omitempty"`
 	// The ID of the message.
 	MessageId *string `json:"message_id,omitempty"`
 	// The number of parts in the message.
-	MessageParts *string `json:"message_parts,omitempty"`
+	MessageParts *int32 `json:"message_parts,omitempty"`
 	// The price of the message.
 	MessagePrice *string `json:"message_price,omitempty"`
 	// The custom string of the message.
@@ -409,9 +408,9 @@ func (o *VoiceMessage) SetVoice(v string) {
 }
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *VoiceMessage) GetSchedule() string {
+func (o *VoiceMessage) GetSchedule() VoiceMessageSchedule {
 	if o == nil || IsNil(o.Schedule) {
-		var ret string
+		var ret VoiceMessageSchedule
 		return ret
 	}
 	return *o.Schedule
@@ -419,7 +418,7 @@ func (o *VoiceMessage) GetSchedule() string {
 
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetScheduleOk() (*string, bool) {
+func (o *VoiceMessage) GetScheduleOk() (*VoiceMessageSchedule, bool) {
 	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
@@ -435,8 +434,8 @@ func (o *VoiceMessage) HasSchedule() bool {
 	return false
 }
 
-// SetSchedule gets a reference to the given string and assigns it to the Schedule field.
-func (o *VoiceMessage) SetSchedule(v string) {
+// SetSchedule gets a reference to the given VoiceMessageSchedule and assigns it to the Schedule field.
+func (o *VoiceMessage) SetSchedule(v VoiceMessageSchedule) {
 	o.Schedule = &v
 }
 
@@ -473,9 +472,9 @@ func (o *VoiceMessage) SetMessageId(v string) {
 }
 
 // GetMessageParts returns the MessageParts field value if set, zero value otherwise.
-func (o *VoiceMessage) GetMessageParts() string {
+func (o *VoiceMessage) GetMessageParts() int32 {
 	if o == nil || IsNil(o.MessageParts) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.MessageParts
@@ -483,7 +482,7 @@ func (o *VoiceMessage) GetMessageParts() string {
 
 // GetMessagePartsOk returns a tuple with the MessageParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetMessagePartsOk() (*string, bool) {
+func (o *VoiceMessage) GetMessagePartsOk() (*int32, bool) {
 	if o == nil || IsNil(o.MessageParts) {
 		return nil, false
 	}
@@ -499,8 +498,8 @@ func (o *VoiceMessage) HasMessageParts() bool {
 	return false
 }
 
-// SetMessageParts gets a reference to the given string and assigns it to the MessageParts field.
-func (o *VoiceMessage) SetMessageParts(v string) {
+// SetMessageParts gets a reference to the given int32 and assigns it to the MessageParts field.
+func (o *VoiceMessage) SetMessageParts(v int32) {
 	o.MessageParts = &v
 }
 

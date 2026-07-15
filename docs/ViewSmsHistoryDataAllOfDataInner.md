@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ErrorCode** | Pointer to **NullableString** | The error code of the operation. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. If no error occurred, the value is **null**. | [optional] 
 **ErrorText** | Pointer to **NullableString** | A message describing the _error_code_ of the operation. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. If no error occurred, the value is **null**. | [optional] 
 **MessageId** | Pointer to **string** | The generated ID of the message. | [optional] 
-**MessageParts** | Pointer to **string** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the &lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;&lt;strong&gt;SMS Character Count&lt;/strong&gt;&lt;/a&gt;. | [optional] 
+**MessageParts** | Pointer to **int32** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the &lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;&lt;strong&gt;SMS Character Count&lt;/strong&gt;&lt;/a&gt;. | [optional] 
 **MessagePrice** | Pointer to **string** | The price of this message. This depends on the total number of parts of the message. | [optional] 
 **FromEmail** | Pointer to **string** | The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS | [optional] 
 **ListId** | Pointer to **NullableString** | The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request. | [optional] 
@@ -371,20 +371,20 @@ HasMessageId returns a boolean if a field has been set.
 
 ### GetMessageParts
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() string`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() int32`
 
 GetMessageParts returns the MessageParts field if non-nil, zero value otherwise.
 
 ### GetMessagePartsOk
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePartsOk() (*string, bool)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePartsOk() (*int32, bool)`
 
 GetMessagePartsOk returns a tuple with the MessageParts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessageParts
 
-`func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageParts(v string)`
+`func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageParts(v int32)`
 
 SetMessageParts sets MessageParts field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TemplateIdMaster** | Pointer to **int32** | The unique identifier for the template. | [optional] 
 **TemplateName** | Pointer to **string** | The name of the template. | [optional] 
-**DateAdded** | Pointer to **string** | The date the template was added. | [optional] 
+**DateAdded** | Pointer to **int32** | The date the template was added. | [optional] 
 **Body** | Pointer to **NullableString** | The body of the template. | [optional] 
 **Thumbnail** | Pointer to [**MasterEmailTemplateThumbnail**](MasterEmailTemplateThumbnail.md) |  | [optional] 
 
@@ -81,20 +81,20 @@ HasTemplateName returns a boolean if a field has been set.
 
 ### GetDateAdded
 
-`func (o *MasterEmailTemplate) GetDateAdded() string`
+`func (o *MasterEmailTemplate) GetDateAdded() int32`
 
 GetDateAdded returns the DateAdded field if non-nil, zero value otherwise.
 
 ### GetDateAddedOk
 
-`func (o *MasterEmailTemplate) GetDateAddedOk() (*string, bool)`
+`func (o *MasterEmailTemplate) GetDateAddedOk() (*int32, bool)`
 
 GetDateAddedOk returns a tuple with the DateAdded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateAdded
 
-`func (o *MasterEmailTemplate) SetDateAdded(v string)`
+`func (o *MasterEmailTemplate) SetDateAdded(v int32)`
 
 SetDateAdded sets DateAdded field to given value.
 

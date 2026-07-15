@@ -24,7 +24,7 @@ type MasterEmailTemplate struct {
 	// The name of the template.
 	TemplateName *string `json:"template_name,omitempty"`
 	// The date the template was added.
-	DateAdded *string `json:"date_added,omitempty"`
+	DateAdded *int32 `json:"date_added,omitempty"`
 	// The body of the template.
 	Body NullableString `json:"body,omitempty"`
 	Thumbnail *MasterEmailTemplateThumbnail `json:"thumbnail,omitempty"`
@@ -112,9 +112,9 @@ func (o *MasterEmailTemplate) SetTemplateName(v string) {
 }
 
 // GetDateAdded returns the DateAdded field value if set, zero value otherwise.
-func (o *MasterEmailTemplate) GetDateAdded() string {
+func (o *MasterEmailTemplate) GetDateAdded() int32 {
 	if o == nil || IsNil(o.DateAdded) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.DateAdded
@@ -122,7 +122,7 @@ func (o *MasterEmailTemplate) GetDateAdded() string {
 
 // GetDateAddedOk returns a tuple with the DateAdded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MasterEmailTemplate) GetDateAddedOk() (*string, bool) {
+func (o *MasterEmailTemplate) GetDateAddedOk() (*int32, bool) {
 	if o == nil || IsNil(o.DateAdded) {
 		return nil, false
 	}
@@ -138,8 +138,8 @@ func (o *MasterEmailTemplate) HasDateAdded() bool {
 	return false
 }
 
-// SetDateAdded gets a reference to the given string and assigns it to the DateAdded field.
-func (o *MasterEmailTemplate) SetDateAdded(v string) {
+// SetDateAdded gets a reference to the given int32 and assigns it to the DateAdded field.
+func (o *MasterEmailTemplate) SetDateAdded(v int32) {
 	o.DateAdded = &v
 }
 

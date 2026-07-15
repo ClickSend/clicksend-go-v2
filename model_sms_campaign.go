@@ -34,11 +34,11 @@ type SmsCampaign struct {
 	// The message body of the SMS campaign sent.
 	Body *string `json:"body,omitempty"`
 	// The scheduled date of the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
-	Schedule *string `json:"schedule,omitempty"`
+	Schedule *int32 `json:"schedule,omitempty"`
 	// The status of the SMS. Available statuses are:    - _Approved_: The SMS campaign has been approved and is ready to be sent.   - _Cancelled_: The SMS campaign was scheduled but has been cancelled before sending.   - _Draft_: The SMS campaign is saved as a draft and has not been sent.   - _Failed_: The SMS campaign failed to send due to an issue.   - _Queued_: The SMS campaign is waiting to be sent.   - _Scheduled_: The SMS campaign is set to be sent at a later time.   - _Sending_: The SMS campaign is currently being sent.   - _Sent_: The SMS campaign has been sent, but this does not guarantee that all messages were successfully delivered.   - _WaitApproval_: The SMS campaign is awaiting approval from ClickSend, which may take a few minutes.
 	Status *string `json:"status,omitempty"`
 	// The date you created the SMS campaign. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
-	DateAdded *string `json:"date_added,omitempty"`
+	DateAdded *int32 `json:"date_added,omitempty"`
 	// The custom note that was added when creating or updating the SMS campaign.
 	CustomString NullableString `json:"custom_string,omitempty"`
 	// The original URL that had been shorten. It will return an **empty** value if the SMS campaign didn’t include any shortened URL.
@@ -297,9 +297,9 @@ func (o *SmsCampaign) SetBody(v string) {
 }
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *SmsCampaign) GetSchedule() string {
+func (o *SmsCampaign) GetSchedule() int32 {
 	if o == nil || IsNil(o.Schedule) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.Schedule
@@ -307,7 +307,7 @@ func (o *SmsCampaign) GetSchedule() string {
 
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SmsCampaign) GetScheduleOk() (*string, bool) {
+func (o *SmsCampaign) GetScheduleOk() (*int32, bool) {
 	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
@@ -323,8 +323,8 @@ func (o *SmsCampaign) HasSchedule() bool {
 	return false
 }
 
-// SetSchedule gets a reference to the given string and assigns it to the Schedule field.
-func (o *SmsCampaign) SetSchedule(v string) {
+// SetSchedule gets a reference to the given int32 and assigns it to the Schedule field.
+func (o *SmsCampaign) SetSchedule(v int32) {
 	o.Schedule = &v
 }
 
@@ -361,9 +361,9 @@ func (o *SmsCampaign) SetStatus(v string) {
 }
 
 // GetDateAdded returns the DateAdded field value if set, zero value otherwise.
-func (o *SmsCampaign) GetDateAdded() string {
+func (o *SmsCampaign) GetDateAdded() int32 {
 	if o == nil || IsNil(o.DateAdded) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.DateAdded
@@ -371,7 +371,7 @@ func (o *SmsCampaign) GetDateAdded() string {
 
 // GetDateAddedOk returns a tuple with the DateAdded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SmsCampaign) GetDateAddedOk() (*string, bool) {
+func (o *SmsCampaign) GetDateAddedOk() (*int32, bool) {
 	if o == nil || IsNil(o.DateAdded) {
 		return nil, false
 	}
@@ -387,8 +387,8 @@ func (o *SmsCampaign) HasDateAdded() bool {
 	return false
 }
 
-// SetDateAdded gets a reference to the given string and assigns it to the DateAdded field.
-func (o *SmsCampaign) SetDateAdded(v string) {
+// SetDateAdded gets a reference to the given int32 and assigns it to the DateAdded field.
+func (o *SmsCampaign) SetDateAdded(v int32) {
 	o.DateAdded = &v
 }
 

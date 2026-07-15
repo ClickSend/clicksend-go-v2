@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name of the country. | [optional] 
 **Code** | Pointer to **string** | The country code. | [optional] 
 **Region** | Pointer to **string** | The region of the country. | [optional] 
-**AgreedAt** | Pointer to **NullableString** | The date when the country was agreed upon. | [optional] 
+**AgreedAt** | Pointer to **NullableInt32** | The date when the country was agreed upon. | [optional] 
 **RegistrationEntity** | Pointer to [**NullableAccountReferrerChosen**](AccountReferrerChosen.md) |  | [optional] 
 **RegistrationStatus** | Pointer to [**GlobalSendingRegistrationStatus**](GlobalSendingRegistrationStatus.md) |  | [optional] 
 **JotformId** | Pointer to **string** | The ID of the country in JotForm. | [optional] 
@@ -144,20 +144,20 @@ HasRegion returns a boolean if a field has been set.
 
 ### GetAgreedAt
 
-`func (o *GlobalSending) GetAgreedAt() string`
+`func (o *GlobalSending) GetAgreedAt() int32`
 
 GetAgreedAt returns the AgreedAt field if non-nil, zero value otherwise.
 
 ### GetAgreedAtOk
 
-`func (o *GlobalSending) GetAgreedAtOk() (*string, bool)`
+`func (o *GlobalSending) GetAgreedAtOk() (*int32, bool)`
 
 GetAgreedAtOk returns a tuple with the AgreedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgreedAt
 
-`func (o *GlobalSending) SetAgreedAt(v string)`
+`func (o *GlobalSending) SetAgreedAt(v int32)`
 
 SetAgreedAt sets AgreedAt field to given value.
 

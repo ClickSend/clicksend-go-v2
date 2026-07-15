@@ -44,7 +44,7 @@ type ViewSmsHistoryDataAllOfDataInner struct {
 	// The generated ID of the message.
 	MessageId *string `json:"message_id,omitempty"`
 	// The number of parts the message was broken into. To look at how many parts your message is broken down into, use the <a href=\"http://smscharactercount.com/\" target=\"_blank\"><strong>SMS Character Count</strong></a>.
-	MessageParts *string `json:"message_parts,omitempty"`
+	MessageParts *int32 `json:"message_parts,omitempty"`
 	// The price of this message. This depends on the total number of parts of the message.
 	MessagePrice *string `json:"message_price,omitempty"`
 	// The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS
@@ -493,9 +493,9 @@ func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageId(v string) {
 }
 
 // GetMessageParts returns the MessageParts field value if set, zero value otherwise.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() string {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() int32 {
 	if o == nil || IsNil(o.MessageParts) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.MessageParts
@@ -503,7 +503,7 @@ func (o *ViewSmsHistoryDataAllOfDataInner) GetMessageParts() string {
 
 // GetMessagePartsOk returns a tuple with the MessageParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePartsOk() (*string, bool) {
+func (o *ViewSmsHistoryDataAllOfDataInner) GetMessagePartsOk() (*int32, bool) {
 	if o == nil || IsNil(o.MessageParts) {
 		return nil, false
 	}
@@ -519,8 +519,8 @@ func (o *ViewSmsHistoryDataAllOfDataInner) HasMessageParts() bool {
 	return false
 }
 
-// SetMessageParts gets a reference to the given string and assigns it to the MessageParts field.
-func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageParts(v string) {
+// SetMessageParts gets a reference to the given int32 and assigns it to the MessageParts field.
+func (o *ViewSmsHistoryDataAllOfDataInner) SetMessageParts(v int32) {
 	o.MessageParts = &v
 }
 

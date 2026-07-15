@@ -25,7 +25,7 @@ type ViewAccountUsageDataEmailInner struct {
 	Username *string `json:"username,omitempty"`
 	// The total count of emails.
 	TotalCount *int32 `json:"total_count,omitempty"`
-	TotalPrice *string `json:"total_price,omitempty"`
+	TotalPrice *float32 `json:"total_price,omitempty"`
 	// Optional notes.
 	Notes NullableString `json:"notes,omitempty"`
 }
@@ -144,9 +144,9 @@ func (o *ViewAccountUsageDataEmailInner) SetTotalCount(v int32) {
 }
 
 // GetTotalPrice returns the TotalPrice field value if set, zero value otherwise.
-func (o *ViewAccountUsageDataEmailInner) GetTotalPrice() string {
+func (o *ViewAccountUsageDataEmailInner) GetTotalPrice() float32 {
 	if o == nil || IsNil(o.TotalPrice) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.TotalPrice
@@ -154,7 +154,7 @@ func (o *ViewAccountUsageDataEmailInner) GetTotalPrice() string {
 
 // GetTotalPriceOk returns a tuple with the TotalPrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ViewAccountUsageDataEmailInner) GetTotalPriceOk() (*string, bool) {
+func (o *ViewAccountUsageDataEmailInner) GetTotalPriceOk() (*float32, bool) {
 	if o == nil || IsNil(o.TotalPrice) {
 		return nil, false
 	}
@@ -170,8 +170,8 @@ func (o *ViewAccountUsageDataEmailInner) HasTotalPrice() bool {
 	return false
 }
 
-// SetTotalPrice gets a reference to the given string and assigns it to the TotalPrice field.
-func (o *ViewAccountUsageDataEmailInner) SetTotalPrice(v string) {
+// SetTotalPrice gets a reference to the given float32 and assigns it to the TotalPrice field.
+func (o *ViewAccountUsageDataEmailInner) SetTotalPrice(v float32) {
 	o.TotalPrice = &v
 }
 

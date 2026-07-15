@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TotalCount** | Pointer to **int32** | The total number of records. | [optional] 
-**TotalPrice** | Pointer to **float32** | The total price of the SMS campaign. | [optional] 
+**TotalPrice** | Pointer to **string** | The total price of the SMS campaign. | [optional] 
 **Data** | Pointer to [**CalculateSmsCampaignPriceDataData**](CalculateSmsCampaignPriceDataData.md) |  | [optional] 
 **Currency** | Pointer to [**Currency**](Currency.md) |  | [optional] 
 
@@ -55,20 +55,20 @@ HasTotalCount returns a boolean if a field has been set.
 
 ### GetTotalPrice
 
-`func (o *CalculateSmsCampaignPriceData) GetTotalPrice() float32`
+`func (o *CalculateSmsCampaignPriceData) GetTotalPrice() string`
 
 GetTotalPrice returns the TotalPrice field if non-nil, zero value otherwise.
 
 ### GetTotalPriceOk
 
-`func (o *CalculateSmsCampaignPriceData) GetTotalPriceOk() (*float32, bool)`
+`func (o *CalculateSmsCampaignPriceData) GetTotalPriceOk() (*string, bool)`
 
 GetTotalPriceOk returns a tuple with the TotalPrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalPrice
 
-`func (o *CalculateSmsCampaignPriceData) SetTotalPrice(v float32)`
+`func (o *CalculateSmsCampaignPriceData) SetTotalPrice(v string)`
 
 SetTotalPrice sets TotalPrice field to given value.
 

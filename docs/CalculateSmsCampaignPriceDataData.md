@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **From** | Pointer to **string** | The sender. | [optional] 
 **Body** | Pointer to **string** | The message body. | [optional] 
-**Schedule** | Pointer to **string** | The schedule timestamp. | [optional] 
+**Schedule** | Pointer to **int32** | The schedule timestamp. | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasBody returns a boolean if a field has been set.
 
 ### GetSchedule
 
-`func (o *CalculateSmsCampaignPriceDataData) GetSchedule() string`
+`func (o *CalculateSmsCampaignPriceDataData) GetSchedule() int32`
 
 GetSchedule returns the Schedule field if non-nil, zero value otherwise.
 
 ### GetScheduleOk
 
-`func (o *CalculateSmsCampaignPriceDataData) GetScheduleOk() (*string, bool)`
+`func (o *CalculateSmsCampaignPriceDataData) GetScheduleOk() (*int32, bool)`
 
 GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchedule
 
-`func (o *CalculateSmsCampaignPriceDataData) SetSchedule(v string)`
+`func (o *CalculateSmsCampaignPriceDataData) SetSchedule(v int32)`
 
 SetSchedule sets Schedule field to given value.
 

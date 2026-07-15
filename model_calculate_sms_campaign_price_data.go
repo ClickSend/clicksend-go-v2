@@ -22,7 +22,7 @@ type CalculateSmsCampaignPriceData struct {
 	// The total number of records.
 	TotalCount *int32 `json:"total_count,omitempty"`
 	// The total price of the SMS campaign.
-	TotalPrice *float32 `json:"total_price,omitempty"`
+	TotalPrice *string `json:"total_price,omitempty"`
 	Data *CalculateSmsCampaignPriceDataData `json:"data,omitempty"`
 	Currency *Currency `json:"_currency,omitempty"`
 }
@@ -77,9 +77,9 @@ func (o *CalculateSmsCampaignPriceData) SetTotalCount(v int32) {
 }
 
 // GetTotalPrice returns the TotalPrice field value if set, zero value otherwise.
-func (o *CalculateSmsCampaignPriceData) GetTotalPrice() float32 {
+func (o *CalculateSmsCampaignPriceData) GetTotalPrice() string {
 	if o == nil || IsNil(o.TotalPrice) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.TotalPrice
@@ -87,7 +87,7 @@ func (o *CalculateSmsCampaignPriceData) GetTotalPrice() float32 {
 
 // GetTotalPriceOk returns a tuple with the TotalPrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CalculateSmsCampaignPriceData) GetTotalPriceOk() (*float32, bool) {
+func (o *CalculateSmsCampaignPriceData) GetTotalPriceOk() (*string, bool) {
 	if o == nil || IsNil(o.TotalPrice) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *CalculateSmsCampaignPriceData) HasTotalPrice() bool {
 	return false
 }
 
-// SetTotalPrice gets a reference to the given float32 and assigns it to the TotalPrice field.
-func (o *CalculateSmsCampaignPriceData) SetTotalPrice(v float32) {
+// SetTotalPrice gets a reference to the given string and assigns it to the TotalPrice field.
+func (o *CalculateSmsCampaignPriceData) SetTotalPrice(v string) {
 	o.TotalPrice = &v
 }
 

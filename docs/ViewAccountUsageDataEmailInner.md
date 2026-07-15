@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **SubaccountId** | Pointer to **int32** | The subaccount identifier. | [optional] 
 **Username** | Pointer to **string** | The username associated with the subaccount. | [optional] 
 **TotalCount** | Pointer to **int32** | The total count of emails. | [optional] 
-**TotalPrice** | Pointer to **string** |  | [optional] 
+**TotalPrice** | Pointer to **float32** |  | [optional] 
 **Notes** | Pointer to **NullableString** | Optional notes. | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasTotalCount returns a boolean if a field has been set.
 
 ### GetTotalPrice
 
-`func (o *ViewAccountUsageDataEmailInner) GetTotalPrice() string`
+`func (o *ViewAccountUsageDataEmailInner) GetTotalPrice() float32`
 
 GetTotalPrice returns the TotalPrice field if non-nil, zero value otherwise.
 
 ### GetTotalPriceOk
 
-`func (o *ViewAccountUsageDataEmailInner) GetTotalPriceOk() (*string, bool)`
+`func (o *ViewAccountUsageDataEmailInner) GetTotalPriceOk() (*float32, bool)`
 
 GetTotalPriceOk returns a tuple with the TotalPrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalPrice
 
-`func (o *ViewAccountUsageDataEmailInner) SetTotalPrice(v string)`
+`func (o *ViewAccountUsageDataEmailInner) SetTotalPrice(v float32)`
 
 SetTotalPrice sets TotalPrice field to given value.
 

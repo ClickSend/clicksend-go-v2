@@ -28,7 +28,7 @@ type GlobalSending struct {
 	// The region of the country.
 	Region *string `json:"region,omitempty"`
 	// The date when the country was agreed upon.
-	AgreedAt NullableString `json:"agreed_at,omitempty"`
+	AgreedAt NullableInt32 `json:"agreed_at,omitempty"`
 	RegistrationEntity NullableAccountReferrerChosen `json:"registration_entity,omitempty"`
 	RegistrationStatus *GlobalSendingRegistrationStatus `json:"registration_status,omitempty"`
 	// The ID of the country in JotForm.
@@ -201,9 +201,9 @@ func (o *GlobalSending) SetRegion(v string) {
 }
 
 // GetAgreedAt returns the AgreedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GlobalSending) GetAgreedAt() string {
+func (o *GlobalSending) GetAgreedAt() int32 {
 	if o == nil || IsNil(o.AgreedAt.Get()) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.AgreedAt.Get()
@@ -212,7 +212,7 @@ func (o *GlobalSending) GetAgreedAt() string {
 // GetAgreedAtOk returns a tuple with the AgreedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GlobalSending) GetAgreedAtOk() (*string, bool) {
+func (o *GlobalSending) GetAgreedAtOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -228,8 +228,8 @@ func (o *GlobalSending) HasAgreedAt() bool {
 	return false
 }
 
-// SetAgreedAt gets a reference to the given NullableString and assigns it to the AgreedAt field.
-func (o *GlobalSending) SetAgreedAt(v string) {
+// SetAgreedAt gets a reference to the given NullableInt32 and assigns it to the AgreedAt field.
+func (o *GlobalSending) SetAgreedAt(v int32) {
 	o.AgreedAt.Set(&v)
 }
 // SetAgreedAtNil sets the value for AgreedAt to be an explicit nil

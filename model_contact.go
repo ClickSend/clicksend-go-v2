@@ -37,10 +37,10 @@ type Contact struct {
 	Custom3 *string `json:"custom_3,omitempty"`
 	// Custom field 4.
 	Custom4 *string `json:"custom_4,omitempty"`
-	// The date when the contact was added. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \"1783997542\") instead of ISO 8601.
-	DateAdded *string `json:"date_added,omitempty"`
-	// The date when the contact was last updated. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \"1783997542\") instead of ISO 8601.
-	DateUpdated *string `json:"date_updated,omitempty"`
+	// The date when the contact was added, as a <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix timestamp</a>.
+	DateAdded *int32 `json:"date_added,omitempty"`
+	// The date when the contact was last updated, as a <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix timestamp</a>.
+	DateUpdated *int32 `json:"date_updated,omitempty"`
 	// The fax number of the contact.
 	FaxNumber NullableString `json:"fax_number,omitempty"`
 	// The organization name of the contact.
@@ -369,9 +369,9 @@ func (o *Contact) SetCustom4(v string) {
 }
 
 // GetDateAdded returns the DateAdded field value if set, zero value otherwise.
-func (o *Contact) GetDateAdded() string {
+func (o *Contact) GetDateAdded() int32 {
 	if o == nil || IsNil(o.DateAdded) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.DateAdded
@@ -379,7 +379,7 @@ func (o *Contact) GetDateAdded() string {
 
 // GetDateAddedOk returns a tuple with the DateAdded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Contact) GetDateAddedOk() (*string, bool) {
+func (o *Contact) GetDateAddedOk() (*int32, bool) {
 	if o == nil || IsNil(o.DateAdded) {
 		return nil, false
 	}
@@ -395,15 +395,15 @@ func (o *Contact) HasDateAdded() bool {
 	return false
 }
 
-// SetDateAdded gets a reference to the given string and assigns it to the DateAdded field.
-func (o *Contact) SetDateAdded(v string) {
+// SetDateAdded gets a reference to the given int32 and assigns it to the DateAdded field.
+func (o *Contact) SetDateAdded(v int32) {
 	o.DateAdded = &v
 }
 
 // GetDateUpdated returns the DateUpdated field value if set, zero value otherwise.
-func (o *Contact) GetDateUpdated() string {
+func (o *Contact) GetDateUpdated() int32 {
 	if o == nil || IsNil(o.DateUpdated) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.DateUpdated
@@ -411,7 +411,7 @@ func (o *Contact) GetDateUpdated() string {
 
 // GetDateUpdatedOk returns a tuple with the DateUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Contact) GetDateUpdatedOk() (*string, bool) {
+func (o *Contact) GetDateUpdatedOk() (*int32, bool) {
 	if o == nil || IsNil(o.DateUpdated) {
 		return nil, false
 	}
@@ -427,8 +427,8 @@ func (o *Contact) HasDateUpdated() bool {
 	return false
 }
 
-// SetDateUpdated gets a reference to the given string and assigns it to the DateUpdated field.
-func (o *Contact) SetDateUpdated(v string) {
+// SetDateUpdated gets a reference to the given int32 and assigns it to the DateUpdated field.
+func (o *Contact) SetDateUpdated(v int32) {
 	o.DateUpdated = &v
 }
 
