@@ -40,8 +40,7 @@ type VoiceMessage struct {
 	Schedule *VoiceMessageSchedule `json:"schedule,omitempty"`
 	// The ID of the message.
 	MessageId *string `json:"message_id,omitempty"`
-	// The number of parts in the message.
-	MessageParts *int32 `json:"message_parts,omitempty"`
+	MessageParts *VoiceMessageSchedule `json:"message_parts,omitempty"`
 	// The price of the message.
 	MessagePrice *string `json:"message_price,omitempty"`
 	// The custom string of the message.
@@ -472,9 +471,9 @@ func (o *VoiceMessage) SetMessageId(v string) {
 }
 
 // GetMessageParts returns the MessageParts field value if set, zero value otherwise.
-func (o *VoiceMessage) GetMessageParts() int32 {
+func (o *VoiceMessage) GetMessageParts() VoiceMessageSchedule {
 	if o == nil || IsNil(o.MessageParts) {
-		var ret int32
+		var ret VoiceMessageSchedule
 		return ret
 	}
 	return *o.MessageParts
@@ -482,7 +481,7 @@ func (o *VoiceMessage) GetMessageParts() int32 {
 
 // GetMessagePartsOk returns a tuple with the MessageParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoiceMessage) GetMessagePartsOk() (*int32, bool) {
+func (o *VoiceMessage) GetMessagePartsOk() (*VoiceMessageSchedule, bool) {
 	if o == nil || IsNil(o.MessageParts) {
 		return nil, false
 	}
@@ -498,8 +497,8 @@ func (o *VoiceMessage) HasMessageParts() bool {
 	return false
 }
 
-// SetMessageParts gets a reference to the given int32 and assigns it to the MessageParts field.
-func (o *VoiceMessage) SetMessageParts(v int32) {
+// SetMessageParts gets a reference to the given VoiceMessageSchedule and assigns it to the MessageParts field.
+func (o *VoiceMessage) SetMessageParts(v VoiceMessageSchedule) {
 	o.MessageParts = &v
 }
 

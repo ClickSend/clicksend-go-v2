@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Voice** | Pointer to **string** | The voice of the message. | [optional] 
 **Schedule** | Pointer to [**VoiceMessageSchedule**](VoiceMessageSchedule.md) |  | [optional] 
 **MessageId** | Pointer to **string** | The ID of the message. | [optional] 
-**MessageParts** | Pointer to **int32** | The number of parts in the message. | [optional] 
+**MessageParts** | Pointer to [**VoiceMessageSchedule**](VoiceMessageSchedule.md) |  | [optional] 
 **MessagePrice** | Pointer to **string** | The price of the message. | [optional] 
 **CustomString** | Pointer to **string** | The custom string of the message. | [optional] 
 **UserId** | Pointer to **float32** | The ID of the user. | [optional] 
@@ -357,20 +357,20 @@ HasMessageId returns a boolean if a field has been set.
 
 ### GetMessageParts
 
-`func (o *VoiceMessage) GetMessageParts() int32`
+`func (o *VoiceMessage) GetMessageParts() VoiceMessageSchedule`
 
 GetMessageParts returns the MessageParts field if non-nil, zero value otherwise.
 
 ### GetMessagePartsOk
 
-`func (o *VoiceMessage) GetMessagePartsOk() (*int32, bool)`
+`func (o *VoiceMessage) GetMessagePartsOk() (*VoiceMessageSchedule, bool)`
 
 GetMessagePartsOk returns a tuple with the MessageParts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessageParts
 
-`func (o *VoiceMessage) SetMessageParts(v int32)`
+`func (o *VoiceMessage) SetMessageParts(v VoiceMessageSchedule)`
 
 SetMessageParts sets MessageParts field to given value.
 
