@@ -30,19 +30,55 @@ func main() {
 		Password: os.Getenv("CLICKSEND_API_KEY"),
 	})
 
-	smsMessageCollection := clicksend.SmsMessageCollection{
-		Messages: []clicksend.SmsMessage{
-			{Source: "sdk", Body: "Hello from ClickSend!", To: "+61411111111"},
-		},
-	}
+	message := clicksend.NewSendSmsRequestMessagesInner("Hello from ClickSend!")
+	message.SetTo("+61411111111")
+	message.SetSource("sdk")
 
-	result, _, err := client.SMSAPI.SmsSendPost(auth).SmsMessageCollection(smsMessageCollection).Execute()
+	sendSmsRequest := clicksend.NewSendSmsRequest()
+	sendSmsRequest.SetMessages([]clicksend.SendSmsRequestMessagesInner{*message})
+
+	result, _, err := client.SmsAPI.SendSms(auth).SendSmsRequest(*sendSmsRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error calling SmsSendPost: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error calling SendSms: %v\n", err)
 		return
 	}
 	fmt.Println(result)
 }
+```
+
+## More Examples
+
+### View account details
+
+```go
+result, _, err := client.ManagementAPI.ViewAccountDetails(auth).Execute()
+if err != nil {
+	fmt.Fprintf(os.Stderr, "Error calling ViewAccountDetails: %v\n", err)
+	return
+}
+fmt.Println(result)
+```
+
+### Send an MMS
+
+```go
+mmsMessage := clicksend.NewSendMmsRequestMessagesInner()
+mmsMessage.SetTo("+61411111111")
+mmsMessage.SetFrom("sdk")
+mmsMessage.SetSubject("Hello")
+mmsMessage.SetBody("Hello from ClickSend!")
+mmsMessage.SetSource("sdk")
+
+sendMmsRequest := clicksend.NewSendMmsRequest()
+sendMmsRequest.SetMediaFile("https://clicksend.com/logo.png")
+sendMmsRequest.SetMessages([]clicksend.SendMmsRequestMessagesInner{*mmsMessage})
+
+result, _, err := client.MmsAPI.SendMms(auth).SendMmsRequest(*sendMmsRequest).Execute()
+if err != nil {
+	fmt.Fprintf(os.Stderr, "Error calling SendMms: %v\n", err)
+	return
+}
+fmt.Println(result)
 ```
 
 ## Authentication

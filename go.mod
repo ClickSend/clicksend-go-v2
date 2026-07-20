@@ -1,4 +1,4 @@
-module github.com/GIT_USER_ID/GIT_REPO_ID
+module github.com/ClickSend/clicksend-go-v2
 
 go 1.23
 
