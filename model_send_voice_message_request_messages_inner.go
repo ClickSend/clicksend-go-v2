@@ -33,6 +33,8 @@ type SendVoiceMessageRequestMessagesInner struct {
 // will change when the set of required properties is changed
 func NewSendVoiceMessageRequestMessagesInner() *SendVoiceMessageRequestMessagesInner {
 	this := SendVoiceMessageRequestMessagesInner{}
+	var source string = "sdk"
+	this.Source = &source
 	return &this
 }
 
@@ -41,6 +43,8 @@ func NewSendVoiceMessageRequestMessagesInner() *SendVoiceMessageRequestMessagesI
 // but it doesn't guarantee that properties required by API are set
 func NewSendVoiceMessageRequestMessagesInnerWithDefaults() *SendVoiceMessageRequestMessagesInner {
 	this := SendVoiceMessageRequestMessagesInner{}
+	var source string = "sdk"
+	this.Source = &source
 	return &this
 }
 

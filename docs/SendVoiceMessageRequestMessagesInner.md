@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Source** | Pointer to **string** |  | [optional] 
+**Source** | Pointer to **string** |  | [optional] [default to "sdk"]
 **Body** | Pointer to **string** |  | [optional] 
 **To** | Pointer to **string** |  | [optional] 
 **Voice** | Pointer to **string** |  | [optional] 
