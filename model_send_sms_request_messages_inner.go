@@ -54,7 +54,7 @@ type _SendSmsRequestMessagesInner SendSmsRequestMessagesInner
 func NewSendSmsRequestMessagesInner(body string) *SendSmsRequestMessagesInner {
 	this := SendSmsRequestMessagesInner{}
 	this.Body = body
-	var source string = "sdk"
+	var source string = "sdk-go"
 	this.Source = &source
 	return &this
 }
@@ -64,7 +64,7 @@ func NewSendSmsRequestMessagesInner(body string) *SendSmsRequestMessagesInner {
 // but it doesn't guarantee that properties required by API are set
 func NewSendSmsRequestMessagesInnerWithDefaults() *SendSmsRequestMessagesInner {
 	this := SendSmsRequestMessagesInner{}
-	var source string = "sdk"
+	var source string = "sdk-go"
 	this.Source = &source
 	return &this
 }

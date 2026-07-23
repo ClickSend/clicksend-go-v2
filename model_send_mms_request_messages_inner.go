@@ -33,7 +33,7 @@ type SendMmsRequestMessagesInner struct {
 // will change when the set of required properties is changed
 func NewSendMmsRequestMessagesInner() *SendMmsRequestMessagesInner {
 	this := SendMmsRequestMessagesInner{}
-	var source string = "sdk"
+	var source string = "sdk-go"
 	this.Source = &source
 	return &this
 }
@@ -43,7 +43,7 @@ func NewSendMmsRequestMessagesInner() *SendMmsRequestMessagesInner {
 // but it doesn't guarantee that properties required by API are set
 func NewSendMmsRequestMessagesInnerWithDefaults() *SendMmsRequestMessagesInner {
 	this := SendMmsRequestMessagesInner{}
-	var source string = "sdk"
+	var source string = "sdk-go"
 	this.Source = &source
 	return &this
 }
