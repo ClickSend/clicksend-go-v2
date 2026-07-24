@@ -61,11 +61,7 @@ type APIClient struct {
 
 	EmailToSmsAPI *EmailToSmsAPIService
 
-	FaxAPI *FaxAPIService
-
 	InternationalMessagingAPI *InternationalMessagingAPIService
-
-	LettersAPI *LettersAPIService
 
 	ListsAPI *ListsAPIService
 
@@ -80,8 +76,6 @@ type APIClient struct {
 	NumbersAPI *NumbersAPIService
 
 	OwnNumbersAPI *OwnNumbersAPIService
-
-	PostcardsAPI *PostcardsAPIService
 
 	ReferralsAPI *ReferralsAPIService
 
@@ -130,9 +124,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DefaultSendersAPI = (*DefaultSendersAPIService)(&c.common)
 	c.EmailAPI = (*EmailAPIService)(&c.common)
 	c.EmailToSmsAPI = (*EmailToSmsAPIService)(&c.common)
-	c.FaxAPI = (*FaxAPIService)(&c.common)
 	c.InternationalMessagingAPI = (*InternationalMessagingAPIService)(&c.common)
-	c.LettersAPI = (*LettersAPIService)(&c.common)
 	c.ListsAPI = (*ListsAPIService)(&c.common)
 	c.ManagementAPI = (*ManagementAPIService)(&c.common)
 	c.MessageDeliveryAPI = (*MessageDeliveryAPIService)(&c.common)
@@ -140,7 +132,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.MmsCampaignsAPI = (*MmsCampaignsAPIService)(&c.common)
 	c.NumbersAPI = (*NumbersAPIService)(&c.common)
 	c.OwnNumbersAPI = (*OwnNumbersAPIService)(&c.common)
-	c.PostcardsAPI = (*PostcardsAPIService)(&c.common)
 	c.ReferralsAPI = (*ReferralsAPIService)(&c.common)
 	c.ResellerAPI = (*ResellerAPIService)(&c.common)
 	c.SmsAPI = (*SmsAPIService)(&c.common)
