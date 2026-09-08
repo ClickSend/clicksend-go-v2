@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "ClickSend-SDK/6.0.0/go",
+		UserAgent:        "ClickSend-SDK/6.0.1/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
