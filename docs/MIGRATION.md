@@ -1,6 +1,6 @@
-# Migration Guide: clicksend-go (legacy) → clicksend-go-v2
+# Migration Guide: clicksend-go (legacy) → clicksend-go-v2/v6
 
-This guide helps you migrate from the legacy ClickSend Go SDK (`github.com/ClickSend/clicksend-go`, package `clicksend`) to the current v2 SDK (`github.com/ClickSend/clicksend-go-v2`, also package `clicksend`). Both SDKs talk to the same ClickSend v3 REST API, but the calling convention, response shapes, and API groupings have all changed. Read this guide fully before upgrading — almost every call site in your existing integration will need to change, and because both packages share the import name `clicksend`, the compiler alone won't catch every difference.
+This guide helps you migrate from the legacy ClickSend Go SDK (`github.com/ClickSend/clicksend-go`, package `clicksend`) to the current v2 SDK (`github.com/ClickSend/clicksend-go-v2/v6`, also package `clicksend`). Both SDKs talk to the same ClickSend v3 REST API, but the calling convention, response shapes, and API groupings have all changed. Read this guide fully before upgrading — almost every call site in your existing integration will need to change, and because both packages share the import name `clicksend`, the compiler alone won't catch every difference.
 
 ## Contents
 
@@ -33,7 +33,7 @@ The v2 SDK is generated fresh from ClickSend's current OpenAPI v3 specification 
 - Returns a **fully typed struct pointer** for every successful response instead of a raw, un-decoded JSON string.
 - Renames the generic error type `GenericSwaggerError` → `GenericOpenAPIError`, and changes it from a returned **value** to a returned **pointer** (see [§8](#8-error-handling-same-shape-no-exceptions-but-the-type-changed-from-a-value-to-a-pointer)).
 - Drops the `github.com/antihax/optional` dependency entirely — optional/query parameters are now plain typed chained setters (see [§9](#9-removed-apixxxopts--antihaxoptional--replaced-by-chained-setters)).
-- Ships as a proper Go module (`go.mod`/`go.sum` committed, `go 1.23`) with a real import path, `github.com/ClickSend/clicksend-go-v2` — the legacy SDK has **no `go.mod` of its own at all** (see [§2](#2-installation--imports)).
+- Ships as a proper Go module (`go.mod`/`go.sum` committed, `go 1.23`) with a real import path, `github.com/ClickSend/clicksend-go-v2/v6` — the legacy SDK has **no `go.mod` of its own at all** (see [§2](#2-installation--imports)).
 
 What did **not** change: Go's error model. Neither SDK has exceptions — both legacy and v2 return the idiomatic Go 3-tuple `(result, *http.Response, error)` (or a 2-tuple for a few no-body v2 endpoints), and both already required a `context.Context` as the first argument on every call. If you're coming from the Python or Node migration guides in this repo, do not expect an exception hierarchy or an `async_req` flag here — those don't apply to Go and this guide does not force that narrative (see [§8](#8-error-handling-same-shape-no-exceptions-but-the-type-changed-from-a-value-to-a-pointer) and [§9](#9-removed-apixxxopts--antihaxoptional--replaced-by-chained-setters)).
 
@@ -43,11 +43,11 @@ None of this changes the underlying REST API — it's the same ClickSend v3 API 
 
 | | Legacy | v2 |
 |---|---|---|
-| Import path | `github.com/ClickSend/clicksend-go` | `github.com/ClickSend/clicksend-go-v2` |
+| Import path | `github.com/ClickSend/clicksend-go` | `github.com/ClickSend/clicksend-go-v2/v6` |
 | Go package name | `clicksend` | `clicksend` (same — see the warning below) |
-| Module manifest | **none** — no `go.mod`, `go.sum`, `Gopkg.toml`, or `glide.yaml` anywhere in the legacy source tree | `go.mod` + `go.sum` committed, `module github.com/ClickSend/clicksend-go-v2`, `go 1.23` |
+| Module manifest | **none** — no `go.mod`, `go.sum`, `Gopkg.toml`, or `glide.yaml` anywhere in the legacy source tree | `go.mod` + `go.sum` committed, `module github.com/ClickSend/clicksend-go-v2/v6`, `go 1.23` |
 | Declared dependencies | `github.com/antihax/optional` (optional-param wrapper, used throughout `api_*.go`), `golang.org/x/oauth2` (imported in `client.go` for an OAuth2 context-value code path, unused by Basic-Auth callers) — neither is vendored or pinned by the legacy SDK itself | `gopkg.in/validator.v2` only |
-| Version at time of writing | untagged / no `go.mod` version | `6.0.2` (per the `User-Agent` string baked into `configuration.go`) |
+| Version at time of writing | untagged / no `go.mod` version | `6.0.3` (per the `User-Agent` string baked into `configuration.go`) |
 
 Because the legacy SDK ships with no `go.mod`, its own README documents installing it by copying the source into your project rather than `go get`-ing it as a module:
 
@@ -64,11 +64,11 @@ In practice, most real integrations today reference the legacy SDK one of two wa
 v2 is a proper Go module and installs the normal way:
 
 ```sh
-go get github.com/ClickSend/clicksend-go-v2
+go get github.com/ClickSend/clicksend-go-v2/v6
 ```
 
 ```go
-import clicksend "github.com/ClickSend/clicksend-go-v2"
+import clicksend "github.com/ClickSend/clicksend-go-v2/v6"
 ```
 
 **Both SDKs use the same Go package name, `clicksend`.** If your project currently imports the legacy SDK under an implicit `clicksend` identifier and you swap only the import path, the package name is identical, so `go build` will *not* flag the import line itself as wrong — it will instead fail (or worse, silently type-check against the wrong types if you have some transitional aliasing) at every call site whose method or type no longer exists. Do not rely on "the import still compiles" as a signal that the migration is complete; there is no cohabitation concern only because you should remove the legacy import entirely rather than run both.
@@ -103,7 +103,7 @@ Nothing about `Configuration`/`APIClient`/`BasicAuth` construction needs to chan
 
 - **Which field you call on `client`.** Legacy exposes 37 fields named after the URL path (`client.SMSApi`, `client.MMSApi`, `client.ContactApi`, …). v2 exposes 26 fields with a capitalized `API` suffix (`client.SmsAPI`, `client.MmsAPI`, `client.ContactsAPI`, …) — see the full field list in [§10](#10-service-by-service-mapping-all-37-legacy-services).
 - **How you call the method on that field** — see [§5](#5-calling-an-endpoint-positional-args--fluent-builder).
-- **Default `User-Agent`.** Legacy defaults to `Swagger-Codegen/1.0.0/go`; v2 defaults to `ClickSend-SDK/6.0.2/go`, settable via `cfg.UserAgent = "..."` in both SDKs (same field name).
+- **Default `User-Agent`.** Legacy defaults to `Swagger-Codegen/1.0.0/go`; v2 defaults to `ClickSend-SDK/6.0.3/go`, settable via `cfg.UserAgent = "..."` in both SDKs (same field name).
 - **`cfg.HTTPClient`** (a `*http.Client` for supplying your own timeouts/proxies/transport) exists on `Configuration` in both SDKs with the same field name — no change needed there.
 
 ## 4. Base path / URL changes
@@ -622,7 +622,7 @@ fmt.Println(parsed)
 import (
     "context"
     "fmt"
-    clicksend "github.com/ClickSend/clicksend-go-v2"
+    clicksend "github.com/ClickSend/clicksend-go-v2/v6"
 )
 
 cfg := clicksend.NewConfiguration()
@@ -813,7 +813,7 @@ No legacy counterpart at all — nothing to migrate, but worth knowing they exis
 
 ## 15. Step-by-step migration checklist
 
-1. **Swap the import path**: `github.com/ClickSend/clicksend-go` → `github.com/ClickSend/clicksend-go-v2`, and switch your install mechanism from however you currently vendor/`replace` the legacy source (it has no `go.mod`) to a normal `go get` ([§2](#2-installation--imports)). Both packages import as `clicksend`, so the import line alone won't flag anything — every call site has to be checked.
+1. **Swap the import path**: `github.com/ClickSend/clicksend-go` → `github.com/ClickSend/clicksend-go-v2/v6`, and switch your install mechanism from however you currently vendor/`replace` the legacy source (it has no `go.mod`) to a normal `go get` ([§2](#2-installation--imports)). Both packages import as `clicksend`, so the import line alone won't flag anything — every call site has to be checked.
 2. **Rename every service field on `client`**: `client.SMSApi` → `client.SmsAPI`, `client.MMSApi` → `client.MmsAPI`, etc., using the [§10](#10-service-by-service-mapping-all-37-legacy-services) tables. **Pay special attention to `VoiceApi` → `VoiceMessagingAPI`** and `VoiceDeliveryReceiptRulesApi` → `VoiceAPI` ([§12](#12-the-voice-naming-trap-read-this-before-touching-voice-code)).
 3. **Convert every call site from positional arguments to the fluent builder pattern**, ending each chain in `.Execute()` ([§5](#5-calling-an-endpoint-positional-args--fluent-builder)). The compiler will flag a missing `.Execute()` and a nonexistent method, but not a builder call made on the wrong service field.
 4. **Rebuild every request payload** using the matching `New*Request()` constructor and `Set*()` methods (or a struct literal wrapped in `Ptr*` helpers) instead of the old domain-model struct literal ([§6](#6-request-payloads-builder--request-models-replace-struct-literals)).
