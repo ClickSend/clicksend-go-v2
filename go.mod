@@ -1,4 +1,4 @@
-module github.com/ClickSend/clicksend-go-v2
+module github.com/ClickSend/clicksend-go-v2/v6
 
 go 1.23
 

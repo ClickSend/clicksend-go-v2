@@ -1,6 +1,6 @@
 # ClickSend Go SDK
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/ClickSend/clicksend-go-v2.svg)](https://pkg.go.dev/github.com/ClickSend/clicksend-go-v2)
+[![Go Reference](https://pkg.go.dev/badge/github.com/ClickSend/clicksend-go-v2/v6.svg)](https://pkg.go.dev/github.com/ClickSend/clicksend-go-v2/v6)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![API: v3](https://img.shields.io/badge/ClickSend%20API-v3-brightgreen.svg)](https://developers.clicksend.com/docs/rest/v3/)
 
@@ -34,7 +34,7 @@ This library is generated from ClickSend's official OpenAPI v3 specification and
 ## Installation
 
 ```sh
-go get github.com/ClickSend/clicksend-go-v2
+go get github.com/ClickSend/clicksend-go-v2/v6
 ```
 
 ## Authentication
@@ -56,7 +56,7 @@ import (
 	"fmt"
 	"os"
 
-	clicksend "github.com/ClickSend/clicksend-go-v2"
+	clicksend "github.com/ClickSend/clicksend-go-v2/v6"
 )
 
 func main() {
@@ -153,7 +153,7 @@ if err != nil {
 ## Documentation
 
 - Full REST API reference: https://developers.clicksend.com/docs/rest/v3/
-- Package reference: https://pkg.go.dev/github.com/ClickSend/clicksend-go-v2
+- Package reference: https://pkg.go.dev/github.com/ClickSend/clicksend-go-v2/v6
 - Per-endpoint SDK docs: the [`docs/`](docs) directory in this repository
 
 ## Versioning
